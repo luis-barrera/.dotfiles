@@ -1,0 +1,61 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "layout": "splitv",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "none",
+            "name": "irssi",
+            "percent": 0.5,
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^URxvt$"
+                }
+            ]
+        },
+        {
+            // stacked split container with 2 children
+            "layout": "stacked",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "name": "notmuch",
+                    "percent": 0.5,
+                    "type": "con",
+                    "swallows": [
+                        {
+                            "class": "^URxvt$"
+                        }
+                    ]
+                },
+                {
+                    "name": "midna: ~",
+                    "percent": 0.5,
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // stacked split container with 1 children
+    "layout": "stacked",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [
+        {
+            "name": "chrome",
+            "type": "con",
+            "swallows": [
+                {
+                    "class": "^URxvt$"
+                }
+            ]
+        }
+    ]
+}
