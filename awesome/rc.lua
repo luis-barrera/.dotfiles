@@ -380,7 +380,7 @@ globalkeys = my_table.join(
               {description = "Mover espacio a la izquierda", group = "tag"}),
     awful.key({ modkey, "Shift"   }, "Right", function () lain.util.move_tag(1) end,
               {description = "Mover espacio a la derecha", group = "tag"}),
-    awful.key({ modkey, "Shift"   }, "d", function () lain.util.delete_tag() end,
+    awful.key({ altkey, "Shift"   }, "d", function () lain.util.delete_tag() end,
               {description = "Eliminar espacio", group = "tag"}),
 
     -- Ajustes de Awesome
