@@ -482,10 +482,16 @@ globalkeys = my_table.join(
         {description = "Mute sonido", group = "media"}),
 
     -- Lanzar algunos programas
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end,
+    awful.key({ modkey,           }, "q", function () awful.spawn(browser) end,
               {description = "Abrir Firefox", group = "launcher"}),
-    awful.key({ modkey }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "w", function () awful.spawn("nemo") end,
+              {description = "Abrir nemo", group = "launcher"}),
+    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "Abrir terminal", group = "launcher"}),
+    awful.key({ modkey, "Shift"   }, "z", function () awful.spawn("rofi -show keys -theme dmenu") end,
+              {description = "Mostrar keys extras", group = "launcher"}),
+    awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi -theme dmenu") end,
+              {description = "dmenu", group = "launcher"}),
 
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
