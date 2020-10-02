@@ -624,7 +624,7 @@ clientkeys = my_table.join(
     awful.key({ modkey,           }, "o", function (c) c:move_to_screen() end,
               {description = "Mover a pantalla", group = "client"}),
     awful.key({ modkey,           }, "t", function (c) c.ontop = not c.ontop end,
-              {description = "ManteMantener al frente", group = "client"}),
+              {description = "Mantener al frente", group = "client"}),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -640,7 +640,7 @@ clientkeys = my_table.join(
         {description = "Maximizar", group = "client"})
 )
 
--- Asigna espacios a teclas
+-- Asigna espacios a teclas de numeros
 for i = 1, 9 do
     -- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
     local descr_view, descr_toggle, descr_move, descr_toggle_focus
@@ -766,7 +766,9 @@ clientbuttons = gears.table.join(
 -- Establecer las keybindings 
 root.keys(globalkeys)
 
--- {{{ Rules
+----------------------------------------------------------------------------------
+------------------------------ Reglas de ventanas --------------------------------
+----------------------------------------------------------------------------------
 -- Reglas que deben seguir los clientes (ventanas)(a traves de la señal "manage").
 awful.rules.rules = {
     -- Las reglas para todos los clientes
@@ -788,27 +790,24 @@ awful.rules.rules = {
       properties = { titlebars_enabled = false } },
 
     -- Configuración para clientes de Firefox.
-    --{ rule = { class = "firefox" },
-    --  properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
-
-    -- Zathura
+    { rule = { class = "firefox" },
+      properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
 
     -- Spotify
-    --{ rule = { class = "Spotify" },  
-    --  properties = { screen = 1, tag = awful.util.tagnames[5], titlebars_enabled = false } },
+    { rule = { class = "Spotify" },  
+      properties = { screen = 1, tag = awful.util.tagnames[4], titlebars_enabled = false } },
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
 }
--- }}}
 
--- {{{ Signals
--- Signal function to execute when a new client appears.
+----------------------------------------------------------------------------------
+----------------- Acciones específicas para nuevos clientes ----------------------
+----------------------------------------------------------------------------------
+-- Funciones que se ejecutan una vez que aperece un nuevo cliente.
 client.connect_signal("manage", function (c)
-    -- Set the windows at the slave,
-    -- i.e. put it at the end of others instead of setting it master.
     -- if not awesome.startup then awful.client.setslave(c) end
-
+    -- Establece la ventana como hijo
     if awesome.startup and
       not c.size_hints.user_position
       and not c.size_hints.program_position then
@@ -817,43 +816,47 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- Add a titlebar if titlebars_enabled is set to true in the rules.
+-- Formato de la titlebar en caso de que esté activada en las reglas 
 client.connect_signal("request::titlebars", function(c)
-    -- Custom
+    -- Personalizado
     if beautiful.titlebar_fun then
         beautiful.titlebar_fun(c)
         return
     end
 
     -- Default
-    -- buttons for the titlebar
+    -- Acciones con el ratón
     local buttons = my_table.join(
+        -- Mover cliente con mouse
         awful.button({ }, 1, function()
             c:emit_signal("request::activate", "titlebar", {raise = true})
             awful.mouse.client.move(c)
         end),
+        -- Matar cliente con click derecho
         awful.button({ }, 2, function() c:kill() end),
-        awful.button({ }, 3, function()
+        -- Cambiar tamaño arrastrando el mouse
+        awful.button({ }, 2, function()
             c:emit_signal("request::activate", "titlebar", {raise = true})
             awful.mouse.client.resize(c)
         end)
     )
 
+    -- Disposición de los elementos
     awful.titlebar(c, {size = dpi(16)}) : setup {
-        { -- Left
+        { -- Izquierda
             awful.titlebar.widget.iconwidget(c),
             buttons = buttons,
             layout  = wibox.layout.fixed.horizontal
         },
-        { -- Middle
-            { -- Title
+        { -- Medio
+            { -- Nombre 
                 align  = "center",
                 widget = awful.titlebar.widget.titlewidget(c)
             },
             buttons = buttons,
             layout  = wibox.layout.flex.horizontal
         },
-        { -- Right
+        { -- Derecha
             awful.titlebar.widget.floatingbutton (c),
             awful.titlebar.widget.maximizedbutton(c),
             awful.titlebar.widget.stickybutton   (c),
@@ -865,14 +868,13 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
--- Enable sloppy focus, so that focus follows mouse.
+-- Activa el sloppy focus, para que el focus siga el mouse
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
 end)
 
+-- Cambiar el color de los bordes de los clientes
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
--- possible workaround for tag preservation when switching back to default screen:
--- https://github.com/lcpz/awesome-copycats/issues/251
--- }}}
+-- Fin
