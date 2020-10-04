@@ -62,8 +62,9 @@ end
 run_once({ "dropbox", --deamon de dropbox
           "unclutter -root", 
           "light-locker", --deamon del display manager, necesario para suspender el equipo
+          "picom -b" -- deamon del compositor, permite transparencia en algunas ventanas
         })
-
+-- Si se usa dropbox, para que se vean mejor los iconos descargar dropbox-kde-systray-icons hardcode-tray
 -- This function implements the XDG autostart specification
 --[[
 awful.spawn.with_shell(
@@ -491,11 +492,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Shift"   }, "z", function () awful.spawn("rofi -show keys -theme dmenu") end,
               {description = "Mostrar keys extras", group = "launcher"}),
     awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi -theme dmenu") end,
-              {description = "dmenu", group = "launcher"}),
-
-    -- Prompt
-    awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
-              {description = "Run Prompt", group = "launcher"})
+              {description = "dmenu", group = "launcher"})
 
     --[[
     awful.key({ altkey, "Control" }, "m",
@@ -763,7 +760,7 @@ clientbuttons = gears.table.join(
         awful.mouse.client.move(c)
     end),
     -- Cambiar tamaño del cliente
-    awful.button({ modkey }, 2, function (c)
+    awful.button({ modkey }, 3, function (c)
         c:emit_signal("request::activate", "mouse_click", {raise = true})
         awful.mouse.client.resize(c)
     end)
@@ -838,10 +835,10 @@ client.connect_signal("request::titlebars", function(c)
             c:emit_signal("request::activate", "titlebar", {raise = true})
             awful.mouse.client.move(c)
         end),
-        -- Matar cliente con click derecho
+        -- Matar cliente con click central
         awful.button({ }, 2, function() c:kill() end),
         -- Cambiar tamaño arrastrando el mouse
-        awful.button({ }, 2, function()
+        awful.button({ }, 3, function()
             c:emit_signal("request::activate", "titlebar", {raise = true})
             awful.mouse.client.resize(c)
         end)
