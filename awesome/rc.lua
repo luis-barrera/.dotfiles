@@ -59,11 +59,14 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({ "dropbox", --deamon de dropbox
+run_once({--  "dropbox", --deamon de dropbox
+          --"pcloud",
           "unclutter -root", 
           "light-locker", --deamon del display manager, necesario para suspender el equipo
           "picom -b" -- deamon del compositor, permite transparencia en algunas ventanas
         })
+
+awful.spawn("pcloud")
 -- Si se usa dropbox, para que se vean mejor los iconos descargar dropbox-kde-systray-icons hardcode-tray
 -- This function implements the XDG autostart specification
 --[[
@@ -93,25 +96,25 @@ awful.util.terminal = terminal
 
 awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- nombre de los espacios
 awful.layout.layouts = {
+    lain.layout.cascade,
     awful.layout.suit.tile,
     awful.layout.suit.max,
     awful.layout.suit.magnifier,
     awful.layout.suit.floating,
-    awful.layout.suit.tile.left,
+    awful.layout.suit.max.fullscreen,
+    lain.layout.cascade.tile,
+    lain.layout.centerwork,
+    --awful.layout.suit.tile.left,
     --awful.layout.suit.tile.bottom,
     --awful.layout.suit.tile.top,
     --awful.layout.suit.fair,
     --awful.layout.suit.fair.horizontal,
     --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.max.fullscreen,
     --awful.layout.suit.corner.nw,
     --awful.layout.suit.corner.ne,
     --awful.layout.suit.corner.sw,
     --awful.layout.suit.corner.se,
-    --lain.layout.cascade,
-    --lain.layout.cascade.tile,
-    --lain.layout.centerwork,
     --lain.layout.centerwork.horizontal,
     --lain.layout.termfair,
     --lain.layout.termfair.center,
@@ -255,9 +258,9 @@ root.buttons(my_table.join(
 ----------------------------------------------------------------------------------
 globalkeys = my_table.join(
     -- Screenshot
-    awful.key({ altkey }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes") end,
+    awful.key({ altkey }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
               {description = "Screenshot", group = "hotkeys"}),
-    awful.key({ }, "Print", function() os.execute("flameshot gui -p ~/Imágenes") end,
+    awful.key({ }, "Print", function() os.execute("flameshot gui -p ~/Imágenes/screenshots") end,
               {description = "Recorte de pantalla", group = "hotkeys"}),
 
     -- Bloquear pantalla
@@ -491,7 +494,7 @@ globalkeys = my_table.join(
               {description = "Abrir terminal", group = "launcher"}),
     awful.key({ modkey, "Shift"   }, "z", function () awful.spawn("rofi -show keys -theme dmenu") end,
               {description = "Mostrar keys extras", group = "launcher"}),
-    awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi -theme dmenu") end,
+    awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi -theme gruvbox-dark") end,
               {description = "dmenu", group = "launcher"})
 
     --[[
