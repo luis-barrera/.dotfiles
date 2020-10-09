@@ -15,6 +15,9 @@ local dpi   = require("beautiful.xresources").apply_dpi
 local string, os = string, os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
+-- necesario clonar el repositorio de github github.com/streetturtle/awesome-wm-widgets
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+
 ----------------------------------------------------------------------------------
 ---------------------------- Definición de varibles ------------------------------
 ----------------------------------------------------------------------------------
@@ -22,7 +25,7 @@ local theme                                     = {}
 -- Directorios por default
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/icons"
-theme.wallpaper                                 = os.getenv("HOME") .. "/Imágenes/fondo2.png"
+theme.wallpaper                                 = os.getenv("HOME") .. "/Imágenes/f2.jpg"
 -- Fuentes
 theme.font                                      = "Source Code Pro 9"
 theme.taglist_font                              = "Source Code Pro Bold 10"
@@ -151,18 +154,35 @@ local volumewidget = wibox.container.background(theme.volume.bar, theme.bg_focus
 volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(1), dpi(1))
 
 -- Music player
+local songInfo = awful.widget.watch('playerctl metadata --format "   {{ artist }} - {{ title }}"', 1)
+songInfo = wibox.container.margin(songInfo, dpi(3), dpi(3), dpi(2), dpi(1))
 local player_icon = wibox.widget.imagebox(theme.mpdl, gears.shape.rounded_bar)
 local prev_icon = wibox.widget.imagebox(theme.prev, gears.shape.rounded_bar)
 local next_icon = wibox.widget.imagebox(theme.nex, gears.shape.rounded_bar)
 local stop_icon = wibox.widget.imagebox(theme.stop, gears.shape.rounded_bar)
 local pause_icon = wibox.widget.imagebox(theme.pause, gears.shape.rounded_bar)
-local play_pause_icon = wibox.widget.imagebox(theme.play, gears.shape.rounded_bar)
+local play_pause_icon = wibox.widget.imagebox(theme.stop, gears.shape.rounded_bar)
+play_pause_icon = awful.widget.watch('playerctl status', 1, 
+  function(play_pause_icon, stdout, stderr, exitreason, exitcode)
+    local f = io.popen('playerctl status', 'r') -- runs command
+    local l = f:read() -- read output of command
+    if (l == "Playing") then
+      play_pause_icon:set_image(theme.pause)
+    elseif (l == "Paused") then
+      play_pause_icon:set_image(theme.play)
+    else
+      play_pause_icon:set_image(theme.stop)
+    end
+    f:close()
+  end, wibox.widget.imagebox()
+)
 local separator = wibox.widget.textbox('  ')
 local player = wibox.widget{separator,
+                            songInfo,
+                            separator,
                             prev_icon,
-                            next_icon,
-                            stop_icon,
                             play_pause_icon,
+                            next_icon,
                             volumewidget,
                             separator,
                             layout = wibox.layout.fixed.horizontal
@@ -172,9 +192,27 @@ local player = wibox.widget{separator,
 local player_widget = wibox.container.background(player, theme.bg_focus, gears.shape.rounded_bar)
 player_widget = wibox.container.margin(player_widget, dpi(3), dpi(3), dpi(1), dpi(1))
 
+-- Song description
+local function playerStatus()
+  
+end
+
+-- Funcionalidad de los botones de audio
+prev_icon:connect_signal("button::press", function() os.execute("playerctl --player=playerctld previous") end)
+play_pause_icon:connect_signal("button::press", 
+  function()
+  os.execute("playerctl --player=playerctld play-pause")
+  end)
+next_icon:connect_signal("button::press", function() os.execute("playerctl --player=playerctld next") end)
+
+-- battery
+local mybatterywidget = battery_widget({display_notification = true, timeout = 1, show_current_level = true});
+mybatterywidget = wibox.container.margin(mybatterywidget, dpi(3), dpi(3), dpi(3), dpi(1))
+
 -- System Tray icons en un widget
 local tray = wibox.widget{separator,
                           separator,
+                          mybatterywidget,
                           wibox.widget.systray(),
                           separator,
                           separator,
@@ -184,7 +222,6 @@ tray = wibox.container.background(tray, theme.bg_focus, gears.shape.rounded_bar)
 tray = wibox.container.margin(tray, dpi(3), dpi(3), dpi(1), dpi(1))
 
 -- CPU
-local cpu_icon = wibox.widget.imagebox(theme.cpu)
 local cpu = lain.widget.cpu({
     settings = function()
         widget:set_markup(space3 .. markup.font(theme.font, "   CPU " .. cpu_now.usage
@@ -226,7 +263,7 @@ function theme.at_screen_connect(s)
     gears.wallpaper.fit(wallpaper, s)
 
     -- Tags
-    awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+    awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
 
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
