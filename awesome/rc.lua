@@ -60,13 +60,14 @@ local function run_once(cmd_arr)
 end
 
 run_once({--  "dropbox", --deamon de dropbox
-          --"pcloud",
+          "flameshot",
+          "pcloud",
           "unclutter -root", 
           "light-locker", --deamon del display manager, necesario para suspender el equipo
           "picom -b" -- deamon del compositor, permite transparencia en algunas ventanas
         })
 
-awful.spawn("pcloud")
+-- awful.spawn("pcloud")
 -- Si se usa dropbox, para que se vean mejor los iconos descargar dropbox-kde-systray-icons hardcode-tray
 -- This function implements the XDG autostart specification
 --[[
@@ -95,6 +96,7 @@ local scrlocker    = "light-locker"
 awful.util.terminal = terminal 
 
 awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- nombre de los espacios
+awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"}
 awful.layout.layouts = {
     lain.layout.cascade,
     awful.layout.suit.tile,
@@ -241,8 +243,25 @@ screen.connect_signal("arrange", function (s)
         end
     end
 end)
+
+function screenlayout()
+  if screen:count() == 1 then
+    os.execute("sh ~/.config/awesome/onescreenlayout.sh")
+  else
+    os.execute("sh ~/.config/awesome/screenlayout.sh")
+  end
+end
+
 -- Crea una barra(wibox) para cada pantalla conectada y lo agrega
-awful.screen.connect_for_each_screen(function(s) beautiful.at_screen_connect(s) end)
+awful.screen.connect_for_each_screen(function(s) 
+  beautiful.at_screen_connect(s)
+  screenlayout()
+end)
+
+awful.screen.disconnect_for_each_screen(function() 
+  beautiful.at_screen_connect(s)
+  --screenlayout()
+end)
 
 ----------------------------------------------------------------------------------
 ------------------------ Acciones con el mouse -----------------------------------
@@ -258,7 +277,7 @@ root.buttons(my_table.join(
 ----------------------------------------------------------------------------------
 globalkeys = my_table.join(
     -- Screenshot
-    awful.key({ altkey }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
+    awful.key({ modkey,           }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
               {description = "Screenshot", group = "hotkeys"}),
     awful.key({ }, "Print", function() os.execute("flameshot gui -p ~/Imágenes/screenshots") end,
               {description = "Recorte de pantalla", group = "hotkeys"}),

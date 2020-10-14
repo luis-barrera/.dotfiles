@@ -96,7 +96,7 @@ local scrlocker    = "light-locker"
 awful.util.terminal = terminal 
 
 awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- nombre de los espacios
-awful.util.tagnames_sec = {"1:s2", "2:s2", "3:s2"}
+awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"}
 awful.layout.layouts = {
     lain.layout.cascade,
     awful.layout.suit.tile,
@@ -243,10 +243,24 @@ screen.connect_signal("arrange", function (s)
         end
     end
 end)
+
+function screenlayout()
+  if screen:count() == 1 then
+    os.execute("sh ~/.config/awesome/onescreenlayout.sh")
+  else
+    os.execute("sh ~/.config/awesome/screenlayout.sh")
+  end
+end
+
 -- Crea una barra(wibox) para cada pantalla conectada y lo agrega
 awful.screen.connect_for_each_screen(function(s) 
   beautiful.at_screen_connect(s)
-  os.execute("sh ~/.config/awesome/screenlayout.sh") 
+  screenlayout()
+end)
+
+awful.screen.disconnect_for_each_screen(function() 
+  beautiful.at_screen_connect(s)
+  --screenlayout()
 end)
 
 ----------------------------------------------------------------------------------

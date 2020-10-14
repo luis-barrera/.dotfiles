@@ -25,7 +25,8 @@ local theme                                     = {}
 -- Directorios por default
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/icons"
-theme.wallpaper                                 = os.getenv("HOME") .. "/Imágenes/f2.jpg"
+theme.wallpaper                                 = os.getenv("HOME") .. "/Imágenes/fondo2.png"
+theme.wallpaper2                                 = os.getenv("HOME") .. "/Imágenes/f2.jpg"
 -- Fuentes
 theme.font                                      = "Source Code Pro 9"
 theme.taglist_font                              = "Source Code Pro Bold 10"
@@ -164,8 +165,8 @@ local pause_icon = wibox.widget.imagebox(theme.pause, gears.shape.rounded_bar)
 local play_pause_icon = wibox.widget.imagebox(theme.stop, gears.shape.rounded_bar)
 play_pause_icon = awful.widget.watch('playerctl status', 1, 
   function(play_pause_icon, stdout, stderr, exitreason, exitcode)
-    local f = io.popen('playerctl status', 'r') -- runs command
-    local l = f:read() -- read output of command
+    local f = io.popen('playerctl status', 'r') 
+    local l = f:read()
     if (l == "Playing") then
       play_pause_icon:set_image(theme.pause)
     elseif (l == "Paused") then
@@ -254,17 +255,28 @@ local barcolor  = gears.color({
     stops = { {0, theme.bg_focus}, {0.25, "#505050"}, {1, theme.bg_focus} }
 })
 
+-- Widget que muestra la pantalla activa
+--local s_act = awful.screen.focused()
+--local screen_active_widget = wibox.widget.textbox("pantalla activa")
+
+
 function theme.at_screen_connect(s)
     -- Establece un wallpaper 
     local wallpaper = theme.wallpaper
+    local wallpaper2 = theme.wallpaper2
     if type(wallpaper) == "function" then
         wallpaper = wallpaper(s)
     end
-    gears.wallpaper.fit(wallpaper, s)
 
     -- Tags
-    awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
-
+    if s.index == 1 then
+      awful.tag(awful.util.tagnames, s, awful.layout.layouts[1])
+      gears.wallpaper.maximized(wallpaper, s)
+    else
+      awful.tag(awful.util.tagnames_sec, s, awful.layout.layouts[1])
+      gears.wallpaper.maximized(wallpaper2, s)
+    end
+    
     -- Create an imagebox widget which will contains an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
@@ -278,7 +290,7 @@ function theme.at_screen_connect(s)
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons, { bg_focus = barcolor })
     s.mytaglist = wibox.container.margin(s.mytaglist, dpi(9), dpi(9), dpi(1), dpi(1))
     s.mytaglistcont = wibox.container.background(s.mytaglist, theme.bg_focus, gears.shape.rounded_bar)
-    s.mytag = wibox.widget{separator, s.mytaglistcont, s.mylayoutbox, separator, separator, layout = wibox.layout.fixed.horizontal}
+    s.mytag = wibox.widget{separator, s.mytaglistcont, s.mylayoutbox, screen_active_widget, separator, separator, layout = wibox.layout.fixed.horizontal}
     s.mytag = wibox.container.background(s.mytag, theme.bg_focus, gears.shape.rounded_bar)
     s.mytag = wibox.container.margin(s.mytag, dpi(3), dpi(3), dpi(1), dpi(1))
 
@@ -384,4 +396,5 @@ function ()
     theme.mpd.update()
 end)))
 ]]--
+
 return theme
