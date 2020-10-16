@@ -108,6 +108,9 @@ alias wmrc="nvim ~/.config/awesome/rc.lua"
 alias themewm="nvim ~/.config/awesome/theme.lua"
 alias onescreen="sh ~/.config/awesome/onescreenlayout.sh"
 alias twoscreens="sh ~/.config/awesome/screenlayout.sh"
+alias ianotebook="cd ~/QuintoTrimestre/IA/notebooks/ && jupyter-notebook"
+alias startmysql="systemctl start mysqld.service"
+alias stopmysql="systemctl stop mysqld.service"
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -125,3 +128,19 @@ cat ~/.cache/wal/sequences
 
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/luisbarrera/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/luisbarrera/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
