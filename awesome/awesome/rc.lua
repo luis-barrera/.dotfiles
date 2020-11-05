@@ -1,7 +1,7 @@
 --[[
-     Configuración de AwesomeWM de github.com/luis-barrera
-     Inspirado por:
-     Awesome WM configuration template en github.com/lcpz
+    Configuración de AwesomeWM de github.com/luis-barrera
+    Inspirado por:
+    Awesome WM configuration template en github.com/lcpz
 --]]
 
 ----------------------------------------------------------------------------------
@@ -64,7 +64,10 @@ run_once({--  "dropbox", --deamon de dropbox
           "pcloud",
           "unclutter -root", 
           "light-locker", --deamon del display manager, necesario para suspender el equipo
-          "picom -b" -- deamon del compositor, permite transparencia en algunas ventanas
+          "picom -b", -- deamon del compositor, permite transparencia en algunas ventanas
+          "keepassxc",
+          "redshift",
+          "parcellite"
         })
 
 -- awful.spawn("pcloud")
@@ -409,7 +412,7 @@ globalkeys = my_table.join(
     -- Ajustes de Awesome
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "Recargar Awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    awful.key({ modkey, "Control" }, "o", awesome.quit,
               {description = "Cerrar Sesión", group = "awesome"}),
 
     -- Modificar tamaño del cliente
@@ -457,19 +460,19 @@ globalkeys = my_table.join(
     -- Control de volumen y música
     awful.key({ modkey, "Control" }, "Left",
          function ()
-            os.execute("playerctl previous")
+            os.execute("playerctl --player=playerctld previous")
             -- beautiful.volume.update()- agregar una función que actualice la canción actual
         end,
         {description = "Cancion Anterior", group = "media"}),
     awful.key({ modkey, "Control" }, "Right",
          function ()
-            os.execute("playerctl next")
+            os.execute("playerctl --player=playerctld next")
             -- beautiful.volume.update()- agregar una función que actualice la canción actual
         end,
         {description = "Cancion Siguiente", group = "media"}),
     awful.key({ modkey, "Control" }, "space",
          function ()
-            os.execute("playerctl play-pause")
+            os.execute("playerctl --player=playerctld play-pause")
             -- beautiful.volume.update()- agregar una función que actualice la canción actual
         end,
         {description = "Play - Pause", group = "media"}),
@@ -505,9 +508,9 @@ globalkeys = my_table.join(
         {description = "Mute sonido", group = "media"}),
 
     -- Lanzar algunos programas
-    awful.key({ modkey,           }, "q", function () awful.spawn(browser) end,
+    awful.key({ modkey, "Shift"   }, "q", function () awful.spawn(browser) end,
               {description = "Abrir Firefox", group = "launcher"}),
-    awful.key({ modkey,           }, "w", function () awful.spawn("nemo") end,
+    awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("nemo") end,
               {description = "Abrir nemo", group = "launcher"}),
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "Abrir terminal", group = "launcher"}),
@@ -642,7 +645,7 @@ clientkeys = my_table.join(
               {description = "Maximizar cliente", group = "client"}),
     awful.key({ modkey,           }, "c", function (c) c:kill() end,
               {description = "Cerrar cliente", group = "client"}),
-    awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
+    awful.key({ altkey,           }, "space", awful.client.floating.toggle,
               {description = "Floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "Mover a master", group = "client"}),
@@ -819,8 +822,17 @@ awful.rules.rules = {
       properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
 
     -- Spotify
-    { rule = { class = "Spotify" },  
-      properties = { screen = 1, tag = awful.util.tagnames[4], titlebars_enabled = false } },
+    { rule = { class = "spotify" },  
+      properties = { tag = "music", titlebars_enabled = false } },
+
+    -- KeePassXC
+    { rule = { class = "KeePassXC" },  
+      properties = { floating = true } },
+
+    -- zoom
+    { rule = { class = "zoom" },  
+      properties = { floating = true, titlebars_enabled = false } },
+
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },

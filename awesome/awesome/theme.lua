@@ -26,7 +26,7 @@ local theme                                     = {}
 theme.default_dir                               = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                                  = os.getenv("HOME") .. "/.config/awesome/icons"
 theme.wallpaper                                 = os.getenv("HOME") .. "/Imágenes/fondo2.png"
-theme.wallpaper2                                 = os.getenv("HOME") .. "/Imágenes/f2.jpg"
+theme.wallpaper2                                = os.getenv("HOME") .. "/Imágenes/f2.jpg"
 -- Fuentes
 theme.font                                      = "Source Code Pro 9"
 theme.taglist_font                              = "Source Code Pro Bold 10"
@@ -155,7 +155,15 @@ local volumewidget = wibox.container.background(theme.volume.bar, theme.bg_focus
 volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(1), dpi(1))
 
 -- Music player
-local songInfo = awful.widget.watch('playerctl metadata --format "   {{ artist }} - {{ title }}"', 1)
+local songInfo = wibox.widget.textbox('')
+songInfo = awful.widget.watch('sh ~/.config/awesome/songInfo.sh', 1,
+  function(songInfo, stdout, stderr, exitreason, exitcode)
+    local f = io.popen('sh ~/.config/awesome/songInfo.sh', 'r') 
+    local l = f:read()
+    songInfo:set_markup_silently(l)
+    f:close()
+  end, wibox.widget.textbox()
+)
 songInfo = wibox.container.margin(songInfo, dpi(3), dpi(3), dpi(2), dpi(1))
 local player_icon = wibox.widget.imagebox(theme.mpdl, gears.shape.rounded_bar)
 local prev_icon = wibox.widget.imagebox(theme.prev, gears.shape.rounded_bar)
@@ -210,8 +218,22 @@ next_icon:connect_signal("button::press", function() os.execute("playerctl --pla
 local mybatterywidget = battery_widget({display_notification = true, timeout = 1, show_current_level = true});
 mybatterywidget = wibox.container.margin(mybatterywidget, dpi(3), dpi(3), dpi(3), dpi(1))
 
+-- Notificación sobre precio de minecraft
+local price_checker = wibox.widget.textbox('')
+price_checker = awful.widget.watch('python ~/linux-dotfiles/price-tracker/minecraft-price-tracker.py', 1800,
+  function(price_checker, stdout, stderr, exitreason, exitcode)
+    local f = io.popen('python ~/linux-dotfiles/price-tracker/minecraft-price-tracker.py', 'r') 
+    local l = f:read()
+    price_checker:set_markup_silently(l)
+    f:close()
+  end, wibox.widget.textbox()
+)
+
 -- System Tray icons en un widget
 local tray = wibox.widget{separator,
+                          separator,
+                          price_checker,
+                          separator,
                           separator,
                           mybatterywidget,
                           wibox.widget.systray(),
@@ -237,7 +259,7 @@ local netdown_icon = wibox.widget.imagebox(theme.net_down)
 local netup_icon = wibox.widget.imagebox(theme.net_up)
 local net = lain.widget.net({
     settings = function()
-        widget:set_markup(markup.font("Roboto 1", " ") .. markup.font(theme.font, "  " .. net_now.received .. "  -  "
+        widget:set_markup(markup.font("Roboto 1", " ") .. markup.font(theme.font, "  " .. net_now.received .. "  -  "
                           .. net_now.sent .. "  ") .. markup.font("Roboto 2", " "))
     end
 })
@@ -295,9 +317,10 @@ function theme.at_screen_connect(s)
     s.mytag = wibox.container.margin(s.mytag, dpi(3), dpi(3), dpi(1), dpi(1))
 
     -- Create a tasklist widget
-    mytasklist = awful.widget.tasklist(s, 
+    mytasklist = awful.widget.tasklist(s,
                                         awful.widget.tasklist.filter.currenttags, 
                                         awful.util.tasklist_buttons, 
+                                        -- layout = {spacing = 10},
                                         { bg_focus = theme.bg_focus, 
                                           shape = gears.shape.rounded_bar, 
                                           shape_border_width = 5, 
@@ -319,8 +342,8 @@ function theme.at_screen_connect(s)
         nil, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            tray,
-            player_widget
+            player_widget,
+            tray
         },
     }
 
