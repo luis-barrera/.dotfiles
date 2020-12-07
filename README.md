@@ -15,5 +15,3 @@ Hay un alias en el .zshrc llamado dotfiles que permite manipular las acciones de
 Puedo hacer `dotfiles add .zshrc` para agregar un archivo al repositorio.
 
 Y también puedo hacer `dotfiles commit -m "Algún comentario"` para realizar un commit.
-
-
