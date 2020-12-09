@@ -280,6 +280,9 @@ root.buttons(my_table.join(
 ------------------------ Acciones con teclado ------------------------------------
 ----------------------------------------------------------------------------------
 globalkeys = my_table.join(
+    -- Shortcut para reparar problema de pantalla negra después de hacer login
+    awful.key({ modkey,            }, "i", function() os.execute("xrandr --auto") end,
+              {description = "Repara error despues de hacer login", group = "hotkeys"}),
     -- Screenshot
     awful.key({ modkey,           }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
               {description = "Screenshot", group = "hotkeys"}),
