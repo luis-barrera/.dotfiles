@@ -63,11 +63,11 @@ run_once({--  "dropbox", --deamon de dropbox
           "flameshot",
           "pcloud",
           "unclutter -root", 
-          "light-locker", --deamon del display manager, necesario para suspender el equipo
-          "picom -b", -- deamon del compositor, permite transparencia en algunas ventanas
+          --"light-locker", --deamon del display manager, necesario para suspender el equipo
+          "picom", -- deamon del compositor, permite transparencia en algunas ventanas
           -- "seahorse",
-          "redshift",
           "parcellite",
+          "redshift-gtk -c ~/.config/redshift/redshift.conf",
           "syncthing-gtk"
         })
 
