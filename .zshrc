@@ -150,12 +150,11 @@ alias firefoxprofile="firefox -no-remote -P privacy-profile"
 # Alias para bare repo de mis dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 # Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
+# alias grabar="sh $HOME/scripts/grabar.sh"
 grabar() {
   if [ "$1" != "" ]
   then
-    /usr/bin/ffmpeg -video_size 1600x900 -framerate 20 -f x11grab -i :0.0 -f pulse -ac 2 -i default $1.mkv
-  else
-    echo " No se ha proporcionado nombre de la salida "
+    sh /home/luisbarrera/scripts/grabar.sh $1
   fi
 }
 
