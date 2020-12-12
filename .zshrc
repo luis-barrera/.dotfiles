@@ -2,12 +2,9 @@
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-# Not supported in the "fish" shell.
 (cat ~/.cache/wal/sequences &)
-
 # Alternative (blocks terminal for 0-3ms)
 cat ~/.cache/wal/sequences
-
 # To add support for TTYs this line can be optionally added.
 source ~/.cache/wal/colors-tty.sh
 
@@ -107,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
    export EDITOR='nvim'
 else
-   export EDITOR='mvim'
+   export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -116,33 +113,51 @@ export ARCHFLAGS="-arch x86_64"
 #############################################################################################################
 ############## Aliases ######################################################################################
 #############################################################################################################
+#
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# Configurar zsh
 alias zshconfig="nvim ~/.zshrc"
+# Configrar ohmyzsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# Configurar AwesomeWM
 alias wmrc="nvim ~/.config/awesome/rc.lua"
+# Configuar tema de AwesomeWM
 alias themewm="nvim ~/.config/awesome/theme.lua"
+# Corre Script para usar un monitor
 alias onescreen="sh ~/.config/awesome/onescreenlayout.sh && killall picom && picom --config ~/.config/picom.conf"
+# Corre Script para usar dos monitores
 alias twoscreens="sh ~/.config/awesome/screenlayout.sh && killall picom && picom --config ~/.config/picom-twoscreens.conf"
+# Abre jupyter notebook
 alias notebook="jupyter-notebook"
+# Alias para usar MariaDB
 # alias startmysql="systemctl enable mysqld.service --now"
 # alias restartmysql="systemctl restart mysqld.service"
 # alias stopmysql="systemctl disable mysqld.service --now"
-alias typorapull="cd ~/Notas && git pull && typora && cd"
-alias typorapush='cd ~/Notas && git add . && git commit -m "Otro commit" && git push && cd'
+# Abrir configuración de nvim
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
+# Administrar plugins de nvim
 alias nvimplugins="nvim ~/.config/nvim/vim-plug/plugins.vim"
-alias initlatextarea="cp -r ~/Templates/Tarea-Template ./"
-alias editlatex="nvim ./main.tex && pdflatex main.tex"
+# Abre otra terminal
 alias kitty="kitty --detach"
+# Abre zathura de manera correcta
 alias zathura="zathura --fork"
+# Perfil de privacidad para firefox
 alias firefoxprofile="firefox -no-remote -P privacy-profile"
-# Alias para bare repository de mis dotfiles
+# Alias para bare repo de mis dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+# Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
+grabar() {
+  if [ "$1" != "" ]
+  then
+    /usr/bin/ffmpeg -video_size 1600x900 -framerate 20 -f x11grab -i :0.0 -f pulse -ac 2 -i default $1.mkv
+  else
+    echo " No se ha proporcionado nombre de la salida "
+  fi
+}
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
