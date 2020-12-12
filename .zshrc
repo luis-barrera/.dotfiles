@@ -113,6 +113,9 @@ fi
 # Compilation flags
 export ARCHFLAGS="-arch x86_64"
 
+#############################################################################################################
+############## Aliases ######################################################################################
+#############################################################################################################
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -125,7 +128,7 @@ alias wmrc="nvim ~/.config/awesome/rc.lua"
 alias themewm="nvim ~/.config/awesome/theme.lua"
 alias onescreen="sh ~/.config/awesome/onescreenlayout.sh && killall picom && picom --config ~/.config/picom.conf"
 alias twoscreens="sh ~/.config/awesome/screenlayout.sh && killall picom && picom --config ~/.config/picom-twoscreens.conf"
-alias ianotebook="cd ~/QuintoTrimestre/IA/notebooks/ && jupyter-notebook"
+alias notebook="jupyter-notebook"
 # alias startmysql="systemctl enable mysqld.service --now"
 # alias restartmysql="systemctl restart mysqld.service"
 # alias stopmysql="systemctl disable mysqld.service --now"

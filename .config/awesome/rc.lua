@@ -526,6 +526,13 @@ globalkeys = my_table.join(
             beautiful.volume.update()
         end,
         {description = "Mute sonido", group = "media"}),
+    awful.key({ }, "XF86AudioMicMute",
+        function ()
+            os.execute(string.format("amixer -q set Capture toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            beautiful.volume.update()
+        end,
+        {description = "Mute sonido", group = "media"}),
+
 
     -- Lanzar algunos programas
     awful.key({ modkey, "Shift"   }, "q", function () awful.spawn(browser) end,
