@@ -150,13 +150,14 @@ alias firefoxprofile="firefox -no-remote -P privacy-profile"
 # Alias para bare repo de mis dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 # Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
-# alias grabar="sh $HOME/scripts/grabar.sh"
 grabar() {
   if [ "$1" != "" ]
   then
     sh /home/luisbarrera/scripts/grabar.sh $1
   fi
 }
+# Ejecutar jamovi
+alias jamovi="flatpak run org.jamovi.jamovi"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
