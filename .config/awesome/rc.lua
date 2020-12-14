@@ -59,7 +59,7 @@ local function run_once(cmd_arr)
     end
 end
 
-run_once({--  "dropbox", --deamon de dropbox
+run_once({
           "flameshot",
           "pcloud",
           "unclutter -root", 
@@ -67,8 +67,6 @@ run_once({--  "dropbox", --deamon de dropbox
           "picom", -- deamon del compositor, permite transparencia en algunas ventanas
           -- "seahorse",
           "parcellite",
-          -- "redshift-gtk",
-          -- "redshift -c ~/.config/redshift/redshift.conf",
           "syncthing-gtk"
         })
 
