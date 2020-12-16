@@ -87,7 +87,7 @@ theme.tasklist_disable_icon       = true
 theme.mini_icon                   = theme.icon_dir .. "/icon.png"
 
 -- Padding de los clientes
-theme.useless_gap                 = dpi(2)
+theme.useless_gap                 = dpi(8)
 
 ----------------------------------------------------------------------------------
 -------------------------------- Widgets -----------------------------------------
