@@ -9,7 +9,11 @@ if [ "$estado" = "Playing" -o "$estado" = "Paused" ]; then
   declare artist=$(playerctl metadata --format "{{ artist }}")
 
   if [ "$player" = "spotify" -o "$player" = "vlc" ]; then
-    echo " $player 🎧 $artist - $song "
+    if [ ${#song} <= 50 ]; then
+      echo " $player 🎧 $artist - $song "
+    else
+      echo " $player 🎧 $artist - ${song::40} "
+    fi;
   else
     if [ ${#song} <= 50 ]; then
       echo " $player 🎧 $song "
