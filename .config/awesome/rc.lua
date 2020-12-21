@@ -26,14 +26,12 @@ local dpi           = require("beautiful.xresources").apply_dpi
 ----------------------------------------------------------------------------------
 ------------------------ Administrador de Errorres -------------------------------
 ----------------------------------------------------------------------------------
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
+-- Si se detecta errores en el archivo de configuración, se abre otro archivo de respaldo
 if awesome.startup_errors then
     naughty.notify({ preset = naughty.config.presets.critical,
                      title = "Oops, there were errors during startup!",
                      text = awesome.startup_errors })
 end
--- Handle runtime errors after startup
 do
     local in_error = false
     awesome.connect_signal("debug::error", function (err)
@@ -47,7 +45,6 @@ do
     end)
 end
 
-
 ----------------------------------------------------------------------------------
 ------- Autostart para demons y aplicaciones que corren sin GUI ------------------
 ----------------------------------------------------------------------------------
@@ -60,14 +57,15 @@ local function run_once(cmd_arr)
 end
 
 run_once({
-          "flameshot",
-          "pcloud",
-          "unclutter -root", 
-          -- "light-locker", --deamon del display manager, necesario para suspender el equipo
-          "picom", -- deamon del compositor, permite transparencia en algunas ventanas
+          "flameshot", -- Screenshot
+          "pcloud", -- Almacenamiento en la nube 
+          "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
+          "picom -b", -- deamon del compositor, permite transparencia en algunas ventanas
+          "parcellite -d",
+          "syncthing-gtk",
+          "lxsession"
           -- "seahorse",
-          "parcellite",
-          "syncthing-gtk"
+          -- "light-locker", --deamon del display manager, necesario para suspender el equipo
         })
 
 -- awful.spawn("pcloud")
@@ -92,9 +90,9 @@ local terminal     = "kitty" -- terminal por defect -- terminal por defectoo
 local vi_focus     = false -- el foco de la ventana sigue al ratón
 local cycle_prev   = false -- cycle trough all previous client or just the first
 local editor       = "nvim"
-local gui_editor   = "code" -- Editor en gestor grafico
+local gui_editor   = "mousepad" -- Editor en gestor grafico
 local browser      = "firefox"
-local scrlocker    = "light-locker"
+local scrlocker    = "bettersecreenlocker"
 
 awful.util.terminal = terminal 
 
