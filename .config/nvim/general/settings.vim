@@ -43,6 +43,7 @@ set ignorecase  " do case insensitive search
 set incsearch   " show incremental search results as you type
 set number      " display line number
 set noswapfile  " disable swap file
+set relativenumber
 
 " Detecta el tipo de archivo que estamos editando y le damos instrucciones específica en el dir ftplugins
 filetype plugin on
