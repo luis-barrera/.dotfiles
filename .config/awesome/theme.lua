@@ -28,8 +28,7 @@ local theme                       = {}
 theme.default_dir                 = require("awful.util").get_themes_dir() .. "default"
 theme.icon_dir                    = os.getenv("HOME") .. "/.config/awesome/icons"
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/fondo2.png"
--- theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/f2.jpg"
-theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/f2.jpg"
+theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/f5.png"
 
 -- Fuentes
 theme.font                        = "Iosevka Custom 9"
@@ -87,7 +86,7 @@ theme.tasklist_disable_icon       = true
 theme.mini_icon                   = theme.icon_dir .. "/icon.png"
 
 -- Padding de los clientes
-theme.useless_gap                 = dpi(8)
+theme.useless_gap                 = dpi(7)
 
 ----------------------------------------------------------------------------------
 -------------------------------- Widgets -----------------------------------------

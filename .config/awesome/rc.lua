@@ -28,21 +28,21 @@ local dpi           = require("beautiful.xresources").apply_dpi
 ----------------------------------------------------------------------------------
 -- Si se detecta errores en el archivo de configuración, se abre otro archivo de respaldo
 if awesome.startup_errors then
-    naughty.notify({ preset = naughty.config.presets.critical,
-                     title = "Oops, there were errors during startup!",
-                     text = awesome.startup_errors })
+  naughty.notify({ preset = naughty.config.presets.critical,
+                   title = "Oops, there were errors during startup!",
+                   text = awesome.startup_errors })
 end
-do
-    local in_error = false
-    awesome.connect_signal("debug::error", function (err)
-        if in_error then return end
-        in_error = true
 
-        naughty.notify({ preset = naughty.config.presets.critical,
-                         title = "Oops, an error happened!",
-                         text = tostring(err) })
-        in_error = false
-    end)
+do
+  local in_error = false
+  awesome.connect_signal("debug::error", function (err)
+    if in_error then return end
+      in_error = true
+      naughty.notify({ preset = naughty.config.presets.critical,
+                       title = "Oops, an error happened!",
+                       text = tostring(err) })
+      in_error = false
+  end)
 end
 
 ----------------------------------------------------------------------------------
@@ -51,25 +51,22 @@ end
 -- Esta función se ejecuta una sola vez cada que se inicia AwesomeWM, aquí se ponen
 --  programas que corren en segundo plano como dropbox o pulseaudio
 local function run_once(cmd_arr)
-    for _, cmd in ipairs(cmd_arr) do
-        awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
-    end
+  for _, cmd in ipairs(cmd_arr) do
+    awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+  end
 end
 
 run_once({
-          "flameshot", -- Screenshot
-          "pcloud", -- Almacenamiento en la nube 
-          "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
-          "picom -b", -- deamon del compositor, permite transparencia en algunas ventanas
-          "parcellite -d",
-          "syncthing-gtk",
-          "lxsession"
-          -- "seahorse",
-          -- "light-locker", --deamon del display manager, necesario para suspender el equipo
-        })
+  "flameshot", -- Screenshot
+  "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
+  "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
+  "parcellite -d", -- Daemon del clipboard
+  "syncthing-gtk", -- Software para sincronizar archivos entre dispositivos
+  "lxsession" -- Polkit, para software con GUI que requieren autentificación
+  -- "seahorse",
+  -- "light-locker", --deamon del display manager, necesario para suspender el equipo
+})
 
--- awful.spawn("pcloud")
--- Si se usa dropbox, para que se vean mejor los iconos descargar dropbox-kde-systray-icons hardcode-tray
 -- This function implements the XDG autostart specification
 --[[
 awful.spawn.with_shell(
@@ -89,109 +86,102 @@ local altkey       = "Mod1" -- tecla secundaria, tecla Alt izquierdo
 local terminal     = "kitty" -- terminal por defect -- terminal por defectoo
 local vi_focus     = false -- el foco de la ventana sigue al ratón
 local cycle_prev   = false -- cycle trough all previous client or just the first
-local editor       = "nvim"
+local editor       = "nvim" -- Editor en terminal
 local gui_editor   = "mousepad" -- Editor en gestor grafico
-local browser      = "firefox"
-local scrlocker    = "bettersecreenlocker"
+local browser      = "firefox" -- Navegador predeterminado
+local scrlocker    = "bettersecreenlocker" -- Screenlocker
 
-awful.util.terminal = terminal 
+awful.util.terminal = terminal -- Definimos terminal por defecto 
 
-awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- nombre de los espacios
-awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"}
-awful.layout.layouts = {
-    lain.layout.cascade,
-    awful.layout.suit.tile,
-    awful.layout.suit.max,
-    awful.layout.suit.magnifier,
-    awful.layout.suit.floating,
-    awful.layout.suit.max.fullscreen,
-    lain.layout.cascade.tile,
-    lain.layout.centerwork,
-    --awful.layout.suit.tile.left,
-    --awful.layout.suit.tile.bottom,
-    --awful.layout.suit.tile.top,
-    --awful.layout.suit.fair,
-    --awful.layout.suit.fair.horizontal,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
-    --awful.layout.suit.corner.nw,
-    --awful.layout.suit.corner.ne,
-    --awful.layout.suit.corner.sw,
-    --awful.layout.suit.corner.se,
-    --lain.layout.centerwork.horizontal,
-    --lain.layout.termfair,
-    --lain.layout.termfair.center,
+awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- Nombre de los espacios
+awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"} -- Nombre de espacios en monitores extra
+awful.layout.layouts = { -- Disposición de las ventanas
+  lain.layout.cascade,
+  awful.layout.suit.tile,
+  awful.layout.suit.max,
+  awful.layout.suit.magnifier,
+  awful.layout.suit.floating,
+  awful.layout.suit.max.fullscreen,
+  lain.layout.cascade.tile,
+  --lain.layout.centerwork,
+  --awful.layout.suit.tile.left,
+  --awful.layout.suit.tile.bottom,
+  --awful.layout.suit.tile.top,
+  --awful.layout.suit.fair,
+  --awful.layout.suit.fair.horizontal,
+  --awful.layout.suit.spiral,
+  --awful.layout.suit.spiral.dwindle,
+  --awful.layout.suit.corner.nw,
+  --awful.layout.suit.corner.ne,
+  --awful.layout.suit.corner.sw,
+  --awful.layout.suit.corner.se,
+  --lain.layout.centerwork.horizontal,
+  --lain.layout.termfair,
+  --lain.layout.termfair.center,
 }
 
--- Control de la barra(wibox) y algunos eventos de ratón relacionados a los espacios
+-- Acciones con el ratón en el taglist (barra de espacios)
 awful.util.taglist_buttons = my_table.join(
-    -- Mover al espacio al que se hace click izquierdo
-    awful.button({ }, 1, function(t) t:view_only() end),
-    -- Mover una ventana manteniendo tecla win y haciendo click a el espacio que queremos mover
-    awful.button({ modkey }, 1, function(t)
-        if client.focus then
-            client.focus:move_to_tag(t)
-        end
-    end)
-    --[[
-    awful.button({ }, 3, awful.tag.viewtoggle),
-    awful.button({ modkey }, 3, function(t)
-        if client.focus then
-            client.focus:toggle_tag(t)
-        end
-    end),
-    ]]--
-    --[[
-    -- Moverse entre espacios con la rueda del ratón, 
-    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
-    ]]--
+  -- Mostrar el espacio al que se hace click izquierdo en la barra de espacios
+  awful.button({ }, 1, function(t) t:view_only() end),
+  -- Mover un cliente manteniendo tecla win y haciendo click izquierdo a el espacio que queremos mover
+  awful.button({ modkey }, 1, function(t)
+    if client.focus then
+      client.focus:move_to_tag(t)
+    end
+  end),
+  -- Seleciona varios espacios a la vez, lo que muestra todos los clientes en esos espacios en uno solo 
+  awful.button({ }, 3, awful.tag.viewtoggle),
+  -- Muestra el cliente en el espacio actual en otros espacios que se haga click derecho
+  awful.button({ modkey }, 3, function(t)
+    if client.focus then
+      client.focus:toggle_tag(t)
+    end
+  end),
+  -- Moverse entre espacios con la rueda del ratón, 
+  awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
+  awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
 
--- Configuración del tasklist
+-- Acciones con el ratón en el tasklist (barra que muestra las aplicaciones abiertas en un espacio)
 awful.util.tasklist_buttons = my_table.join(
-    -- Minimiza la tarea con click izquierdo
-    awful.button({ }, 1, function (c)
-        if c == client.focus then
-            c.minimized = true
-        else
-            --c:emit_signal("request::activate", "tasklist", {raise = true})<Paste>
-            -- Without this, the following
-            -- :isvisible() makes no sense
-            c.minimized = false
-            if not c:isvisible() and c.first_tag then
-                c.first_tag:view_only()
-            end
-            -- This will also un-minimize
-            -- the client, if needed
-            client.focus = c
-            c:raise()
-        end
-    end),
-    -- Cierra el cliente con click derecho
-    awful.button({ }, 2, function (c) c:kill() end)
-    
-    --[[
-    awful.button({ }, 3, function ()
-        local instance = nil
-
-        return function ()
-            if instance and instance.wibox.visible then
-                instance:hide()
-                instance = nil
-            else
-                instance = awful.menu.clients({theme = {width = dpi(250)}})
-            end
-        end
-    end)
-    ]]--
-    -- awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
-    -- awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
+  -- Minimiza el cliente con click izquierdo
+  awful.button({ }, 1, function (c)
+    if c == client.focus then
+      c.minimized = true
+    else
+      c.minimized = false
+      if not c:isvisible() and c.first_tag then
+        c.first_tag:view_only()
+      end
+      -- Ayuda también a desminimizar el cliente
+      client.focus = c
+      c:raise()
+    end
+  end),
+  -- Cierra el cliente con click central 
+  awful.button({ }, 2, function (c) c:kill() end),
+--[[
+  awful.button({ }, 3, function ()
+      local instance = nil
+      return function ()
+          if instance and instance.wibox.visible then
+              instance:hide()
+              instance = nil
+          else
+              instance = awful.menu.clients({theme = {width = dpi(250)}})
+          end
+      end
+  end),
+]]--
+  -- Mueve entre los clientes con la rueda del mouse
+  awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
+  awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
 )
 
--- Aplica el tema elegido
-beautiful.init(chosen_theme)
+beautiful.init(chosen_theme) -- Aplica el tema elegido
 
+-- TODO
 ----------------------------------------------------------------------------------
 --------------------------------- Menu -------------------------------------------
 ----------------------------------------------------------------------------------
@@ -223,45 +213,42 @@ menubar.utils.terminal = terminal
 ----------------------------------------------------------------------------------
 -- Vuelve a poner el fondo de pantalla en caso de que la geometría de la pantalla cambie
 screen.connect_signal("property::geometry", function(s)
-    if beautiful.wallpaper then
-        local wallpaper = beautiful.wallpaper
-        -- Si wallpaper es una función
-        if type(wallpaper) == "function" then
-            wallpaper = wallpaper(s)
-        end
-        gears.wallpaper.maximized(wallpaper, s, "#ffffff", 1)
+  if beautiful.wallpaper then
+    local wallpaper = beautiful.wallpaper
+    -- Si wallpaper es una función
+    if type(wallpaper) == "function" then
+      wallpaper = wallpaper(s)
     end
-end)
-
--- No borde cuando se organiza solo 1 ventana no flotante o maximizado
-screen.connect_signal("arrange", function (s)
-    local only_one = #s.tiled_clients == 1
-    for _, c in pairs(s.clients) do
-        if only_one and not c.floating or c.maximized then
-            c.border_width = 0
-        else
-            c.border_width = beautiful.border_width
-        end
-    end
-end)
-
-function screenlayout()
-  if screen:count() == 1 then
-    os.execute("sh ~/.config/awesome/onescreenlayout.sh")
-  else
-    os.execute("sh ~/.config/awesome/screenlayout.sh")
+    gears.wallpaper.maximized(wallpaper, s, "#ffffff", 1)
   end
-end
+end)
+
+-- Quita el borde si hay solo un cliente en cualquier layout 
+screen.connect_signal("arrange", function (s)
+  local only_one = #s.tiled_clients == 1
+  for _, c in pairs(s.clients) do
+    if only_one and not c.floating or c.maximized then
+      c.border_width = 0
+    else
+      c.border_width = beautiful.border_width
+    end
+  end
+end)
+
+-- screen.connect_signal("added", function()
+--   local two_screens = not(screen:count() == 1)
+--   if two_screens then
+--     os.execute("sh ~/scripts/twoscreenslayout.sh")
+--   end
+-- end)
 
 -- Crea una barra(wibox) para cada pantalla conectada y lo agrega
 awful.screen.connect_for_each_screen(function(s) 
   beautiful.at_screen_connect(s)
-  screenlayout()
 end)
-
+-- Elimina las wibox si se desconecta el monitor
 awful.screen.disconnect_for_each_screen(function() 
   beautiful.at_screen_connect(s)
-  --screenlayout()
 end)
 
 ----------------------------------------------------------------------------------
