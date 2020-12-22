@@ -161,6 +161,9 @@ awful.util.tasklist_buttons = my_table.join(
   end),
   -- Cierra el cliente con click central 
   awful.button({ }, 2, function (c) c:kill() end),
+  -- Mueve entre los clientes con la rueda del mouse
+  awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
+  awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
 --[[
   awful.button({ }, 3, function ()
       local instance = nil
@@ -174,14 +177,10 @@ awful.util.tasklist_buttons = my_table.join(
       end
   end),
 ]]--
-  -- Mueve entre los clientes con la rueda del mouse
-  awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
-  awful.button({ }, 5, function () awful.client.focus.byidx(-1) end)
 )
 
 beautiful.init(chosen_theme) -- Aplica el tema elegido
 
--- TODO
 ----------------------------------------------------------------------------------
 --------------------------------- Menu -------------------------------------------
 ----------------------------------------------------------------------------------
@@ -193,16 +192,15 @@ local myawesomemenu = {
     { "quit", function() awesome.quit() end }
 }
 awful.util.mymainmenu = freedesktop.menu.build({
-    icon_size = beautiful.menu_height or dpi(18),
+    icon_size = beautiful.menu_height or dpi(25),
     before = {
         { "Awesome", myawesomemenu, beautiful.awesome_icon },
-        -- other triads can be put here
     },
     after = {
         { "Open terminal", terminal },
-        -- other triads can be put here
     }
 })
+
 -- Esconde el menu cuando se quita el mouse
 awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
 -- Establece la terminal para las apps que lo necesitan
@@ -235,17 +233,11 @@ screen.connect_signal("arrange", function (s)
   end
 end)
 
--- screen.connect_signal("added", function()
---   local two_screens = not(screen:count() == 1)
---   if two_screens then
---     os.execute("sh ~/scripts/twoscreenslayout.sh")
---   end
--- end)
-
 -- Crea una barra(wibox) para cada pantalla conectada y lo agrega
 awful.screen.connect_for_each_screen(function(s) 
   beautiful.at_screen_connect(s)
 end)
+
 -- Elimina las wibox si se desconecta el monitor
 awful.screen.disconnect_for_each_screen(function() 
   beautiful.at_screen_connect(s)
@@ -255,280 +247,239 @@ end)
 ------------------------ Acciones con el mouse -----------------------------------
 ----------------------------------------------------------------------------------
 root.buttons(my_table.join(
-    -- awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end)
-    -- awful.button({ }, 4, awful.tag.viewnext),
-    -- awful.button({ }, 5, awful.tag.viewprev)
+  -- Abre menú de aplicaciones con click derecho en cualquier lado libre
+  awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
+  -- Mueve al siguiente espacio si hacemos rueda del ratón arriba
+  awful.button({ }, 4, awful.tag.viewnext),
+  -- Mueve al anterior espacio si hacemos rueda del ratón abajo
+  awful.button({ }, 5, awful.tag.viewprev)
 ))
 
 ----------------------------------------------------------------------------------
 ------------------------ Acciones con teclado ------------------------------------
 ----------------------------------------------------------------------------------
 globalkeys = my_table.join(
-    -- Shortcut para reparar problema de pantalla negra después de hacer login
-    awful.key({ modkey,            }, "i", function() os.execute("xrandr --auto") end,
-              {description = "Repara error despues de hacer login", group = "hotkeys"}),
-    -- Screenshot
-    awful.key({ modkey,           }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
-              {description = "Screenshot", group = "hotkeys"}),
-    -- awful.key({ }, "Print", function() os.execute("flameshot gui -p ~/Imágenes/screenshots") end,
-    --        {description = "Recorte de pantalla", group = "hotkeys"}),
+  -- Shortcut para reparar problema de pantalla negra después de hacer login
+  awful.key({ modkey,            }, "i", function() os.execute("xrandr --auto") end,
+            {description = "Repara error despues de hacer login", group = "hotkeys"}),
+  -- Screenshot
+  awful.key({ modkey,           }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
+            {description = "Screenshot", group = "hotkeys"}),
+  -- Recorte de pantalla
+  awful.key({ modkey, "Shift"   }, "Print", function() os.execute("flameshot gui -p ~/Imágenes/screenshots") end,
+            {description = "Recorte de pantalla", group = "hotkeys"}),
 
-    -- Bloquear pantalla
---    awful.key({ modkey, "Control" }, "l", function () os.execute("light-locker-command -l") end,
---              {description = "Bloquear pantalla", group = "hotkeys"}),
-    -- Apagar equipo
-    awful.key({ modkey, "Control" }, "p", function () os.execute("poweroff") end,
-              {description = "Apagar equipo", group = "hotkeys"}),
+  -- Navegación entre espacios
+  awful.key({ modkey,           }, "Left", awful.tag.viewprev,
+            {description = "Espacio previo", group = "tag"}),
+  awful.key({ modkey,           }, "Right", awful.tag.viewnext,
+            {description = "Espacio siguiente", group = "tag"}),
+  awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
+            {description = "Espacio anterior", group = "tag"}),
 
-    -- Muestra la configuración del teclado
-    awful.key({ modkey,           }, "z", hotkeys_popup.show_help,
-              {description = "Muestra esta pantalla", group="awesome"}),
+  -- Navegación entre espacios no vacios
+  awful.key({ altkey,           }, "Left", function () lain.util.tag_view_nonempty(-1) end,
+            {description = "Espacio no vacío previo", group = "tag"}),
+  awful.key({ altkey,           }, "Right", function () lain.util.tag_view_nonempty(1) end,
+            {description = "Espacio no vacío siguiente", group = "tag"}),
 
-    -- Navegación entre espacios
-    awful.key({ modkey,           }, "Left", awful.tag.viewprev,
-              {description = "Espacio previo", group = "tag"}),
-    awful.key({ modkey,           }, "Right", awful.tag.viewnext,
-              {description = "Espacio siguiente", group = "tag"}),
-    awful.key({ modkey,           }, "Escape", awful.tag.history.restore,
-              {description = "Espacio anterior", group = "tag"}),
+  -- Navegación entre clientes por indice
+  awful.key({ altkey,           }, "j", function () awful.client.focus.byidx(1) end,
+            {description = "Siguiente por indice", group = "client"}),
+  awful.key({ altkey,           }, "k", function () awful.client.focus.byidx(-1) end,
+            {description = "Anterior por indice", group = "client"}),
 
-    -- Navegación entre espacios no vacios
-    awful.key({ altkey,           }, "Left", function () lain.util.tag_view_nonempty(-1) end,
-              {description = "Espacio no vacio previo", group = "tag"}),
-    awful.key({ altkey,           }, "Right", function () lain.util.tag_view_nonempty(1) end,
-              {description = "Espacio no vacio siguiente", group = "tag"}),
+  -- Navegación entre clientes por dirección
+  awful.key({ modkey,           }, "j", function()
+              awful.client.focus.global_bydirection("down")
+              if client.focus then client.focus:raise() end
+            end,
+            {description = "Focus abajo", group = "client"}),
+  awful.key({ modkey,           }, "k", function()
+              awful.client.focus.global_bydirection("up")
+              if client.focus then client.focus:raise() end
+            end,
+            {description = "Focus arriba", group = "client"}),
+  awful.key({ modkey,           }, "h", function()
+              awful.client.focus.global_bydirection("left")
+              if client.focus then client.focus:raise() end
+            end,
+            {description = "Focus izquierdo", group = "client"}),
+  awful.key({ modkey,           }, "l", function()
+              awful.client.focus.global_bydirection("right")
+              if client.focus then client.focus:raise() end
+            end,
+            {description = "Focus derecha", group = "client"}),
 
-    -- Navegación entre clientes por indice
-    awful.key({ altkey,           }, "j",
-        function ()
-            awful.client.focus.byidx( 1)
-        end,
-        {description = "Siguiente por indice", group = "client"}
-    ),
-    awful.key({ altkey,           }, "k",
-        function ()
-            awful.client.focus.byidx(-1)
-        end,
-        {description = "Anterior por indice", group = "client"}
-    ),
+  -- Manipulación de la disposición de los clientes
+  awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(1) end,
+            {description = "Mover cliente a la derecha", group = "client"}),
+  awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(-1) end,
+            {description = "Mover cliente a la izquierda", group = "client"}),
+          
+  -- Número de clientes en la columna (da la sensación de mover clientes horizontalmente) 
+  awful.key({ modkey, "Shift"   }, "h", function () awful.tag.incnmaster(1, nil, true) end,
+            {description = "Mueve cliente a la izquierda", group = "layout"}),
+  awful.key({ modkey, "Shift"   }, "l", function () awful.tag.incnmaster(-1, nil, true) end,
+            {description = "Mueve cliente a la derecha", group = "layout"}),
 
-    -- Navegación entre clientes por dirección
-    awful.key({ modkey,           }, "j",
-        function()
-            awful.client.focus.global_bydirection("down")
-            if client.focus then client.focus:raise() end
-        end,
-        {description = "Focus abajo", group = "client"}),
-    awful.key({ modkey,           }, "k",
-        function()
-            awful.client.focus.global_bydirection("up")
-            if client.focus then client.focus:raise() end
-        end,
-        {description = "Focus arriba", group = "client"}),
-    awful.key({ modkey,           }, "h",
-        function()
-            awful.client.focus.global_bydirection("left")
-            if client.focus then client.focus:raise() end
-        end,
-        {description = "Focus izquierdo", group = "client"}),
-    awful.key({ modkey,           }, "l",
-        function()
-            awful.client.focus.global_bydirection("right")
-            if client.focus then client.focus:raise() end
-        end,
-        {description = "Focus derecha", group = "client"}),
+  -- Focus a la siguiente pantalla
+  awful.key({ modkey, "Control" }, "h", function () awful.screen.focus_relative(1) end,
+            {description = "Focus siguiente pantalla", group = "screen"}),
+  awful.key({ modkey, "Control" }, "l", function () awful.screen.focus_relative(-1) end,
+            {description = "Focus pantalla anterior", group = "screen"}),
 
-    -- Manipulación de la disposición de los clientes
-    awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1) end,
-              {description = "Mover cliente a la derecha", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1) end,
-              {description = "Mover cliente a la izquierda", group = "client"}),
-
-    -- Focus a la siguiente pantalla
-    awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end,
-              {description = "Focus siguiente pantalla", group = "screen"}),
-    awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end,
-              {description = "Focus pantalla anterior", group = "screen"}),
-
-    -- Mueve al cliente en estado urgente
-    awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
-              {description = "Mover a cliente urgente", group = "client"}),
-
-    -- Cicla entre los clientes del espacio
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            if cycle_prev then
+  -- Cicla entre los clientes del espacio
+  awful.key({ modkey,           }, "Tab", function ()
+              if cycle_prev then
                 awful.client.focus.history.previous()
-            else
+              else
                 awful.client.focus.byidx(-1)
-            end
-            if client.focus then
+              end
+              if client.focus then
                 client.focus:raise()
-            end
-        end,
-        {description = "Cicla entre los clientes", group = "client"}),
+              end
+            end,
+            {description = "Cicla entre los clientes", group = "client"}),
 
-     -- Muestra o esconde la barra 
-    awful.key({ modkey,           }, "b", function ()
-            for s in screen do
-              if s.index == 1 then
+  -- Muestra o esconde la barra 
+  awful.key({ modkey,           }, "b", function ()
+              local s = awful.screen.focused({mouse = true})
+              if s.mywibox then
                 s.mywibox.visible = not s.mywibox.visible
               end
-            end
-        end,
-        {description = "Muestra/Oculta Wibox Superior", group = "awesome"}),
+            end,
+            {description = "Muestra/Oculta Wibox Superior", group = "awesome"}),
 
-   -- Muestra o esconde la barra 
-    awful.key({ modkey, "Shift"   }, "b", function ()
-        local status = not screen[1].mybottomwibox.visible
-        -- TODO: obtener el valor de la visibilidad del wibox inferior de la primera pantalla y basarse en el para establecer la visibilidad de los demás
-            for s in screen do
+  -- Muestra o esconde las barras superior e inferior basandose en el estado de la barra inferior
+  awful.key({ modkey, "Shift"   }, "b", function ()
+              local s = awful.screen.focused({mouse = true})
+              local status = not s.mybottomwibox.visible
                 if s.mywibox then
-                  -- s.mywibox.visible = not s.mywibox.visible
                   s.mywibox.visible = status
                 end
                 if s.mybottomwibox then
-                    -- s.mybottomwibox.visible = not s.mybottomwibox.visible
                   s.mybottomwibox.visible = status
-                end
-            end
-        end,
-        {description = "Muestra/Oculta Wibox", group = "awesome"}),
+              end
+            end,
+            {description = "Muestra/Oculta Wibox", group = "awesome"}),
 
-    -- Tamaño del padding de los clientes (gaps)
-    awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end,
-              {description = "Aumenta padding", group = "tag"}),
-    awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end,
-              {description = "Decrementa padding", group = "tag"}),
+  -- Tamaño del padding de los clientes (gaps)
+  awful.key({ altkey, "Control" }, "+", function () lain.util.useless_gaps_resize(1) end,
+            {description = "Aumenta padding", group = "tag"}),
+  awful.key({ altkey, "Control" }, "-", function () lain.util.useless_gaps_resize(-1) end,
+            {description = "Decrementa padding", group = "tag"}),
 
-    -- Espacios Dinámicos
-    awful.key({ modkey, "Shift"   }, "n", function () lain.util.add_tag() end,
-              {description = "Nuevo espacio", group = "tag"}),
-    awful.key({ modkey, "Shift"   }, "r", function () lain.util.rename_tag() end,
-              {description = "Cambiar nombre", group = "tag"}),
-    awful.key({ modkey, "Shift"   }, "Left", function () lain.util.move_tag(-1) end,
-              {description = "Mover espacio a la izquierda", group = "tag"}),
-    awful.key({ modkey, "Shift"   }, "Right", function () lain.util.move_tag(1) end,
-              {description = "Mover espacio a la derecha", group = "tag"}),
-    awful.key({ altkey, "Shift"   }, "d", function () lain.util.delete_tag() end,
-              {description = "Eliminar espacio", group = "tag"}),
+  -- Número de columnas
+  awful.key({ modkey, "Control" }, "h", function () awful.tag.incncol(1, nil, true) end,
+            {description = "Incrementa numero de columnas", group = "layout"}),
+  awful.key({ modkey, "Control" }, "l", function () awful.tag.incncol(-1, nil, true) end,
+            {description = "Decrementa numero de columnas", group = "layout"}),
 
-    -- Ajustes de Awesome
-    awful.key({ modkey, "Control" }, "r", awesome.restart,
-              {description = "Recargar Awesome", group = "awesome"}),
-    awful.key({ modkey, "Control" }, "o", awesome.quit,
-              {description = "Cerrar Sesión", group = "awesome"}),
+  -- Seleccionar el layout 
+  awful.key({ modkey,           }, "space", function () awful.layout.inc( 1) end,
+            {description = "Siguiente Layout", group = "layout"}),
+  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1) end,
+            {description = "Anterior Layout", group = "layout"}),
 
-    -- Modificar tamaño del cliente
-    awful.key({ altkey, "Shift"   }, "l", function () awful.tag.incmwfact( 0.05) end,
-              {description = "Aumenta el tamaño", group = "layout"}),
-    awful.key({ altkey, "Shift"   }, "h", function () awful.tag.incmwfact(-0.05) end,
-              {description = "Disminuye el tamaño", group = "layout"}),
+  -- Muestra las ventanas minimizadas
+  awful.key({ modkey, "Control" }, "n", function ()
+              local c = awful.client.restore()
+              if c then
+                client.focus = c
+                c:raise()
+              end
+            end,
+            {description = "Mostrar minimizado", group = "client"}),
 
-    -- Número de cliente maestros
-    awful.key({ modkey, "Shift"   }, "h", function () awful.tag.incnmaster( 1, nil, true) end,
-              {description = "Aumenta clientes maestros", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "l", function () awful.tag.incnmaster(-1, nil, true) end,
-              {description = "Decrementa clientes maestros", group = "layout"}),
+  -- Brillo de pantalla
+  awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 5") end,
+            {description = "Subir Brillo 5%", group = "hotkeys"}),
+  awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
+            {description = "Bajar Brillo 10%", group = "hotkeys"}),
 
-    -- Número de columnas
-    awful.key({ modkey, "Control" }, "h", function () awful.tag.incncol( 1, nil, true) end,
-              {description = "Incrementa numero de columnas", group = "layout"}),
-    awful.key({ modkey, "Control" }, "l", function () awful.tag.incncol(-1, nil, true) end,
-              {description = "Decrementa numero de columnas", group = "layout"}),
+  -- Control de volumen y música
+  awful.key({ modkey, "Control" }, "Left", function ()
+              os.execute("playerctl --player=playerctld previous")
+            end,
+            {description = "Cancion Anterior", group = "media"}),
+  awful.key({ modkey, "Control" }, "Right", function ()
+              os.execute("playerctl --player=playerctld next")
+            end,
+            {description = "Cancion Siguiente", group = "media"}),
+  awful.key({ modkey, "Control" }, "space", function ()
+              os.execute("playerctl --player=playerctld play-pause")
+            end,
+            {description = "Play - Pause", group = "media"}),
+  awful.key({ modkey, "Control" }, "Up", function ()
+              os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+              beautiful.volume.update()
+            end,
+            {description = "Subir volumen", group = "media"}),
+  awful.key({ modkey, "Control" }, "Down", function ()
+              os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+              beautiful.volume.update()
+            end,
+            {description = "Bajar Volumen", group = "media"}),
+  awful.key({ }, "XF86AudioRaiseVolume", function ()
+              os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+              beautiful.volume.update()
+            end,
+            {description = "Subir volumen", group = "media"}),
+  awful.key({ }, "XF86AudioLowerVolume", function ()
+              os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+              beautiful.volume.update()
+            end,
+            {description = "Bajar Volumen", group = "media"}),
+  awful.key({ }, "XF86AudioMute", function ()
+              os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+              beautiful.volume.update()
+            end,
+            {description = "Mute Sonido", group = "media"}),
+  awful.key({ }, "XF86AudioMicMute", function ()
+              os.execute("amixer -q set Capture toggle")
+              beautiful.volume.update()
+            end,
+            {description = "Mute micrófono", group = "media"}),
 
-    -- Seleccionar el layout 
-    awful.key({ modkey,           }, "space", function () awful.layout.inc( 1) end,
-              {description = "Siguiente Layout", group = "layout"}),
-    awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1) end,
-              {description = "Anterior Layout", group = "layout"}),
+  -- Muestra la configuración del teclado
+  awful.key({ modkey,           }, "z", hotkeys_popup.show_help,
+            {description = "Muestra esta pantalla", group="awesome"}),
 
-    -- Muestra las ventanas minimizadas
-    awful.key({ modkey, "Control" }, "n",
-              function ()
-                  local c = awful.client.restore()
-                  -- Focus restored client
-                  if c then
-                      client.focus = c
-                      c:raise()
-                  end
-              end,
-              {description = "Mostrar minimizado", group = "client"}),
+  -- Ajustes de Awesome
+  awful.key({ modkey, "Control" }, "r", awesome.restart,
+            {description = "Recargar Awesome", group = "awesome"}),
+  awful.key({ modkey, "Control" }, "o", awesome.quit,
+            {description = "Cerrar Sesión", group = "awesome"}),
 
-    -- Brillo de pantalla
-    awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 5") end,
-              {description = "Subir Brillo 5%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
-              {description = "Bajar Brillo 10%", group = "hotkeys"}),
-
-    -- Control de volumen y música
-    awful.key({ modkey, "Control" }, "Left",
-         function ()
-            os.execute("playerctl --player=playerctld previous")
-            -- beautiful.volume.update()- agregar una función que actualice la canción actual
-        end,
-        {description = "Cancion Anterior", group = "media"}),
-    awful.key({ modkey, "Control" }, "Right",
-         function ()
-            os.execute("playerctl --player=playerctld next")
-            -- beautiful.volume.update()- agregar una función que actualice la canción actual
-        end,
-        {description = "Cancion Siguiente", group = "media"}),
-    awful.key({ modkey, "Control" }, "space",
-         function ()
-            os.execute("playerctl --player=playerctld play-pause")
-            -- beautiful.volume.update()- agregar una función que actualice la canción actual
-        end,
-        {description = "Play - Pause", group = "media"}),
-    awful.key({ modkey, "Control" }, "Up",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Subir volumen", group = "media"}),
-    awful.key({ modkey, "Control" }, "Down",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Bajar Volumen", group = "media"}),
-    awful.key({ }, "XF86AudioRaiseVolume",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Subir volumen", group = "media"}),
-    awful.key({ }, "XF86AudioLowerVolume",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Bajar Volumen", group = "media"}),
-    awful.key({ }, "XF86AudioMute",
-        function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Mute sonido", group = "media"}),
-    awful.key({ }, "XF86AudioMicMute",
-        function ()
-            os.execute(string.format("amixer -q set Capture toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end,
-        {description = "Mute sonido", group = "media"}),
-
-
-    -- Lanzar algunos programas
-    awful.key({ modkey, "Shift"   }, "q", function () awful.spawn(browser) end,
-              {description = "Abrir Firefox", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("nemo") end,
-              {description = "Abrir nemo", group = "launcher"}),
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
-              {description = "Abrir terminal", group = "launcher"}),
-    awful.key({ modkey, "Shift"   }, "z", function () awful.spawn("rofi -show keys -theme dmenu") end,
-              {description = "Mostrar keys extras", group = "launcher"}),
-    awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi -theme gruvbox-dark") end,
-              {description = "dmenu", group = "launcher"})
+  -- Lanzar algunos programas
+  awful.key({ modkey, "Shift"   }, "q", function () awful.spawn(browser) end,
+            {description = "Abrir Firefox", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("nemo") end,
+            {description = "Abrir nemo", group = "launcher"}),
+  awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+            {description = "Abrir terminal", group = "launcher"}),
+  awful.key({ modkey, "Shift"   }, "z", function () awful.spawn("rofi -show keys -theme dmenu") end,
+            {description = "Mostrar keys extras", group = "launcher"}),
+          -- TODO crear tema especial para le menu rofi
+  awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi") end,
+            {description = "dmenu", group = "launcher"}),
+  -- Menú de apagado 
+  awful.key({ modkey,           }, "p", function () os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end,
+            {description = "Menú de Apagado", group = "hotkeys"})
+--[[
+  -- Espacios Dinámicos
+  awful.key({ modkey, "Shift"   }, "n", function () lain.util.add_tag() end,
+            {description = "Nuevo espacio", group = "tag"}),
+  awful.key({ modkey, "Shift"   }, "r", function () lain.util.rename_tag() end,
+            {description = "Cambiar nombre", group = "tag"}),
+  awful.key({ modkey, "Shift"   }, "Left", function () lain.util.move_tag(-1) end,
+            {description = "Mover espacio a la izquierda", group = "tag"}),
+  awful.key({ modkey, "Shift"   }, "Right", function () lain.util.move_tag(1) end,
+            {description = "Mover espacio a la derecha", group = "tag"}),
+  awful.key({ altkey, "Shift"   }, "d", function () lain.util.delete_tag() end,
+            {description = "Eliminar espacio", group = "tag"}),
+]]--
 
     --[[
     awful.key({ altkey, "Control" }, "m",
@@ -651,6 +602,9 @@ globalkeys = my_table.join(
 )
 
 clientkeys = my_table.join(
+  -- Mueve al cliente en estado urgente
+  awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
+            {description = "Mover a cliente urgente", group = "client"}),
     awful.key({ modkey, "Shift"   }, "m",  lain.util.magnify_client,
               {description = "Maximizar cliente", group = "client"}),
     awful.key({ modkey,           }, "e", function (c) c:kill() end,

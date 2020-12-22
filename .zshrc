@@ -128,9 +128,9 @@ alias wmrc="nvim ~/.config/awesome/rc.lua"
 # Configuar tema de AwesomeWM
 alias themewm="nvim ~/.config/awesome/theme.lua"
 # Corre Script para usar un monitor
-alias onescreen="sh ~/.config/awesome/onescreenlayout.sh && killall picom && picom --config ~/.config/picom.conf"
+alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
-alias twoscreens="sh ~/.config/awesome/screenlayout.sh && killall picom && picom --config ~/.config/picom-twoscreens.conf"
+alias twoscreens="sh ~/scripts/twoscreenslayout.sh"
 # Abre jupyter notebook
 alias notebook="jupyter-notebook"
 # Alias para usar MariaDB
