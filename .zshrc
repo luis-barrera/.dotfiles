@@ -161,6 +161,8 @@ alias jamovi="flatpak run org.jamovi.jamovi"
 # Pull de varias carpetas locales a remoto de google drive
 alias gpull="sh $HOME/scripts/gpull.sh"
 alias gpush="sh $HOME/scripts/gpush.sh"
+# Ver imágenes en el directorio actual
+alias images="viewnior ./"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
