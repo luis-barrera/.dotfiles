@@ -7,17 +7,16 @@
 ----------------------------------------------------------------------------------
 ------------------------------ Librerias necesarias ------------------------------
 ----------------------------------------------------------------------------------
+local string, os = string, os
 local gears = require("gears")
 local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
 local dpi   = require("beautiful.xresources").apply_dpi
-local string, os = string, os
 local my_table = awful.util.table or gears.table
 local watch = require("awful.widget.watch")
 local batteryarc = require("widgets.batteryarc")
-
--- Función para hacer markup
+local calnot = require("widgets.cal")
 local markup = lain.util.markup
 
 ----------------------------------------------------------------------------------
@@ -26,15 +25,12 @@ local markup = lain.util.markup
 local theme                       = {}
 -- Directorios por default
 theme.default_dir                 = require("awful.util").get_themes_dir() .. "default"
-theme.icon_dir                    = os.getenv("HOME") .. "/.config/awesome/icons"
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/fondo2.png"
 theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/f5.png"
-
 -- Fuentes
 theme.font                        = "Iosevka Custom 9"
 theme.player_font                 = "Hurmit Nerd Font Mono 10"
 theme.taglist_font                = "Iosevka Custom Bold 10"
-
 -- Colores
 theme.fg_normal                   = "#FFFFFF"
 theme.fg_focus                    = "#f6832f"
@@ -43,7 +39,6 @@ theme.bg_normal                   = "#000000"
 theme.fg_urgent                   = "#f8ccae"
 theme.bg_urgent                   = "#f64a32"
 theme.fg_player                   = "#bedc87"
-
 -- Colores de los applets
 theme.applets_font                 = "Iosevka Custom 10"
 theme.applets_fg                  = "#000000"
@@ -53,12 +48,10 @@ theme.applets_bg_3                = "#b8b5db"
 theme.bg_systray                  = theme.applets_bg_1 
 theme.systray_icon_spacing        = dpi(2)
 theme.applets_spacing             = dpi(2)
-
 -- Bordes de clientes
 theme.border_width                = dpi(3)
 theme.border_normal               = "#000000"
 theme.border_focus                = "#f6832f"
-
 -- Configuración del taglist
 theme.taglist_fg_focus            = "#000000"
 theme.taglist_bg_focus            = "#f6832f"
@@ -67,7 +60,6 @@ theme.taglist_bg_occupied         = "#bedc87"
 theme.taglist_fg_occupied         = "#000000"
 theme.taglist_bg_empty            = "#000000"
 theme.taglist_spacing             = dpi(2)
-
 -- Configuración del tasklist
 theme.tasklist_fg_normal          = "#000000"
 theme.tasklist_bg_normal          = "#bedc87" 
@@ -81,18 +73,17 @@ theme.tasklist_shape_border_width = dpi(2)
 theme.tasklist_spacing            = dpi(2)
 theme.tasklist_plain_task_name    = false
 theme.tasklist_disable_icon       = true
-
 -- Iconos
-theme.mini_icon                   = theme.icon_dir .. "/icon.png"
-
+theme.mini_icon                   = os.getenv("HOME") .. "/Imágenes/icon.png"
 -- Padding de los clientes
 theme.useless_gap                 = dpi(7)
+-- Separador
+local separator = wibox.widget.textbox('  ')
 
 ----------------------------------------------------------------------------------
 -------------------------------- Widgets -----------------------------------------
 ----------------------------------------------------------------------------------
 -- System Tray
-local separator = wibox.widget.textbox('  ')
 local tray = wibox.widget{
   separator,
   wibox.widget.systray(),
@@ -122,24 +113,33 @@ clockwidget = wibox.container.background(clockwidget, theme.bg_normal, gears.sha
 clockwidget = wibox.container.margin(clockwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Fecha
-local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg,  "  %a %d %b " ))
+local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg, "  %a %d %b "))
 local calbg = wibox.container.background(mytextcalendar, theme.applets_bg_1, gears.shape.rect)
 calbg = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(2), dpi(2))
 calbg = wibox.container.background(calbg, theme.bg_normal, gears.shape.rect)
 
 -- Calendario
 -- TODO: cambiar el widget de lain a widgets, cambiar el color del icono a negro
+--local calendarwidget = wibox.container.margin(calbg, dpi(1), dpi(2), dpi(2), dpi(2))
+--theme.cal = lain.widget.cal({
+--    attach_to = { mytextcalendar },
+--    notification_preset = {
+--        fg = theme.fg_normal,
+--        bg = theme.applets_fg,
+--        position = "top_right",
+--        font = theme.applets_font
+--    }
+--})
 local calendarwidget = wibox.container.margin(calbg, dpi(1), dpi(2), dpi(2), dpi(2))
-theme.cal = lain.widget.cal({
-    attach_to = { mytextcalendar },
-    notification_preset = {
-        fg = theme.applets_fg,
-        bg = theme.applets_bg_1,
-        position = "top_right",
-        font = theme.applets_font
-    }
+theme.cal = calnot({
+  attach_to = { mytextcalendar },
+  notification_preset = {
+    fg = theme.fg_normal,
+    bg = theme.applets_fg,
+    position = "top_right",
+    font = theme.applets_font
+  }
 })
-
 -- CPU
 local cpu = lain.widget.cpu({
     settings = function()
@@ -183,9 +183,9 @@ volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(0), dpi(
 
 -- Información multimedia
 local songInfo = wibox.widget.textbox(markup.fontfg(theme.applets_font, theme.applets_fg,  " Nada en reprodución "))
-songInfo = awful.widget.watch('sh ~/.config/awesome/songInfo.sh', 1,
+songInfo = awful.widget.watch('sh ~/scripts/songInfo.sh', 1,
   function(songInfo, stdout, stderr, exitreason, exitcode)
-    local f = io.popen('sh ~/.config/awesome/songInfo.sh', 'r') 
+    local f = io.popen('sh ~/scripts/songInfo.sh', 'r') 
     local l = f:read()
     songInfo:set_markup_silently(markup.fontfg(theme.applets_font, theme.applets_fg,  l))
     f:close()
@@ -235,9 +235,6 @@ local player_widget = wibox.container.background(player, theme.applets_bg_1, gea
 player_widget = wibox.container.margin(player_widget, dpi(2), dpi(2), dpi(2), dpi(2))
 player_widget = wibox.container.background(player_widget, theme.bg_normal, gears.shape.rect)
 player_widget = wibox.container.margin(player_widget, dpi(1), dpi(2), dpi(2), dpi(2))
-
-
-
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.mini_icon })
@@ -334,3 +331,4 @@ function theme.at_screen_connect(s)
 end
 
 return theme
+-- TODO cambiar el tema de rofi a uno de github text

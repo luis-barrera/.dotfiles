@@ -248,11 +248,11 @@ end)
 ----------------------------------------------------------------------------------
 root.buttons(my_table.join(
   -- Abre menú de aplicaciones con click derecho en cualquier lado libre
-  awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end),
+  awful.button({ }, 3, function () awful.util.mymainmenu:toggle() end)
   -- Mueve al siguiente espacio si hacemos rueda del ratón arriba
-  awful.button({ }, 4, awful.tag.viewnext),
+  --awful.button({ }, 4, awful.tag.viewnext),
   -- Mueve al anterior espacio si hacemos rueda del ratón abajo
-  awful.button({ }, 5, awful.tag.viewprev)
+  --awful.button({ }, 5, awful.tag.viewprev)
 ))
 
 ----------------------------------------------------------------------------------
