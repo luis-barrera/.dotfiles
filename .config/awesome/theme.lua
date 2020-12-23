@@ -9,15 +9,18 @@
 ----------------------------------------------------------------------------------
 local string, os = string, os
 local gears = require("gears")
-local lain  = require("lain")
 local awful = require("awful")
 local wibox = require("wibox")
 local dpi   = require("beautiful.xresources").apply_dpi
-local my_table = awful.util.table or gears.table
-local watch = require("awful.widget.watch")
+local my_table   = awful.util.table or gears.table
+local watch      = require("awful.widget.watch")
 local batteryarc = require("widgets.batteryarc")
-local calnot = require("widgets.cal")
-local markup = lain.util.markup
+local calnot     = require("widgets.cal")
+local wcpu       = require("widgets.cpu")
+local wnet       = require("widgets.net")
+local alsabar    = require("widgets.alsabar")
+local player     = require("widgets.player")
+local markup     = require("markup")
 
 ----------------------------------------------------------------------------------
 ---------------------------- Definición de varibles ------------------------------
@@ -107,6 +110,7 @@ batteryarc = wibox.container.margin(batteryarc, dpi(1), dpi(2), dpi(2), dpi(2))
 -- Reloj
 local mytextclock = wibox.widget.textclock(markup(theme.applets_fg, "  %H:%M " ))
 mytextclock.font = theme.applets_font
+mytextclock.refresh = 20
 local clockbg = wibox.container.background(mytextclock, theme.applets_bg_3, gears.rect)
 local clockwidget = wibox.container.margin(clockbg, dpi(2), dpi(2), dpi(2), dpi(2))
 clockwidget = wibox.container.background(clockwidget, theme.bg_normal, gears.shape.rect)
@@ -119,17 +123,6 @@ calbg = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(2), dpi(2))
 calbg = wibox.container.background(calbg, theme.bg_normal, gears.shape.rect)
 
 -- Calendario
--- TODO: cambiar el widget de lain a widgets, cambiar el color del icono a negro
---local calendarwidget = wibox.container.margin(calbg, dpi(1), dpi(2), dpi(2), dpi(2))
---theme.cal = lain.widget.cal({
---    attach_to = { mytextcalendar },
---    notification_preset = {
---        fg = theme.fg_normal,
---        bg = theme.applets_fg,
---        position = "top_right",
---        font = theme.applets_font
---    }
---})
 local calendarwidget = wibox.container.margin(calbg, dpi(1), dpi(2), dpi(2), dpi(2))
 theme.cal = calnot({
   attach_to = { mytextcalendar },
@@ -140,11 +133,12 @@ theme.cal = calnot({
     font = theme.applets_font
   }
 })
+
 -- CPU
-local cpu = lain.widget.cpu({
-    settings = function()
-        widget:set_markup( markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
-    end
+local cpu = wcpu({
+  settings = function()
+    widget:set_markup( markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
+  end
 })
 local cpubg = wibox.container.background(cpu.widget, theme.applets_bg_2, gears.shape.rect)
 local cpuwidget = wibox.container.margin(cpubg, dpi(2), dpi(2), dpi(2), dpi(2))
@@ -152,21 +146,18 @@ cpuwidget = wibox.container.background(cpuwidget, theme.bg_normal, gears.shape.r
 cpuwidget = wibox.container.margin(cpuwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Tráfico de red
-local net = lain.widget.net({
-    settings = function()
-        widget:set_markup(markup.fontfg(theme.applets_font, theme.applets_fg, " " .. net_now.received .. "  -  " .. net_now.sent .. " "))
-    end
+local net = wnet({
+  settings = function()
+    widget:set_markup(markup.fontfg(theme.applets_font, theme.applets_fg, " " .. net_now.received .. "  -  " .. net_now.sent .. " "))
+  end
 })
 local netbg = wibox.container.background(net.widget, theme.applets_bg_3, gears.shape.rect)
 local networkwidget = wibox.container.margin(netbg, dpi(2), dpi(2), dpi(2), dpi(2))
 networkwidget = wibox.container.background(networkwidget, theme.bg_normal, gears.shape.rect)
 networkwidget = wibox.container.margin(networkwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
-
-
--- TODO: tratar de mover el widget a un archivo en la carpeta widget
 -- Volumen
-theme.volume = lain.widget.alsabar({
+theme.volume = alsabar({
     notification_preset = { font = "Iosevka Custom 9"},
     -- togglechannel = "IEC958,3",
     width = dpi(100), height = dpi(8), border_width = dpi(0),
@@ -181,67 +172,25 @@ theme.volume.bar.margins = dpi(5)
 local volumewidget = wibox.container.background(theme.volume.bar, theme.applets_bg_1, gears.shape.rect)
 volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(0), dpi(0))
 
--- Información multimedia
-local songInfo = wibox.widget.textbox(markup.fontfg(theme.applets_font, theme.applets_fg,  " Nada en reprodución "))
-songInfo = awful.widget.watch('sh ~/scripts/songInfo.sh', 1,
-  function(songInfo, stdout, stderr, exitreason, exitcode)
-    local f = io.popen('sh ~/scripts/songInfo.sh', 'r') 
-    local l = f:read()
-    songInfo:set_markup_silently(markup.fontfg(theme.applets_font, theme.applets_fg,  l))
-    f:close()
-  end, wibox.widget.textbox()
-)
-songInfo = wibox.container.margin(songInfo, dpi(0), dpi(0), dpi(2), dpi(2))
-
--- Botones de control multimedia
-local prev_icon = wibox.widget.textbox(markup.fontfg(theme.applets_font, theme.applets_fg,  ""))
-local next_icon = wibox.widget.textbox(markup.fontfg(theme.applets_font, theme.applets_fg,  ""))
-local song_status_icon = wibox.widget.textbox(markup.fontfg(theme.applets_font, theme.applets_fg,  "  "))
-
-song_status_icon = awful.widget.watch("playerctl status", 1,
-  function(song_status_icon, stdout, stderr, exitreason, exitcode)
-    local f = io.popen("playerctl status", 'r') 
-    local l = f:read()
-    if (l == "Playing") then
-      song_status_icon:set_markup_silently(markup.fontfg(theme.applets_font, theme.applets_fg,  "  "))
-    elseif (l == "Paused") then
-      song_status_icon:set_markup(markup.fontfg(theme.applets_font, theme.applets_fg,  "  "))
-    else
-      song_status_icon:set_markup(markup.fontfg(theme.applets_font, theme.applets_fg,  "  "))
-    end
-    f:close()
-  end, wibox.widget.textbox()
-)
-
-local player = wibox.widget{
-  songInfo,
-  prev_icon,
-  song_status_icon,
-  next_icon,
+-- Todo el widget de audio
+local wplayer = player()
+local wplayer = wibox.widget{
+  wplayer,
   volumewidget,
   layout = wibox.layout.fixed.horizontal
-}
-
--- Funcionalidad de los botones de audio
-prev_icon:connect_signal("button::press", function() os.execute("playerctl --player=playerctld previous") end)
-song_status_icon:connect_signal("button::press", 
-  function()
-  os.execute("playerctl --player=playerctld play-pause")
-  end)
-next_icon:connect_signal("button::press", function() os.execute("playerctl --player=playerctld next") end)
-
--- Todo el widget de audio
-local player_widget = wibox.container.background(player, theme.applets_bg_1, gears.shape.rect)
+} 
+local player_widget = wibox.container.background(wplayer, theme.applets_bg_1, gears.shape.rect)
 player_widget = wibox.container.margin(player_widget, dpi(2), dpi(2), dpi(2), dpi(2))
 player_widget = wibox.container.background(player_widget, theme.bg_normal, gears.shape.rect)
 player_widget = wibox.container.margin(player_widget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.mini_icon })
-     -- TODO: que al dar click aaprrezca un menu de apagado, supensión, etc
--- mylauncher:connect_signal("button::press", function() awful.util.mymainmenu:toggle() end)
-
--- TODO: un widget de texto que marque que pantalla se está usando
+mylauncher:buttons(gears.table.join(
+    mylauncher:buttons(),
+    awful.button({}, 3, nil, function () 
+      os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end)
+))
 
 function theme.at_screen_connect(s)
 
