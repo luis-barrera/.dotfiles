@@ -163,6 +163,8 @@ alias gpull="sh $HOME/scripts/gpull.sh"
 alias gpush="sh $HOME/scripts/gpush.sh"
 # Ver imágenes en el directorio actual
 alias images="viewnior ./"
+# Abre el stream de lofi en mpv
+alias lofi="mpv https://youtu.be/5qap5aO4i9A"
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
