@@ -1,13 +1,13 @@
 #bin/bash
 
 printf "*********** Pulling Notas ***********\n"
-/usr/bin/rclone copy --no-traverse gdrivemounted:mount/Notas ~/Notas -i && \
+/usr/bin/rclone sync -i gdrivemounted:mount/Notas ~/Notas && \
 
 printf "*********** Pulling SextoTrimestre ***********\n"
-/usr/bin/rclone copy --no-traverse gdrivemounted:mount/SextoTrimestre ~/SextoTrimestre -i && \
+/usr/bin/rclone sync -i gdrivemounted:mount/SextoTrimestre ~/SextoTrimestre && \
 
 printf "*********** Pulling .keepassxc ***********\n"
-/usr/bin/rclone copy --no-traverse gdrivemounted:mount/Archivo/keepass ~/.keepass -i && \
+/usr/bin/rclone sync -i gdrivemounted:mount/Archivo/keepass ~/.keepass && \
 
 printf "*********** Pulling Arduino ***********\n"
-/usr/bin/rclone copy --no-traverse gdrivemounted:mount/Archivo/Arduino ~/Arduino -i
+/usr/bin/rclone sync -i gdrivemounted:mount/Archivo/Arduino ~/Arduino

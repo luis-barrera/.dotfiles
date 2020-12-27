@@ -1,13 +1,13 @@
 #bin/bash
 
 printf "*********** Pushing Notas ***********\n"
-/usr/bin/rclone copy --max-age 24h --no-traverse ~/Notas gdrivemounted:mount/Notas -i && \
+/usr/bin/rclone sync -i -P --max-age 24h ~/Notas gdrivemounted:mount/Notas && \
 
 printf "*********** Pushing SextoTrimestre ***********\n"
-/usr/bin/rclone copy --max-age 24h --no-traverse ~/SextoTrimestre gdrivemounted:mount/SextoTrimestre -i && \
+/usr/bin/rclone sync -i -P --max-age 24h ~/SextoTrimestre gdrivemounted:mount/SextoTrimestre && \
 
 printf "*********** Pushing .keepassxc ***********\n"
-/usr/bin/rclone copy --max-age 24h --no-traverse ~/.keepass gdrivemounted:mount/Archivo/keepass -i && \
+/usr/bin/rclone sync -i -P --max-age 24h ~/.keepass gdrivemounted:mount/Archivo/keepass && \
 
 printf "*********** Pushing Arduino ***********\n"
-/usr/bin/rclone copy --max-age 24h --no-traverse ~/Arduino gdrivemounted:mount/Archivo/Arduino -i
+/usr/bin/rclone sync -i -P --max-age 24h ~/Arduino gdrivemounted:mount/Archivo/Arduino
