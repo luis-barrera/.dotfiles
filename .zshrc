@@ -9,7 +9,6 @@ cat ~/.cache/wal/sequences
 source ~/.cache/wal/colors-tty.sh
 
 # fetch
-#(neofetch &&)
 (pfetch &&)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -25,17 +24,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="/home/luisbarrera/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="typewritten"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -81,15 +70,12 @@ COMPLETION_WAITING_DOTS="true"
 # see 'man strftime' for details.
 HIST_STAMPS="dd.mm.yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -165,6 +151,15 @@ alias gpush="sh $HOME/scripts/gpush.sh"
 alias images="viewnior ./"
 # Abre el stream de lofi en mpv
 alias lofi="mpv https://youtu.be/5qap5aO4i9A"
+# Siguiendo el meme
+alias l='ls'
+alias s='ls'
+alias sl='ls'
+alias lls='ls'
+alias lsl='ls'
+alias lss='ls'
+alias sll='ls'
+alias sls='ls'
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 

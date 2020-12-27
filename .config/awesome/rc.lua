@@ -455,6 +455,8 @@ globalkeys = my_table.join(
   -- Abrir Firefox
   awful.key({ modkey, "Shift"   }, "q", function () awful.spawn(browser) end,
             {description = "Abrir Firefox", group = "launcher"}),
+   awful.key({ modkey, "Control", "Shift" }, "q", function () awful.spawn("brave") end,
+            {description = "Abrir Firefox", group = "launcher"}),
   -- Abrir Nemo
   awful.key({ modkey, "Shift"   }, "w", function () awful.spawn("nemo") end,
             {description = "Abrir nemo", group = "launcher"}),
@@ -465,7 +467,7 @@ globalkeys = my_table.join(
   awful.key({ modkey, "Shift"   }, "x", function () awful.spawn("rofi -show keys") end,
             {description = "Mostrar keys extras", group = "launcher"}),
   -- Menú ROFI
-  awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi") end,
+  awful.key({ modkey,           }, "x", function () awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi") end,
             {description = "dmenu", group = "launcher"}),
   -- Menú de apagado 
   awful.key({ modkey,           }, "p", function () os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end,
@@ -562,7 +564,7 @@ clientkeys = my_table.join(
             {description = "Mover a cliente urgente", group = "client"}),
   awful.key({ modkey, "Shift"   }, "m",  lain.util.magnify_client,
             {description = "Maximizar cliente", group = "client"}),
-  awful.key({ modkey,           }, "e", function (c) c:kill() end,
+  awful.key({ modkey, "Shift"   }, "e", function (c) c:kill() end,
             {description = "Cerrar cliente", group = "client"}),
   awful.key({ altkey,           }, "space", awful.client.floating.toggle,
             {description = "Floating", group = "client"}),
@@ -739,8 +741,9 @@ awful.rules.rules = {
 
   -- zoom
   { rule = { class = "zoom" },  
-    properties = { floating = true, titlebars_enabled = false } },
+    properties = { tag = "4", floating = true, titlebars_enabled = false } },
 
+  -- Gimp
   { rule = { class = "Gimp", role = "gimp-image-window" },
     properties = { maximized = true } },
 }
