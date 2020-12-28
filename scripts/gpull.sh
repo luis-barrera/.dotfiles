@@ -10,4 +10,7 @@ printf "*********** Pulling .keepassxc ***********\n"
 /usr/bin/rclone sync -i gdrivemounted:mount/Archivo/keepass ~/.keepass && \
 
 printf "*********** Pulling Arduino ***********\n"
-/usr/bin/rclone sync -i gdrivemounted:mount/Archivo/Arduino ~/Arduino
+/usr/bin/rclone sync -i gdrivemounted:mount/Archivo/Arduino ~/Arduino && \
+
+printf "*********** Pulling drivesync ***********\n"
+/usr/bin/rclone sync -i gdrivemounted:mount/drivesync ~/drivesync 
