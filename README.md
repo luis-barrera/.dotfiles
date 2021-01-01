@@ -8,7 +8,7 @@ sistema para que sean almacenados en un solo repositorio de git.
 No es necesario guardar información en este directorio, solo debemos hacer link a los archivos que queremos
 agregar al repositorio.
 
-Hay un alias en el .zshrc llamado dotfiles que permite manipular las acciones de git de este repositorio
+Hay un alias en el .zshrc llamado dotfiles que permite manipular las acciones de git de este repositorio.
 
 
 
