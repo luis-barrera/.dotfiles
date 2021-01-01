@@ -44,6 +44,7 @@ set incsearch   " show incremental search results as you type
 set number      " display line number
 set noswapfile  " disable swap file
 set relativenumber
+set showcmd                             " Muestra los comandos que ingresamos
 
 " Detecta el tipo de archivo que estamos editando y le damos instrucciones específica en el dir ftplugins
 filetype plugin on
