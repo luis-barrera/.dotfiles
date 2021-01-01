@@ -83,7 +83,7 @@ awful.spawn.with_shell(
 local chosen_theme = "/home/luisbarrera/.config/awesome/theme.lua" -- tema
 local modkey       = "Mod4" -- tecla principal, tecla Windows
 local altkey       = "Mod1" -- tecla secundaria, tecla Alt izquierdo
-local terminal     = "kitty" -- terminal por defect -- terminal por defectoo
+local terminal     = "kitty" -- terminal por defectoo
 local vi_focus     = false -- el foco de la ventana sigue al ratón
 local cycle_prev   = false -- cycle trough all previous client or just the first
 local editor       = "nvim" -- Editor en terminal
