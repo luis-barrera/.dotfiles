@@ -127,6 +127,8 @@ alias notebook="jupyter-notebook"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 # Administrar plugins de nvim
 alias nvimplugins="nvim ~/.config/nvim/vim-plug/plugins.vim"
+# Configuración básica de vim y nvim
+alias vimrc="vim ~/.vimrc"
 # Abre otra terminal
 alias kitty="kitty --detach"
 # Abre zathura de manera correcta
