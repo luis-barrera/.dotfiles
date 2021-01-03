@@ -1,3 +1,8 @@
+"           _
+"   _   __(_)___ ___  __________
+"  | | / / / __ `__ \/ ___/ ___/
+" _| |/ / / / / / / / /  / /__
+"(_)___/_/_/ /_/ /_/_/   \___/
 " Configuración de Vim básica 
 
 " Configuraciones indispensables
@@ -32,14 +37,10 @@ set cmdheight=1                 " Tamaño de la ventana de comandos
 set number                      " Número de linea a la izquierda
 set relativenumber              " Número de linea respecto a la linea donde esta el cursor
 set numberwidth=5               " Tamaño de la columna de numero
-set notimeout                   " Retardo en las teclas 
-set ttimeout                    " No retardo en los mapeos de teclas 
-set ttimeoutlen=200             " Milisegundos de retardo en las teclas
 set pastetoggle=<F11>           " Cambia entre modo portapapeles y no-portapapeles
 set textwidth=130               " No exige una longitud límite de la linea
 set linebreak                   " Rompe la linea si se llega al límite de la ventana
 set wrap                        " Muestra las linea largas como dos lineas
-set termguicolors               " No usa los colores que se usan en la terminal
 set title                       " Muestra el nombre del archivo en el titulo de la ventana
 set scrolloff=3                 " Muestra 3 lineas más cuando se cuando se navega a través del archivo
 set showmatch                   " Muestra en colores los brackets
@@ -48,6 +49,7 @@ set showtabline=2               " Muestra la barra de tabs siempre
 set whichwrap+=<,>,[,],h,l      " Para que el cursor se salte a la linea si estamos en el ultimo char
 set splitbelow                  " Si dividimos la ventana horizontalmente, aparece abajo
 set splitright                  " Si dividimos la ventana verticalmente, aparece a la derecha
+set termguicolors               " No usa los colores que se usan en la terminal
 set t_Co=256                    " Soporte para más colores
 set t_ut=""                     " Arreglo para color de fondo
 set signcolumn=auto             " Muestra una columna con signos, se usa en git y otras cosas
@@ -55,15 +57,17 @@ set updatetime=200              " Tasa de refresco del buffer
 set colorcolumn=131             " Columna de color mamalona
 set undodir=~/.vim/undo-dir     " Directorio donde guarda el archivo de respaldo
 set undofile                    " Activa un archivo de respaldo
-"set cursorline                  " Una linea debajo de la posición del cursor
-
+set cursorline                  " Una linea debajo de la posición del cursor
+" Retardo en las teclas
+set timeout                     " Retardo en las teclas para acceder una combinación de teclas extra
+set ttimeout                    " No retardo en los mapeos de teclas 
+set ttimeoutlen=100             " Milisegundos de retardo en las teclas
 " Tabuladores 
 set tabstop=8                   " Convierte la tecla tab en 4 espacios
 set softtabstop=4
 set shiftwidth=4                " Se usan 4 espacios en lugar de tabuladores para indentar
 set expandtab
-
-" Status line
+" Status line, en nvim se sobre escribe por airline
 set statusline=%F[%m%r%h%w]%=%y[Hex\ %B][Lineas\ %L][%l,%v][%p%%]
 
 " Mapeos
@@ -73,7 +77,12 @@ let mapleader = "<space>"
 nnoremap <F3> :set hlsearch!<CR>
 " Guardar en modo sudo
 cmap w!! w !sudo tee % >/dev/null
+" Entra al modo normal si pulsamos rápidamente j+k o k+j 
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+" Copy&paste con las teclas que se usan regularmente, se tiene que instalar el paquete xsel
+inoremap <C-v> <ESC>"+pa
+vnoremap <C-c> "+y
+vnoremap <C-d> "+d
 
 colorscheme desert 
-set termguicolors
-set background=dark

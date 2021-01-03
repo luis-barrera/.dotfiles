@@ -1,33 +1,22 @@
-" Leader Key Maps
+" Muestra los keymaps relacionados a la barra espaciadora (leader key)
 
-" Map leader to which_key
+" Agregamos la barra espaciadora para que lance el menu de comandos de teclas 
 nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
-" Create map to add keys to
+" Crea un mapa donde se van a ir agregando los mapeos
 let g:which_key_map =  {}
-" Define a separator
+" Símbolo separador
 let g:which_key_sep = '→'
-" set timeoutlen=100
-
-" Coc Search & refactor
-nnoremap <leader>? :CocSearch <C-R>=expand("<cword>")<CR><CR>
-let g:which_key_map['?'] = 'search word'
-
-" Not a fan of floating windows for this
+" Espacio entre las columnas
+let g:which_key_hspace = 2
+" Muestra los mapeos en la ventana de comandos, en la parte inferior
 let g:which_key_use_floating_win = 0
-
-" Change the colors if you want
+" Colores 
 highlight default link WhichKey          Operator
 highlight default link WhichKeySeperator DiffAdded
 highlight default link WhichKeyGroup     Identifier
 highlight default link WhichKeyDesc      Function
-
-" Hide status line
-autocmd! FileType which_key
-autocmd  FileType which_key set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 noshowmode ruler
-
 
 " Single mappings
 let g:which_key_map['/'] = [ ':call Comment()'                    , 'comment' ]
@@ -261,53 +250,6 @@ let g:which_key_map.T = {
       \ 'P' : [':XTabMoveBufferPrev'      , '<-buffer'],
       \ 'x' : [':XTabPinBuffer'           , 'pin buffer'],
       \ }
-
-" w is for wiki
-let g:which_key_map.w = {
-      \ 'name' : '+wiki' ,
-      \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
-      \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
-      \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
-      \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
-      \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
-      \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
-      \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
-      \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
-      \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
-      \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
-      \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
-      \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
-      \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
-      \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
-      \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
-      \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
-      \ }
-
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
-" <Plug>VimwikiDeleteLink
-" <Plug>VimwikiRenameLink
-" <Plug>VimwikiAddHeaderLevel
 
 " Register which key map
 call which_key#register('<Space>', "g:which_key_map")

@@ -7,7 +7,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
     " Better Comments
     Plug 'tpope/vim-commentary'
     " Change dates fast
@@ -22,13 +21,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     " Plug 'RRethy/vim-illuminate'
-
-  if exists('g:vscode')
-    " Easy motion for VSCode
-    Plug 'asvetliakov/vim-easymotion'
-    Plug 'machakann/vim-highlightedyank'
-  else
-
     " Sneak
     Plug 'justinmk/vim-sneak'
     " Surround
@@ -50,7 +42,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'alvan/vim-closetag'
     " Themes
     Plug 'morhetz/gruvbox'
-    Plug 'christianchiarulli/nvcode.vim'
+    " Plug 'christianchiarulli/nvcode.vim'
     " Plug 'ChristianChiarulli/nv-code'
     " Plug 'kyazdani42/blue-moon'
     " Intellisense
@@ -131,28 +123,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Multiple Cursors
     " Plug 'terryma/vim-multiple-cursors'
     Plug 'kaicataldo/material.vim'
-    " Plug 'NLKNguyen/papercolor-theme'
-    " Plug 'tomasiser/vim-code-dark'
-    " Vim Wiki
-    " Plug 'https://github.com/vimwiki/vimwiki.git'
-    " Better Comments
-    " Plug 'jbgutierrez/vim-better-comments'
-    " Echo doc
-    " Plug 'Shougo/echodoc.vim'
-    " Plug 'hardcoreplayers/spaceline.vim'
-    " Plug 'vim-airline/vim-airline-themes'
-    " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-    " Plug 'arcticicestudio/nord-vim'
-    " Ranger
-    " Plug 'francoiscabrol/ranger.vim'
-    " Plug 'rbgrouleff/bclose.vim'
-    " Making stuff
-    " Plug 'neomake/neomake'
-    " Plug 'mhinz/vim-signify'
-    " Plug 'easymotion/vim-easymotion'
-    " Plug 'preservim/nerdcommenter'
-    " Plug 'brooth/far.vim'
-    " Plug 'atishay/far.vim'
     " Guardar la posición del cursor
     Plug 'vim-scripts/restore_view.vim'
     " Multi cursors
@@ -170,9 +140,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'suxpert/vimcaps'
     " Arduino en Vim
     Plug 'sudar/vim-arduino-syntax'
-        " Plug 'SirVer/ultisnips'
     Plug 'sudar/vim-arduino-snippets'
-  endif
 
 call plug#end()
 
