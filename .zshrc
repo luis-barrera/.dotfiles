@@ -118,7 +118,7 @@ alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
 alias twoscreens="sh ~/scripts/twoscreenslayout.sh"
 # Abre jupyter notebook
-alias notebook="jupyter-notebook"
+alias jn="jupyter-notebook"
 # Alias para usar MariaDB
 # alias startmysql="systemctl enable mysqld.service --now"
 # alias restartmysql="systemctl restart mysqld.service"
@@ -153,6 +153,7 @@ alias gpush="sh $HOME/scripts/gpush.sh"
 alias images="viewnior ./"
 # Abre el stream de lofi en mpv
 alias lofi="mpv https://youtu.be/5qap5aO4i9A"
+alias lofimex="mpv --loop-playlist=inf https://youtu.be/VzCXIqufgKk"
 # Siguiendo el meme
 alias l='ls'
 alias s='ls'
