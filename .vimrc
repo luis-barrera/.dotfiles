@@ -3,10 +3,10 @@
 "  | | / / / __ `__ \/ ___/ ___/
 " _| |/ / / / / / / / /  / /__
 "(_)___/_/_/ /_/ /_/_/   \___/
-" Configuración de Vim básica 
+" Configuración de Vim básica
 
 " Configuraciones indispensables
-set nocompatible                " En algunas distros puede haber problema si se tiene instalado varios fork de vi   
+set nocompatible                " En algunas distros puede haber problema si se tiene instalado varios fork de vi
 filetype indent plugin on       " Trata de adivinar el tipo de archivo a partir del nombre
 syntax on                       " Resaltado de sintaxis para cada lenguaje
 set hidden                      " Mostrar varios editores en una misma ventana, ocultando uno mientras se muestra otro
@@ -24,7 +24,7 @@ set ignorecase                  " Busqueda insensible a las mayusculas
 set smartcase                   " Busqueda sensible a las mayúsculas solo si se usan mayúsculas
 set incsearch                   " Busca al mismo tiempo que se ingresa la palabra
 set backspace=indent,eol,start  " Retroceder en autoindentado, fin de linea o nueva linea
-set autoindent                  " Sigue la indentación de la linea anterior	
+set autoindent                  " Sigue la indentación de la linea anterior
 set nostartofline               " Evita que el cursor se ponga sobre el primer char de la linea
 set ruler                       " Muestra la posición del cursor
 set laststatus=2                " Siempre muestra la linea de estado
@@ -60,9 +60,9 @@ set undofile                    " Activa un archivo de respaldo
 set cursorline                  " Una linea debajo de la posición del cursor
 " Retardo en las teclas
 set timeout                     " Retardo en las teclas para acceder una combinación de teclas extra
-set ttimeout                    " No retardo en los mapeos de teclas 
+set ttimeout                    " No retardo en los mapeos de teclas
 set ttimeoutlen=100             " Milisegundos de retardo en las teclas
-" Tabuladores 
+" Tabuladores
 set tabstop=8                   " Convierte la tecla tab en 4 espacios
 set softtabstop=4
 set shiftwidth=4                " Se usan 4 espacios en lugar de tabuladores para indentar
@@ -77,7 +77,7 @@ let mapleader = "<space>"
 nnoremap <F3> :set hlsearch!<CR>
 " Guardar en modo sudo
 cmap w!! w !sudo tee % >/dev/null
-" Entra al modo normal si pulsamos rápidamente j+k o k+j 
+" Entra al modo normal si pulsamos rápidamente j+k o k+j
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 " Copy&paste con las teclas que se usan regularmente, se tiene que instalar el paquete xsel
