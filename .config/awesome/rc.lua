@@ -91,7 +91,7 @@ local gui_editor   = "mousepad" -- Editor en gestor grafico
 local browser      = "firefox" -- Navegador predeterminado
 local scrlocker    = "bettersecreenlocker" -- Screenlocker
 
-awful.util.terminal = terminal -- Definimos terminal por defecto 
+awful.util.terminal = terminal -- Definimos terminal por defecto
 
 awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- Nombre de los espacios
 awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"} -- Nombre de espacios en monitores extra
@@ -130,7 +130,7 @@ awful.util.taglist_buttons = my_table.join(
       client.focus:move_to_tag(t)
     end
   end),
-  -- Seleciona varios espacios a la vez, lo que muestra todos los clientes en esos espacios en uno solo 
+  -- Seleciona varios espacios a la vez, lo que muestra todos los clientes en esos espacios en uno solo
   awful.button({ }, 3, awful.tag.viewtoggle),
   -- Muestra el cliente en el espacio actual en otros espacios que se haga click derecho
   awful.button({ modkey }, 3, function(t)
@@ -138,7 +138,7 @@ awful.util.taglist_buttons = my_table.join(
       client.focus:toggle_tag(t)
     end
   end),
-  -- Moverse entre espacios con la rueda del ratón, 
+  -- Moverse entre espacios con la rueda del ratón,
   awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
   awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
 )
@@ -159,7 +159,7 @@ awful.util.tasklist_buttons = my_table.join(
       c:raise()
     end
   end),
-  -- Cierra el cliente con click central 
+  -- Cierra el cliente con click central
   awful.button({ }, 2, function (c) c:kill() end),
   -- Mueve entre los clientes con la rueda del mouse
   awful.button({ }, 4, function () awful.client.focus.byidx(1) end),
@@ -204,7 +204,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
 -- Esconde el menu cuando se quita el mouse
 awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function() awful.util.mymainmenu:hide() end)
 -- Establece la terminal para las apps que lo necesitan
-menubar.utils.terminal = terminal 
+menubar.utils.terminal = terminal
 
 ----------------------------------------------------------------------------------
 ----------------------------- Pantallas ------------------------------------------
@@ -221,7 +221,7 @@ screen.connect_signal("property::geometry", function(s)
   end
 end)
 
--- Quita el borde si hay solo un cliente en cualquier layout 
+-- Quita el borde si hay solo un cliente en cualquier layout
 screen.connect_signal("arrange", function (s)
   local only_one = #s.tiled_clients == 1
   for _, c in pairs(s.clients) do
@@ -234,12 +234,12 @@ screen.connect_signal("arrange", function (s)
 end)
 
 -- Crea una barra(wibox) para cada pantalla conectada y lo agrega
-awful.screen.connect_for_each_screen(function(s) 
+awful.screen.connect_for_each_screen(function(s)
   beautiful.at_screen_connect(s)
 end)
 
 -- Elimina las wibox si se desconecta el monitor
-awful.screen.disconnect_for_each_screen(function() 
+awful.screen.disconnect_for_each_screen(function()
   beautiful.at_screen_connect(s)
 end)
 
@@ -316,8 +316,8 @@ globalkeys = my_table.join(
             {description = "Mover cliente a la derecha", group = "client"}),
   awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx(-1) end,
             {description = "Mover cliente a la izquierda", group = "client"}),
-          
-  -- Número de clientes en la columna (da la sensación de mover clientes horizontalmente) 
+
+  -- Número de clientes en la columna (da la sensación de mover clientes horizontalmente)
   awful.key({ modkey, "Shift"   }, "h", function () awful.tag.incnmaster(1, nil, true) end,
             {description = "Mueve cliente a la izquierda", group = "layout"}),
   awful.key({ modkey, "Shift"   }, "l", function () awful.tag.incnmaster(-1, nil, true) end,
@@ -342,7 +342,7 @@ globalkeys = my_table.join(
             end,
             {description = "Cicla entre los clientes", group = "client"}),
 
-  -- Muestra o esconde la barra 
+  -- Muestra o esconde la barra
   awful.key({ modkey,           }, "b", function ()
               local s = awful.screen.focused({mouse = true})
               if s.mywibox then
@@ -376,7 +376,7 @@ globalkeys = my_table.join(
   awful.key({ modkey, "Control" }, "l", function () awful.tag.incncol(-1, nil, true) end,
             {description = "Decrementa numero de columnas", group = "layout"}),
 
-  -- Seleccionar el layout 
+  -- Seleccionar el layout
   awful.key({ modkey,           }, "space", function () awful.layout.inc( 1) end,
             {description = "Siguiente Layout", group = "layout"}),
   awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1) end,
@@ -469,7 +469,7 @@ globalkeys = my_table.join(
   -- Menú ROFI
   awful.key({ modkey,           }, "x", function () awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi") end,
             {description = "dmenu", group = "launcher"}),
-  -- Menú de apagado 
+  -- Menú de apagado
   awful.key({ modkey,           }, "p", function () os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end,
             {description = "Menú de Apagado", group = "hotkeys"})
 --[[
@@ -545,7 +545,7 @@ globalkeys = my_table.join(
   -- Mostrar menú
   awful.key({ modkey,           }, "w", function () awful.util.mymainmenu:show() end,
             {description = "show main menu", group = "awesome"}),
-  -- Dropdown application -- no lo utilizo ni sé para qué sirve 
+  -- Dropdown application -- no lo utilizo ni sé para qué sirve
   awful.key({ modkey, }, "z", function () awful.screen.focused().quake:toggle() end,
             {description = "dropdown application", group = "launcher"}),
   -- Widgets popups
@@ -681,7 +681,7 @@ for i = 1, 4 do
               end
             end,
             descr_toggle_focus)
-  ) 
+  )
 end
 
 clientbuttons = gears.table.join(
@@ -700,7 +700,7 @@ clientbuttons = gears.table.join(
   end)
 )
 
--- Establecer las keybindings 
+-- Establecer las keybindings
 root.keys(globalkeys)
 
 ----------------------------------------------------------------------------------
@@ -732,16 +732,16 @@ awful.rules.rules = {
     properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
 
   -- Spotify
-  { rule = { class = "spotify" },  
+  { rule = { class = "spotify" },
     properties = { tag = "music", titlebars_enabled = false } },
 
   -- KeePassXC
-  { rule = { class = "KeePassXC" },  
+  { rule = { class = "KeePassXC" },
     properties = { floating = true } },
 
   -- zoom
-  { rule = { class = "zoom" },  
-    properties = { tag = "4", floating = true, titlebars_enabled = false } },
+  { rule = { class = "zoom" },
+    properties = { tag = "4", floating = true, titlebars_enabled = false, maximized = false } },
 
   -- Gimp
   { rule = { class = "Gimp", role = "gimp-image-window" },
@@ -763,7 +763,7 @@ client.connect_signal("manage", function (c)
   end
 end)
 
--- Formato de la titlebar en caso de que esté activada en las reglas 
+-- Formato de la titlebar en caso de que esté activada en las reglas
 client.connect_signal("request::titlebars", function(c)
   -- Personalizado
   if beautiful.titlebar_fun then
@@ -796,7 +796,7 @@ client.connect_signal("request::titlebars", function(c)
       layout  = wibox.layout.fixed.horizontal
     },
     { -- Medio
-      { -- Nombre 
+      { -- Nombre
         align  = "center",
         widget = awful.titlebar.widget.titlewidget(c)
       },
