@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/luisbarrera/.config/awesome'
+let g:netrw_dirhist_9='/home/luisbarrera/.config'
+let g:netrw_dirhist_8='/home/luisbarrera'
+let g:netrw_dirhist_7='/home/luisbarrera/.config'
+let g:netrw_dirhist_6='/home/luisbarrera/.config/awesome'
+let g:netrw_dirhist_5='/home/luisbarrera/.config'
+let g:netrw_dirhist_4='/home/luisbarrera/.config/awesome'
+let g:netrw_dirhist_3='/home/luisbarrera/.config'
+let g:netrw_dirhist_2='/home/luisbarrera/.config/awesome'
+let g:netrw_dirhist_1='/home/luisbarrera/.config'
