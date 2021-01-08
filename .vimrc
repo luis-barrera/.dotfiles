@@ -84,5 +84,3 @@ inoremap <expr> <c-k> ("\<C-p>")
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
-
-colorscheme desert 
