@@ -7,6 +7,7 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+
     " Better Comments
     Plug 'tpope/vim-commentary'
     " Change dates fast
@@ -17,7 +18,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'tpope/vim-repeat'
     " Text Navigation
     Plug 'unblevable/quick-scope'
-    " Useful for React Commenting 
+    " Useful for React Commenting
     Plug 'suy/vim-context-commentstring'
     " highlight all matches under cursor
     " Plug 'RRethy/vim-illuminate'
@@ -135,12 +136,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     " Lexical, gramática, ortografía
-    Plug 'reedes/vim-lexical'
+    " Plug 'reedes/vim-lexical'
     " Plugin para quitar el capslock cuando se entra a normal mode
     Plug 'suxpert/vimcaps'
     " Arduino en Vim
     Plug 'sudar/vim-arduino-syntax'
     Plug 'sudar/vim-arduino-snippets'
+    " Vim Wiki
+    Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
