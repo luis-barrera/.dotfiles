@@ -28,7 +28,7 @@ let g:coc_global_extensions = [
     \ ]
 
 " Con <tab> se lanza el menú de autocompletado
-inoremap <silent><expr> <TAB>
+inoremap <silent><expr> <tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()

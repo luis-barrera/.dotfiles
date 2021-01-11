@@ -33,7 +33,7 @@ set confirm                     " Pide confirmación para guardar el buffer ante
 set visualbell                  " Advierte visualmente si un problema ocurre
 set t_vb=                       " Ayuda a que la advertencia visual no de falsos
 set mouse=a                     " Permite usar el mouse en todos los modos
-set cmdheight=1                 " Tamaño de la ventana de comandos
+set cmdheight=2                 " Tamaño de la ventana de comandos
 set number                      " Número de linea a la izquierda
 set relativenumber              " Número de linea respecto a la linea donde esta el cursor
 set numberwidth=5               " Tamaño de la columna de numero
@@ -52,12 +52,15 @@ set splitright                  " Si dividimos la ventana verticalmente, aparece
 set termguicolors               " No usa los colores que se usan en la terminal
 set t_Co=256                    " Soporte para más colores
 set t_ut=""                     " Arreglo para color de fondo
-set signcolumn=auto             " Muestra una columna con signos, se usa en git y otras cosas
-set updatetime=200              " Tasa de refresco del buffer
+set signcolumn=yes              " Muestra una columna con signos, se usa en git y otras cosas
+set updatetime=300              " Tasa de refresco del buffer
 set colorcolumn=131             " Columna de color mamalona
 set undodir=~/.vim/undo-dir     " Directorio donde guarda el archivo de respaldo
 set undofile                    " Activa un archivo de respaldo
 set cursorline                  " Una linea debajo de la posición del cursor
+set nobackup
+set nowritebackup
+set shortmess+=c
 " Retardo en las teclas
 set timeout                     " Retardo en las teclas para acceder una combinación de teclas extra
 set ttimeout                    " No retardo en los mapeos de teclas
