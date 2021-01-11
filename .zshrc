@@ -119,6 +119,7 @@ alias onescreen="sh ~/scripts/onescreenlayout.sh"
 alias twoscreens="sh ~/scripts/twoscreenslayout.sh"
 # Abre jupyter notebook
 alias jn="jupyter-notebook"
+alias jl="jupyter-lab"
 # Alias para usar MariaDB
 # alias startmysql="systemctl enable mysqld.service --now"
 # alias restartmysql="systemctl restart mysqld.service"
