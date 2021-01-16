@@ -164,6 +164,8 @@ alias lsl='ls'
 alias lss='ls'
 alias sll='ls'
 alias sls='ls'
+# Kittens, plugins para kitty
+alias ssh='kitty +kitten ssh'
 
 source ~/.powerlevel10k/powerlevel10k.zsh-theme
 

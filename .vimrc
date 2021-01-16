@@ -38,7 +38,7 @@ set number                      " Número de linea a la izquierda
 set relativenumber              " Número de linea respecto a la linea donde esta el cursor
 set numberwidth=5               " Tamaño de la columna de numero
 set pastetoggle=<F11>           " Cambia entre modo portapapeles y no-portapapeles
-set textwidth=130               " No exige una longitud límite de la linea
+set textwidth=120               " No exige una longitud límite de la linea
 set linebreak                   " Rompe la linea si se llega al límite de la ventana
 set wrap                        " Muestra las linea largas como dos lineas
 set title                       " Muestra el nombre del archivo en el titulo de la ventana
@@ -54,7 +54,7 @@ set t_Co=256                    " Soporte para más colores
 set t_ut=""                     " Arreglo para color de fondo
 set signcolumn=yes              " Muestra una columna con signos, se usa en git y otras cosas
 set updatetime=300              " Tasa de refresco del buffer
-set colorcolumn=131             " Columna de color mamalona
+set colorcolumn=121             " Columna de color mamalona
 set undodir=~/.vim/undo-dir     " Directorio donde guarda el archivo de respaldo
 set undofile                    " Activa un archivo de respaldo
 set cursorline                  " Una linea debajo de la posición del cursor

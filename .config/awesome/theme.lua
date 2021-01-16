@@ -29,7 +29,7 @@ local theme                       = {}
 -- Directorios por default
 theme.default_dir                 = require("awful.util").get_themes_dir() .. "default"
 -- theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/fondo2.png"
-theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
+theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/bosque2.jpg"
 theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/f5.png"
 -- Fuentes
 theme.font                        = "Iosevka Custom 9"

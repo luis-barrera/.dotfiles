@@ -49,6 +49,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'kien/rainbow_parentheses.vim'                 " Paréntesis de colores
     Plug 'airblade/vim-gitgutter'                       " Muestra los diff de git en la signcolumn
     Plug 'mbbill/undotree'                              " <F5> para ver historial cosas borradas
+    Plug 'reedes/vim-pencil'                            " Wrap para .md
 
     " Themes
     Plug 'itchyny/lightline.vim'

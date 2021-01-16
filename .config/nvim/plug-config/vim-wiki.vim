@@ -26,3 +26,5 @@ let g:vimwiki_diary_months = {
       \ 7: 'July', 8: 'August', 9: 'September',
       \ 10: 'October', 11: 'November', 12: 'December'
       \ }
+
+let g:vimwiki_global_ext = 0
