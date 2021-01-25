@@ -1,9 +1,9 @@
-"           _
+
 "   _   __(_)___ ___  __________
 "  | | / / / __ `__ \/ ___/ ___/
 " _| |/ / / / / / / / /  / /__
 "(_)___/_/_/ /_/ /_/_/   \___/
-" Configuración de Vim básica
+" Configuración de VIM básica
 
 " Configuraciones indispensables
 set nocompatible                " En algunas distros puede haber problema si se tiene instalado varios fork de vi
@@ -38,9 +38,10 @@ set number                      " Número de linea a la izquierda
 set relativenumber              " Número de linea respecto a la linea donde esta el cursor
 set numberwidth=5               " Tamaño de la columna de numero
 set pastetoggle=<F11>           " Cambia entre modo portapapeles y no-portapapeles
-set textwidth=120               " No exige una longitud límite de la linea
-set linebreak                   " Rompe la linea si se llega al límite de la ventana
 set wrap                        " Muestra las linea largas como dos lineas
+set linebreak                   " Rompe la linea respecto a un espacio y no entre palabras
+set breakindent
+set showbreak=">>"
 set title                       " Muestra el nombre del archivo en el titulo de la ventana
 set scrolloff=3                 " Muestra 3 lineas más cuando se cuando se navega a través del archivo
 set showmatch                   " Muestra en colores los brackets
@@ -87,3 +88,5 @@ inoremap <expr> <c-k> ("\<C-p>")
 inoremap <C-v> <ESC>"+pa
 vnoremap <C-c> "+y
 vnoremap <C-d> "+d
+
+colorscheme murphy

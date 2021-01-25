@@ -59,7 +59,7 @@ end
 run_once({
   "flameshot", -- Screenshot
   "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
-  "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
+  -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
   "parcellite -d", -- Daemon del clipboard
   "syncthing-gtk", -- Software para sincronizar archivos entre dispositivos
   "lxsession" -- Polkit, para software con GUI que requieren autentificación

@@ -137,7 +137,7 @@ alias zathura="zathura --fork"
 # Perfil de privacidad para firefox
 alias firefoxprofile="firefox -no-remote -P privacy-profile"
 # Alias para bare repo de mis dotfiles
-alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias dots="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 # Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
 grabar() {
   if [ "$1" != "" ]
@@ -154,7 +154,7 @@ alias gpush="sh $HOME/scripts/gpush.sh"
 alias images="viewnior ./"
 # Abre el stream de lofi en mpv
 alias lofi="mpv https://youtu.be/5qap5aO4i9A"
-alias lofimex="mpv --loop-playlist=inf https://youtu.be/VzCXIqufgKk"
+alias jrap="mpv https://youtu.be/Ii-_EtWBVSM"
 # Siguiendo el meme
 alias l='ls'
 alias s='ls'
