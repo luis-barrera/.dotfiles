@@ -59,12 +59,12 @@ end
 run_once({
   "flameshot", -- Screenshot
   "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
-  -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
+  "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
   "parcellite -d", -- Daemon del clipboard
   "syncthing-gtk", -- Software para sincronizar archivos entre dispositivos
+  -- "light-locker", --deamon del display manager, necesario para suspender el equipo
   "lxsession" -- Polkit, para software con GUI que requieren autentificación
   -- "seahorse",
-  -- "light-locker", --deamon del display manager, necesario para suspender el equipo
 })
 
 -- This function implements the XDG autostart specification
@@ -87,9 +87,9 @@ local terminal     = "kitty" -- terminal por defectoo
 local vi_focus     = false -- el foco de la ventana sigue al ratón
 local cycle_prev   = false -- cycle trough all previous client or just the first
 local editor       = "nvim" -- Editor en terminal
-local gui_editor   = "mousepad" -- Editor en gestor grafico
+local gui_editor   = "notepadqq" -- Editor en gestor grafico
 local browser      = "firefox" -- Navegador predeterminado
-local scrlocker    = "bettersecreenlocker" -- Screenlocker
+local scrlocker    = "light-locker" -- Screenlocker
 
 awful.util.terminal = terminal -- Definimos terminal por defecto
 
@@ -715,7 +715,6 @@ awful.rules.rules = {
                    focus = awful.client.focus.filter,
                    raise = true,
                    keys = clientkeys,
-                   buttons = clientbuttons,
                    screen = awful.screen.preferred,
                    placement = awful.placement.no_overlap+awful.placement.no_offscreen,
                    size_hints_honor = false,

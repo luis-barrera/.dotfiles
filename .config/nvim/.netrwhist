@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/home/luisbarrera/.xmonad'
 let g:netrw_dirhist_2='/etc/X11/xorg.conf.d'
 let g:netrw_dirhist_1='/home/luisbarrera/.config/redyt'
 let g:netrw_dirhist_0='/home/luisbarrera/.config/awesome'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/home/luisbarrera/.config'
 let g:netrw_dirhist_6='/home/luisbarrera/.config/awesome'
 let g:netrw_dirhist_5='/home/luisbarrera/.config'
 let g:netrw_dirhist_4='/home/luisbarrera/.config/awesome'
-let g:netrw_dirhist_3='/home/luisbarrera/.config'

@@ -53,7 +53,7 @@ theme.bg_systray                  = theme.applets_bg_1
 theme.systray_icon_spacing        = dpi(2)
 theme.applets_spacing             = dpi(2)
 -- Bordes de clientes
-theme.border_width                = dpi(3)
+theme.border_width                = dpi(1)
 theme.border_normal               = "#000000"
 theme.border_focus                = "#f6832f"
 -- Configuración del taglist
@@ -187,11 +187,6 @@ player_widget = wibox.container.margin(player_widget, dpi(1), dpi(2), dpi(2), dp
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.mini_icon })
-mylauncher:buttons(gears.table.join(
-    mylauncher:buttons(),
-    awful.button({}, 3, nil, function () 
-      os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end)
-))
 
 function theme.at_screen_connect(s)
 
@@ -220,14 +215,14 @@ function theme.at_screen_connect(s)
 
     -- Widget que muestra las aplicaciones en cada espacio
     mytasklist = awful.widget.tasklist(s,
-                                        awful.widget.tasklist.filter.currenttags, 
-                                        awful.util.tasklist_buttons 
+                                        awful.widget.tasklist.filter.currenttags,
+                                        awful.util.tasklist_buttons
                                         )
     s.mytasklist = wibox.container.margin(mytasklist, dpi(2), dpi(2), dpi(2), dpi(2))
     --s.mytasklist = wibox.container.background(s.mytasklist, theme.bg_focus, gears.shape.rect)
     --s.mytasklist = wibox.container.margin(s.mytasklist, dpi(3), dpi(3), dpi(2), dpi(2))
 
-    -- Establece un wallpaper 
+    -- Establece un wallpaper
     local wallpaper = theme.wallpaper
     local wallpaper2 = theme.wallpaper2
     if type(wallpaper) == "function" then
@@ -242,7 +237,7 @@ function theme.at_screen_connect(s)
       s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = "000000AA"})
       s.mywibox:setup {
           layout = wibox.layout.align.horizontal,
-          { -- Parte izquierda 
+          { -- Parte izquierda
               layout = wibox.layout.fixed.horizontal,
           },
           nil, -- Parte central
@@ -263,8 +258,7 @@ function theme.at_screen_connect(s)
       gears.wallpaper.maximized(wallpaper2, s)
     end
 
-
-    -- Barra inferior 
+    -- Barra inferior
     s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(30), bg = "000000AA" })
     s.mybottomwibox:setup {
         layout = wibox.layout.align.horizontal,

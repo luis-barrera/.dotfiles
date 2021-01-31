@@ -14,9 +14,9 @@ source ~/.cache/wal/colors-tty.sh
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -113,6 +113,8 @@ alias zshconfig="nvim ~/.zshrc"
 alias wmrc="nvim ~/.config/awesome/rc.lua"
 # Configuar tema de AwesomeWM
 alias themewm="nvim ~/.config/awesome/theme.lua"
+# Configuar xmonad
+alias xmwm="nvim ~/.xmonad/xmonad.hs"
 # Corre Script para usar un monitor
 alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
@@ -165,12 +167,12 @@ alias lss='ls'
 alias sll='ls'
 alias sls='ls'
 # Kittens, plugins para kitty
-alias ssh='kitty +kitten ssh'
+# alias ssh='kitty +kitten ssh'
 
-source ~/.powerlevel10k/powerlevel10k.zsh-theme
+# source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -200,3 +202,5 @@ codi() {
     hi NonText ctermfg=0 |\
     Codi $syntax" "$@"
 }
+
+eval "$(starship init zsh)"
