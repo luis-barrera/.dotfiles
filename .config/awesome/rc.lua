@@ -684,19 +684,19 @@ for i = 1, 4 do
   )
 end
 
-clientbuttons = gears.table.join(
+clientbuttons = awful.util.table.join(
   awful.button({ }, 1, function (c)
     c:emit_signal("request::activate", "mouse_click", {raise = true})
   end),
   -- Cambiar posición del cliente
   awful.button({ modkey }, 1, function (c)
     c:emit_signal("request::activate", "mouse_click", {raise = true})
-    awful.mouse.client.move(c)
+    awful.mouse.client.move()
   end),
   -- Cambiar tamaño del cliente
   awful.button({ modkey }, 3, function (c)
     c:emit_signal("request::activate", "mouse_click", {raise = true})
-    awful.mouse.client.resize(c)
+    awful.mouse.client.resize()
   end)
 )
 
@@ -715,6 +715,7 @@ awful.rules.rules = {
                    focus = awful.client.focus.filter,
                    raise = true,
                    keys = clientkeys,
+                   buttons = clientbuttons,
                    screen = awful.screen.preferred,
                    placement = awful.placement.no_overlap+awful.placement.no_offscreen,
                    size_hints_honor = false,
