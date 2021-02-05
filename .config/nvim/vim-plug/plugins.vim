@@ -16,7 +16,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'ryanoasis/vim-devicons'                       " Cool Icons
     Plug 'jiangmiao/auto-pairs'                         " Cierra los parentesis, llaves y corchetes
-    Plug 'xuhdev/vim-latex-live-preview', {'for':'tex'} " Preview de un .tex con el command LLP
+    " Plug 'xuhdev/vim-latex-live-preview', {'for':'tex'} " Preview de un .tex con el command LLP
     Plug 'mg979/vim-visual-multi', {'branch': 'master'} " Multi-cursor
     Plug 'vim-scripts/restore_view.vim'                 " Guarda la posición del cursor
     Plug 'psliwka/vim-smoothie'                         " Scroll suave
@@ -50,6 +50,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'airblade/vim-gitgutter'                       " Muestra los diff de git en la signcolumn
     Plug 'mbbill/undotree'                              " <F5> para ver historial cosas borradas
     Plug 'junegunn/goyo.vim'                            " nvim sin distracciones
+    Plug 'lervag/vimtex'                                " Soporte para latex
 
     " Themes
     Plug 'itchyny/lightline.vim'
