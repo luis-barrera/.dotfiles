@@ -56,8 +56,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'itchyny/lightline.vim'
     " Plug 'kaicataldo/material.vim'
     Plug 'morhetz/gruvbox'
+    Plug 'bluz71/vim-moonfly-colors'
 
-call plug#end()
+    call plug#end()
 
 " Automatically install missing plugins on startup
 autocmd VimEnter *

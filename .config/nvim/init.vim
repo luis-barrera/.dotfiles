@@ -31,5 +31,6 @@ source $HOME/.config/nvim/plug-config/goyo.vim                  " Goyo
 source $HOME/.config/nvim/keys/which-key.vim                    " Muestra las combinaciones de teclas de la barra esp.
 
 " Temas
-"source $HOME/.config/nvim/themes/material.vim
-source $HOME/.config/nvim/themes/gruvbox.vim
+" source $HOME/.config/nvim/themes/material.vim
+" source $HOME/.config/nvim/themes/gruvbox.vim
+source $HOME/.config/nvim/themes/moonfly.vim
