@@ -1,4 +1,4 @@
-#bin/bash
+#!/bin/bash
 
 printf "*********** Pulling Notas ***********\n"
 /usr/bin/rclone sync -i gdrivemounted:mount/Notas ~/Notas && \

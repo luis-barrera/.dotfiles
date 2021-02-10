@@ -1,4 +1,6 @@
 #!/bin/bash
+# Hard push de los archivos locales a Google Drive
+# Copia todos los archivos sin checar primero por la fecha de creación
 
 printf "*********** Pushing Notas ***********\n"
 /usr/bin/rclone sync -i --max-age 24h ~/Notas gdrivemounted:mount/Notas && \
