@@ -30,7 +30,7 @@ local theme                       = {}
 theme.default_dir                 = require("awful.util").get_themes_dir() .. "default"
 -- theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/fondo2.png"
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
-theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/f5.png"
+theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
 -- Fuentes
 theme.font                        = "Iosevka Custom 9"
 theme.player_font                 = "Hurmit Nerd Font Mono 10"
@@ -157,33 +157,33 @@ local networkwidget = wibox.container.margin(netbg, dpi(2), dpi(2), dpi(2), dpi(
 networkwidget = wibox.container.background(networkwidget, theme.bg_normal, gears.shape.rect)
 networkwidget = wibox.container.margin(networkwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
--- Volumen
-theme.volume = alsabar({
-    notification_preset = { font = "Iosevka Custom 9"},
-    -- togglechannel = "IEC958,3",
-    width = dpi(100), height = dpi(8), border_width = dpi(0),
-    colors = {
-        background = theme.applets_bg_1,
-        unmute     = theme.applets_fg,
-        mute       = theme.applets_bg_1,
-    },
-})
-theme.volume.bar.paddings = dpi(0)
-theme.volume.bar.margins = dpi(5)
-local volumewidget = wibox.container.background(theme.volume.bar, theme.applets_bg_1, gears.shape.rect)
-volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(0), dpi(0))
+-- -- Volumen
+-- theme.volume = alsabar({
+--     notification_preset = { font = "Iosevka Custom 9"},
+--     -- togglechannel = "IEC958,3",
+--     width = dpi(100), height = dpi(8), border_width = dpi(0),
+--     colors = {
+--         background = theme.applets_bg_1,
+--         unmute     = theme.applets_fg,
+--         mute       = theme.applets_bg_1,
+--     },
+-- })
+-- theme.volume.bar.paddings = dpi(0)
+-- theme.volume.bar.margins = dpi(5)
+-- local volumewidget = wibox.container.background(theme.volume.bar, theme.applets_bg_1, gears.shape.rect)
+-- volumewidget = wibox.container.margin(volumewidget, dpi(3), dpi(3), dpi(0), dpi(0))
 
--- Todo el widget de audio
-local wplayer = player()
-local wplayer = wibox.widget{
-  wplayer,
-  volumewidget,
-  layout = wibox.layout.fixed.horizontal
-} 
-local player_widget = wibox.container.background(wplayer, theme.applets_bg_1, gears.shape.rect)
-player_widget = wibox.container.margin(player_widget, dpi(2), dpi(2), dpi(2), dpi(2))
-player_widget = wibox.container.background(player_widget, theme.bg_normal, gears.shape.rect)
-player_widget = wibox.container.margin(player_widget, dpi(1), dpi(2), dpi(2), dpi(2))
+-- -- Todo el widget de audio
+-- local wplayer = player()
+-- local wplayer = wibox.widget{
+--   wplayer,
+--   volumewidget,
+--   layout = wibox.layout.fixed.horizontal
+-- } 
+-- local player_widget = wibox.container.background(wplayer, theme.applets_bg_1, gears.shape.rect)
+-- player_widget = wibox.container.margin(player_widget, dpi(2), dpi(2), dpi(2), dpi(2))
+-- player_widget = wibox.container.background(player_widget, theme.bg_normal, gears.shape.rect)
+-- player_widget = wibox.container.margin(player_widget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Launcher
 local mylauncher = awful.widget.button({ image = theme.mini_icon })

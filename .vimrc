@@ -67,11 +67,13 @@ set timeout                     " Retardo en las teclas para acceder una combina
 set ttimeout                    " No retardo en los mapeos de teclas
 set ttimeoutlen=100             " Milisegundos de retardo en las teclas
 " Tabuladores
-set tabstop=8                   " Convierte la tecla tab en 4 espacios
-set softtabstop=4
-set shiftwidth=4                " Se usan 4 espacios en lugar de tabuladores para indentar
-set expandtab
-" Status line, en nvim se sobre escribe por airline
+" set softtabstop=4
+set tabstop=2                   " Convierte la tecla tab en 4 espacios
+set shiftwidth=2                " Se usan 2 espacios en lugar de tabuladores para indentar
+set expandtab                   " Convierte los tabs en espacios
+" Para convertir tabs en espacios en documentos que tinen tabs, usar :retab
+
+" Status line, en nvim se sobre escribe por statusline 
 set statusline=%F[%m%r%h%w]%=%y[Hex\ %B][Lineas\ %L][%l,%v][%p%%]
 
 " Mapeos

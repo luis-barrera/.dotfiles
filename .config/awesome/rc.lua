@@ -52,19 +52,21 @@ end
 --  programas que corren en segundo plano como dropbox o pulseaudio
 local function run_once(cmd_arr)
   for _, cmd in ipairs(cmd_arr) do
-    awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+    -- awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+    -- For fish shell
+    awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || %s", cmd, cmd))
   end
 end
 
 run_once({
+  -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
+  -- "seahorse",
+  -- "light-locker", --deamon del display manager, necesario para suspender el equipo
+  -- "lxsession" -- Polkit, para software con GUI que requieren autentificación
   "flameshot", -- Screenshot
   "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
-  "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
   "parcellite -d", -- Daemon del clipboard
-  "syncthing-gtk", -- Software para sincronizar archivos entre dispositivos
-  -- "light-locker", --deamon del display manager, necesario para suspender el equipo
-  "lxsession" -- Polkit, para software con GUI que requieren autentificación
-  -- "seahorse",
+  "syncthing-gtk" -- Software para sincronizar archivos entre dispositivos
 })
 
 -- This function implements the XDG autostart specification
@@ -260,13 +262,13 @@ root.buttons(my_table.join(
 ----------------------------------------------------------------------------------
 globalkeys = my_table.join(
   -- Shortcut para reparar problema de pantalla negra después de hacer login
-  awful.key({ modkey,            }, "i", function() os.execute("xrandr --auto") end,
+  awful.key({ modkey,            }, "i", function() awful.spawn("xrandr --auto") end,
             {description = "Repara error despues de hacer login", group = "hotkeys"}),
   -- Screenshot
-  awful.key({ modkey,           }, "Print", function() os.execute("flameshot full -c -p ~/Imágenes/screenshots") end,
+  awful.key({ modkey,           }, "Print", function() awful.spawn("flameshot full -c -p /home/luisbarrera/screenshots") end,
             {description = "Screenshot", group = "hotkeys"}),
   -- Recorte de pantalla
-  awful.key({ modkey, "Shift"   }, "Print", function() os.execute("flameshot gui -p ~/Imágenes/screenshots") end,
+  awful.key({ modkey, "Shift"   }, "Print", function() awful.spawn("flameshot gui -p /home/luisbarrera/screenshots") end,
             {description = "Recorte de pantalla", group = "hotkeys"}),
 
   -- Navegación entre espacios
@@ -393,52 +395,49 @@ globalkeys = my_table.join(
             {description = "Mostrar minimizado", group = "client"}),
 
   -- Brillo de pantalla
-  awful.key({ }, "XF86MonBrightnessUp", function () os.execute("xbacklight -inc 5") end,
+  awful.key({ }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 5") end,
             {description = "Subir Brillo 5%", group = "hotkeys"}),
-  awful.key({ }, "XF86MonBrightnessDown", function () os.execute("xbacklight -dec 10") end,
+  awful.key({ }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end,
             {description = "Bajar Brillo 10%", group = "hotkeys"}),
 
-  -- Control de volumen y música
+  -- Control de música
   awful.key({ modkey, "Control" }, "Left", function ()
-              os.execute("playerctl --player=playerctld previous")
+              awful.spawn("playerctl --player=playerctld previous")
             end,
             {description = "Cancion Anterior", group = "media"}),
   awful.key({ modkey, "Control" }, "Right", function ()
-              os.execute("playerctl --player=playerctld next")
+              awful.spawn("playerctl --player=playerctld next")
             end,
             {description = "Cancion Siguiente", group = "media"}),
   awful.key({ modkey, "Control" }, "space", function ()
-              os.execute("playerctl --player=playerctld play-pause")
+              awful.spawn("playerctl --player=playerctld play-pause")
             end,
             {description = "Play - Pause", group = "media"}),
+
+  -- Control de Volumen 
   awful.key({ modkey, "Control" }, "Up", function ()
-              os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl up 2")
             end,
             {description = "Subir volumen", group = "media"}),
   awful.key({ modkey, "Control" }, "Down", function ()
-              os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl down 5")
             end,
             {description = "Bajar Volumen", group = "media"}),
+
   awful.key({ }, "XF86AudioRaiseVolume", function ()
-              os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl up 2")
             end,
             {description = "Subir volumen", group = "media"}),
   awful.key({ }, "XF86AudioLowerVolume", function ()
-              os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl down 5")
             end,
             {description = "Bajar Volumen", group = "media"}),
   awful.key({ }, "XF86AudioMute", function ()
-              os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl mute")
             end,
             {description = "Mute Sonido", group = "media"}),
   awful.key({ }, "XF86AudioMicMute", function ()
-              os.execute("amixer -q set Capture toggle")
-              beautiful.volume.update()
+              awful.spawn("pulseaudio-ctl mute-input")
             end,
             {description = "Mute micrófono", group = "media"}),
 
@@ -470,7 +469,7 @@ globalkeys = my_table.join(
   awful.key({ modkey,           }, "x", function () awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi") end,
             {description = "dmenu", group = "launcher"}),
   -- Menú de apagado
-  awful.key({ modkey,           }, "p", function () os.execute("sh $HOME/scripts/powermenu/powermenu.sh") end,
+  awful.key({ modkey,           }, "p", function () awful.spawn("sh $HOME/scripts/powermenu/powermenu.sh") end,
             {description = "Menú de Apagado", group = "hotkeys"})
 --[[
   -- Espacios Dinámicos

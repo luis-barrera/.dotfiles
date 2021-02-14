@@ -9,6 +9,7 @@
 local wibox    = require("wibox")
 local math     = math
 local string   = string
+local gears    = require("gears")
 local tostring = tostring
 
 local function factory(args)
@@ -22,7 +23,7 @@ local function factory(args)
     if not name or #name == 0 then return end
     name = (stoppable and name) or timeout
     if not timer_table[name] then
-      timer_table[name] = timer({ timeout = timeout })
+      timer_table[name] = gears.timer({ timeout = timeout })
       timer_table[name]:start()
     end
     timer_table[name]:connect_signal("timeout", fun)

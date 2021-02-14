@@ -13,4 +13,4 @@ printf "*********** Pushing Arduino ***********\n"
 /usr/bin/rclone sync -i --max-age 24h ~/Arduino gdrivemounted:mount/Archivo/Arduino && \
 
 printf "*********** Pushing drivesync ***********\n"
-/usr/bin/rclone sync -i --max-age 24h ~/drivesync gdrivemounted:mount/drivesync
+/usr/bin/rclone sync -i --max-age 24h ~/drivesync gdrivemounted:mount/drivesync && \
