@@ -32,5 +32,5 @@ source $HOME/.config/nvim/keys/which-key.vim                    " Muestra las co
 
 " Temas
 " source $HOME/.config/nvim/themes/material.vim
-" source $HOME/.config/nvim/themes/gruvbox.vim
-source $HOME/.config/nvim/themes/moonfly.vim
+source $HOME/.config/nvim/themes/gruvbox.vim
+" source $HOME/.config/nvim/themes/moonfly.vim
