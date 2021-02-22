@@ -95,8 +95,8 @@ local scrlocker    = "light-locker" -- Screenlocker
 
 awful.util.terminal = terminal -- Definimos terminal por defecto
 
-awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4"} -- Nombre de los espacios
-awful.util.tagnames_sec = {"a:s2", "s:s2", "d:s2"} -- Nombre de espacios en monitores extra
+awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "email", "cal", "vimwiki"} -- Nombre de los espacios
+awful.util.tagnames_sec = {"a-s2", "s-s2", "d-s2", "f-s2"} -- Nombre de espacios en monitores extra
 awful.layout.layouts = { -- Disposición de las ventanas
   lain.layout.cascade,
   awful.layout.suit.tile,
@@ -647,7 +647,7 @@ for i = 1, 4 do
               local screen = awful.screen.focused()
               local tag = screen.tags[i]
               if tag then
-                 tag:view_only()
+                tag:view_only()
               end
             end,
             descr_view),
@@ -674,6 +674,53 @@ for i = 1, 4 do
   awful.key({ modkey, "Control", "Shift" }, j, function ()
               if client.focus then
                 local tag = client.focus.screen.tags[i]
+                if tag then
+                  client.focus:toggle_tag(tag)
+                end
+              end
+            end,
+            descr_toggle_focus)
+  )
+end
+
+local arr = {'8', '9', '0'}
+for i = 1, 3 do
+  local j = arr[i]
+  local k = 8 + i
+  globalkeys = my_table.join(globalkeys,
+  -- Moverse a un espacio.
+  awful.key({ modkey }, j, function ()
+              local screen = awful.screen.focused()
+              local tag = screen.tags[k]
+              if tag then
+                 tag:view_only()
+              end
+            end,
+            descr_view),
+  -- Selecciona varios espacios
+  awful.key({ modkey, "Control" }, j, function ()
+              local screen = awful.screen.focused()
+              local tag = screen.tags[k]
+              if tag then
+                awful.tag.viewtoggle(tag)
+              end
+            end,
+            descr_toggle),
+  -- Mueve cliente a espacio
+  awful.key({ modkey, "Shift" }, j, function ()
+              if client.focus then
+                  local tag = screen.tags[k]
+                  if tag then
+                      client.focus:move_to_tag(tag)
+                  end
+              end
+            end,
+            descr_move),
+  -- Muestra cliente en espacio
+  awful.key({ modkey, "Control", "Shift" }, j, function ()
+              if client.focus then
+                -- local tag = client.focus.screen.tags[i]
+                local tag = screen.tags[k]
                 if tag then
                   client.focus:toggle_tag(tag)
                 end
