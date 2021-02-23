@@ -32,9 +32,9 @@ theme.default_dir                 = require("awful.util").get_themes_dir() .. "d
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
 theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
 -- Fuentes
-theme.font                        = "Iosevka Custom 9"
+theme.font                        = "JetBrains Mono 9"
 theme.player_font                 = "Hurmit Nerd Font Mono 10"
-theme.taglist_font                = "Iosevka Custom Bold 10"
+theme.taglist_font                = "JetBrains Mono Bold 10"
 -- Colores
 theme.fg_normal                   = "#FFFFFF"
 theme.fg_focus                    = "#f6832f"
@@ -44,12 +44,12 @@ theme.fg_urgent                   = "#f8ccae"
 theme.bg_urgent                   = "#f64a32"
 theme.fg_player                   = "#bedc87"
 -- Colores de los applets
-theme.applets_font                 = "Iosevka Custom 10"
+theme.applets_font                 = "JetBrains Mono 10"
 theme.applets_fg                  = "#000000"
 theme.applets_bg_1                = "#dd8a6f"
 theme.applets_bg_2                = "#bedc87"
 theme.applets_bg_3                = "#b8b5db"
-theme.bg_systray                  = theme.applets_bg_1 
+theme.bg_systray                  = theme.applets_bg_1
 theme.systray_icon_spacing        = dpi(2)
 theme.applets_spacing             = dpi(2)
 -- Bordes de clientes
@@ -66,7 +66,7 @@ theme.taglist_bg_empty            = "#000000"
 theme.taglist_spacing             = dpi(2)
 -- Configuración del tasklist
 theme.tasklist_fg_normal          = "#000000"
-theme.tasklist_bg_normal          = "#bedc87" 
+theme.tasklist_bg_normal          = "#bedc87"
 theme.tasklist_fg_focus           = "#000000"
 theme.tasklist_bg_focus           = "#f6832f"
 theme.tasklist_fg_urgent          = "#000000"
@@ -100,9 +100,9 @@ tray = wibox.container.background(tray, theme.bg_normal, gears.shape.rect)
 tray = wibox.container.margin(tray, dpi(1), dpi(2), dpi(2), dpi(2))
 
 ---- Batería
-local batteryarc = batteryarc({ 
+local batteryarc = batteryarc({
   font = theme.applets_font,
-  bg_color = theme.applets_bg_2 }) 
+  bg_color = theme.applets_bg_2 })
 batteryarc = wibox.container.background(batteryarc, theme.applets_bg_2, gears.shape.rect)
 batteryarc = wibox.container.margin(batteryarc, dpi(2), dpi(2), dpi(2), dpi(2))
 batteryarc = wibox.container.background(batteryarc, theme.bg_normal, gears.shape.rect)
