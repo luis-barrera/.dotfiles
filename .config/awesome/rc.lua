@@ -414,7 +414,7 @@ globalkeys = my_table.join(
             end,
             {description = "Play - Pause", group = "media"}),
 
-  -- Control de Volumen 
+  -- Control de Volumen
   awful.key({ modkey, "Control" }, "Up", function ()
               awful.spawn("pulseaudio-ctl up 2")
             end,
@@ -709,7 +709,7 @@ for i = 1, 3 do
   -- Mueve cliente a espacio
   awful.key({ modkey, "Shift" }, j, function ()
               if client.focus then
-                  local tag = screen.tags[k]
+                  local tag = client.focus.screen.tags[k]
                   if tag then
                       client.focus:move_to_tag(tag)
                   end
@@ -719,8 +719,8 @@ for i = 1, 3 do
   -- Muestra cliente en espacio
   awful.key({ modkey, "Control", "Shift" }, j, function ()
               if client.focus then
-                -- local tag = client.focus.screen.tags[i]
-                local tag = screen.tags[k]
+                local tag = client.focus.screen.tags[k]
+                -- local tag = screen.tags[k]
                 if tag then
                   client.focus:toggle_tag(tag)
                 end
