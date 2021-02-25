@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 printf "*********** Pushing Notas ***********\n"
 /usr/bin/rclone sync --max-age 24h ~/Notas gdrivemounted:mount/Notas && \

@@ -13,4 +13,4 @@ printf "*********** Pulling Arduino ***********\n"
 /usr/bin/rclone sync -i gdrivemounted:mount/Archivo/Arduino ~/Arduino && \
 
 printf "*********** Pulling drivesync ***********\n"
-/usr/bin/rclone sync -i gdrivemounted:mount/drivesync ~/drivesync 
+/usr/bin/rclone sync -i gdrivemounted:mount/drivesync ~/drivesync
