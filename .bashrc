@@ -33,3 +33,6 @@ codi() {
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
+
+# Java for Flutter
+JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'

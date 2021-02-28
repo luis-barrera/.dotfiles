@@ -32,9 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'honza/vim-snippets'                           " Snippets para varios lenguajes
     Plug 'marcweber/vim-addon-mw-utils'                 " Dependencia para snipmate
     Plug 'tomtom/tlib_vim'                              " Dependencia para snipmate
-" Si hay problemas para instalar snipmate por primera vez, comentar la linea de snipmate para instalar primero sus dependencias
+    " Si hay problemas para instalar snipmate por primera vez, comentar la linea de snipmate para instalar primero sus dependencias
     Plug 'garbas/vim-snipmate'                          " Plugin para usar snippets
-
     Plug 'tpope/vim-commentary'                         " Comentarios con el keymap gcc
     Plug 'vimwiki/vimwiki'                              " Vim Wiki
     Plug 'neoclide/coc.nvim', {'branch': 'release'}     " Autocompletado
@@ -51,6 +50,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'mbbill/undotree'                              " <F5> para ver historial cosas borradas
     Plug 'junegunn/goyo.vim'                            " nvim sin distracciones
     Plug 'lervag/vimtex'                                " Soporte para latex
+    Plug 'chaoren/vim-wordmotion'                       " Detectar mejor las palabras al usar w, e & b
+    Plug 'zivyangll/git-blame.vim'                      " git-blame
 
     " Themes
     Plug 'itchyny/lightline.vim'

@@ -95,7 +95,7 @@ local scrlocker    = "light-locker" -- Screenlocker
 
 awful.util.terminal = terminal -- Definimos terminal por defecto
 
-awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "email", "cal", "vimwiki"} -- Nombre de los espacios
+awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "email/cal", "tlgrm", "vimwiki"} -- Nombre de los espacios
 awful.util.tagnames_sec = {"a-s2", "s-s2", "d-s2", "f-s2"} -- Nombre de espacios en monitores extra
 awful.layout.layouts = { -- Disposición de las ventanas
   lain.layout.cascade,

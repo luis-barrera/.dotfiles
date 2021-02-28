@@ -27,7 +27,7 @@ source $HOME/.config/nvim/plug-config/nvim-colorizer.vim        " Resalta el col
 source $HOME/.config/nvim/plug-config/undotree.vim              " Linea del tiempo de todo el historial de undo
 source $HOME/.config/nvim/plug-config/snipmate.vim              " Snippet Snippets
 source $HOME/.config/nvim/plug-config/lightline.vim             " Statusline
-source $HOME/.config/nvim/plug-config/goyo.vim                  " Goyo 
+source $HOME/.config/nvim/plug-config/goyo.vim                  " Goyo
 source $HOME/.config/nvim/keys/which-key.vim                    " Muestra las combinaciones de teclas de la barra esp.
 
 " Temas
