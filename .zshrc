@@ -75,7 +75,7 @@ HIST_STAMPS="dd.mm.yyyy"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages git-auto-fetch gitfast git-prompt virtualenv)
+plugins=(git colored-man-pages git-auto-fetch gitfast git-prompt virtualenv zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,7 +118,8 @@ alias xmwm="nvim ~/.xmonad/xmonad.hs"
 # Corre Script para usar un monitor
 alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
-alias twoscreens="sh ~/scripts/twoscreenslayout.sh"
+alias rightscreen="sh ~/scripts/rightscreen.sh"
+alias leftscreen="sh ~/scripts/leftscreen.sh"
 # Abre jupyter notebook
 alias jn="jupyter-notebook"
 alias jl="jupyter-lab"
@@ -210,3 +211,9 @@ codi() {
 
 # nvim como lector de manpages
 export MANPAGER="nvim -c 'set ft=man' -"
+
+# Flutter
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+# export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+# export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.xml.bind'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
