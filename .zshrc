@@ -160,6 +160,7 @@ alias images="viewnior ./"
 # Abre el stream de lofi en mpv
 alias lofi="mpv https://youtu.be/5qap5aO4i9A"
 alias jrap="mpv https://youtu.be/Ii-_EtWBVSM"
+alias whitenoise="mpv https://youtu.be/nMfPqeZjc2c"
 # Siguiendo el meme
 alias l='ls'
 alias s='ls'
