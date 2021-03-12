@@ -59,10 +59,10 @@ local function run_once(cmd_arr)
 end
 
 run_once({
-  -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
   -- "seahorse",
   -- "light-locker", --deamon del display manager, necesario para suspender el equipo
   -- "lxsession" -- Polkit, para software con GUI que requieren autentificación
+  -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
   "flameshot", -- Screenshot
   "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
   "parcellite -d", -- Daemon del clipboard
@@ -466,7 +466,8 @@ globalkeys = my_table.join(
   awful.key({ modkey, "Shift"   }, "x", function () awful.spawn("rofi -show keys") end,
             {description = "Mostrar keys extras", group = "launcher"}),
   -- Menú ROFI
-  awful.key({ modkey,           }, "x", function () awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi") end,
+  -- awful.key({ modkey,           }, "x", function () awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi") end,
+  awful.key({ modkey,           }, "x", function () awful.spawn("rofi -show combi") end,
             {description = "dmenu", group = "launcher"}),
   -- Menú de apagado
   awful.key({ modkey,           }, "p", function () awful.spawn("sh $HOME/scripts/powermenu/powermenu.sh") end,
