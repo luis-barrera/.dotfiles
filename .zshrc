@@ -149,18 +149,22 @@ grabar() {
   fi
 }
 # Ejecutar jamovi
-alias jamovi="flatpak run org.jamovi.jamovi"
+# alias jamovi="flatpak run org.jamovi.jamovi"
 # Ejecutar news flash
-alias rss="flatpak run com.gitlab.newsflash"
+# alias rss="flatpak run com.gitlab.newsflash"
 # Pull de varias carpetas locales a remoto de google drive
 alias gpull="sh $HOME/scripts/gpull.sh"
 alias gpush="sh $HOME/scripts/gpush.sh"
 # Ver imágenes en el directorio actual
 alias images="viewnior ./"
 # Abre el stream de lofi en mpv
-alias lofi="mpv https://youtu.be/5qap5aO4i9A"
-alias jrap="mpv https://youtu.be/Ii-_EtWBVSM"
-alias whitenoise="mpv https://youtu.be/nMfPqeZjc2c"
+# Utiliza youtube-dl para obtener una calidad no tan alta, por defecto se usa la mejor calidad posible
+# Para obtener el codigo del formato, usar youtube-dl --list-formats <URL>
+alias lofi="mpv --ytdl-format=94 https://youtu.be/5qap5aO4i9A"
+# Reproduce sonidos de ruido blanco desde youtube
+alias whitenoise="mpv --ytdl-format=251 https://youtu.be/nMfPqeZjc2c"
+# Reproduce sonidos relajantes de la selva
+alias relax="mpv --ytdl-format=251 https://youtu.be/cjkFG6bHGNc"
 # Siguiendo el meme
 alias l='ls'
 alias s='ls'
