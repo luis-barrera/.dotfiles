@@ -95,7 +95,8 @@ local scrlocker    = "light-locker" -- Screenlocker
 
 awful.util.terminal = terminal -- Definimos terminal por defecto
 
-awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "email/cal", "tlgrm", "vimwiki"} -- Nombre de los espacios
+-- Nombre de los espacios
+awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "bpytop", "em/cl", "tlgrm", "vimwiki"}
 awful.util.tagnames_sec = {"a-s2", "s-s2", "d-s2", "f-s2"} -- Nombre de espacios en monitores extra
 awful.layout.layouts = { -- Disposición de las ventanas
   lain.layout.cascade,
@@ -684,8 +685,8 @@ for i = 1, 4 do
   )
 end
 
-local arr = {'8', '9', '0'}
-for i = 1, 3 do
+local arr = {'7', '8', '9', '0'}
+for i = 1, 4 do
   local j = arr[i]
   local k = 8 + i
   globalkeys = my_table.join(globalkeys,
