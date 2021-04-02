@@ -53,7 +53,7 @@ theme.bg_systray                  = theme.applets_bg_1
 theme.systray_icon_spacing        = dpi(2)
 theme.applets_spacing             = dpi(2)
 -- Bordes de clientes
-theme.border_width                = dpi(1)
+theme.border_width                = dpi(2)
 theme.border_normal               = "#000000"
 theme.border_focus                = "#f6832f"
 -- Configuración del taglist
