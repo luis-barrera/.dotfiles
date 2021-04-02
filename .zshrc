@@ -176,6 +176,14 @@ alias sll='ls'
 alias sls='ls'
 # Kittens, plugins para kitty
 # alias ssh='kitty +kitten ssh'
+# Abrir archivos de la escuela en zathura
+alias horario="zathura ~/Trim-7/horario_final.pdf"
+alias caluam="zathura ~/Trim-7/Calendario_UAM.pdf"
+alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
+alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
+alias flutterbook="zathura ~/Cosas_por_hacer/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
+# Abrir AppImages
+alias pizarron="~/AppImages/OpenBoard-4fca3a6-x86_64.AppImage"
 
 # source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
@@ -222,3 +230,6 @@ export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 # export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 # export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.xml.bind'
 export ANDROID_SDK_ROOT='/opt/android-sdk'
+
+export EDITOR='nvim'
+export VISUAL='nvim'
