@@ -63,6 +63,7 @@ run_once({
   -- "light-locker", --deamon del display manager, necesario para suspender el equipo
   -- "lxsession" -- Polkit, para software con GUI que requieren autentificación
   -- "picom -b", -- Daemon del compositor, permite transparencia en algunas ventanas
+  "nm-applet",
   "flameshot", -- Screenshot
   "unclutter", -- Oculta el cursor después de no usarlo por un tiempo
   "parcellite -d", -- Daemon del clipboard
@@ -96,7 +97,7 @@ local scrlocker    = "light-locker" -- Screenlocker
 awful.util.terminal = terminal -- Definimos terminal por defecto
 
 -- Nombre de los espacios
-awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "bpytop", "em/cl", "tlgrm", "vimwiki"}
+awful.util.tagnames = {"home", "web", "terminal", "music", "1", "2", "3", "4", "5", "cal", "email", "vimwiki"}
 awful.util.tagnames_sec = {"a-s2", "s-s2", "d-s2", "f-s2"} -- Nombre de espacios en monitores extra
 awful.layout.layouts = { -- Disposición de las ventanas
   lain.layout.cascade,
@@ -587,10 +588,10 @@ clientkeys = my_table.join(
 )
 
 -- Asigna espacios a teclas de numeros
-for i = 1, 4 do
+for i = 1, 5 do
   -- Crea entradas en pantalla de ayuda
   local descr_view, descr_toggle, descr_move, descr_toggle_focus
-  if i == 1 or i == 4 then
+  if i == 1 or i == 5 then
     descr_view = {description = "Ver #", group = "tag"}
     descr_toggle = {description = "Seleccionar #", group = "tag"}
     descr_move = {description = "Mover cliente a #", group = "tag"}
@@ -685,10 +686,10 @@ for i = 1, 4 do
   )
 end
 
-local arr = {'7', '8', '9', '0'}
-for i = 1, 4 do
+local arr = {'8', '9', '0'}
+for i = 1, 3 do
   local j = arr[i]
-  local k = 8 + i
+  local k = 9 + i
   globalkeys = my_table.join(globalkeys,
   -- Moverse a un espacio.
   awful.key({ modkey }, j, function ()
