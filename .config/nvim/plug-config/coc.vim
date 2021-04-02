@@ -21,11 +21,11 @@ let g:coc_global_extensions = [
     \ 'coc-sh',
     \ 'coc-snippets',
     \ 'coc-svg',
-    \ 'coc-tabnine',
     \ 'coc-texlab',
     \ 'coc-todolist',
     \ 'coc-marketplace',
     \ ]
+    " \ 'coc-tabnine',
 
 " Con <tab> se lanza el menú de autocompletado
 inoremap <silent><expr> <tab>
