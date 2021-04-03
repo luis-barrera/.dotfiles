@@ -32,9 +32,9 @@ theme.default_dir                 = require("awful.util").get_themes_dir() .. "d
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
 theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/bosque.jpg"
 -- Fuentes
-theme.font                        = "JetBrains Mono 9"
+theme.font                        = "JetBrainsMono Nerd Font 9"
 theme.player_font                 = "Hurmit Nerd Font Mono 10"
-theme.taglist_font                = "JetBrains Mono Bold 10"
+theme.taglist_font                = "JetBrainsMono Nerd Font Bold 10"
 -- Colores
 theme.fg_normal                   = "#FFFFFF"
 theme.fg_focus                    = "#f6832f"
@@ -44,7 +44,7 @@ theme.fg_urgent                   = "#f8ccae"
 theme.bg_urgent                   = "#f64a32"
 theme.fg_player                   = "#bedc87"
 -- Colores de los applets
-theme.applets_font                 = "JetBrains Mono 10"
+theme.applets_font                 = "JetBrainsMono Nerd Font 10"
 theme.applets_fg                  = "#000000"
 theme.applets_bg_1                = "#dd8a6f"
 theme.applets_bg_2                = "#bedc87"
@@ -76,11 +76,11 @@ theme.tasklist_shape_border_color = "#000000"
 theme.tasklist_shape_border_width = dpi(2)
 theme.tasklist_spacing            = dpi(2)
 theme.tasklist_plain_task_name    = false
-theme.tasklist_disable_icon       = true
+theme.tasklist_disable_icon       = false
 -- Iconos
 theme.mini_icon                   = os.getenv("HOME") .. "/Imágenes/icon.png"
 -- Padding de los clientes
-theme.useless_gap                 = dpi(7)
+theme.useless_gap                 = dpi(4)
 -- Separador
 local separator = wibox.widget.textbox('  ')
 
@@ -138,7 +138,7 @@ theme.cal = calnot({
 -- CPU
 local cpu = wcpu({
   settings = function()
-    widget:set_markup( markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
+    widget:set_markup( markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
   end
 })
 local cpubg = wibox.container.background(cpu.widget, theme.applets_bg_2, gears.shape.rect)
@@ -215,9 +215,9 @@ function theme.at_screen_connect(s)
 
     -- Widget que muestra las aplicaciones en cada espacio
     mytasklist = awful.widget.tasklist(s,
-                                        awful.widget.tasklist.filter.currenttags,
-                                        awful.util.tasklist_buttons
-                                        )
+      awful.widget.tasklist.filter.currenttags,
+      awful.util.tasklist_buttons
+      )
     s.mytasklist = wibox.container.margin(mytasklist, dpi(2), dpi(2), dpi(2), dpi(2))
     --s.mytasklist = wibox.container.background(s.mytasklist, theme.bg_focus, gears.shape.rect)
     --s.mytasklist = wibox.container.margin(s.mytasklist, dpi(3), dpi(3), dpi(2), dpi(2))
