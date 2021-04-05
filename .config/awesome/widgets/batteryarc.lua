@@ -32,8 +32,9 @@ local function worker(args)
   local bg_color = args.bg_color
   local low_level_color = "#e53935"
   local medium_level_color = "#ffac20"
-  local charging_color = "#5d88da"
-  local default_color = "#000000" 
+  local charging_color = "#79E7FF"
+  -- local default_color = "#000000" 
+  local default_color = "#FFFFFF" 
 
   local warning_msg_title = 'Houston, we have a problem'
   local warning_msg_text = 'Battery is dying'
