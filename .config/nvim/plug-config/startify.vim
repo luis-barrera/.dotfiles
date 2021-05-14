@@ -12,7 +12,7 @@ let g:startify_custom_header = [
 
 " El plugin permite guardar los buffers abiertos con :SSave y restituirlos con :SLoad
 " Aquí está el directorio que guarda las sesiones
-let g:startify_session_dir = '~/.config/nvim/session'
+" let g:startify_session_dir = '~/.config/nvim/session'
 
 " Nombres de las secciones
 let g:startify_lists = [

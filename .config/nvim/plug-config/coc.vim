@@ -1,5 +1,5 @@
 " Plugin para autocompletado
-"  Lenguajes a mostrar autocompletado
+" Lenguajes a mostrar autocompletado
 let g:coc_global_extensions = [
     \ 'coc-clangd',
     \ 'coc-css',

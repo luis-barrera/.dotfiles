@@ -12,7 +12,7 @@ let g:which_key_sep = '→'
 let g:which_key_hspace = 2
 " Muestra los mapeos en la ventana de comandos, en la parte inferior
 let g:which_key_use_floating_win = 0
-" Colores 
+" Colores
 highlight default link WhichKey          Operator
 highlight default link WhichKeySeperator DiffAdded
 highlight default link WhichKeyGroup     Identifier

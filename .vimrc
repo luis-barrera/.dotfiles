@@ -1,4 +1,3 @@
-
 "   _   __(_)___ ___  __________
 "  | | / / / __ `__ \/ ___/ ___/
 " _| |/ / / / / / / / /  / /__
@@ -73,22 +72,27 @@ set shiftwidth=2                " Se usan 2 espacios en lugar de tabuladores par
 set expandtab                   " Convierte los tabs en espacios
 " Para convertir tabs en espacios en documentos que tinen tabs, usar :retab
 
-" Status line, en nvim se sobre escribe por statusline 
+" Status line, en nvim se sobre escribe por statusline
 set statusline=%F[%m%r%h%w]%=%y[Hex\ %B][Lineas\ %L][%l,%v][%p%%]
+
 
 " Mapeos
 " Tecla leader
 let mapleader = "<space>"
+
 " Quitar el resaltado en los resultados de las busquedas
 nnoremap <F3> :set hlsearch!<CR>
+
 " Guardar en modo sudo
 cmap w!! w !sudo tee % >/dev/null
+
 " Entra al modo normal si pulsamos rápidamente j+k o k+j
-inoremap <expr> <c-j> ("\<C-n>")
-inoremap <expr> <c-k> ("\<C-p>")
+" inoremap <expr> <c-j> ("\<C-n>")
+" inoremap <expr> <c-k> ("\<C-p>")
+
 " Copy&paste con las teclas que se usan regularmente, se tiene que instalar el paquete xsel
-inoremap <C-v> <ESC>"+pa
-vnoremap <C-c> "+y
-vnoremap <C-d> "+d
+" vnoremap <C-c> <ESC>"+y
+" inoremap <C-v> "+p
+" vnoremap <C-d> "+d
 
 colorscheme industry
