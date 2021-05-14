@@ -6,3 +6,8 @@ xset r rate 200 60 &
 light-locker &
 redshift &
 pcloud &
+flameshot &
+parcellite -d &
+syncthing-gtk &
+# unclutter &
+# picom -b &
