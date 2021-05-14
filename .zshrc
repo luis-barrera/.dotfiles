@@ -120,6 +120,7 @@ alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
 alias rightscreen="sh ~/scripts/rightscreen.sh"
 alias leftscreen="sh ~/scripts/leftscreen.sh"
+alias upscreen="sh ~/scripts/upscreen.sh"
 # Abre jupyter notebook
 alias jn="jupyter-notebook"
 alias jl="jupyter-lab"
@@ -184,6 +185,19 @@ alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Cosas_por_hacer/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
 # Abrir AppImages
 alias pizarron="~/AppImages/OpenBoard-4fca3a6-x86_64.AppImage"
+# Abrir nvim en VimWiki
+alias vimwiki="nvim -c VimwikiIndex"
+alias wiki="nvim -c VimwikiIndex"
+# Alias a oneliners
+alias toimg="convert label:@- process.png" # después de un comando, hacer pip a este alias covierte la salida a una imágen
+alias ipdir="curl ipinfo.io" # Muestra la ip
+alias contribuidores="git log --format='%aN' | sort -u" # Muestra ordenandamente los contribuidores de un repo git
+alias common-comands="history | awk '{print $2}' | sort | uniq -c | sort -rn | head" # Comandos más comunes
+alias lsd="ls -d */" # Lista solo los directorios
+alias bigger-dirs="du -hs */ | sort -hr | head" # Lista los directorios más grandes
+alias internet-inspect="ss -p" # Muestra las apps que están usando internet
+# alias rm-excepto="rm -f !(test.txt)" # Borra todos los archivos, excepto el que le demos
+alias basic-server="python3 -m http.server" # Crea un server básico para poder compartir archivos sobre la red
 
 # source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
