@@ -35,4 +35,6 @@ codi() {
 alias ls='ls --color=auto'
 
 # Java for Flutter
-JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+# JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+
+export ANDROID_SDK_ROOT=/home/luisbarrera/Android/Sdk
