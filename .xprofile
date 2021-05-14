@@ -1,0 +1,8 @@
+# set key repeat rate. delay 200 milisecond, 60 per sec
+xset r rate 200 60 &
+
+# Autostart después del display server y antes del WM
+# xcompmgr &
+light-locker &
+redshift &
+pcloud &
