@@ -30,13 +30,13 @@ local theme                       = {}
 theme.default_dir                 = require("awful.util").get_themes_dir() .. "default"
 -- theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/fondo2.png"
 theme.wallpaper                   = os.getenv("HOME") .. "/Imágenes/suitsat1_nasa_2008.jpg"
-theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/suitsat1_nasa_2008.jpg"
+theme.wallpaper2                  = os.getenv("HOME") .. "/Imágenes/Caspar_David_Friedrich-Wanderer_above_the_sea_of_fog.jpg"
 -- Fuentes
 theme.font                        = "JetBrainsMono Nerd Font 9"
 theme.player_font                 = "Hurmit Nerd Font Mono 10"
 theme.taglist_font                = "JetBrainsMono Nerd Font Bold 10"
 -- Colores
-theme.fg_normal                   = "#FFFFFF"
+theme.fg_normal                   = "#EEEEEE"
 theme.bg_normal                   = "#000000"
 theme.fg_focus                    = "#79E7FF"
 theme.bg_focus                    = "#000000"
@@ -44,7 +44,7 @@ theme.fg_urgent                   = "#000000"
 theme.bg_urgent                   = "#f64a32"
 -- Colores de los applets
 theme.applets_font                 = "JetBrainsMono Nerd Font 10"
-theme.applets_fg                  = "#FFFFFF"
+theme.applets_fg                  = "#EEEEEE"
 theme.applets_bg_1                = "#000000"
 theme.applets_bg_2                = "#000000"
 theme.applets_bg_3                = "#000000"
@@ -55,28 +55,29 @@ theme.fg_player                   = "#bedc87"
 -- Bordes de clientes
 theme.border_width                = dpi(2)
 theme.border_normal               = "#000000"
-theme.border_focus                = "#FFFFFF"
+theme.border_focus                = "#EEEEEE"
 -- Configuración del taglist
 theme.taglist_fg_focus            = "#000000"
 theme.taglist_bg_focus            = "#79E7FF"
 theme.taglist_fg_occupied         = "#000000"
-theme.taglist_bg_occupied         = "#FFFFFF"
+theme.taglist_bg_occupied         = "#EEEEEE"
 theme.taglist_bg_empty            = "#000000"
 theme.taglist_bg_urgent           = "#f64a32"
 theme.taglist_spacing             = dpi(4)
 -- Configuración del tasklist
 theme.tasklist_fg_normal          = "#000000"
-theme.tasklist_bg_normal          = "#FFFFFF"
+theme.tasklist_bg_normal          = "#EEEEEE"
 theme.tasklist_fg_focus           = "#000000"
-theme.tasklist_bg_focus           = "#79E7FF"
+theme.tasklist_bg_focus           = "#C9F5FF"
 theme.tasklist_fg_urgent          = "#000000"
 theme.tasklist_bg_urgent          = "#f64a32"
 theme.tasklist_shape              = gears.shape.rectangle
-theme.tasklist_shape_border_color = "#FFFFFF"
-theme.tasklist_shape_border_width = dpi(0)
+-- theme.tasklist_shape_border_color = "#EEEEEE"
+theme.tasklist_shape_border_color = "#000000"
+theme.tasklist_shape_border_width = dpi(2)
 theme.tasklist_spacing            = dpi(4)
 theme.tasklist_plain_task_name    = false
-theme.tasklist_disable_icon       = false
+theme.tasklist_disable_icon       = true
 -- Iconos
 theme.mini_icon                   = os.getenv("HOME") .. "/Imágenes/icon.png"
 -- Padding de los clientes
@@ -179,7 +180,7 @@ networkwidget = wibox.container.margin(networkwidget, dpi(1), dpi(2), dpi(2), dp
 --   wplayer,
 --   volumewidget,
 --   layout = wibox.layout.fixed.horizontal
--- } 
+-- }
 -- local player_widget = wibox.container.background(wplayer, theme.applets_bg_1, gears.shape.rect)
 -- player_widget = wibox.container.margin(player_widget, dpi(2), dpi(2), dpi(2), dpi(2))
 -- player_widget = wibox.container.background(player_widget, theme.bg_normal, gears.shape.rect)

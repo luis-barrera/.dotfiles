@@ -47,24 +47,29 @@ end
 ------------
 -- This function is executed once, the first time you enter the WM. It's useful for demons and application
 --    that runs in the background.
+--[[
 local function run_once(cmd_arr)
   for _, cmd in ipairs(cmd_arr) do
     awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || %s", cmd, cmd))
     -- awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
   end
 end
+--]]
 
+-- Los programas que se iniciaban con est cuenta fueron movidos a .xprofile
+--[[
 run_once({
-  -- "seahorse",
-  -- "light-locker", -- Display manager's Daemon, necessary for suspend your laptop
-  -- "lxsession" -- Polkit, used by software that needs authentication
-  -- "picom -b", -- Compositor's Daemon, allows transparency in some windows (clients)
+  "seahorse",
+  "light-locker", -- Display manager's Daemon, necessary for suspend your laptop
+  "lxsession" -- Polkit, used by software that needs authentication
+  "picom -b", -- Compositor's Daemon, allows transparency in some windows (clients)
   "nm-applet", -- NetworkManager applet, usefull to easily connect to a network
   "flameshot", -- Software used to take Screenshots
   "unclutter", -- Hides the cursor when is not used
   "parcellite -d", -- Clipboard software
   "syncthing-gtk" -- Simple Local Network File Sync Software
 })
+--]]
 
 -- This function implements the XDG autostart specification
 --[[
@@ -384,16 +389,16 @@ globalkeys = my_table.join(
   awful.key({ }, "XF86AudioMute", function()
     awful.spawn("pulseaudio-ctl mute")
   end, {description = "Mute Sonido", group = "media"}),
-  awful.key({ }, "XF86AudioMicMute", function()
-    awful.spawn("pulseaudio-ctl mute-input")
-  end, {description = "Mute micrófono", group = "media"}),
+  -- awful.key({ }, "XF86AudioMicMute", function()
+    -- awful.spawn("pulseaudio-ctl mute-input")
+  -- end, {description = "Mute micrófono", group = "media"}),
 
   -- Muestra la configuración del teclado
-  awful.key({ modkey, "Shift" }, "z", hotkeys_popup.show_help, {description = "Muestra esta pantalla", group="awesome"}),
+  -- awful.key({ modkey, "Shift" }, "z", hotkeys_popup.show_help, {description = "Muestra esta pantalla", group="awesome"}),
 
   -- Ajustes de Awesome
   awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
-  awful.key({ modkey, "Control" }, "o", awesome.quit, {description = "Cerrar Sesión", group = "awesome"}),
+  awful.key({ modkey, "Control" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
 
   -- Abrir Firefox
   awful.key({ modkey, "Shift" }, "b", function()
