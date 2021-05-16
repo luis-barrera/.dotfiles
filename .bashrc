@@ -38,3 +38,6 @@ alias ls='ls --color=auto'
 # JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 
 export ANDROID_SDK_ROOT=/home/luisbarrera/Android/Sdk
+
+# JavaFX
+export PATH_TO_FX=/home/luisbarrera/eclipse-ws-java/javafx-sdk-16/lib
