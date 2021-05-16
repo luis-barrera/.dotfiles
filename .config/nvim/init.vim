@@ -8,16 +8,20 @@
 source $HOME/.vimrc
 
 " General Settings
-""""""""""""""""""
+" ----------------
 " Configuración de Plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
 " Mapeos de teclas
 source $HOME/.config/nvim/keys/mappings.vim
 
-" Configuración de algunos plugins, hay algunos plugin que no necesitan configuración
-""""""""""""""""""
-" Autocompletado
+" Snippets personales
+source $HOME/.config/nvim/snippets/snippet-config.vim
+
+" Configuración de algunos plugins, hay algunos plugin que no necesitan
+"   configuración
+" ---------------------------------------------------------------------
+" LSP nativo, a partir de NeoVim 5.0
 source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 luafile $HOME/.config/nvim/plug-config/compe.lua
 source $HOME/.config/nvim/plug-config/vsnip.vim

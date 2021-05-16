@@ -16,8 +16,8 @@ inoremap kj <Esc>
 nnoremap <silent> <C-c> <Esc>
 
 " Navegar entre las recomendaciones de autocompletado
-inoremap <expr> <C-j> ("\<C-n>")
-inoremap <expr> <C-k> ("\<C-p>")
+" inoremap <expr> <Tab> ("\<C-n>")
+" inoremap <expr> <S-Tab> ("\<C-p>")
 
 " Indentar en NORMAL-mode
 vnoremap < <gv
@@ -36,10 +36,8 @@ nnoremap <silent> <C-s> :w<CR>
 nnoremap <silent> <C-Q> :wq!<CR>
 
 " Mejor movimiento entre lineas recortadas por el largo de ventana
-inoremap <silent> j <C-o>gj
-inoremap <silent> k <C-o>gk
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
-" Leader Key, usar Space para hacer combinaciones de teclas
+" LeaderKey, usar Space para hacer combinaciones de teclas
 let mapleader=" "
