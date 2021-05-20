@@ -40,7 +40,7 @@ set encoding=utf-8
 set iskeyword+=-,_
 
 " Desactiva el swapfile, en este archivo se guardan copias de seguridad
-set noswapfile                  
+set noswapfile
 " Directorio donde guarda el archivo de respaldo
 set undodir=~/.vim/undo-dir
 " Activa un archivo de respaldo
@@ -65,10 +65,10 @@ set incsearch
 " Resalta los resultados de busqueda
 set hlsearch!
 
-" Retroceder en autoindentado, fin de linea o nueva linea
-set backspace=indent,eol,start
 " Sigue la indentacion de la linea anterior
 set autoindent
+" Retroceder en autoindentado, fin de linea o nueva linea
+set backspace=indent,eol,start
 " Que el cursor se ponga sobre el primer char de la linea
 set nostartofline
 
@@ -128,17 +128,24 @@ set timeout
 " No retardo en los mapeos de teclas
 set ttimeout
 " Milisegundos de retardo en las teclas
-set ttimeoutlen=100
+set ttimeoutlen=10
 
 " Convierte la tecla tab en 4 espacios
-set tabstop=8
+set tabstop=4
 " Detecta mejor si varios espacios son un TAB al momento de borrar
 set softtabstop=2
 " Se usan 2 espacios en lugar de tabuladores para indentar
 set shiftwidth=2
 " Convierte los tabs en espacios
 set noexpandtab
-" Para convertir tabs en espacios en documentos que tinen tabs, usar :retab
+" Al insertar un TAB después de texto, inserta los 2 espacios
+set smarttab
+" Para convertir tabs en espacios en documentos que tienen tabs, usar :retab
+
+" Desactiva que se inserte una linea de comentario si hacemos ^O o ^o en una
+" linea comentada, es un comportamiento que, en lo personal, me disgusta
+set formatoptions-=o
+autocmd FileType * set formatoptions-=o
 
 " Mapeos y comandos
 " ------

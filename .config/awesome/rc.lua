@@ -218,21 +218,21 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "Right", awful.tag.viewnext, {description = "Espacio siguiente", group = "tag"}),
   awful.key({ modkey }, "Escape", awful.tag.history.restore, {description = "Espacio anterior", group = "tag"}),
 
-  -- Navegación entre espacios no vacios
-  awful.key({ altkey }, "Left", function()
-    lain.util.tag_view_nonempty(-1)
-  end, {description = "Espacio no vacío anterior", group = "tag"}),
-  awful.key({ altkey }, "Right", function()
-    lain.util.tag_view_nonempty(1)
-  end, {description = "Espacio no vacío siguiente", group = "tag"}),
+  -- -- Navegación entre espacios no vacios
+  -- awful.key({ altkey }, "Left", function()
+  --   lain.util.tag_view_nonempty(-1)
+  -- end, {description = "Espacio no vacío anterior", group = "tag"}),
+  -- awful.key({ altkey }, "Right", function()
+  --   lain.util.tag_view_nonempty(1)
+  -- end, {description = "Espacio no vacío siguiente", group = "tag"}),
 
   -- Navegación entre clientes por indice
-  awful.key({ altkey }, "j", function()
-    awful.client.focus.byidx(1)
-  end, {description = "Siguiente por indice", group = "client"}),
-  awful.key({ altkey }, "k", function()
-    awful.client.focus.byidx(-1)
-  end, {description = "Anterior por indice", group = "client"}),
+  -- awful.key({ altkey }, "j", function()
+  --   awful.client.focus.byidx(1)
+  -- end, {description = "Siguiente por indice", group = "client"}),
+  -- awful.key({ altkey }, "k", function()
+  --   awful.client.focus.byidx(-1)
+  -- end, {description = "Anterior por indice", group = "client"}),
 
   -- Navegación entre clientes por dirección
   awful.key({ modkey }, "j", function()

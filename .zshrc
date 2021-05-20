@@ -198,6 +198,8 @@ alias bigger-dirs="du -hs */ | sort -hr | head" # Lista los directorios más gra
 alias internet-inspect="ss -p" # Muestra las apps que están usando internet
 # alias rm-excepto="rm -f !(test.txt)" # Borra todos los archivos, excepto el que le demos
 alias basic-server="python3 -m http.server" # Crea un server básico para poder compartir archivos sobre la red
+# Sustituir ls con exa
+alias la="exa -la"
 
 # source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
