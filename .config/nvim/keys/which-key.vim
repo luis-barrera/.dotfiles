@@ -1,6 +1,6 @@
 " Muestra los keymaps relacionados a la barra espaciadora (leader key)
 
-" Agregamos la barra espaciadora para que lance el menu de comandos de teclas 
+" Agregamos la barra espaciadora para que lance el menu de comandos de teclas
 nnoremap <silent> <leader> :silent <c-u> :silent WhichKey '<Space>'<CR>
 vnoremap <silent> <leader> :silent <c-u> :silent WhichKeyVisual '<Space>'<CR>
 
@@ -12,6 +12,7 @@ let g:which_key_sep = '→'
 let g:which_key_hspace = 2
 " Muestra los mapeos en la ventana de comandos, en la parte inferior
 let g:which_key_use_floating_win = 0
+
 " Colores
 highlight default link WhichKey          Operator
 highlight default link WhichKeySeperator DiffAdded

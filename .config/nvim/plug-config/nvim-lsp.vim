@@ -58,19 +58,16 @@ require'lspconfig'.yamlls.setup{} -- YAML
 require'lspconfig'.sqlls.setup{
     cmd={ "/usr/bin/sql-language-server", "up", "--method", "stdio" };
 }
--- Java
--- Necesario paru -S jdtls
+-- Java, Necesario paru -S jdtls
 require'lspconfig'.jdtls.setup{}
 
--- TODO LuaScript
--- Necesario paru -S lua-language-server
--- source $HOME/.config/nvim/plug-config/lua-lsp-config.lua
+-- Lua. Necesario paru -S lua-language-server
+EOF
+source $HOME/.config/nvim/plug-config/lua-lsp-config.vim
+lua << EOF
 require'lspconfig'.sumneko_lua.setup{}
--- Flow, static type checker for JS
--- TODO instalar el server y configurarlo
-require'lspconfig'.flow.setup{}
--- GO
--- TODO instalar y configurar el server
+
+-- GO. Necesario sudo pacman -S gopls
 require'lspconfig'.gopls.setup{}
 EOF
 
@@ -96,4 +93,4 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
-" highlight link CompeDocumentation NormalFloat
+highlight link CompeDocumentation NormalFloat

@@ -86,6 +86,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'lervag/vimtex'
   " git-blame
     Plug 'zivyangll/git-blame.vim'
+  " Netrw mejorado, con , abrimos el explorador, con <C-6> volvemos al buffer
+    Plug 'tpope/vim-vinegar'
   " Autocompletado
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " Detectar mejor las palabras al usar w, e & b

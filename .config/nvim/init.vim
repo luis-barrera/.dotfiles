@@ -7,25 +7,26 @@
 " Exporta la configuración de Vim a NeoVim
 source $HOME/.vimrc
 
+" Sobreescribir configuración de undodir
+set undodir=$HOME/.config/nvim/undodir
+
 " General Settings
 " ----------------
-" Configuración de Plugins
-source $HOME/.config/nvim/vim-plug/plugins.vim
-
 " Mapeos de teclas
 source $HOME/.config/nvim/keys/mappings.vim
 
 " Snippets personales
 source $HOME/.config/nvim/snippets/snippet-config.vim
 
-" Configuración de algunos plugins, hay algunos plugin que no necesitan
-"   configuración
-" ---------------------------------------------------------------------
+" Cargar Plugins
+source $HOME/.config/nvim/vim-plug/plugins.vim
+
+" Configuración de algunos plugins, algunos otros no necesitan configuración
+" --------------------------------------------------------------------------
 " LSP nativo, a partir de NeoVim 5.0
 source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 luafile $HOME/.config/nvim/plug-config/compe.lua
 source $HOME/.config/nvim/plug-config/vsnip.vim
-
 
 
 
@@ -76,9 +77,15 @@ source $HOME/.config/nvim/themes/gruvbox.vim
 " source $HOME/.config/nvim/themes/melange.vim
 " source $HOME/.config/nvim/themes/moonfly.vim
 
-" Tabuladores, repetido porque algún plugin sobreescribe el .vimrc
+" Convierte la tecla tab en 4 espacios
+set tabstop=8
+" Detecta mejor si varios espacios son un TAB al momento de borrar
 set softtabstop=2
-set tabstop=2                   " Convierte la tecla tab en 4 espacios
-set shiftwidth=2                " Se usan 2 espacios en lugar de tabuladores para indentar
-set expandtab                   " Convierte los tabs en espacios
-" Para convertir tabs en espacios en documentos que tienen tabs, usar :retab
+" Se usan 2 espacios en lugar de tabuladores para indentar
+set shiftwidth=2
+" Convierte los tabs en espacios
+set noexpandtab
+" Para convertir tabs en espacios en documentos que tinen tabs, usar :retab
+
+" Unmaps, a pesar de usar noremap, hay sobreescritura de keymaps
+source $HOME/.config/nvim/keys/unmappings.vim
