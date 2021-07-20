@@ -1,3 +1,7 @@
+" Modo sin distracciones
 
-let g:goyo_height=95
+" Altura, en porcentaje
+let g:goyo_height=75
+
+" Anchura, en columnas
 let g:goyo_width=100

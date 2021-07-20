@@ -24,7 +24,7 @@ local function worker(args)
 
   local font = args.font or 'Noto Sans 8'
   local arc_thickness = 4
-  local show_current_level = true 
+  local show_current_level = true
   local size = 15
   local timeout = 5
 
@@ -33,12 +33,12 @@ local function worker(args)
   local low_level_color = "#e53935"
   local medium_level_color = "#ffac20"
   local charging_color = "#79E7FF"
-  -- local default_color = "#000000" 
-  local default_color = "#FFFFFF" 
+  -- local default_color = "#000000"
+  local default_color = "#FFFFFF"
 
   local warning_msg_title = 'Houston, we have a problem'
   local warning_msg_text = 'Battery is dying'
-  local warning_msg_position = 'top_right'
+  local warning_msg_position = 'top_left'
   local warning_msg_icon = HOME .. '/.config/awesome/widgets/images/spaceman.jpg'
   local enable_battery_warning = true
 
@@ -128,13 +128,14 @@ local function worker(args)
       notification = naughty.notify {
         text = stdout,
         title = "Battery status",
-        timeout = 5,
+        timeout = 1,
         hover_timeout = 0.5,
+        position = warning_msg_position,
         width = 300,
       }
     end)
   end
-  
+
   --[[ Show warning notification ]]
   function show_battery_warning()
     naughty.notify {
@@ -150,7 +151,7 @@ local function worker(args)
       width = 300,
       }
   end
-  
+
   widget:connect_signal("mouse::enter", function()
     show_battery_status()
   end)

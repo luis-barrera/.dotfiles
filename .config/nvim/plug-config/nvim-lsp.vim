@@ -56,7 +56,7 @@ require'lspconfig'.yamlls.setup{} -- YAML
 
 -- SQL
 require'lspconfig'.sqlls.setup{
-    cmd={ "/usr/bin/sql-language-server", "up", "--method", "stdio" };
+  cmd={ "/usr/bin/sql-language-server", "up", "--method", "stdio" };
 }
 -- Java, Necesario paru -S jdtls
 require'lspconfig'.jdtls.setup{}
@@ -69,6 +69,9 @@ require'lspconfig'.sumneko_lua.setup{}
 
 -- GO. Necesario sudo pacman -S gopls
 require'lspconfig'.gopls.setup{}
+
+-- zeta-note. Markdown syntax
+require'lspconfig'.zeta_note.setup{}
 EOF
 
 " Declaración de keymappings
@@ -77,7 +80,7 @@ nnoremap <silent> gD <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> gi <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
-nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
+" nnoremap <silent> <C-k> <cmd>lua vim.lsp.buf.signature_help()<CR>
 nnoremap <silent> <C-n> <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
 nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
 
@@ -87,10 +90,10 @@ autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync(nil, 100)
 autocmd BufWritePre *.py lua vim.lsp.buf.formatting_sync(nil, 100)
 
 " Mappings para compe
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
-inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
-inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
+" inoremap <silent><expr> <C-Space> compe#complete()
+" inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+" inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
+" inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 
 highlight link CompeDocumentation NormalFloat

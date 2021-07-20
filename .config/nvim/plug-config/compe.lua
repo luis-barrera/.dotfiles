@@ -19,10 +19,9 @@ require'compe'.setup{
     buffer = true;  -- Autocompletado según el contenido del buffer
     tags = true;  -- Autocompletado con las tags del proyecto
     calc = true;  -- Hacer cálculos y sugerir el resultado
-    vsnip = true; -- Autocompletado para snippets
     nvim_lsp = true;  -- Autocompletado según el LSP de NVim
     nvim_lua = true;  -- Autocompletado para Lua
-    vsnip = true; -- Snippets
+    vsnip = true; -- Autocompletado para snippets
     utilsnip = true;  -- Más snippets
     snippets_nvim = true;
     spell = true;

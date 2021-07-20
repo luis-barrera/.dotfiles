@@ -56,7 +56,7 @@ local function run_once(cmd_arr)
 end
 --]]
 
--- Los programas que se iniciaban con est cuenta fueron movidos a .xprofile
+-- Los programas que se iniciaban con esta función fueron movidos a .xprofile
 --[[
 run_once({
   "seahorse",
@@ -110,10 +110,11 @@ awful.layout.layouts = { -- Clients Layouts
   awful.layout.suit.floating,
   awful.layout.suit.max.fullscreen,
   lain.layout.cascade.tile,
-  -- lain.layout.centerwork,
-  -- awful.layout.suit.tile.left,
-  -- awful.layout.suit.tile.bottom,
-  -- awful.layout.suit.tile.top,
+
+  lain.layout.centerwork,
+  awful.layout.suit.tile.left,
+  awful.layout.suit.tile.bottom,
+  awful.layout.suit.tile.top,
   -- awful.layout.suit.fair,
   -- awful.layout.suit.fair.horizontal,
   -- awful.layout.suit.spiral,
@@ -123,7 +124,7 @@ awful.layout.layouts = { -- Clients Layouts
   -- awful.layout.suit.corner.sw,
   -- awful.layout.suit.corner.se,
   -- lain.layout.centerwork.horizontal,
-  -- lain.layout.termfair,
+  lain.layout.termfair,
   -- lain.layout.termfair.center,
 }
 
@@ -189,7 +190,7 @@ awful.util.tasklist_buttons = my_table.join(
 
 root.buttons(my_table.join(
   -- Abre menú de aplicaciones con click derecho en cualquier lado libre
-  awful.button({ }, 3, function() awful.util.mymainmenu:toggle() end)
+  --awful.button({ }, 3, function() awful.util.mymainmenu:toggle() end)
   -- Mueve al siguiente espacio si hacemos rueda del ratón arriba
   --awful.button({ }, 4, awful.tag.viewnext),
   -- Mueve al anterior espacio si hacemos rueda del ratón abajo

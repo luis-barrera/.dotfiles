@@ -1,14 +1,17 @@
+" LeaderKey, usar Space para hacer combinaciones de teclas
+let mapleader=' '
+
 " Navegación entre ventanas
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-h> <ESC><C-w>h
+nnoremap <C-j> <ESC><C-w>j
+nnoremap <C-k> <ESC><C-w>k
+nnoremap <C-l> <ESC><C-w>l
 
 " Resize de las ventanas
-nnoremap <silent> <M-h> :vertical resize +1<CR>
-nnoremap <silent> <M-l> :vertical resize -1<CR>
-nnoremap <silent> <M-j> :resize -1<CR>
-nnoremap <silent> <M-k> :resize +1<CR>
+nnoremap <M-j> 1<C-w>+
+nnoremap <M-k> 1<C-w>-
+nnoremap <M-h> 1<C-w><
+nnoremap <M-l> 1<C-w>>
 
 " Entrar a modo normal usando la combinacion j-k o k-j
 inoremap jk <Esc>
@@ -39,5 +42,9 @@ nnoremap <silent> <C-Q> :wq!<CR>
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
-" LeaderKey, usar Space para hacer combinaciones de teclas
-let mapleader=" "
+" Quitar el resaltado en los resultados de las busquedas
+nnoremap <F3> :set hlsearch!<CR>
+
+" Borrar hacia atras
+" imap <C-H> <C-W>
+" noremap! <C-H> <C-W>

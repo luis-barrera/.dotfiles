@@ -1,4 +1,6 @@
-
 " set nolinebreak
 " set wrapmargin=12
-" set wrap
+" set wrapmargin=10
+set wrap
+setlocal foldmethod=manual
+set scrolloff=1

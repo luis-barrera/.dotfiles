@@ -7,6 +7,7 @@
 # cat ~/.cache/wal/sequences
 # To add support for TTYs this line can be optionally added.
 # source ~/.cache/wal/colors-tty.sh
+(wal -q --theme sexy-muse &)
 
 # fetch
 (pfetch &&)
@@ -109,39 +110,49 @@ export ARCHFLAGS="-arch x86_64"
 alias zshconfig="nvim ~/.zshrc"
 # Configrar ohmyzsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 # Configurar AwesomeWM
 alias wmrc="nvim ~/.config/awesome/rc.lua"
 # Configuar tema de AwesomeWM
 alias themewm="nvim ~/.config/awesome/theme.lua"
 # Configuar xmonad
 alias xmwm="nvim ~/.xmonad/xmonad.hs"
+
 # Corre Script para usar un monitor
 alias onescreen="sh ~/scripts/onescreenlayout.sh"
 # Corre Script para usar dos monitores
 alias rightscreen="sh ~/scripts/rightscreen.sh"
 alias leftscreen="sh ~/scripts/leftscreen.sh"
 alias upscreen="sh ~/scripts/upscreen.sh"
+
 # Abre jupyter notebook
 alias jn="jupyter-notebook"
 alias jl="jupyter-lab"
+
 # Alias para usar MariaDB
 # alias startmysql="systemctl enable mysqld.service --now"
 # alias restartmysql="systemctl restart mysqld.service"
 # alias stopmysql="systemctl disable mysqld.service --now"
+
 # Abrir configuración de nvim
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 # Administrar plugins de nvim
 alias nvimplugins="nvim ~/.config/nvim/vim-plug/plugins.vim"
 # Configuración básica de vim y nvim
 alias vimrc="vim ~/.vimrc"
+
 # Abre otra terminal
 alias kitty="kitty --detach"
+
 # Abre zathura de manera correcta
 alias zathura="zathura --fork"
+
 # Perfil de privacidad para firefox
 alias firefoxprofile="firefox -no-remote -P privacy-profile"
+
 # Alias para bare repo de mis dotfiles
 alias dots="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+
 # Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
 grabar() {
   if [ "$1" != "" ]
@@ -149,15 +160,20 @@ grabar() {
     sh /home/luisbarrera/scripts/grabar.sh $1
   fi
 }
+
 # Ejecutar jamovi
 # alias jamovi="flatpak run org.jamovi.jamovi"
+
 # Ejecutar news flash
 # alias rss="flatpak run com.gitlab.newsflash"
+
 # Pull de varias carpetas locales a remoto de google drive
 alias gpull="sh $HOME/scripts/gpull.sh"
 alias gpush="sh $HOME/scripts/gpush.sh"
+
 # Ver imágenes en el directorio actual
 alias images="viewnior ./"
+
 # Abre el stream de lofi en mpv
 # Utiliza youtube-dl para obtener una calidad no tan alta, por defecto se usa la mejor calidad posible
 # Para obtener el codigo del formato, usar youtube-dl --list-formats <URL>
@@ -166,6 +182,7 @@ alias lofi="mpv --ytdl-format=94 https://youtu.be/5qap5aO4i9A"
 alias whitenoise="mpv --ytdl-format=251 https://youtu.be/nMfPqeZjc2c"
 # Reproduce sonidos relajantes de la selva
 alias relax="mpv --ytdl-format=251 https://youtu.be/cjkFG6bHGNc"
+
 # Siguiendo el meme
 alias l='ls'
 alias s='ls'
@@ -175,19 +192,25 @@ alias lsl='ls'
 alias lss='ls'
 alias sll='ls'
 alias sls='ls'
+
 # Kittens, plugins para kitty
 # alias ssh='kitty +kitten ssh'
+
 # Abrir archivos de la escuela en zathura
 alias horario="zathura ~/Trim-7/horario_final.pdf"
 alias caluam="zathura ~/Trim-7/Calendario_UAM.pdf"
 alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Cosas_por_hacer/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
+alias tsbook="zathura Cosas_por_hacer/Programming\ TypeScript\ by\ Boris\ Cherny\ \(z-lib.org\).epub"
+
 # Abrir AppImages
 alias pizarron="~/AppImages/OpenBoard-4fca3a6-x86_64.AppImage"
+
 # Abrir nvim en VimWiki
 alias vimwiki="nvim -c VimwikiIndex"
-alias wiki="nvim -c VimwikiIndex"
+alias wiki="cd ~/Notas && nvim -c VimwikiIndex"
+
 # Alias a oneliners
 alias toimg="convert label:@- process.png" # después de un comando, hacer pip a este alias covierte la salida a una imágen
 alias ipdir="curl ipinfo.io" # Muestra la ip
@@ -198,8 +221,14 @@ alias bigger-dirs="du -hs */ | sort -hr | head" # Lista los directorios más gra
 alias internet-inspect="ss -p" # Muestra las apps que están usando internet
 # alias rm-excepto="rm -f !(test.txt)" # Borra todos los archivos, excepto el que le demos
 alias basic-server="python3 -m http.server" # Crea un server básico para poder compartir archivos sobre la red
+
 # Sustituir ls con exa
-alias la="exa -la"
+alias la="exa -la --icons --group-directories-first"
+alias ls="exa -l --icons --group-directories-first"
+
+# Abrir el Zettelkasten
+# alias zet="cd ~/neuron && nvim /home/luisbarrera/neuron/index.md"
+# alias gzn="cd ~/neuron && neuron new -e"
 
 # source ~/.powerlevel10k/powerlevel10k.zsh-theme
 
@@ -249,3 +278,4 @@ export ANDROID_SDK_ROOT='/opt/android-sdk'
 
 export EDITOR='nvim'
 export VISUAL='nvim'
+if [ -e /home/luisbarrera/.nix-profile/etc/profile.d/nix.sh ]; then . /home/luisbarrera/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -91,7 +91,7 @@ set number
 " Numero de linea respecto a la linea donde esta el cursor
 set relativenumber
 " Tamano de la columna de numero
-set numberwidth=5
+set numberwidth=2
 " Muestra una columna con signos, se usa en git y otras cosas
 set signcolumn=yes
 
@@ -108,11 +108,11 @@ set breakindent
 "   muestra otro
 set hidden
 " Muestra 3 lineas mas cuando se cuando se navega a traves del archivo
-set scrolloff=3
+set scrolloff=5
 " Muestra el nombre del archivo en el titulo de la ventana
 set title
 " Maximo de pestanas
-set tabpagemax=6
+set tabpagemax=10
 " Muestra la barra de pestanas abiertas siempre
 set showtabline=2
 
@@ -137,7 +137,7 @@ set softtabstop=2
 " Se usan 2 espacios en lugar de tabuladores para indentar
 set shiftwidth=2
 " Convierte los tabs en espacios
-set noexpandtab
+set expandtab
 " Al insertar un TAB después de texto, inserta los 2 espacios
 set smarttab
 " Para convertir tabs en espacios en documentos que tienen tabs, usar :retab
@@ -155,13 +155,23 @@ nnoremap <F3> :set hlsearch!<CR>
 " Tags, navegacion entre las partes del codigo
 command! MakeTags !ctags -R .
 
+" Borrar hacia atras
+imap <C-H> <C-W>
+noremap! <C-H> <C-W>
+
 
 " Colores
 " -------
 set t_Co=256                    " Soporte para mas colores
 set t_ut=""                     " Solucion para color de fondo
-set termguicolors               " No usa los colores que se usan en la terminal
+" set termguicolors               " No usa los colores que se usan en la terminal
 " colorscheme industry
 
 " Status line, en nvim se sobre escribe por statusline
 set statusline=%F[%m%r%h%w]%=%y[Hex\ %B][Lineas\ %L][%l,%v][%p%%]
+
+nnoremap <M-j> 1<C-w>+
+nnoremap <M-k> 1<C-w>-
+nnoremap <M-h> 1<C-w><
+nnoremap <M-l> 1<C-w>>
+

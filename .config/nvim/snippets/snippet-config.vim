@@ -3,7 +3,7 @@
 "   contenido de un archivo dentro del buffer que tenemos abierto
 
 " Inserta esqueleto básico de HTML
-command! SnipHTML execute "-1read $HOME/.config/nvim/snippets/skeleton.html"
+command! MySnippetHTML execute "-1read $HOME/.config/nvim/snippets/skeleton.html"
 
 " Inserta un esqueleto básico de C Lang
-command! SnipCprog execute "-1read $HOME/.config/nvim/snippets/skeleton.c"
+command! MySnippetCprog execute "-1read $HOME/.config/nvim/snippets/skeleton.c"
