@@ -1,0 +1,16 @@
+[user]
+	name = Luis Barrera
+	email = luisvaldovinosbarrera@gmail.com
+[core]
+	editor = nvim
+[diff]
+	tool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+	cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+	tool = meld
+[mergetool "meld"]
+    cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"

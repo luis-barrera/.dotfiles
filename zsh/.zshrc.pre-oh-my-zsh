@@ -1,0 +1,28 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=100000
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/luisbarrera/.zshrc'
+
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' menu select
+setopt COMPLETE_ALIASES
+
+# History search
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+# Keybidings for history search with arrow keys
+[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
+[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+
+# Prompt themes
+# autoload -Uz promptinit
+# promptinit
+# prompt fire red magenta blue white white white
+
+# End of lines added by compinstall

@@ -13,7 +13,7 @@
 " LeaderKey, usar Space para hacer combinaciones de teclas
 let mapleader=' '
 
-" Directorio donde guarda el archivo de respaldo
+" Directorio donde guardar el registro de cambios de un archivo
 set undodir=$HOME/.config/nvim/undodir
 
 " Decirle a NeoVim que deje de intentar ser Vi
@@ -21,12 +21,12 @@ set nocompatible
 " Portapapeles
 set clipboard=unnamedplus
 
-" Trata de adivinar el tipo de archivo a partir del nombre
+" Trata de adivinar el tipo de archivo
 filetype plugin on
 " Resaltado de sintaxis para cada lenguaje
 syntax enable
 
-" Codificación de los caracteres que podemos usar
+" Codificación de los caracteres que podemos usar dentro del editor
 set encoding=utf-8
 " Considera las palabras unidas con - y _ como una palabra
 set iskeyword+=-,_
@@ -160,10 +160,10 @@ source $HOME/.config/nvim/plug-config/lightline.vim
 " source $HOME/.config/nvim/themes/material.vim
 " source $HOME/.config/nvim/themes/gruvbox.vim
 " source $HOME/.config/nvim/themes/spacecamp.vim
-" source $HOME/.config/nvim/themes/melange.vim
+source $HOME/.config/nvim/themes/melange.vim
 " source $HOME/.config/nvim/themes/moonfly.vim
 " source $HOME/.config/nvim/themes/falcon.vim
-source $HOME/.config/nvim/themes/srcery.vim
+" source $HOME/.config/nvim/themes/srcery.vim
 
 " Columna de color mamalona
 set colorcolumn=80
