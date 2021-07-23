@@ -41,10 +41,9 @@ xinput set-prop 12 363 0, 0
 # Autostart después del display server y antes del WM
 # xcompmgr &
 # light-locker &
-redshift &
+redshift-gtk &
 pcloud &
 flameshot &
 parcellite -d &
-syncthing-gtk &
 picom -b &
 # unclutter &

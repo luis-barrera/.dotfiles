@@ -1,0 +1,35 @@
+# Lista de paquetes indispensables para el sistema
+# Para instalar todos de una sola sentada quitar los comentarios
+# 	(aquellas líneas que empiezan con #) y correr el siguiente comando
+# paru -S --needed - < aur-packages.txt
+anaconda
+bibata-cursor-theme
+brave-bin
+cef-minimal
+eclipse-java-bin
+font-manager
+humanity-icon-theme
+librewolf-bin
+ly
+mailspring
+nerd-fonts-jetbrains-mono
+obs-studio-git
+pacmixer
+paru
+pcloud-drive
+peruse
+pfetch
+pomotroid-bin
+proggyfonts
+python-clickgen
+smartgit
+spicetify-cli
+spicetify-themes-git
+spotify
+spotify-tui-bin
+staruml
+ttf-twemoji-color
+yaru-colors-gtk-theme
+yaru-colors-icon-theme
+yaru-icon-theme
+zoom

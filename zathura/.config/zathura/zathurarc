@@ -1,0 +1,19 @@
+# Copia selección al primary
+
+# No muestra ningún elemento como barra de estado y scrollbars al iniciar
+set guioptions ""
+
+# Fuente de la barra de comandos
+set font "JetBrains Mono 14"
+
+# La selección de texto se guarda en el clipboard
+set selection-clipboard clipboard
+
+# Las imágenes no se invierten de color con recolor
+set recolor-reverse-video true
+
+# Algunos elementos tampoco deben tocar en recolor
+set recolor-keephue true
+
+# Recolor al iniciar
+set recolor true
