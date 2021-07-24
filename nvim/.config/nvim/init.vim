@@ -279,7 +279,7 @@ source $HOME/.config/nvim/plug-config/vim-wiki.vim
 " Pegar imágenes desde el clipboard
 " source $HOME/.config/nvim/plug-config/clipboard-image.vim
 
-" vimtex
+" vimtex, LaTeX en nvim
 let g:vimtex_compiler_progname = 'nvr'
 
 
@@ -288,6 +288,7 @@ let g:vimtex_compiler_progname = 'nvr'
 " ========
 " Establecer tabstop, softtabstop y shiftwidth al mismo nivel
 source $HOME/.config/nvim/functions/stab.vim
+source $HOME/.config/nvim/functions/toggleindent.vim
 " Convierte los tabs en espacios
 set noexpandtab
 set copyindent
