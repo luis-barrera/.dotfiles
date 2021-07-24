@@ -1,7 +1,3 @@
-# Lista de paquetes indispensables para el sistema
-# Para instalar todos de una sola sentada quitar los comentarios
-# 	(aquellas líneas que empiezan con #) y correr el siguiente comando
-# pacman -S --needed - < pacman-packages.txt
 acpi
 alacritty
 anki

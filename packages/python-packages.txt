@@ -1,4 +1,3 @@
-# Para instalar estos paquetes, quitar este comentario y correr `pip install < python-packages.txt`
 pywal
 pynvim
 neovim-remote
