@@ -46,4 +46,6 @@ pcloud &
 flameshot &
 parcellite -d &
 picom -b &
+playerctld daemon &
+# fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &

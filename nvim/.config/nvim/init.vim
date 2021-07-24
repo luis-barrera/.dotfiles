@@ -157,10 +157,10 @@ source $HOME/.config/nvim/plug-config/lightline.vim
 
 " Descomentar solo una línea, según el tema que se desee
 " source $HOME/.config/nvim/themes/tender.vim
-" source $HOME/.config/nvim/themes/material.vim
+source $HOME/.config/nvim/themes/material.vim
 " source $HOME/.config/nvim/themes/gruvbox.vim
 " source $HOME/.config/nvim/themes/spacecamp.vim
-source $HOME/.config/nvim/themes/melange.vim
+" source $HOME/.config/nvim/themes/melange.vim
 " source $HOME/.config/nvim/themes/moonfly.vim
 " source $HOME/.config/nvim/themes/falcon.vim
 " source $HOME/.config/nvim/themes/srcery.vim
@@ -287,7 +287,7 @@ let g:vimtex_compiler_progname = 'nvr'
 " = Tabs =
 " ========
 " Establecer tabstop, softtabstop y shiftwidth al mismo nivel
-" source $HOME/.config/nvim/functions/stab.vim
+source $HOME/.config/nvim/functions/stab.vim
 " Convierte los tabs en espacios
 set noexpandtab
 set copyindent
@@ -300,7 +300,9 @@ set tabstop=4
 set shiftwidth=4
 " Al insertar un TAB después de texto, inserta los 2 espacios
 " set smarttab
-" Muestra los tabuladores con un caracter >
+set listchars+=tab:¦--
+set listchars+=eol:¶
+" Muestra los tabuladores con un caracter > o el que pongamos con listchars
 set list
 " Para convertir tabs en espacios en documentos que tienen tabs, usar :retab
 
@@ -308,8 +310,7 @@ set list
 " =============
 " = Funciones =
 " =============
-" TODO
-" source $HOME/.config/nvim/functions/getFecha.vim
+source $HOME/.config/nvim/functions/getFecha.vim
 
 
 " ====================

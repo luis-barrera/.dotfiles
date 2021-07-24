@@ -128,3 +128,4 @@ zathura-djvu
 zathura-pdf-mupdf
 zathura-ps
 zsh
+zsh-autosuggestions
