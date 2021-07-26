@@ -124,7 +124,7 @@ alias zshconfig="nvim ~/.zshrc"
 # Configurar AwesomeWM
 alias wmrc="nvim ~/.config/awesome/rc.lua"
 # Configuar tema de AwesomeWM
-alias themewm="nvim ~/.config/awesome/theme.lua"
+alias themewm="nvim ~/.config/awesome/space-theme.lua"
 # Configuar xmonad
 alias xmwm="nvim ~/.xmonad/xmonad.hs"
 
@@ -161,7 +161,7 @@ alias zathura="zathura --fork"
 alias firefoxprofile="firefox -no-remote -P privacy-profile"
 
 # Alias para bare repo de mis dotfiles
-alias dots="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+# alias dots="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # Función para grabar pantalla, toma el nombre del video de salida como parámetro (es necesario pulseaudio)
 grabar() {
@@ -207,12 +207,12 @@ alias sls='ls'
 # alias ssh='kitty +kitten ssh'
 
 # Abrir archivos de la escuela en zathura
-alias horario="zathura ~/Trim-7/horario_final.pdf"
+alias horario="zathura ~/Trim-8/Horario21P.pdf"
 alias caluam="zathura ~/Trim-7/Calendario_UAM.pdf"
-alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
-alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
-alias flutterbook="zathura ~/Cosas_por_hacer/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
-alias tsbook="zathura Cosas_por_hacer/Programming\ TypeScript\ by\ Boris\ Cherny\ \(z-lib.org\).epub"
+# alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
+# alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
+alias flutterbook="zathura ~/Pendientes/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
+alias tsbook="zathura ~/Pendientes/Programming\ TypeScript\ by\ Boris\ Cherny\ \(z-lib.org\).epub"
 
 # Abrir AppImages
 alias pizarron="~/AppImages/OpenBoard-4fca3a6-x86_64.AppImage"

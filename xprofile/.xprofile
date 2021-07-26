@@ -47,5 +47,6 @@ flameshot &
 parcellite -d &
 picom -b &
 playerctld daemon &
+# clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &

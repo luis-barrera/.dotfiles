@@ -2,6 +2,7 @@ anaconda
 bibata-cursor-theme
 brave-bin
 cef-minimal
+clight-gui-git
 eclipse-java-bin
 font-manager
 humanity-icon-theme

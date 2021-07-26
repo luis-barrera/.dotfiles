@@ -1,7 +1,7 @@
 " Función para cambiar la forma en que se representan las indentaciones, ya
 " sea con espacios o tabs
 
-command! ToogleIndent call TabToggle()
+command! ToggleIndent call TabToggle()
 
 function TabToggle()
 	if &expandtab

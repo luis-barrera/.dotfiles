@@ -301,7 +301,7 @@ set tabstop=4
 set shiftwidth=4
 " Al insertar un TAB después de texto, inserta los 2 espacios
 " set smarttab
-set listchars+=tab:¦--
+set listchars+=tab:│•
 set listchars+=eol:¶
 " Muestra los tabuladores con un caracter > o el que pongamos con listchars
 set list

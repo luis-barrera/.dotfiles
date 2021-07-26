@@ -31,9 +31,10 @@ local theme = {}
 
 -- Directorios por default
 theme.default_dir = require("awful.util").get_themes_dir() .. "default"
-theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/seeyouspacecowboy.png"
+-- theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/Imágenes/wallpaper1.jpg"
-theme.wallpaper2 = os.getenv("HOME") .. "/Pictures/f2.jpg"
+-- theme.wallpaper2 = os.getenv("HOME") .. "/Pictures/f2.jpg"
 
 -- Fuentes
 theme.font = "JetBrainsMono Nerd Font 9"
@@ -305,7 +306,7 @@ function theme.at_screen_connect(s)
 		-- Define el layout de los clientes por defecto
 		awful.tag(awful.util.tagnames, s, awful.layout.layouts[2])
 		-- Establece el wallpaper
-		gears.wallpaper.centered(wallpaper, s)
+		gears.wallpaper.maximized(wallpaper, s)
 		-- Elementos de la Barra superior
 		s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = "000000AA"})
 		s.mywibox:setup {
