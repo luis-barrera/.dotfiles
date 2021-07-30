@@ -123,16 +123,16 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Plug 'sheerun/vim-polyglot'
 
   " Sopore para comandos Git en nvim
-  Plug 'tpope/vim-fugitive'
+  " Plug 'tpope/vim-fugitive'
 
   " Muestra información de los commits con <leader>gm
-  Plug 'rhysd/git-messenger.vim'
+  " Plug 'rhysd/git-messenger.vim'
 
   " Soporte para Github en nvim
   " Plug 'tpope/vim-rhubarb'
 
   " Muestra el historial de commits con :GV o :GV!
-  Plug 'junegunn/gv.vim'
+  " Plug 'junegunn/gv.vim'
 
   " Snippets para webdev
   " Plug 'mattn/emmet-vim'
@@ -194,6 +194,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'jacoborus/tender.vim'
 	Plug 'fenetikm/falcon'
 	Plug 'srcery-colors/srcery-vim'
+	Plug 'sainnhe/gruvbox-material'
 
 " Statusline
 	Plug 'itchyny/lightline.vim'

@@ -157,13 +157,17 @@ source $HOME/.config/nvim/plug-config/lightline.vim
 
 " Descomentar solo una línea, según el tema que se desee
 " source $HOME/.config/nvim/themes/tender.vim
-source $HOME/.config/nvim/themes/material.vim
+" source $HOME/.config/nvim/themes/material.vim
 " source $HOME/.config/nvim/themes/gruvbox.vim
 " source $HOME/.config/nvim/themes/spacecamp.vim
 " source $HOME/.config/nvim/themes/melange.vim
 " source $HOME/.config/nvim/themes/moonfly.vim
 " source $HOME/.config/nvim/themes/falcon.vim
 " source $HOME/.config/nvim/themes/srcery.vim
+source $HOME/.config/nvim/themes/gruvbox-material.vim
+
+" Para que los temas no tengan problemas con la signcolumn de gitgutter
+highlight! link SignColumn LineNr
 
 " Columna de color mamalona
 set colorcolumn=80
@@ -302,7 +306,7 @@ set shiftwidth=4
 " Al insertar un TAB después de texto, inserta los 2 espacios
 " set smarttab
 set listchars+=tab:│•
-set listchars+=eol:¶
+" set listchars+=eol:¶
 " Muestra los tabuladores con un caracter > o el que pongamos con listchars
 set list
 " Para convertir tabs en espacios en documentos que tienen tabs, usar :retab

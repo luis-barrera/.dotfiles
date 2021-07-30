@@ -853,6 +853,9 @@ awful.rules.rules = {
   -- Gimp
   { rule = { class = "Gimp", role = "gimp-image-window" },
     properties = { maximized = true } },
+
+  { rule = { class = "conky", type = "dock" },
+    properties = { border_width = 0 } },
 }
 
 -- For news clients
