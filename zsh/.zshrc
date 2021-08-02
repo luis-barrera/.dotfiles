@@ -208,7 +208,7 @@ alias sls='ls'
 
 # Abrir archivos de la escuela en zathura
 alias horario="zathura ~/Trim-8/Horario21P.pdf"
-alias caluam="zathura ~/Trim-7/Calendario_UAM.pdf"
+alias caluam="zathura ~/Trim-8/Calendario_UAM.pdf"
 # alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 # alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Pendientes/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
