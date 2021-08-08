@@ -16,3 +16,5 @@
     # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [gc]
 	autoDetach = false
+[credential]
+	helper = cache
