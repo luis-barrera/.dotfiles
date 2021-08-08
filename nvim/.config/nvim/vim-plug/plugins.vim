@@ -18,6 +18,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'neovim/nvim-lspconfig'
 " Instalar automáticamente los server de lenguajes para lsp
 	Plug 'kabouzeid/nvim-lspinstall'
+" Para mejorar los colorschemes usando LSP
+	Plug 'folke/lsp-colors.nvim'
+
 " Autocompletado con LSP
 	Plug 'nvim-lua/completion-nvim'
 " Complemento para completion-nvim, usa treessitter para dar recomendaciones
@@ -29,8 +32,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Complemento para completion-nvim, usa snippets para dar recomendaciones
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
-" Para mejorar los colorschemes usando LSP
-	Plug 'folke/lsp-colors.nvim'
+" Complemento para completion-nvim, usa tabnine para dar recomendaciones
+	Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " Tree Sitter, analizador de parser para lenguajes
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -78,10 +81,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'AckslD/nvim-revJ.lua'
 
 " Tomar notas de forma más eficiente y ordenada usando el método Zettelkasten
-	Plug 'oberblastmeister/neuron.nvim', {'branch': 'unstable'}
-	Plug 'nvim-lua/popup.nvim'
-	Plug 'nvim-lua/plenary.nvim'
-	Plug 'nvim-telescope/telescope.nvim'
+	" Plug 'oberblastmeister/neuron.nvim', {'branch': 'unstable'}
+	" Plug 'nvim-lua/popup.nvim'
+	" Plug 'nvim-lua/plenary.nvim'
+	" Plug 'nvim-telescope/telescope.nvim'
 
 " Pegar imágenes desde el clipboard
 	Plug 'ekickx/clipboard-image.nvim'
@@ -200,7 +203,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'itchyny/lightline.vim'
 
 " Pestañas más bonitas
-	Plug 'akinsho/nvim-bufferline.lua'
+	" Plug 'akinsho/nvim-bufferline.lua'
 
 call plug#end()
 
