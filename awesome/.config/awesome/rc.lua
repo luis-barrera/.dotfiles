@@ -89,9 +89,9 @@ local modkey       = "Mod4" -- Principal Key, Windows Key
 local altkey       = "Mod1" -- Secondary Key, Left Alt key
 local terminal     = "kitty" -- Default Terminal Emulator
 local editor       = "nvim" -- Text Editor in the Terminal
-local gui_editor   = "geany" -- Default GUI editor
+-- local gui_editor   = "geany" -- Default GUI editor
 local browser      = "firefox" -- Default Internet Browser
-local scrlocker    = "light-locker" -- Screenlocker
+-- local scrlocker    = "light-locker" -- Screenlocker
 local vi_focus     = false -- The focus of the client (window) follows the coursor
 local cycle_prev   = false -- Cycle trough all previous client or just the first
 
