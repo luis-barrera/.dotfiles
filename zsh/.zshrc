@@ -140,9 +140,9 @@ alias jn="jupyter-notebook"
 alias jl="jupyter-lab"
 
 # Alias para usar MariaDB
-# alias startmysql="systemctl enable mysqld.service --now"
-# alias restartmysql="systemctl restart mysqld.service"
-# alias stopmysql="systemctl disable mysqld.service --now"
+alias startmysql="systemctl enable mysqld.service --now"
+alias restartmysql="systemctl restart mysqld.service"
+alias stopmysql="systemctl disable mysqld.service --now"
 
 # Abrir configuración de nvim
 alias nvimconfig="cd ~/.config/nvim && nvim ~/.config/nvim/init.vim"
@@ -244,6 +244,11 @@ alias trans-en="trans -s en -t es"
 alias conda-activate="source /opt/anaconda/bin/activate root"
 alias conda-deactivate="source /opt/anaconda/bin/deactivate root"
 
+# Ver webcam en una ventana usando mpv
+alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
+
+# Alias de lua
+alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
