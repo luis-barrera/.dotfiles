@@ -13,9 +13,6 @@
 " LeaderKey, usar Space para hacer combinaciones de teclas
 let mapleader=' '
 
-" Directorio donde guardar el registro de cambios de un archivo
-set undodir=$HOME/.config/nvim/undodir
-
 " Decirle a NeoVim que deje de intentar ser Vi
 set nocompatible
 " Portapapeles
@@ -47,14 +44,6 @@ set confirm
 set path+=**
 " Mejor autocompletado en la línea de comandos
 set wildmenu
-
-" Desactiva el swapfile, en este archivo se guardan copias de seguridad
-set noswapfile
-" Activa un archivo de respaldo
-set undofile
-" No crea archivos de backup
-set nobackup
-set nowritebackup
 
 " Búsqueda dentro del archivo
 " Búsqueda insensible a las mayúsculas
@@ -133,11 +122,6 @@ set ttimeoutlen=500
 " Agrupar código, con zc y zo
 set foldmethod=indent
 
-" Desactiva que se inserte una línea de comentario si hacemos ^O o ^o en una
-"   linea comentada, es un comportamiento que, en lo personal, me disgusta
-set formatoptions-=o
-autocmd FileType * set formatoptions-=o
-
 
 " ========================
 " = Cargar otro archivos =
@@ -184,11 +168,11 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 " = Configuración plugins =
 " =========================
 " LSP nativo, a partir de NeoVim 5.0
-" source $HOME/.config/nvim/plug-config/nvim-lsp.vim
+source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 " Instalar automáticamente server de LSP
-" source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
+source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
 " Autocompletado
-" source $HOME/.config/nvim/plug-config/completion-nvim.vim
+source $HOME/.config/nvim/plug-config/completion-nvim.vim
 
 " Ayuda a identificar cuando usamos f, F, t & T
 source $HOME/.config/nvim/plug-config/quickscope.vim
@@ -224,10 +208,10 @@ source $HOME/.config/nvim/plug-config/goyo.vim
 " 	configs de otros plugins como:
 " 		- nvim-ts-context-commentstring
 " 		- nvim-ts-rainbow
-" source $HOME/.config/nvim/plug-config/treesitter.vim
+source $HOME/.config/nvim/plug-config/treesitter.vim
 
 " Telescope, fuzzy finder
-" source $HOME/.config/nvim/plug-config/telescope.vim
+source $HOME/.config/nvim/plug-config/telescope.vim
 
 " Encuentra y muestra posibles errores en el código
 " source $HOME/.config/nvim/plug-config/trouble.vim
@@ -323,3 +307,25 @@ source $HOME/.config/nvim/functions/getFecha.vim
 " ====================
 " Algunos plugins tienen también sus propios mappings
 source $HOME/.config/nvim/keys/mappings.vim
+
+
+" ============
+" = Reconfig =
+" ============
+" Al parecer hay plugins que sobreescriben las coniguraciones, por eso las
+" cambio de lugar. Antes estaban al principio, ahora al final
+" Directorio donde guardar el registro de cambios de un archivo
+set undodir=$HOME/.config/nvim/undodir
+
+" Desactiva el swapfile, en este archivo se guardan copias de seguridad
+set noswapfile
+" Activa un archivo de respaldo
+set undofile
+" No crea archivos de backup
+set nobackup
+set nowritebackup
+
+" Desactiva que se inserte una línea de comentario si hacemos ^O o ^o en una
+"   linea comentada, es un comportamiento que, en lo personal, me disgusta
+set formatoptions-=o
+autocmd FileType * set formatoptions-=o
