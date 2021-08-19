@@ -299,7 +299,10 @@ set list
 " =============
 " = Funciones =
 " =============
+" Sustituir la linea actual con la salida del comando `date`
 source $HOME/.config/nvim/functions/getFecha.vim
+" Limpiar todos los registros
+source $HOME/.config/nvim/functions/clearRegisters.vim
 
 
 " ====================
