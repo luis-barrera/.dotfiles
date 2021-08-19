@@ -96,6 +96,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Plugin para incrementar más fácil fechas con C-a y C-x
 	Plug 'tpope/vim-speeddating'
 
+" Plugin para ver el contenido de los diferentes registros de nvim, los
+" registros son el portapapeles interno de nvim. Con "" activamos este plugin.
+	Plug 'gennaro-tedesco/nvim-peekup'
+
 "" TODO
 
 " Mejor representación de las lineas indentadas a través de líneas verticales
