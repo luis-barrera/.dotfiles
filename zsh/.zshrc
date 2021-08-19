@@ -233,8 +233,16 @@ alias internet-inspect="ss -p" # Muestra las apps que están usando internet
 alias basic-server="python3 -m http.server" # Crea un server básico para poder compartir archivos sobre la red
 
 # Sustituir ls con exa
-alias la="exa -la --icons --group-directories-first"
-alias ls="exa -l --icons --group-directories-first"
+alias la="exa -la --icons --group-directories-first -h --git"
+alias ls="exa -l --icons --group-directories-first -h"
+# Sustituir cat con bat
+# alias cat="bat"
+# Sustituir ps por procs
+# alias ps="procs"
+# Sustituir sed por sd
+# alias sed="sd"
+# Sustituir du por dust
+alias du="dust"
 
 # Translate
 alias trans-es="trans -s es -t en"
@@ -247,8 +255,19 @@ alias conda-deactivate="source /opt/anaconda/bin/deactivate root"
 # Ver webcam en una ventana usando mpv
 alias webcam="mpv av://v4l2:/dev/video0 --profile=low-latency --untimed"
 
+# Ver qué proceso está usando mucha memoria
+alias psmem='ps auxf | sort -nr -k 4'
+alias psmem10='ps auxf | sort -nr -k 4 | head -10'
+
+# Ver qué procesos estan usando mucho CPU
+alias pscpu='ps auxf | sort -nr -k 3'
+alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
+
 # Alias de lua
 alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Establece un navegador web por defecto
+export BROWSER=/sbin/vivaldi-stable
