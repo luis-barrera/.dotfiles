@@ -89,12 +89,14 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Pegar imágenes desde el clipboard
 	Plug 'ekickx/clipboard-image.nvim'
 
+" Mostrar los símbolos del proyecto en una vista a la derecha con el comando
+" :SymbolsOutline y dentro del menú con r podemos renombrarlo
+	Plug 'simrat39/symbols-outline.nvim'
+
+" Plugin para incrementar más fácil fechas con C-a y C-x
+	Plug 'tpope/vim-speeddating'
 
 "" TODO
-" Autocompletado
-  " Plug 'hrsh7th/nvim-compe'
-  " Plug 'hrsh7th/vim-vsnip'
-  " Plug 'hrsh7th/vim-vsnip-integ'
 
 " Mejor representación de las lineas indentadas a través de líneas verticales
 " que marcan los bloques de código
