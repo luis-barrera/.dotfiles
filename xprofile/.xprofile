@@ -38,9 +38,10 @@ xinput set-prop 12 360 0
 # Perfiles de aceleración
 xinput set-prop 12 363 0, 0
 
-# Autostart después del display server y antes del WM
+# Abrir aplicaciones después del display server, pero antes del WM
 # xcompmgr &
 # light-locker &
+gnome-keyring-daemon --start
 redshift-gtk &
 pcloud &
 flameshot &
