@@ -17,4 +17,4 @@
 [gc]
 	autoDetach = false
 [credential]
-	helper = store
+	helper = /usr/lib/git-core/git-credential-libsecret
