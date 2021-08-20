@@ -17,4 +17,4 @@
 [gc]
 	autoDetach = false
 [credential]
-	helper = cache
+	helper = store
