@@ -13,6 +13,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+" VimWiki
+  Plug 'vimwiki/vimwiki'
 
 " LSP Nativo de NVim
 	Plug 'neovim/nvim-lspconfig'
@@ -100,6 +102,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " registros son el portapapeles interno de nvim. Con "" activamos este plugin.
 	Plug 'gennaro-tedesco/nvim-peekup'
 
+" Preview de markdown
+	Plug 'shime/vim-livedown'
+
 "" TODO
 
 " Mejor representación de las lineas indentadas a través de líneas verticales
@@ -149,9 +154,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
   " Comentarios con el keymap gcc
   Plug 'tpope/vim-commentary'
 
-  " VimWiki
-  Plug 'vimwiki/vimwiki'
-
   " Página de inico
   " Plug 'mhinz/vim-startify'
 
@@ -193,6 +195,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
   " Detectar mejor las palabras al usar w, e & b
   " Plug 'chaoren/vim-wordmotion'
+
+" END TODO
 
 " Temas
 	Plug 'kaicataldo/material.vim'

@@ -43,7 +43,7 @@ set confirm
 " set path+=/home/luisbarrera/,**
 set path+=**
 " Mejor autocompletado en la línea de comandos
-set wildmenu
+set wildmenu wildmode=longest:full,full
 
 " Búsqueda dentro del archivo
 " Búsqueda insensible a las mayúsculas
@@ -270,6 +270,8 @@ source $HOME/.config/nvim/plug-config/vim-wiki.vim
 " vimtex, LaTeX en nvim
 let g:vimtex_compiler_progname = 'nvr'
 
+" LiveDown, preview de markdown
+let g:livedown_browser = "surf" " Navegador a usar
 
 " ========
 " = Tabs =

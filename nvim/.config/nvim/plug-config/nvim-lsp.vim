@@ -5,7 +5,7 @@
 "	 página anterior para más información.
 
 " Característica necesaria para mostrar la ventana de sugerencias
-set omnifunc=compe#complete()
+" set omnifunc=compe#complete()
 
 " Inicia bloque de código de Lua, aquí se declaran los lenguajes y sus
 "		respectivos servidores a usar en el LSP nativo

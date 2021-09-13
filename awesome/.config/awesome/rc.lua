@@ -218,6 +218,7 @@ globalkeys = my_table.join(
   awful.key({ modkey }, "Left", awful.tag.viewprev, {description = "Espacio previo", group = "tag"}),
   awful.key({ modkey }, "Right", awful.tag.viewnext, {description = "Espacio siguiente", group = "tag"}),
   awful.key({ modkey }, "Escape", awful.tag.history.restore, {description = "Espacio anterior", group = "tag"}),
+  awful.key({ "Control" }, "Escape", awful.tag.history.restore, {description = "Espacio anterior", group = "tag"}),
 
   -- -- Navegación entre espacios no vacios
   -- awful.key({ altkey }, "Left", function()
@@ -433,6 +434,7 @@ globalkeys = my_table.join(
   -- awful.key({ modkey }, "x", function()
   --   awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi")
   -- end, {description = "dmenu", group = "launcher"}),
+
   awful.key({ modkey }, "z", function()
     awful.spawn("rofi -show combi")
   end, {description = "dmenu", group = "launcher"})

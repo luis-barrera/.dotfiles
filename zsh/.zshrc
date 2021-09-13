@@ -271,3 +271,12 @@ alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 
 # Establece un navegador web por defecto
 export BROWSER=/sbin/vivaldi-stable
+
+export SPOTIPY_CLIENT_ID=05308fd46b4d4660a76ec2020bfc95be
+export SPOTIPY_CLIENT_SECRET=7767add221f54d7fa0472b1b97c70471
+
+PATH="/home/luisbarrera/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/luisbarrera/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/luisbarrera/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/luisbarrera/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/luisbarrera/perl5"; export PERL_MM_OPT;
