@@ -1,6 +1,7 @@
 " Lista de servers del native nvim language server protocol
 "	 los nombres de los servers disponibles se encuentran en:
 "	 https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md
+
 " Cada uno de estos servers deben ser instalados por separado. Visitar la
 "	 página anterior para más información.
 
