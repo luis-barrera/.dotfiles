@@ -100,7 +100,7 @@ set scrolloff=5
 " Muestra el nombre del archivo en el titulo de la ventana
 set title
 " Máximo de pestanas
-set tabpagemax=10
+" set tabpagemax=10
 " Muestra la barra de pestañas abiertas siempre
 set showtabline=2
 
@@ -148,7 +148,8 @@ source $HOME/.config/nvim/plug-config/lightline.vim
 " source $HOME/.config/nvim/themes/moonfly.vim
 " source $HOME/.config/nvim/themes/falcon.vim
 " source $HOME/.config/nvim/themes/srcery.vim
-source $HOME/.config/nvim/themes/gruvbox-material.vim
+" source $HOME/.config/nvim/themes/gruvbox-material.vim
+source $HOME/.config/nvim/themes/vim-material.vim
 
 " Para que los temas no tengan problemas con la signcolumn de gitgutter
 highlight! link SignColumn LineNr

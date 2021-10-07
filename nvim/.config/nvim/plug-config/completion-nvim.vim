@@ -30,8 +30,9 @@ let g:completion_trigger_on_delete = 1
 " moverse entre ellas usamo Control+l
 imap <C-l> <Plug>(completion_next_source)
 
+" \{'complete_items': ['lsp', 'snippet', 'buffers', 'ts', 'tabnine']},
 let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippet', 'buffers', 'ts', 'tabnine']},
+    \{'complete_items': ['lsp', 'snippet', 'buffers', 'ts']},
     \{'mode': '<c-p>'},
     \{'mode': '<c-n>'}
 \]
