@@ -105,6 +105,10 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Preview de markdown
 	Plug 'shime/vim-livedown'
 
+" Mostrar el contexto al final de una función, sirve para identificar varios
+" más facilmente las funciones en código muy grande.
+	Plug 'haringsrob/nvim_context_vt'
+
 "" TODO
 
 " Mejor representación de las lineas indentadas a través de líneas verticales
@@ -208,6 +212,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'fenetikm/falcon'
 	Plug 'srcery-colors/srcery-vim'
 	Plug 'sainnhe/gruvbox-material'
+	Plug 'hzchirs/vim-material'
 
 " Statusline
 	Plug 'itchyny/lightline.vim'
