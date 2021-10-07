@@ -98,23 +98,26 @@ local cycle_prev   = false -- Cycle trough all previous client or just the first
 awful.util.terminal = terminal -- Defines the default terminal emulator
 beautiful.init(chosen_theme) -- Applies theme
 
+local bling = require("bling") -- Utilidades para awesome
+
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
 awful.util.tagnames = {"home", "web", "terminal", "music", "cal", "email", "vimwiki", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
-  lain.layout.cascade,
   awful.layout.suit.tile,
+  bling.layout.equalarea,
+  lain.layout.cascade,
   awful.layout.suit.max,
   awful.layout.suit.magnifier,
   awful.layout.suit.floating,
   awful.layout.suit.max.fullscreen,
   lain.layout.cascade.tile,
 
-  lain.layout.centerwork,
-  awful.layout.suit.tile.left,
-  awful.layout.suit.tile.bottom,
-  awful.layout.suit.tile.top,
+  -- lain.layout.centerwork,
+  -- awful.layout.suit.tile.left,
+  -- awful.layout.suit.tile.bottom,
+  -- awful.layout.suit.tile.top,
   -- awful.layout.suit.fair,
   -- awful.layout.suit.fair.horizontal,
   -- awful.layout.suit.spiral,
@@ -124,7 +127,7 @@ awful.layout.layouts = { -- Clients Layouts
   -- awful.layout.suit.corner.sw,
   -- awful.layout.suit.corner.se,
   -- lain.layout.centerwork.horizontal,
-  lain.layout.termfair,
+  -- lain.layout.termfair,
   -- lain.layout.termfair.center,
 }
 
@@ -435,8 +438,12 @@ globalkeys = my_table.join(
   --   awful.spawn("rofi -no-lazy-grab -show drun -modi drun -theme ~/scripts/launcher/launchpad.rasi")
   -- end, {description = "dmenu", group = "launcher"}),
 
+  -- awful.key({ modkey }, "z", function()
+  --   awful.spawn("rofi -show combi")
+  -- end, {description = "dmenu", group = "launcher"})
+
   awful.key({ modkey }, "z", function()
-    awful.spawn("rofi -show combi")
+    awful.spawn("sh /home/luisbarrera/.config/rofi/launchers/misc/launcher.sh")
   end, {description = "dmenu", group = "launcher"})
 
   -- No poner nada entre esta linea y el parentesis cerrando
