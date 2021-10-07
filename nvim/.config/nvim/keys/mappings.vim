@@ -43,7 +43,7 @@ nnoremap <silent> j gj
 nnoremap <silent> k gk
 
 " Quitar el resaltado en los resultados de las busquedas
-nnoremap <F3> :set hlsearch!<CR>
+nnoremap <F9> :set hlsearch!<CR>
 
 " Borrar hacia atras
 " imap <C-H> <C-W>
