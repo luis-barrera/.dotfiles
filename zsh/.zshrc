@@ -143,6 +143,8 @@ alias jl="jupyter-lab"
 alias startmysql="systemctl enable mysqld.service --now"
 alias restartmysql="systemctl restart mysqld.service"
 alias stopmysql="systemctl disable mysqld.service --now"
+alias mysqld="sudo /usr/local/mysql/bin/mysqld_safe --user=mysql"
+alias killmysqld="killall mysqld_safe"
 
 # Abrir configuración de nvim
 alias nvimconfig="cd ~/.config/nvim && nvim ~/.config/nvim/init.vim"
@@ -263,6 +265,9 @@ alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 
+# ripgrep, buscar pero ignorando si son mayúsculas o minúsculas
+alias rg='rg -i'
+
 # Alias de lua
 alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 
@@ -272,6 +277,9 @@ alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 # Establece un navegador web por defecto
 export BROWSER=/sbin/vivaldi-stable
 
+# Mensaje personalizado de sudo
+export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
+
 # Secrets para spotify-dl
 source ~/.spotify-secrets
 
@@ -280,3 +288,12 @@ PERL5LIB="/home/luisbarrera/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PE
 PERL_LOCAL_LIB_ROOT="/home/luisbarrera/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/luisbarrera/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/luisbarrera/perl5"; export PERL_MM_OPT;
+
+# opam configuration
+[[ ! -r /home/luisbarrera/.opam/opam-init/init.zsh ]] || source /home/luisbarrera/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
+
+# Emacs
+export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
