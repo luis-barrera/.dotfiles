@@ -48,3 +48,11 @@ export ANDROID_SDK_ROOT=/home/luisbarrera/Android/Sdk
 
 # JavaFX
 export PATH_TO_FX=/home/luisbarrera/eclipse-ws-java/javafx-sdk-16/lib
+
+# MySQL
+MYSQL_TCP_PORT=3306
+export MYSQL_TCP_PORT
+PATH=${PATH}:/usr/local/mysql/bin
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
