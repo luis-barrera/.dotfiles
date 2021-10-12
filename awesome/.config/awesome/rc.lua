@@ -539,9 +539,12 @@ clientkeys = my_table.join(
   awful.key({ modkey }, "u",
     awful.client.urgent.jumpto,
     {description = "Mover a cliente urgente", group = "client"}),
-  awful.key({ modkey, "Shift" }, "m",
-    lain.util.magnify_client,
-    {description = "Maximizar cliente", group = "client"}),
+  awful.key({ modkey, "Shift" }, "m", function(c)
+    -- lain.util.magnify_client,
+    local status = not c.maximized
+    c.maximized = status
+	c:emit_signal ("focus")
+    end, {description = "Maximizar cliente", group = "client"}),
   awful.key({ modkey, "Shift" }, "x", function(c)
     c:kill()
   end, {description = "Cerrar cliente", group = "client"}),
@@ -562,7 +565,7 @@ clientkeys = my_table.join(
   end, {description = "Minimizar", group = "client"}),
   awful.key({ modkey }, "m", function(c)
     c.maximized = not c.maximized
-    c:raise()
+	c:emit_signal ("focus")
   end, {description = "Maximizar", group = "client"})
 )
 
@@ -799,16 +802,16 @@ screen.connect_signal("property::geometry", function(s)
 end)
 
 -- No border when only one client is opened
-screen.connect_signal("arrange", function(s)
-  local only_one = #s.tiled_clients == 1
-  for _, c in pairs(s.clients) do
-    if only_one and not c.floating or c.maximized then
-      c.border_width = 0
-    else
-      c.border_width = beautiful.border_width
-    end
-  end
-end)
+-- screen.connect_signal("arrange", function(s)
+--   local only_one = #s.tiled_clients == 1
+--   for _, c in pairs(s.clients) do
+--     if only_one and not c.floating or c.maximized then
+--       c.border_width = 0
+--     else
+--       c.border_width = beautiful.border_width
+--     end
+--   end
+-- end)
 
 -- Creates the bars (wibar)
 awful.screen.connect_for_each_screen(function(s)
@@ -939,5 +942,12 @@ end)
 -- Change color of the client border
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+client.connect_signal("focus", function(c)
+	if c.maximized then
+		c.border_width=dpi(0)
+	else
+		c.border_width=beautiful.border_width
+	end
+end)
 
 -- EOF

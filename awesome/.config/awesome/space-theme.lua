@@ -31,7 +31,8 @@ local theme = {}
 
 -- Directorios por default
 theme.default_dir = require("awful.util").get_themes_dir() .. "default"
-theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
+-- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/seeyouspacecowboy.png"
 -- theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/Imágenes/wallpaper1.jpg"
@@ -63,12 +64,12 @@ theme.fg_player = "#bedc87"
 
 -- Bordes de clientes
 theme.border_width = dpi(2)
-theme.border_normal = "#000000"
-theme.border_focus = "#EEEEEE"
+theme.border_normal = "#FFFFFF"
+theme.border_focus = "#F77F00"
 
 -- Configuración del taglist
 theme.taglist_fg_focus = "#000000"
-theme.taglist_bg_focus = "#79E7FF"
+theme.taglist_bg_focus = theme.border_focus
 theme.taglist_fg_occupied = "#000000"
 theme.taglist_bg_occupied = "#EEEEEE"
 theme.taglist_bg_empty = "#000000"
