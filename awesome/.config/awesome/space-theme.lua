@@ -80,9 +80,9 @@ theme.taglist_spacing = dpi(4)
 theme.tasklist_fg_normal = "#000000"
 theme.tasklist_bg_normal = "#EEEEEE"
 theme.tasklist_fg_focus = "#000000"
-theme.tasklist_bg_focus = "#C9F5FF"
+theme.tasklist_bg_focus = theme.border_focus
 theme.tasklist_fg_urgent = "#000000"
-theme.tasklist_bg_urgent = "#f64a32"
+theme.tasklist_bg_urgent = "#ff0000"
 theme.tasklist_shape = gears.shape.rectangle
 
 -- theme.tasklist_shape_border_color = "#EEEEEE"
