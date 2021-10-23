@@ -112,6 +112,7 @@ vulkan-intel
 wget
 which
 wireless_tools
+xautolock
 xdg-user-dirs
 xdg-utils
 xf86-input-synaptics
