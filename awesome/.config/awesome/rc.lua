@@ -102,7 +102,7 @@ local bling = require("bling") -- Utilidades para awesome
 
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
-awful.util.tagnames = {"home", "web", "terminal", "music", "cal", "email", "vimwiki", "1", "2", "3", "4", "5"}
+awful.util.tagnames = {"home", "web", "terminal", "music", "org", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
   awful.layout.suit.tile,
