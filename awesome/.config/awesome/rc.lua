@@ -539,15 +539,15 @@ clientkeys = my_table.join(
   awful.key({ modkey }, "u",
     awful.client.urgent.jumpto,
     {description = "Mover a cliente urgente", group = "client"}),
-  awful.key({ modkey, "Shift" }, "m", function(c)
-    -- lain.util.magnify_client,
-    local status = not c.maximized
-    c.maximized = status
-	c:emit_signal ("focus")
-    end, {description = "Maximizar cliente", group = "client"}),
+  -- awful.key({ modkey, "Shift" }, "m", function(c)
+  --   -- lain.util.magnify_client,
+  --   local status = not c.maximized
+  --   c.maximized = status
+  --   c:emit_signal ("focus")
+  --   end, {description = "Maximizar cliente", group = "client"}),
   awful.key({ modkey, "Shift" }, "x", function(c)
     c:kill()
-  end, {description = "Cerrar cliente", group = "client"}),
+    end, {description = "Cerrar cliente", group = "client"}),
   awful.key({ altkey }, "space",
     awful.client.floating.toggle,
     {description = "Floating", group = "client"}),
@@ -557,16 +557,17 @@ clientkeys = my_table.join(
   awful.key({ modkey }, "o", function(c)
     c:move_to_screen()
   end, {description = "Mover a pantalla", group = "client"}),
-  awful.key({ modkey }, "t",
-    function (c) c.ontop = not c.ontop
-  end, {description = "Mantener al frente", group = "client"}),
-  awful.key({ modkey }, "n", function(c)
-    c.minimized = true
-  end, {description = "Minimizar", group = "client"}),
+  awful.key({ modkey }, "t", function (c)
+    c.ontop = not c.ontop
+    c.sticky = not c.sticky
+  end, {description = "Al frente en todos los tags", group = "client"}),
   awful.key({ modkey }, "m", function(c)
     c.maximized = not c.maximized
-	c:emit_signal ("focus")
-  end, {description = "Maximizar", group = "client"})
+    c:emit_signal ("focus")
+  end, {description = "Maximizar", group = "client"}),
+  awful.key({ modkey }, "n", function(c)
+    c.minimized = true
+  end, {description = "Minimizar", group = "client"})
 )
 
 -- Asigna espacios a teclas de numeros

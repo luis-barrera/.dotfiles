@@ -63,7 +63,7 @@ theme.applets_spacing = dpi(2)
 theme.fg_player = "#bedc87"
 
 -- Bordes de clientes
-theme.border_width = dpi(2)
+theme.border_width = dpi(3)
 theme.border_normal = "#FFFFFF"
 theme.border_focus = "#F77F00"
 
