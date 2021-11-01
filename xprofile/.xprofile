@@ -56,3 +56,6 @@ playerctld daemon &
 
 # Intercambia la tecla CAPS con CTRL-Izq
 setxkbmap -option 'ctrl:swapcaps'
+
+# Monitor de cambios en el File System
+fswatch -xL ~/google-drive | xargs -I{} ~/scripts/drive-push.sh {} &
