@@ -8,16 +8,14 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 local gears         = require("gears")
-local awful         = require("awful")
-                      require("awful.autofocus")
+local awful         = require("awful") require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
 local lain          = require("lain")
 local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
-local hotkeys_popup = require("awful.hotkeys_popup").widget
-                      require("awful.hotkeys_popup.keys")
+local hotkeys_popup = require("awful.hotkeys_popup").widget require("awful.hotkeys_popup.keys")
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi           = require("beautiful.xresources").apply_dpi
 
@@ -26,9 +24,9 @@ local dpi           = require("beautiful.xresources").apply_dpi
 -- If an error occurs during the load of the configuration file, it display a notification
 --    and then loads a basic configuration file.
 if awesome.startup_errors then
-  naughty.notify({ preset = naughty.config.presets.critical,
-    title = "Oops, there were errors during startup!",
-    text = awesome.startup_errors })
+	naughty.notify({ preset = naughty.config.presets.critical,
+		title = "Oops, there were errors during startup!",
+		text = awesome.startup_errors })
 end
 
 do
@@ -105,17 +103,17 @@ awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'
 awful.util.tagnames = {"home", "web", "terminal", "music", "org", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
-  awful.layout.suit.tile,
   bling.layout.equalarea,
-  lain.layout.cascade,
-  awful.layout.suit.max,
-  awful.layout.suit.magnifier,
-  awful.layout.suit.floating,
-  awful.layout.suit.max.fullscreen,
+  awful.layout.suit.tile,
+  awful.layout.suit.tile.left,
   lain.layout.cascade.tile,
 
+  -- awful.layout.suit.max,
+  -- awful.layout.suit.magnifier,
+  -- awful.layout.suit.floating,
+  -- awful.layout.suit.max.fullscreen,
+  -- lain.layout.cascade,
   -- lain.layout.centerwork,
-  -- awful.layout.suit.tile.left,
   -- awful.layout.suit.tile.bottom,
   -- awful.layout.suit.tile.top,
   -- awful.layout.suit.fair,
@@ -548,9 +546,13 @@ clientkeys = my_table.join(
   awful.key({ modkey, "Shift" }, "x", function(c)
     c:kill()
     end, {description = "Cerrar cliente", group = "client"}),
-  awful.key({ altkey }, "space",
-    awful.client.floating.toggle,
-    {description = "Floating", group = "client"}),
+  awful.key({ altkey }, "space", function(c)
+    c.floating = not c.floating
+	if c.floating == true then
+		c.width=800
+		c.height=400
+	end
+    end, {description = "Floating", group = "client"}),
   awful.key({ modkey, "Control" }, "Return", function(c)
     c:swap(awful.client.getmaster())
   end, {description = "Mover a master", group = "client"}),
@@ -558,8 +560,10 @@ clientkeys = my_table.join(
     c:move_to_screen()
   end, {description = "Mover a pantalla", group = "client"}),
   awful.key({ modkey }, "t", function (c)
-    c.ontop = not c.ontop
-    c.sticky = not c.sticky
+    local status = not c.sticky
+    c.sticky = status
+    c.ontop = status
+    c:emit_signal ("focus")
   end, {description = "Al frente en todos los tags", group = "client"}),
   awful.key({ modkey }, "m", function(c)
     c.maximized = not c.maximized
@@ -830,6 +834,7 @@ awful.rules.rules = {
   -- Rules for all the clients
   { rule = { },
     properties = {
+      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
       border_width = beautiful.border_width,
       border_color = beautiful.border_normal,
       focus = awful.client.focus.filter,
@@ -837,8 +842,7 @@ awful.rules.rules = {
       keys = clientkeys,
       buttons = clientbuttons,
       screen = awful.screen.preferred,
-      placement = awful.placement.no_overlap+awful.placement.no_offscreen,
-      size_hints_honor = false,
+      -- size_hints_honor = false,
       -- maximized = true,
     }
   },
@@ -846,6 +850,10 @@ awful.rules.rules = {
   -- Barra de título
   { rule_any = { type = { "dialog", "normal" } },
     properties = { titlebars_enabled = false } },
+
+  -- Terminales de kitty minimizadas a un tamaño fijo
+  { rule = { class="kitty", floating=true },
+    properties = { width=800, height=400 } },
 
   -- Configuración para clientes de Firefox.
   { rule = { class = "firefox" },
@@ -868,7 +876,7 @@ awful.rules.rules = {
     properties = { maximized = true } },
 
   { rule = { class = "conky", type = "dock" },
-    properties = { border_width = 0 } },
+    properties = { border_width = 0 } }
 }
 
 -- For news clients

@@ -5,3 +5,6 @@
 /emacs/.emacs.d/auto-save-list
 /emacs/.emacs.d/transient
 /emacs/.emacs.d/backup
+/emacs/.emacs.d/.org-id-locations
+/emacs/.emacs.d/bookmarks
+/emacs/.emacs.d/projectile-bookmarks.eld
