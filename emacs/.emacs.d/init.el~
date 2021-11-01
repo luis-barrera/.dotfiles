@@ -1,25 +1,11 @@
-;; Poner bordes a los lados del editor, solo en org-mode
-(defun efs/org-mode-visual-fill ()
-  (setq visual-fill-column-width 100
-	visual-fill-column-center-text t)
-  (visual-fill-column-mode 1))
-
-;; Quitar los keybindings de RET y SPC
-(defun my-move-key (keymap-from keymap-to key)
-     (define-key keymap-to key (lookup-key keymap-from key))
-     (define-key keymap-from key nil))
-(my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
-(my-move-key evil-motion-state-map evil-normal-state-map " ")
-
-
-
+;; Quitar mensaje de startup
 (setq inhibit-startup-message t)
 
-(scroll-bar-mode -1) ; Desactiva las scrollbars
-(tool-bar-mode -1) ; Desactiva la tool bar
-(tooltip-mode -1) ; Desactiva los tooltips
-(set-fringe-mode 10) ; TODO
-(menu-bar-mode -1) ; Desactiva el menubar
+(scroll-bar-mode -1) ;; Desactiva las scrollbars
+(tool-bar-mode -1) ;; Desactiva la tool bar
+(tooltip-mode -1) ;; Desactiva los tooltips
+;;(set-fringe-mode 10) ;; TODO
+(menu-bar-mode -1) ;; Desactiva el menubar
 
 ;; La pantalla parpadea cuando hay errores
 (setq visible-bell t)
@@ -28,17 +14,17 @@
 (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
 
 ;; Mostrar en la barra inferior la columna en la que está el cursor
-(column-number-mode)
+(column-number-mode t)
 ;; Columna de números
-(global-display-line-numbers-mode t)
+(global-display-line-numbers-mode 1)
 ;; Numeros de linea relativos
-; BUG: no está funcionando en buffers de org mode, a veces se desactiva en algunos otros
-;(setq display-line-numbers 'relative)
-
+;; BUG: no está funcionando en buffers de org mode, a veces se desactiva en algunos otros
+(setq display-line-numbers 'relative)
 ;; Deshabilitar la columna de números en algunos modos
-;(dolist (mode '(term-mode-hook
-;		shell-mode-hook))
-;  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+;; (dolist (mode '(term-mode-hook
+;; 		shell-mode-hook))
+;;   (add-hook mode (lambda () (display-line-numbers-mode 'nil))))
+
 
 
 ;; Package administrator
@@ -122,24 +108,6 @@
   :diminish which-key-mode
   :config
   (setq which-key-idle-delay 0.3))
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
- '(org-level-2 ((t (:inherit outline-2 :height 1.4))))
- '(org-level-3 ((t (:inherit outline-3 :height 1.3))))
- '(org-level-4 ((t (:inherit outline-4 :height 1.2))))
- '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
 
 ;; Muestra más info acerca de los comandos, así como su keybinding si está disponible
 (use-package ivy-rich
@@ -254,7 +222,7 @@
   (setq org-ellipsis " ⥥")
 
   ; Elimina los símbolos que se usan para modificar los caracteres, por ejemplo: los * que se usan para hacer negritas
-  ;org-hide-emphasis-markers t)
+  (setq org-hide-emphasis-markers t)
 
   ; Org agenda
   (setq org-agenda-files '("~/org-mode/tasks.org"))
@@ -263,7 +231,8 @@
   (setq org-return-follows-link t)
 
   ; Keywords para tasks
-  (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE"))))
+  (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE")))
+  )
 
 ;; Tener bloques de código sin perder el nivel de jerarquía
 ; org-mode no deja que metas un subtítulo y luego regreses al título anterior
@@ -297,7 +266,30 @@
   :ensure t
   :init (setq org-roam-v2-ack t)
   :custom
-  (org-roam-directory "~/org-roam")
+  (setq org-roam-directory "~/org-roam")
+
+  (setq org-roam-completion-everywhere t)
+
+  (setq org-roam-capture-templates
+    '(("d" "default" plain "%?"
+       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+			  "#+title: ${title}\n")
+       :unnarrowed t)
+      ("c" "Nota con más meta información" plain "%?"
+       :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+			  ":PROPERTIES:
+:AUTHOR: %^{Author|No Author}
+:ROAM_REFS: %^{Link o Referencia|No Referencia}
+:ROAM_ALIAS: %^{Alias|No Alias}
+:TYPE: %^{Type|Artículo}
+:DATE: %T
+:CREATOR: luis-barrera
+:END:
+#+title: ${title}
+#+filetags:")
+       :unnarrowed t)
+      )
+   )
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ; Esta es la función con la que debemos empezar
 	 ("C-c n f" . org-roam-node-find)
@@ -336,3 +328,36 @@
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 ;(setq split-window-right)
+
+;; Poner bordes a los lados del editor, solo en org-mode
+(defun efs/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+	visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+;; Quitar los keybindings de RET y SPC
+(defun my-move-key (keymap-from keymap-to key)
+     (define-key keymap-to key (lookup-key keymap-from key))
+     (define-key keymap-from key nil))
+(my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
+(my-move-key evil-motion-state-map evil-normal-state-map " ")
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(display-line-numbers 'relative)
+ '(package-selected-packages
+   '(undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.4))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.3))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.2))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
+

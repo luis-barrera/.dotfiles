@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/org-roam/20211021002528-nuevo_nodo_de_prueba_que_no_existe.org")
- (front-context-string . "\nEste es un nodo")
- (rear-context-string . "a que no existe\n")
- (position . 112))
+ (filename . "~/org-roam/20211028001747-youtube_agregando_caracteres_al_final_de_las_urls.org")
+ (front-context-string . "#+filetags: :she")
+ (rear-context-string . "nal de las URLs\n")
+ (position . 185))
 ("org-refile-last-stored"
  (filename . "~/org-mode/tasks.org")
  (front-context-string . "** DOING Una tar")

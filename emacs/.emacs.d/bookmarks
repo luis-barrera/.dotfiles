@@ -3,10 +3,10 @@
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
 (("org-capture-last-stored"
- (filename . "~/org-roam/20211023223854-processing_semi_structured_data_in_the_unix_shell.org")
+ (filename . "~/org-roam/20211029172926-the_most_unbelievable_things_about_life_before_smartphones.org")
  (front-context-string)
- (rear-context-string . " the Unix Shell\n")
- (position . 127))
+ (rear-context-string . "logia:internet:\n")
+ (position . 373))
 ("org-refile-last-stored"
  (filename . "~/org-mode/tasks.org")
  (front-context-string . "** DOING Una tar")
