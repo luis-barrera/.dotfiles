@@ -259,7 +259,6 @@ globalkeys = my_table.join(
 	-- Muestra las ventanas minimizadas
 	awful.key({ modkey, "Control" }, "n", function()
 		local c = awful.client.restore()
-
 		if c then
 			client.focus = c
 			c:raise()
@@ -347,6 +346,7 @@ clientkeys = my_table.join(
 		if c.floating == true then
 			c.width=800
 			c.height=400
+			awful.placement.centered(client.focus)
 		end
 		end, {description = "Floating", group = "client"}),
 	awful.key({ modkey, "Control" }, "Return", function(c)
@@ -359,6 +359,9 @@ clientkeys = my_table.join(
 		local status = not c.sticky
 		c.sticky = status
 		c.ontop = status
+		if c.sticky == true then
+			awful.placement.under_mouse(client.focus)
+		end
 		c:emit_signal ("focus")
 		end, {description = "Al frente en todos los tags", group = "client"}),
 	awful.key({ modkey }, "m", function(c)
