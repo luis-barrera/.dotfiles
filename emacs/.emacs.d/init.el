@@ -34,6 +34,7 @@
 
 
 
+;; ##############################
 ;; Package administrator
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")))
@@ -44,6 +45,7 @@
 
 
 
+;; ##############################
 ;; Auto-completado
 (use-package ivy
   :diminish
@@ -155,6 +157,7 @@
 
 
 
+;; ##############################
 ;; Keybindings
 ;; Evil mode, capa de vim
 (setq evil-want-keybinding nil)
@@ -203,6 +206,7 @@
 
 
 
+;; ##############################
 ;; Git y manejo de proyectos
 ;; Manejo de proyectos según le directorio en el que estamos
 (use-package projectile
@@ -232,6 +236,7 @@
 
 
 
+;; ##############################
 ;; Org mode
 (use-package org
   :hook (org-mode . org-indent-mode)
@@ -305,6 +310,19 @@
 ")
 	 :unnarrowed t)))
 
+;; Pegar imágenes en las notas desde el clipboard o abre una app para hacer screenshot
+(use-package org-download
+  :after org
+  :bind
+  (:map org-mode-map
+        (("s-Y" . org-download-screenshot)
+         ("s-y" . org-download-yank))))
+
+;; Navegar entre ventanas de mejor manera usando winner mode
+(winner-mode +1)
+(define-key winner-mode-map (kbd "<M-left>") #'winner-undo)
+(define-key winner-mode-map (kbd "<M-right>") #'winner-redo)
+
 ;; Evil para org, hay algunas teclas que no funcionan correctamente en org mode debido a evil
 (use-package evil-org
   :ensure t
@@ -339,7 +357,11 @@
  ;; If there is more than one, they won't work right.
  '(display-line-numbers 'relative)
  '(package-selected-packages
-   '(undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package)))
+   '(org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
+ '(safe-local-variable-values
+   '((eval setq org-image-actual-width 200)
+     (eval org-display-inline-images t t)
+     (eval setq org-image-actual-width 100))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -359,3 +381,17 @@
   kept-new-versions 20   ; how many of the newest versions to keep
   kept-old-versions 5    ; and how many of the old
   )
+
+;; Transparencia en el fondo
+(defun toggle-transparency ()
+   (interactive)
+   (let ((alpha (frame-parameter nil 'alpha)))
+     (set-frame-parameter
+      nil 'alpha
+      (if (eql (cond ((numberp alpha) alpha)
+                     ((numberp (cdr alpha)) (cdr alpha))
+                     ;; Also handle undocumented (<active> <inactive>) form.
+                     ((numberp (cadr alpha)) (cadr alpha)))
+               100)
+          '(85 . 50) '(100 . 100)))))
+ (global-set-key (kbd "C-c t") 'toggle-transparency)
