@@ -45,11 +45,11 @@ xinput set-prop $trackpoint 363 0, 0
 # light-locker &
 gnome-keyring-daemon --start
 redshift-gtk &
-pcloud &
 flameshot &
 parcellite -d &
 picom -b &
 playerctld daemon &
+# pcloud &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &
@@ -58,4 +58,4 @@ playerctld daemon &
 setxkbmap -option 'ctrl:swapcaps'
 
 # Monitor de cambios en el File System
-fswatch -xL ~/google-drive | xargs -I{} ~/scripts/drive-push.sh {} &
+#setsid fswatch -x -L /home/luisbarrera/google-drive/* | xargs -I{} ~/scripts/drive-push.sh {} >/dev/null 2>&1 < /dev/null &
