@@ -7,7 +7,8 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 
 # Set colorscheme using pywal
 (cat ~/.cache/wal/sequences &)
-(wal -q --theme base16-seti &)
+#(wal -q --theme base16-seti &)
+(wal -q --theme sexy-x-dotshare &)
 
 # pfetch
 (pfetch &&)
@@ -194,6 +195,7 @@ alias lofi="mpv --ytdl-format=94 https://youtu.be/5qap5aO4i9A"
 alias whitenoise="mpv --ytdl-format=251 https://youtu.be/nMfPqeZjc2c"
 # Reproduce sonidos relajantes de la selva
 alias relax="mpv --ytdl-format=251 https://youtu.be/cjkFG6bHGNc"
+alias travelers="mpv --ytdl-format=251 https://youtu.be/mDZf-fjBxz4"
 
 # Siguiendo el meme
 alias l='ls'
