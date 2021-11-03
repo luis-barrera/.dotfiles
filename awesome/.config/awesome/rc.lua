@@ -8,14 +8,16 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 local gears         = require("gears")
-local awful         = require("awful") require("awful.autofocus")
+local awful         = require("awful")
+                      require("awful.autofocus")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local naughty       = require("naughty")
 local lain          = require("lain")
 local menubar       = require("menubar")
 local freedesktop   = require("freedesktop")
-local hotkeys_popup = require("awful.hotkeys_popup").widget require("awful.hotkeys_popup.keys")
+local hotkeys_popup = require("awful.hotkeys_popup").widget
+                      require("awful.hotkeys_popup.keys")
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi           = require("beautiful.xresources").apply_dpi
 
@@ -62,7 +64,7 @@ local bling = require("bling") -- Utilidades para awesome
 
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
-awful.util.tagnames = {"home", "web", "terminal", "music", "org", "agenda", "htop", "1", "2", "3", "4", "5"}
+awful.util.tagnames = {"home", "web", "terminal", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
 	bling.layout.equalarea,
@@ -475,7 +477,7 @@ screen.connect_signal("arrange", function(s)
 	 local only_one = #s.tiled_clients == 1
 	 for _, c in pairs(s.clients) do
 		if only_one and not c.floating or c.maximized then
-			c.border_width = 0
+			c.border_width = dpi(0)
 		else
 			c.border_width = beautiful.border_width
 		end
@@ -506,8 +508,7 @@ awful.rules.rules = {
 			keys = clientkeys,
 			buttons = clientbuttons,
 			screen = awful.screen.preferred,
-			-- size_hints_honor = false,
-			-- maximized = true,
+			size_hints_honor = false
 		}
 	},
 
@@ -517,7 +518,7 @@ awful.rules.rules = {
 
 	-- Terminales de kitty minimizadas a un tamaño fijo
 	{ rule = { class="kitty", floating=true },
-		properties = { width=800, height=400 } },
+		properties = { width = 800, height = 500 } },
 
 	-- Configuración para clientes de Firefox.
 	{ rule = { class = "firefox" },
@@ -538,6 +539,10 @@ awful.rules.rules = {
 	-- Gimp
 	{ rule = { class = "Gimp", role = "gimp-image-window" },
 		properties = { maximized = true } },
+
+	-- Error fix
+	{ rule = { role = "GtkFileChooserDialog" },
+		properties = { maximized = false, width = 800, height = 600 } },
 
 	{ rule = { class = "conky", type = "dock" },
 		properties = { border_width = 0 } }
@@ -609,19 +614,19 @@ end)
 
 -- Activate sloppy focus, so focus follows the mouse
 client.connect_signal("mouse::enter", function(c)
-	c:emit_signal("request::activate", "mouse_enter", {raise = vi_focus})
+	c:emit_signal("request::activate", "mouse_enter", { raise = vi_focus })
 end)
 
 -- Change color of the client border
-client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
-client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 client.connect_signal("focus", function(c)
+	c.border_color = beautiful.border_focus
 	if c.maximized then
 		c.border_width=dpi(0)
 	else
 		c.border_width=beautiful.border_width
 	end
 end)
+client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 -- Partes archivadas
 
