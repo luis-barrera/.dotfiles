@@ -509,7 +509,8 @@ awful.rules.rules = {
 			buttons = clientbuttons,
 			screen = awful.screen.preferred,
 			size_hints_honor = false
-		}
+		},
+		callback = awful.client.setslave
 	},
 
 	-- Barra de título

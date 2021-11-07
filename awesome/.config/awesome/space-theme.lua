@@ -182,6 +182,7 @@ function countdown.set()
 						title = "Countdown",
 						text  = string.format("%s %s timeout", timeout, countdown.minute_t)
 					})
+					awful.spawn("paplay /home/luisbarrera/.config/awesome/widgets/serious-strike-533.ogg")
 					countdown.widget:set_markup("")
 					countdown.checkbox.checked = true
 					countdown.timer:stop()
