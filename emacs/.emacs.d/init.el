@@ -18,7 +18,8 @@
 ;; Columna de números
 (global-display-line-numbers-mode 1)
 ;; Numeros de linea relativos
-;; BUG: no está funcionando en buffers de org mode, a veces se desactiva en algunos otros
+;; BUG: no está funcionando en buffers de org mode, a veces se
+;; desactiva en algunos otros
 (setq display-line-numbers-type 'relative)
 ;; Deshabilitar la columna de números en algunos modos
 (dolist (mode '(term-mode-hook
@@ -87,11 +88,11 @@
   ;; Si queremos tener una lista completa de temas usar M-x counsel-load-theme RET
   ;(load-theme 'doom-one t)
   ;(load-theme 'doom-acario-dark t)
-  (load-theme 'doom-gruvbox t)
+  ;(load-theme 'doom-gruvbox t)
   ;(load-theme 'doom-Iosvkem t)
   ;(load-theme 'doom-manegarm t)
   ;(load-theme 'doom-peacock t)
-  ;(load-theme 'doom-tomorrow-night t)
+  (load-theme 'doom-tomorrow-night t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -102,6 +103,29 @@
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
+
+;; Temas, desde base16-emacs
+;; (use-package base16-theme
+;;   :ensure t
+;;   :config
+;;   ;; Temas favoritos
+;;   ;; (load-theme 'base16-3024 t)
+;;   ;; (load-theme 'base16-atelier-cave t)
+;;   ;; (load-theme 'base16-atelier-dune t)
+;;   ;; (load-theme 'base16-atelier-forest t)
+;;   ;; (load-theme 'base16-atelier-heath t)
+;;   ;; (load-theme 'base16-atelier-plateau t)
+;;   ;; (load-theme 'base16-brewer t)
+;;   ;; (load-theme 'base16-chalk t)
+;;   ;; (load-theme 'base16-darktooth t)
+;;   ;; (load-theme 'base16-gruvbox-dark-hard t)
+;;   ;; (load-theme 'base16-irblack t)
+;;   ;; (load-theme 'base16-spacemacs t)
+;;   ;; (load-theme 'base16-atelier-plateau t)
+
+;;   (setq base16-distinct-fringe-background 'nil
+;; 	;; Mode line
+;; 	base16-highlight-mode-line 'contrast))
 
 ;; Paréntesis de colores
 (use-package rainbow-delimiters
@@ -215,10 +239,12 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  ; Si entramos a cualquier directorio dentro de ~/dev se carga una configuración global dentro de ese directorio
+  ; Si entramos a cualquier directorio dentro de ~/dev se carga una
+  ; configuración global dentro de ese directorio
   (when (file-directory-p "~/dev")
   (setq projectile-project-search-path '("~/dev")))
-  ; Cuando entramos a un directorio, dired también se mueva a ese directorio
+  ; Cuando entramos a un directorio, dired también se mueva a ese
+  ; directorio
   (setq projectile-switch-project-action #'projectile-dired))
 
 ;; Counsel para projectile
@@ -249,15 +275,28 @@
   (setq org-link-frame-setup '((file . find-file)))
   ;; Símbolo a usar cuando cuando hay texto oculto por usar S-TAB
   (setq org-ellipsis "⥥")
-  ;; Elimina los símbolos que se usan para modificar los caracteres, por ejemplo: los * que se usan para hacer negritas
+  ;; Elimina los símbolos que se usan para modificar los caracteres,
+  ;; por ejemplo: los * que se usan para hacer negritas
   (setq org-hide-emphasis-markers t)
   ;; Org agenda
-  (setq org-agenda-files '("~/org-mode/tasks.org"))
+  ;; Guardar un log de las tareas completas
+  (setq org-agenda-start-with-log-mode t)
+  ;; Guardar la fecha cuando marcamos algo como completo
+  (setq org-log-donde 'time)
+  ;; Mantener el log dentro de un drawer, de manerar que se hace un fold 
+  (setq org-log-into-drawer t)
+  ;; Archivos considerados por org-agenda
+  (setq org-agenda-files '("~/org-mode/Tareas21O.org" "~/org-mode/Clases21O.org"))
+  ;; (setq org-agenda-files '("~/org-mode/tasks.org" "~/org-mode/clases21O.org"))
+  ;; Mostrar 10 días en la vista de semana de org-agenda.
+  (setq org-agenda-span 10)
   ;; Keywords para tasks
   (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE"))))
 
 ;; Seguir links de org mode al dar RET sobre ellos
 (setq org-return-follows-link t)
+;; Maping para abrir la agenda
+(global-set-key (kbd "C-c a") 'org-agenda-list)
 
 ;; Cambiar los símbolos de los headings
 (use-package org-superstar
@@ -357,7 +396,7 @@
  ;; If there is more than one, they won't work right.
  '(display-line-numbers 'relative)
  '(package-selected-packages
-   '(org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
+   '(base16-theme org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
  '(safe-local-variable-values
    '((eval setq org-image-actual-width 200)
      (eval org-display-inline-images t t)
@@ -395,3 +434,6 @@
                100)
           '(85 . 50) '(100 . 100)))))
  (global-set-key (kbd "C-c t") 'toggle-transparency)
+
+;; Guardar los buffers abiertos antes de cerrar el editor
+(desktop-save-mode 1)
