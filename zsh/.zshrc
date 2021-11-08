@@ -196,6 +196,7 @@ alias whitenoise="mpv --ytdl-format=251 https://youtu.be/nMfPqeZjc2c"
 # Reproduce sonidos relajantes de la selva
 alias relax="mpv --ytdl-format=251 https://youtu.be/cjkFG6bHGNc"
 alias travelers="mpv --ytdl-format=251 https://youtu.be/mDZf-fjBxz4"
+alias heavy-classic:"mpv --ytdl-format=251 https://youtu.be/2QKuxt_QKts"
 
 # Siguiendo el meme
 alias l='ls'
