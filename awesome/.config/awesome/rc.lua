@@ -21,6 +21,26 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi           = require("beautiful.xresources").apply_dpi
 
+-- Collision, extensión para el manejo de clientes, para usarlo pulsar las
+-- teclas de dirección (h,j,k,l) junto con alguna de las teclas mod (Tecla
+-- Windows(Mod4), Alt(Mod1), Control Shift)
+-- Mod4                                 : Move the focus on the tiled layer
+-- Mod4 + Control                       : Move the focus on the floating layer
+-- Mod4 + Shift                         : Move a client in the tiled or floating layer
+-- Mod4 + Shift + Control               : Move a floating client to the far side of that screen
+-- Mod4 + Mod1                          : Increase a floating client size
+-- Mod4 + Mod1 + Shift                  : Reduce a floating client size
+-- Control + Mod1                       : Move to the next/previous tag
+-- Control + Mod4 + Mod1 (Alt)          : Move to the next/previous screen
+-- Control + Mod4 + Mod1 (Alt) + Shift  : Move tag to the next/previous screen
+require("collision") {
+	--        Normal    Xephyr       Vim      G510
+	up    = { "Up"    , "&"        , "k"   , "F15" },
+	down  = { "Down"  , "KP_Enter" , "j"   , "F14" },
+	left  = { "Left"  , "#"        , "h"   , "F13" },
+	right = { "Right" , "\""       , "l"   , "F17" },
+}
+
 -- Error Catching
 -----------------
 -- If an error occurs during the load of the configuration file, it display a notification
@@ -138,66 +158,14 @@ globalkeys = my_table.join(
 		end, {description = "Recorte de pantalla", group = "hotkeys"}),
 
 	-- Navegación entre espacios
-	awful.key({ modkey }, "Left", awful.tag.viewprev, {description = "Espacio previo", group = "tag"}),
-	awful.key({ modkey }, "Right", awful.tag.viewnext, {description = "Espacio siguiente", group = "tag"}),
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, {description = "Espacio anterior", group = "tag"}),
 	awful.key({ "Control" }, "Escape", awful.tag.history.restore, {description = "Espacio anterior", group = "tag"}),
 
-	-- Navegación entre clientes por indice
-	awful.key({ altkey }, "j", function()
-		awful.client.focus.byidx(1)
-		end, {description = "Siguiente por indice", group = "client"}),
-	awful.key({ altkey }, "k", function()
-		awful.client.focus.byidx(-1)
-		end, {description = "Anterior por indice", group = "client"}),
-
-	-- Navegación entre clientes por dirección
-	awful.key({ modkey }, "j", function()
-		awful.client.focus.global_bydirection("down")
-		if client.focus then
-			client.focus:raise()
-		end
-		end, { description = "Focus abajo", group = "client" }),
-	awful.key({ modkey }, "k", function()
-		awful.client.focus.global_bydirection("up")
-		if client.focus then
-			client.focus:raise()
-		end
-		end, { description = "Focus arriba", group = "client" }),
-	awful.key({ modkey }, "h", function()
-		awful.client.focus.global_bydirection("left")
-		if client.focus then
-			client.focus:raise()
-		end
-		end, { description = "Focus izquierdo", group = "client" }),
-	awful.key({ modkey }, "l", function()
-		awful.client.focus.global_bydirection("right")
-		if client.focus then
-			client.focus:raise()
-		end
-		end, { description = "Focus derecha", group = "client" }),
-
-	-- Manipulación de la disposición de los clientes
-	awful.key({ modkey, "Shift" }, "j", function()
-		awful.client.swap.byidx(1)
-		end, {description = "Mover cliente a la derecha", group = "client"}),
-	awful.key({ modkey, "Shift" }, "k", function()
-		awful.client.swap.byidx(-1)
-		end, {description = "Mover cliente a la izquierda", group = "client"}),
-
-	-- Número de clientes en la columna (da la sensación de mover clientes horizontalmente)
-	awful.key({ modkey, "Shift" }, "h", function()
-		awful.tag.incnmaster(1, nil, true)
-		end, {description = "Mueve cliente a la izquierda", group = "layout"}),
-	awful.key({ modkey, "Shift" }, "l", function()
-		awful.tag.incnmaster(-1, nil, true)
-		end, {description = "Mueve cliente a la derecha", group = "layout"}),
-
 	-- Focus a la siguiente pantalla
-	awful.key({ modkey, "Control" }, "h", function()
+	awful.key({ modkey, }, "o", function()
 		awful.screen.focus_relative(1)
 		end, {description = "Focus siguiente pantalla", group = "screen"}),
-	awful.key({ modkey, "Control" }, "l", function()
+	awful.key({ modkey, }, "p", function()
 		awful.screen.focus_relative(-1)
 		end, {description = "Focus pantalla anterior", group = "screen"}),
 
@@ -242,14 +210,6 @@ globalkeys = my_table.join(
 		lain.util.useless_gaps_resize(-1)
 		end, {description = "Decrementa padding", group = "tag"}),
 
-	-- Número de columnas
-	awful.key({ modkey, "Control" }, "h", function()
-		awful.tag.incncol(1, nil, true)
-		end, {description = "Incrementa numero de columnas", group = "layout"}),
-	awful.key({ modkey, "Control" }, "l", function()
-		awful.tag.incncol(-1, nil, true)
-		end, {description = "Decrementa numero de columnas", group = "layout"}),
-
 	-- Seleccionar el layout
 	awful.key({ modkey }, "space", function()
 		awful.layout.inc(1)
@@ -279,10 +239,10 @@ globalkeys = my_table.join(
 		end, {description = "Bajar Brillo al Mínimo", group = "hotkeys"}),
 
 	-- Control de música
-	awful.key({ modkey, "Control" }, "Left", function()
+	awful.key({ modkey, "Control" }, "{", function()
 		awful.spawn("playerctl --player=playerctld previous")
 		end, {description = "Cancion Anterior", group = "media"}),
-	awful.key({ modkey, "Control" }, "Right", function()
+	awful.key({ modkey, "Control" }, "}", function()
 		awful.spawn("playerctl --player=playerctld next")
 		end, {description = "Cancion Siguiente", group = "media"}),
 	awful.key({ modkey, "Control" }, "space", function()
@@ -290,10 +250,10 @@ globalkeys = my_table.join(
 		end, {description = "Play - Pause", group = "media"}),
 
 	-- Control de Volumen
-	awful.key({ modkey, "Control" }, "Up", function()
+	awful.key({ modkey, "Control" }, "+", function()
 		awful.spawn("pactl set-sink-volume 0 +2%")
 		end, {description = "Subir volumen", group = "media"}),
-	awful.key({ modkey, "Control" }, "Down", function()
+	awful.key({ modkey, "Control" }, "-", function()
 		awful.spawn("pactl set-sink-volume 0 -5%")
 		end, {description = "Bajar Volumen", group = "media"}),
 	awful.key({ }, "XF86AudioRaiseVolume", function()
@@ -759,6 +719,68 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "z", function()
 		awful.spawn("rofi -show combi")
 	end, {description = "dmenu", group = "launcher"})
+
+	-- Navegación entre espacios
+	awful.key({ modkey }, "Left", awful.tag.viewprev, {description = "Espacio previo", group = "tag"}),
+	awful.key({ modkey }, "Right", awful.tag.viewnext, {description = "Espacio siguiente", group = "tag"}),
+
+	-- Navegación entre clientes por indice
+	awful.key({ altkey }, "j", function()
+		awful.client.focus.byidx(1)
+		end, {description = "Siguiente por indice", group = "client"}),
+	awful.key({ altkey }, "k", function()
+		awful.client.focus.byidx(-1)
+		end, {description = "Anterior por indice", group = "client"}),
+
+	-- Navegación entre clientes por dirección
+	awful.key({ modkey }, "j", function()
+		awful.client.focus.global_bydirection("down")
+		if client.focus then
+			client.focus:raise()
+		end
+		end, { description = "Focus abajo", group = "client" }),
+	awful.key({ modkey }, "k", function()
+		awful.client.focus.global_bydirection("up")
+		if client.focus then
+			client.focus:raise()
+		end
+		end, { description = "Focus arriba", group = "client" }),
+	awful.key({ modkey }, "h", function()
+		awful.client.focus.global_bydirection("left")
+		if client.focus then
+			client.focus:raise()
+		end
+		end, { description = "Focus izquierdo", group = "client" }),
+	awful.key({ modkey }, "l", function()
+		awful.client.focus.global_bydirection("right")
+		if client.focus then
+			client.focus:raise()
+		end
+		end, { description = "Focus derecha", group = "client" }),
+
+	-- Manipulación de la disposición de los clientes
+	awful.key({ modkey, "Shift" }, "j", function()
+		awful.client.swap.byidx(1)
+		end, {description = "Mover cliente a la derecha", group = "client"}),
+	awful.key({ modkey, "Shift" }, "k", function()
+		awful.client.swap.byidx(-1)
+		end, {description = "Mover cliente a la izquierda", group = "client"}),
+
+	-- Número de clientes en la columna (da la sensación de mover clientes horizontalmente)
+	awful.key({ modkey, "Shift" }, "h", function()
+		awful.tag.incnmaster(1, nil, true)
+		end, {description = "Mueve cliente a la izquierda", group = "layout"}),
+	awful.key({ modkey, "Shift" }, "l", function()
+		awful.tag.incnmaster(-1, nil, true)
+		end, {description = "Mueve cliente a la derecha", group = "layout"}),
+
+	-- Número de columnas
+	awful.key({ modkey, "Control" }, "h", function()
+		awful.tag.incncol(1, nil, true)
+		end, {description = "Incrementa numero de columnas", group = "layout"}),
+	awful.key({ modkey, "Control" }, "l", function()
+		awful.tag.incncol(-1, nil, true)
+		end, {description = "Decrementa numero de columnas", group = "layout"}),
 )
 ]]--
 
