@@ -22,6 +22,7 @@ local wcpu = require("widgets.cpu")
 local wnet = require("widgets.net")
 local alsabar = require("widgets.alsabar")
 local player = require("widgets.player")
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local markup = require("markup")
 local naughty = require("naughty")
 
@@ -40,10 +41,14 @@ theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jp
 -- theme.wallpaper2 = os.getenv("HOME") .. "/Pictures/f2.jpg"
 
 -- Fuentes
-theme.font = "JetBrainsMono Nerd Font 9"
-theme.prompt_font = "JetBrainsMono Nerd Font 9"
-theme.player_font = "Hurmit Nerd Font Mono 10"
-theme.taglist_font = "JetBrainsMono Nerd Font Bold 10"
+-- theme.font = "JetBrainsMono Nerd Font 12"
+-- theme.prompt_font = "JetBrainsMono Nerd Font 9"
+-- theme.player_font = "Hurmit Nerd Font Mono 10"
+-- theme.taglist_font = "JetBrainsMono Nerd Font Bold 12"
+theme.font = "Iosevka 12"
+theme.prompt_font = "Iosevka 9"
+theme.player_font = "Iosevka 10"
+theme.taglist_font = "Iosevka Italic 12"
 
 -- Colores
 theme.fg_normal = "#EEEEEE"
@@ -54,7 +59,7 @@ theme.fg_urgent = "#000000"
 theme.bg_urgent = "#f64a32"
 
 -- Colores de los applets
-theme.applets_font = "JetBrainsMono Nerd Font 10"
+theme.applets_font = theme.font
 theme.applets_fg = "#EEEEEE"
 theme.applets_bg_1 = "#000000"
 theme.applets_bg_2 = "#000000"
@@ -141,78 +146,20 @@ local clockwidget = wibox.container.margin(clockbg, dpi(2), dpi(2), dpi(2), dpi(
 clockwidget = wibox.container.background(clockwidget, theme.bg_normal, gears.shape.rect)
 clockwidget = wibox.container.margin(clockwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
--- Countdown
-local countdown = {
-	widget   = wibox.widget.textbox(),
-	checkbox = wibox.widget {
-		checked = false,
-		check_color = theme.applets_fg,  -- customize
-		border_color = theme.applets_fg, -- customize
-		check_border_color = theme.taglist_bg_urgent,
-		check_color = theme.taglist_bg_urgent,
-		border_width = dpi(2), -- customize
-		shape = gears.shape.circle,
-		widget = wibox.widget.checkbox
-	}
+-- Volume
+local volumen = wibox.widget{
+  separator,
+  volume_widget{
+            widget_type = 'icon_and_text',
+            font = theme.applets_font
+        },
+  separator,
+  layout = wibox.layout.fixed.horizontal
 }
-
-function countdown.set()
-	awful.prompt.run {
-		prompt = ' <b>Countdown minutes: </b>', -- floats accepted
-		text = '25',
-		font = "JetBrainsMono Nerd Font 9",
-		textbox = countdown.widget,
-		fg_cursor = theme.border_focus,
-		bg_cursor = theme.border_focus,
-		exe_callback = function(timeout)
-			countdown.seconds = tonumber(timeout)
-			if not countdown.seconds then return end
-			countdown.checkbox.checked = false
-			countdown.minute_t = countdown.seconds > 1 and "minutes" or "minute"
-			countdown.seconds = countdown.seconds * 60
-			countdown.timer = gears.timer({ timeout = 1 })
-			countdown.timer:connect_signal("timeout", function()
-				if countdown.seconds > 0 then
-					local minutes = math.floor(countdown.seconds / 60)
-					local seconds = math.fmod(countdown.seconds, 60)
-					countdown.widget:set_markup(string.format(" %d:%02d ", minutes, seconds))
-					countdown.seconds = countdown.seconds - 1
-				else
-					naughty.notify({
-						title = "Countdown",
-						text  = string.format("%s %s timeout", timeout, countdown.minute_t)
-					})
-					awful.spawn("paplay /home/luisbarrera/.config/awesome/widgets/serious-strike-533.ogg")
-					countdown.widget:set_markup("")
-					countdown.checkbox.checked = true
-					countdown.timer:stop()
-				end
-			end)
-			countdown.timer:start()
-		end
-	}
-end
-
-countdown.checkbox:buttons(awful.util.table.join(
-	awful.button({}, 1, function() countdown.set() end), -- left click
-	awful.button({}, 3, function() -- right click
-		if countdown.timer and countdown.timer.started then
-			countdown.widget:set_markup("")
-			countdown.checkbox.checked = false
-			countdown.timer:stop()
-			naughty.notify({ title = "Countdown", text  = "Timer stopped" })
-		end
-	end)
-))
-
-local wcountdown = wibox.widget{
-	countdown.widget,
-	wibox.container.margin(countdown.checkbox, dpi(4), dpi(4), dpi(4), dpi(4)),
-	layout = wibox.layout.fixed.horizontal
-}
-local mycountdownwidget = wibox.container.background(wcountdown, theme.applets_bg_1, gears.shape.rect)
-mycountdownwidget = wibox.container.margin(mycountdownwidget, dpi(1), dpi(2), dpi(2), dpi(2))
-mycountdownwidget = wibox.container.background(mycountdownwidget, dpi(1), dpi(2), dpi(2), dpi(2))
+volumen = wibox.container.background(volumen, theme.applets_bg_3, gears.rect)
+volumen = wibox.container.margin(volumen, dpi(2), dpi(2), dpi(2), dpi(2))
+volumen = wibox.container.background(volumen, theme.bg_normal, gears.shape.rect)
+volumen = wibox.container.margin(volumen, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Fecha
 local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg, "  %a %d %b "))
@@ -401,6 +348,7 @@ function theme.at_screen_connect(s)
 				calendarwidget,
 				mycountdownwidget,
 				clockwidget,
+				volumen,
 				mybatterywidget,
 			},
 			nil, -- Parte central

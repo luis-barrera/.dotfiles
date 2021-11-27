@@ -219,7 +219,7 @@ globalkeys = my_table.join(
 		end, {description = "Anterior Layout", group = "layout"}),
 
 	-- Muestra las ventanas minimizadas
-	awful.key({ modkey, "Control" }, "n", function()
+	awful.key({ modkey, "Shift" }, "n", function()
 		local c = awful.client.restore()
 		if c then
 			client.focus = c
@@ -486,8 +486,8 @@ awful.rules.rules = {
 		properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
 
 	-- Spotify
-	{ rule = { class = "spotify" },
-		properties = { tag = "music", titlebars_enabled = false } },
+	{ rule = { class = "Spotify" },
+		properties = { tag = awful.util.tagnames[4], titlebars_enabled = false } },
 
 	-- KeePassXC
 	{ rule = { class = "KeePassXC" },
