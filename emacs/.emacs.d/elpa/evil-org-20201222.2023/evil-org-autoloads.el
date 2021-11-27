@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "evil-org" "evil-org.el" (0 0 0 0))
-;;; Generated autoloads from evil-org.el
+;;;### (autoloads nil "evil-org" "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org.el"
+;;;;;;  "cc0ef1ebe3835603d36d992852001580")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org.el
 
 (autoload 'evil-org-mode "evil-org" "\
 Buffer local minor mode for evil-org
@@ -18,20 +19,31 @@ also enable the mode if ARG is omitted or nil, and toggle it if
 ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "evil-org" "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "evil-org" '("evil-org-")))
 
 ;;;***
+
+;;;***
 
-;;;### (autoloads nil "evil-org-agenda" "evil-org-agenda.el" (0 0
-;;;;;;  0 0))
-;;; Generated autoloads from evil-org-agenda.el
+;;;### (autoloads "actual autoloads are elsewhere" "evil-org-agenda"
+;;;;;;  "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org-agenda.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org-agenda.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "evil-org-agenda" '("evil-org-agenda-set-keys")))
 
 ;;;***
 
-;;;### (autoloads nil nil ("evil-org-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org-agenda.el"
+;;;;;;  "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org-pkg.el"
+;;;;;;  "../../../../../.emacs.d/elpa/evil-org-20201222.2023/evil-org.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

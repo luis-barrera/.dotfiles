@@ -11,22 +11,38 @@
 (setq visible-bell t)
 
 ;; Establecemos la fuente, para el tamaño multiplicar por 10
-(set-face-attribute 'default nil :font "JetBrainsMono Nerd Font" :height 140)
+;; (set-face-attribute 'default t :font "JetBrainsMono Nerd Font" :height 200)
+;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-20")
+;; (set-frame-font "JetBrainsMono Nerd Font-20" nil t)
+(set-face-attribute 'default nil :font "Iosevka-18")
+(set-frame-font "Iosevka-18" nil t)
 
+;; Indentación
+;; Se recomienda usar también los comando tabify y untabify
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+;; Cortar lineas
+(global-visual-line-mode t)
 ;; Mostrar en la barra inferior la columna en la que está el cursor
 (column-number-mode t)
 ;; Columna de números
-(global-display-line-numbers-mode 1)
+;; (global-display-line-numbers-mode 1)
+(defun my-display-numbers-hook ()
+  (display-line-numbers-mode t)
+  (setq display-line-numbers-type 'relative)
+)
+(add-hook 'prog-mode-hook 'my-display-numbers-hook)
+(add-hook 'text-mode-hook (display-line-numbers-mode 'nil))
+(add-hook 'org-mode-hook (display-line-numbers-mode 'nil))
 ;; Numeros de linea relativos
 ;; BUG: no está funcionando en buffers de org mode, a veces se
 ;; desactiva en algunos otros
-(setq display-line-numbers-type 'relative)
+;; (setq display-line-numbers-type 'relative)
 ;; Deshabilitar la columna de números en algunos modos
-(dolist (mode '(term-mode-hook
- 		shell-mode-hook))
-   (add-hook mode (lambda () (display-line-numbers-mode 'nil))))
-;; Cortar lineas
-(global-visual-line-mode t)
+;; (dolist (mode '(term-mode-hook
+;;  		shell-mode-hook))
+;;    (add-hook mode (lambda () (display-line-numbers-mode 'nil))))
 
 ;; Abrir ventanas a la derecha y no debajo
 (setq split-height-threshold nil)
@@ -38,11 +54,14 @@
 ;; ##############################
 ;; Package administrator
 (require 'package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
+;; and `package-pinned-packages`. Most users will not need or want to do this.
+;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
-(unless (package-installed-p 'use-package)
-  (package-install 'use-package))
+;; (unless (package-installed-p 'use-package)
+;;   (package-install 'use-package))
 
 
 
@@ -74,7 +93,8 @@
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
-  :custom (doom-modeline-height 12))
+  :custom (doom-modeline-height 10))
+(setq doom-modeline-buffer-file-name-style 'truncate-upto-root)
 
 ;; Temas, desde Doom-Emacs
 (use-package doom-themes
@@ -87,45 +107,23 @@
   ;; Temas favoritos
   ;; Si queremos tener una lista completa de temas usar M-x counsel-load-theme RET
   ;(load-theme 'doom-one t)
-  ;(load-theme 'doom-acario-dark t)
+  (load-theme 'doom-acario-dark t)
   ;(load-theme 'doom-gruvbox t)
   ;(load-theme 'doom-Iosvkem t)
   ;(load-theme 'doom-manegarm t)
   ;(load-theme 'doom-peacock t)
-  (load-theme 'doom-tomorrow-night t)
+  ;(load-theme 'doom-tomorrow-night t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  ;; (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (setq doom-themes-treemacs-theme "doom-colors")
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
-
-;; Temas, desde base16-emacs
-;; (use-package base16-theme
-;;   :ensure t
-;;   :config
-;;   ;; Temas favoritos
-;;   ;; (load-theme 'base16-3024 t)
-;;   ;; (load-theme 'base16-atelier-cave t)
-;;   ;; (load-theme 'base16-atelier-dune t)
-;;   ;; (load-theme 'base16-atelier-forest t)
-;;   ;; (load-theme 'base16-atelier-heath t)
-;;   ;; (load-theme 'base16-atelier-plateau t)
-;;   ;; (load-theme 'base16-brewer t)
-;;   ;; (load-theme 'base16-chalk t)
-;;   ;; (load-theme 'base16-darktooth t)
-;;   ;; (load-theme 'base16-gruvbox-dark-hard t)
-;;   ;; (load-theme 'base16-irblack t)
-;;   ;; (load-theme 'base16-spacemacs t)
-;;   ;; (load-theme 'base16-atelier-plateau t)
-
-;;   (setq base16-distinct-fringe-background 'nil
-;; 	;; Mode line
-;; 	base16-highlight-mode-line 'contrast))
 
 ;; Paréntesis de colores
 (use-package rainbow-delimiters
@@ -164,17 +162,17 @@
   ([remap describe-key] . helpful-key))
 
 ;; Leader key con <espacio>, como en vim
-(use-package general
-  :config
-  (general-create-definer rune/leader-keys
-			  :keymaps '(normal visual emacs)
-			  ;:prefix "SPC"
-			  :prefix "C-SPC")
+;; (use-package general
+;;   :config
+;;   (general-create-definer rune/leader-keys
+;; 			  :keymaps '(normal visual emacs)
+;; 			  ;:prefix "SPC"
+;; 			  :prefix "C-SPC")
 
-  ;; Estos son ejemplos de cómo se definen los keybindings
-  (rune/leader-keys
-   "t" '(:ignore t :which-key "toggles")
-   "tt" '(counsel-load-theme :which-key "choose theme")))
+;;   ;; Estos son ejemplos de cómo se definen los keybindings
+;;   (rune/leader-keys
+;;    "t" '(:ignore t :which-key "toggles")
+;;    "tt" '(counsel-load-theme :which-key "choose theme")))
 
 ;; Ayuda a repetir comandos
 ;; (use-package hydra)
@@ -269,6 +267,8 @@
   :config
   ;; Guardar los buffers después de hacer un refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
+  ;; Deja de insertar indentación en los bloques de código
+  (setq org-edit-src-content-indentation 0)
   ;; Seguir links al dar RET sobre ellos
   (setq org-return-follows-link t)
   ;; Abrir los links en el mismo frame
@@ -277,12 +277,12 @@
   (setq org-ellipsis "⥥")
   ;; Elimina los símbolos que se usan para modificar los caracteres,
   ;; por ejemplo: los * que se usan para hacer negritas
-  (setq org-hide-emphasis-markers t)
+  (setq org-hide-emphasis-markers nil)
   ;; Org agenda
   ;; Guardar un log de las tareas completas
   (setq org-agenda-start-with-log-mode t)
   ;; Guardar la fecha cuando marcamos algo como completo
-  (setq org-log-donde 'time)
+  (setq org-log-done 'time)
   ;; Mantener el log dentro de un drawer, de manerar que se hace un fold 
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
@@ -304,7 +304,7 @@
   :hook (org-mode . org-superstar-mode)
   :config
   ; Caracteres a usar para cada nivel
-  (setq org-superstar-headline-bullets-list '("❉" "❋" "✺" "✹" "✸" "✶" "✵" "✲"))
+  (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
   ; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
   (setq org-superstar-cycle-headline-bullets 'nil)
   ; Ocultar un puntito que sale enfrente de los heading
@@ -362,6 +362,15 @@
 (define-key winner-mode-map (kbd "<M-left>") #'winner-undo)
 (define-key winner-mode-map (kbd "<M-right>") #'winner-redo)
 
+;; Encontrar palabras dentro de los archivos
+(use-package deft
+    :config
+    (setq deft-directory org-roam-directory
+          deft-recursive t
+          deft-use-filename-as-title t)
+    :bind
+    ("C-c n d" . deft))
+
 ;; Evil para org, hay algunas teclas que no funcionan correctamente en org mode debido a evil
 (use-package evil-org
   :ensure t
@@ -382,6 +391,9 @@
 	visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
+
+
+;; TODO: partes desordenadas, funcionan pero ponerlas en su lugar correspondiente
 ;; Quitar los keybindings de RET y SPC
 (defun my-move-key (keymap-from keymap-to key)
      (define-key keymap-to key (lookup-key keymap-from key))
@@ -394,23 +406,26 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(display-line-numbers 'relative)
+ ;; '(display-line-numbers 'relative)
  '(package-selected-packages
-   '(base16-theme org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
+   '(solaire-mode neotree lean-mode js-react-redux-yasnippets yasnippet-classic-snippets yasnippet-lean company-try-hard php-mode emmet-mode yasnippet-snippets company-web web-mode sequential-command alert pomm deft org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
  '(safe-local-variable-values
    '((eval setq org-image-actual-width 200)
      (eval org-display-inline-images t t)
-     (eval setq org-image-actual-width 100))))
+     (eval setq org-image-actual-width 100)))
+)
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-level-1 ((t (:inherit outline-1 :height 1.5))))
- '(org-level-2 ((t (:inherit outline-2 :height 1.4))))
- '(org-level-3 ((t (:inherit outline-3 :height 1.3))))
- '(org-level-4 ((t (:inherit outline-4 :height 1.2))))
- '(org-level-5 ((t (:inherit outline-5 :height 1.1)))))
+ '(mode-line ((t (:family "Iosevka" :height 0.8))))
+ '(mode-line-inactive ((t (:family "Iosevka" :height 0.8))))
+ '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
 ;; Poner los archivos de Backup (los que terminan en ~) en otro lugar
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
@@ -432,8 +447,135 @@
                      ;; Also handle undocumented (<active> <inactive>) form.
                      ((numberp (cadr alpha)) (cadr alpha)))
                100)
-          '(85 . 50) '(100 . 100)))))
+          '(90 . 50) '(100 . 100)))))
  (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; Guardar los buffers abiertos antes de cerrar el editor
 (desktop-save-mode 1)
+
+
+;; Notificaciones de escritorio para los eventos de org-agenda, por
+;; defecto Emacs no puede enviar notificaciones al escritorio
+(require 'appt)
+(appt-activate t)
+
+(setq appt-message-warning-time 5) ; Show notification 5 minutes before event
+(setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
+(setq appt-display-mode-line nil)
+
+; Use appointment data from org-mode
+(defun my-org-agenda-to-appt ()
+  (interactive)
+  (setq appt-time-msg-list nil)
+  (org-agenda-to-appt))
+
+; Update alarms when...
+; (1) ... Starting Emacs
+(my-org-agenda-to-appt)
+; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
+(run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt)
+(run-at-time "07:35am" (* 24 3600) 'my-org-agenda-to-appt)
+; (3) ... When TODO.txt is saved
+(add-hook 'after-save-hook
+          '(lambda ()
+             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Tareas21O.org"))
+                 (my-org-agenda-to-appt))))
+(add-hook 'after-save-hook
+          '(lambda ()
+             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Clases21O.org"))
+                 (my-org-agenda-to-appt))))
+
+; Display appointments as a window manager notification
+(setq appt-disp-window-function 'my-appt-display)
+(setq appt-delete-window-function (lambda () t))
+
+(setq my-appt-notification-app (concat (getenv "HOME") "/bin/appt-notification"))
+
+(defun my-appt-display (min-to-app new-time msg)
+  (if (atom min-to-app)
+    (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
+  (dolist (i (number-sequence 0 (1- (length min-to-app))))
+    (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
+
+;; Notificaciones en el escritorio
+(setq alert-default-style 'libnotify)
+
+
+
+;; ##############################
+;; Web-mode
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.css?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
+
+;; Resalta las columnas
+(setq web-mode-enable-current-column-highlight t)
+;; (setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-element-highlight 'nil)
+
+;; Autocompletado en línea
+(defun my-web-mode-hook ()
+  (set (make-local-variable 'company-backends) '(company-css company-web-html company-yasnippet company-files))
+)
+
+;; Activar emmet en web-mode
+(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'web-mode-hook  'emmet-mode) 
+;; Editar js, css en html-mode
+(add-hook 'web-mode-before-auto-complete-hooks
+    '(lambda ()
+     (let ((web-mode-cur-language
+  	    (web-mode-language-at-pos)))
+               (if (string= web-mode-cur-language "php")
+    	   (yas-activate-extra-mode 'php-mode)
+      	 (yas-deactivate-extra-mode 'php-mode))
+               (if (string= web-mode-cur-language "css")
+    	   (setq emmet-use-css-transform t)
+      	 (setq emmet-use-css-transform nil)))))
+;; Emmet usa por defecto dos tabs(o espacios) para indentar, usar solo 1 tab
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indent-after-insert t)))
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 1)))
+;; Mover el cursor entre quotes
+(setq emmet-move-cursor-between-quotes t) ;; default nil
+
+;; Hora en la modeline
+(display-time-mode 1)
+
+;; Mover la indentación por bloques
+(global-set-key (kbd "C->") 'indent-rigidly-right-to-tab-stop)
+(global-set-key (kbd "C-<") 'indent-rigidly-left-to-tab-stop)
+
+;; Autocompletado con company
+;; Funciona a través de backends, para una lista completa de los que
+;; están habilitados usar el comando =M-x customize-variable RET
+;; company-backends=.
+(add-hook 'after-init-hook 'global-company-mode)
+
+;; Snippets, autocompletado
+;; (yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+(put 'narrow-to-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
+;; Autopair paréntesis
+(electric-pair-mode)
+
+;; Neotree, file manager
+(global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+
+(defun neotree-setup ()(interactive)(progn(text-scale-adjust 0)(text-scale-decrease 0.4)))
+(add-hook 'neo-after-create-hook
+          (lambda (_)(call-interactively 'neotree-setup))
+          (global-visual-line-mode 'nil)
+          (display-line-numbers-mode 'nil))
+
+;; Quita el path completo para symbolik links
+(setq find-file-visit-truename t)
+
+;; Solaire-mode
+(solaire-global-mode +1)
