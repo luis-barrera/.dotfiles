@@ -7,8 +7,10 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 
 # Set colorscheme using pywal
 (cat ~/.cache/wal/sequences &)
-#(wal -q --theme base16-seti &)
-(wal -q --theme sexy-x-dotshare &)
+# (wal -q --theme base16-seti &)
+# (wal -q --theme sexy-x-dotshare &)
+(wal -q --theme sexy-sexcolors &)
+# (wal -q --theme sexy-dwmrob &)
 
 # pfetch
 (pfetch &&)
@@ -274,6 +276,9 @@ alias rg='rg -i'
 # Alias de lua
 alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 
+# Alias para libreoffice
+alias office="libreoffice"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -300,3 +305,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # Emacs
 export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
+
+
+# PHP 7
+# export PATH=/sbin/php7:$PATH
+# alias php=/sbin/php7
