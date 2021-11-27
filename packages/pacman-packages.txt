@@ -1,5 +1,6 @@
 acpi
 alacritty
+alsa-utils
 anki
 arduino
 arduino-avr-core
