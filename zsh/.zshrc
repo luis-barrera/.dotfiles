@@ -215,7 +215,7 @@ alias sls='ls'
 
 # Abrir archivos de la escuela en zathura
 alias horario="zathura ~/Trim-8/Horario21P.pdf"
-alias caluam="zathura ~/Trim-8/Calendario_UAM.pdf"
+alias caluam="zathura ~/Trim9-21O/caluam.pdf"
 # alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 # alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Pendientes/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
@@ -279,11 +279,15 @@ alias luamake="/home/luisbarrera/dev/lua-language-server/3rd/luamake/luamake"
 # Alias para libreoffice
 alias office="libreoffice"
 
+# Alias para establecer web browser por default
+alias set-firefox-default-browser="xdg-settings set default-web-browser firefox.desktop"
+alias set-chromium-default-browser="xdg-settings set default-web-browser chromium.desktop"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Establece un navegador web por defecto
-export BROWSER=/sbin/vivaldi-stable
+# export BROWSER=/sbin/vivaldi-stable
 
 # Mensaje personalizado de sudo
 export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
