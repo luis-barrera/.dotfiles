@@ -30,8 +30,7 @@
 ;; (global-display-line-numbers-mode 1)
 (defun my-display-numbers-hook ()
   (display-line-numbers-mode t)
-  (setq display-line-numbers-type 'relative)
-)
+  (setq display-line-numbers-type 'relative))
 (add-hook 'prog-mode-hook 'my-display-numbers-hook)
 (add-hook 'text-mode-hook (display-line-numbers-mode 'nil))
 (add-hook 'org-mode-hook (display-line-numbers-mode 'nil))
@@ -54,15 +53,45 @@
 ;; ##############################
 ;; Package administrator
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
+(package-refresh-contents)
 
-;; (unless (package-installed-p 'use-package)
-;;   (package-install 'use-package))
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
 
+(unless (package-installed-p 'swiper)
+   (package-install 'swiper))
+
+(unless (package-installed-p 'counsel)
+   (package-install 'counsel))
+
+; (custom-set-variables
+;  ;; custom-set-variables was added by Custom.
+;  ;; If you edit it by hand, you could mess it up, so be careful.
+;  ;; Your init file should contain only one such instance.
+;  ;; If there is more than one, they won't work right.
+;  '(package-selected-packages
+;    '(swiper ivy counsel comment-tags multiple-cursors company-php ivy-hydra treemacs-magit treemacs-projectile treemacs-evil parrot lsp-pyright lsp-java lsp-dart lsp-mode solaire-mode lean-mode js-react-redux-yasnippets yasnippet-classic-snippets yasnippet-lean company-try-hard php-mode emmet-mode yasnippet-snippets company-web web-mode sequential-command alert pomm deft org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
+;  '(safe-local-variable-values
+;    '((eval setq org-image-actual-width 200)
+;      (eval org-display-inline-images t t)
+;      (eval setq org-image-actual-width 100))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(mode-line ((t (:family "Iosevka" :height 0.8))))
+ '(mode-line-inactive ((t (:family "Iosevka" :height 0.8))))
+ '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
+ '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
 
 
 ;; ##############################
@@ -84,6 +113,20 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
+;; Quita el símbolo ^ de los buffers de ivy
+(setq ivy-initial-inputs-alist nil)
+
+;; Interfaz para encontrar cualquier cosa
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-ibuffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history)))
+;; Cambiar entre buffers, si queremos mostrar buffer especiales (los que empiezan con *) usar "C-x b"
+(setq ivy-ignore-buffers '("\\` " "\\`\\*"))
+(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
+(global-set-key (kbd "M-o")  'mode-line-other-buffer)
 
 ;; Iconos para la barra de estado
 ;; Después de instalar el paquete, correr M-x all-the-icons-install-fonts
@@ -141,14 +184,6 @@
   :init
   (ivy-rich-mode 1))
 
-;; Ayuda
-(use-package counsel
-  :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel.ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history)))
-
 ;; Mejora al sistema de ayuda para la documentación de Emacs
 (use-package helpful
   :ensure t
@@ -185,11 +220,13 @@
 (setq evil-want-keybinding nil)
 (setq evil-want-integration t)
 (unless (package-installed-p 'evil)
-  (package-install evil))
+  (package-install 'evil))
 (require 'evil)
 (evil-mode 1)
+
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+(define-key evil-normal-state-map (kbd "gcc") 'comment-or-uncomment-region)
 (setq evil-ex-search-vim-style-regexp t)
 (setq evil-in-single-undo t)
 
@@ -198,9 +235,6 @@
   :after evil
   :config
   (evil-collection-init))
-
-;; Cambiar entre buffers
-(global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
 
 ;; Tener bloques de código sin perder el nivel de jerarquía
 ; org-mode no deja que metas un subtítulo y luego regreses al título anterior
@@ -323,7 +357,9 @@
 	 ; Esta es la función con la que debemos empezar
 	 ("C-c n f" . org-roam-node-find)
 	 ("C-c n i" . org-roam-node-insert)
-	 ("C-M-i" . completion-at-point))
+	 ("C-M-i" . completion-at-point)
+   ("C-c n t" . org-roam-tag-add)
+   ("C-c n c" . org-id-get-create))
   :config
   ;(org-roam-setup)
   (setq org-roam-completion-everywhere t))
@@ -401,32 +437,6 @@
 (my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (my-move-key evil-motion-state-map evil-normal-state-map " ")
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- ;; '(display-line-numbers 'relative)
- '(package-selected-packages
-   '(solaire-mode neotree lean-mode js-react-redux-yasnippets yasnippet-classic-snippets yasnippet-lean company-try-hard php-mode emmet-mode yasnippet-snippets company-web web-mode sequential-command alert pomm deft org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful counsel ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
- '(safe-local-variable-values
-   '((eval setq org-image-actual-width 200)
-     (eval org-display-inline-images t t)
-     (eval setq org-image-actual-width 100)))
-)
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(mode-line ((t (:family "Iosevka" :height 0.8))))
- '(mode-line-inactive ((t (:family "Iosevka" :height 0.8))))
- '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
- '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
- '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
- '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
- '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
-
 ;; Poner los archivos de Backup (los que terminan en ~) en otro lugar
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
   backup-by-copying t    ; Don't delink hardlinks
@@ -437,6 +447,7 @@
   )
 
 ;; Transparencia en el fondo
+;; TODO: no me gusta que también se ponga transparante el fondo, así que por el momento lo desactivo
 (defun toggle-transparency ()
    (interactive)
    (let ((alpha (frame-parameter nil 'alpha)))
@@ -448,7 +459,7 @@
                      ((numberp (cadr alpha)) (cadr alpha)))
                100)
           '(90 . 50) '(100 . 100)))))
- (global-set-key (kbd "C-c t") 'toggle-transparency)
+ ;; (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; Guardar los buffers abiertos antes de cerrar el editor
 (desktop-save-mode 1)
@@ -564,18 +575,168 @@
 (electric-pair-mode)
 
 ;; Neotree, file manager
-(global-set-key [f8] 'neotree-toggle)
-(setq neo-smart-open t)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;; (global-set-key [f8] 'neotree-toggle)
+;; (setq neo-smart-open t)
+;; (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 
-(defun neotree-setup ()(interactive)(progn(text-scale-adjust 0)(text-scale-decrease 0.4)))
-(add-hook 'neo-after-create-hook
-          (lambda (_)(call-interactively 'neotree-setup))
-          (global-visual-line-mode 'nil)
-          (display-line-numbers-mode 'nil))
+;; (defun neotree-setup ()(interactive)(progn(text-scale-adjust 0)(text-scale-decrease 0.4)))
+;; (add-hook 'neo-after-create-hook
+;;           (lambda (_)(call-interactively 'neotree-setup))
+;;           (global-visual-line-mode 'nil)
+;;           (display-line-numbers-mode 'nil))
+;; Treemacs, mejor file manager
+;; Para agregar más directorios correr el comando treemacs-edit-workspace
+(global-set-key [f8] 'treemacs)
+(use-package treemacs-evil)
+(lsp-treemacs-sync-mode 1)
 
 ;; Quita el path completo para symbolik links
 (setq find-file-visit-truename t)
 
 ;; Solaire-mode
 (solaire-global-mode +1)
+
+;; Viva la parrot revolution!!
+(use-package parrot
+  :config
+  (parrot-mode))
+;; default confused emacs nyan rotating science thumbsup
+(parrot-set-parrot-type 'emacs)
+;; Infinitamente
+;; (setq parrot-num-rotations nil)
+(setq parrot-num-rotations 6)
+
+;; LSP-mode
+;; Algunos comandos interesantes:
+;;   * lsp-find-definition
+;;   * lsp-find-references
+;;   * lsp-modeline-diagnostics-mode, es un modo para mostrar los errores del código en el mode-line
+;;   * lsp-modeline-code-actions-mode, modo para mostrar las acciones disponibles
+;; Alguna config rara, pero necesaria
+(setq gc-cons-threshold 100000000)
+;; Cantidad de información que lee Emacs
+(setq read-process-output-max (* 1024 4096))
+;; Tasa de refresco
+(setq lsp-idle-delay 0.500)
+;; Los logs pueden bajar el performance
+(setq lsp-log-io nil) ; if set to true can cause a performance hit
+;; Para que se funcione con company
+(setq company-minimum-prefix-length 1
+      company-idle-delay 0.0) ;; default is 0.2
+;; Mostrar el número de errores en el mode-line
+(with-eval-after-load 'lsp-mode
+  ;; :global/:workspace/:file
+  (setq lsp-modeline-diagnostics-scope :workspace))
+;; LSP-java, instalar el package lsp-java
+(use-package lsp-java)
+(add-hook 'java-mode-hook #'lsp)
+;; LSP-python
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
+;; sql
+;; Aquí se deben definir las conexiones a las BD que querramos usar, luego correr el comando M-x lsp-sqls-*
+;; (setq lsp-sqls-connections
+;;     '(((driver . "mysql") (dataSourceName . "yyoncho:local@tcp(localhost:3306)/foo"))
+;;       ((driver . "postgresql") (dataSourceName . "host=127.0.0.1 port=5432 user=yyoncho password=local dbname=sammy sslmode=disable"))))
+
+;; Config para lsp
+(use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :hook ((prog-mode-hook . lsp-mode) (lsp-mode . lsp-enable-which-key-integration) (lsp-mode . lsp-completion-mode))
+  :commands (lsp lsp-deferred))
+
+;; optionally
+;; (use-package lsp-ui :commands lsp-ui-mode)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list)
+;; optional if you want which-key integration
+;; (use-package which-key
+;;     :config
+;;     (which-key-mode))
+
+;; LSP por major-mode
+(add-hook 'hack-local-variables-hook
+          (lambda () (when (prog-mode 'javascript-mode) (deno-ls)))
+          (lambda () (when (prog-mode 'js2-mode) (deno-ls)))
+          (lambda () (when (prog-mode 'typescript-mode) (deno-ls)))
+          )
+
+;; pomm
+(setq pomm-audio-enabled t)
+(setq pomm-audio-player-executable "/sbin/paplay")
+
+;; Multiple cursores
+;; Para salir de este modo, usar C-g o <return>, para meter un salto de linea dentro del modo usar C-j
+(use-package multiple-cursors)
+;; Soporte para evil-mode
+(setq mc/cmds-to-run-for-all
+      '(
+        electric-newline-and-maybe-indent
+        evil-backward-char
+        evil-delete-char
+        evil-escape-emacs-state
+        evil-escape-insert-state
+        evil-exit-emacs-state
+        evil-forward-char
+        evil-insert
+        evil-next-line
+        evil-normal-state
+        evil-previous-line
+        forward-sentence
+        kill-sentence
+        org-self-insert-command
+        sp-backward-delete-char
+        sp-delete-char
+        sp-remove-active-pair-overlay
+        ))
+;; Si tenemos seleccionado muchas líneas, agregar un cursor al inicio de estas
+(global-set-key (kbd "C-c C-S-c") 'mc/edit-lines)
+;;;; Editar string similares a la que está seleccionada
+;; Si no hay texto seleccionado, solo se brinca a la misma posición en la linea anterior o posterior.
+;; Para que funcione con evil-mode, dar <esc> después de seleccionar para luego entrar al insert-mode.
+;; Esto porque estamos usando visual-mode y debemos salirnos de este modo para luego entrar al insert-mode.
+;; Editar string siguiente similar
+(global-set-key (kbd "C-c C-<") 'mc/mark-next-like-this)
+;; Editar string anterior similar
+(global-set-key (kbd "C-c C->") 'mc/mark-previous-like-this)
+;; Este obligatoriamente debe tener texto seleccionado
+;; Editar todas las strings similares
+(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+
+;; Plugin para ver y administrar code-tags
+;; (autoload 'comment-tags-mode "comment-tags-mode")
+(setq comment-tags-keymap-prefix (kbd "C-c C-t"))
+(use-package comment-tags
+  :hook ((prog-mode-hook . comment-tags-mode)))
+(with-eval-after-load "comment-tags"
+  (setq comment-tags-keyword-faces
+        `(("TODO" . ,(list :weight 'bold :foreground "#28ABE3"))
+          ("FIXME" . ,(list :weight 'bold :foreground "#DB3340"))
+          ("BUG" . ,(list :weight 'bold :foreground "#DB3340"))
+          ("HACK" . ,(list :weight 'bold :foreground "#E8B71A"))
+          ("KLUDGE" . ,(list :weight 'bold :foreground "#E8B71A"))
+          ("XXX" . ,(list :weight 'bold :foreground "#F7EAC8"))
+          ("INFO" . ,(list :weight 'bold :foreground "#F7EAC8"))
+          ("DONE" . ,(list :weight 'bold :foreground "#1FDA9A"))))
+  (setq comment-tags-comment-start-only 'nil
+        comment-tags-require-colon t
+        comment-tags-case-sensitive t
+        comment-tags-show-faces t
+        comment-tags-lighter t))
+(add-hook 'prog-mode-hook 'comment-tags-mode)
+
+;; Config para dired
+(put 'dired-find-alternate-file 'disabled nil)
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(emmet-mode rainbow-delimiters yasnippet-snippets yasnippet comment-tags web-mode company org-superstar visual-fill-column multiple-cursors lsp-java lsp-pyright which-key use-package undo-fu treemacs-evil solaire-mode parrot org-roam lsp-treemacs ivy-rich helpful evil-org evil-numbers evil-collection doom-themes doom-modeline counsel-projectile)))

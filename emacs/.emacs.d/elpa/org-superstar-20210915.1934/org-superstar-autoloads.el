@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "org-superstar" "org-superstar.el" (0 0 0 0))
-;;; Generated autoloads from org-superstar.el
+;;;### (autoloads nil "org-superstar" "../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar.el"
+;;;;;;  "81c9fb83646017c88f4b46d7790f123e")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar.el
 
 (put 'org-superstar-leading-bullet 'safe-local-variable #'char-or-string-p)
 
@@ -28,8 +29,21 @@ from Lisp, also enable the mode if ARG is omitted or nil, and
 toggle it if ARG is `toggle'; disable the mode otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "org-superstar"
+;;;;;;  "../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "org-superstar" '("org-superstar-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/org-superstar-20210915.1934/org-superstar.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

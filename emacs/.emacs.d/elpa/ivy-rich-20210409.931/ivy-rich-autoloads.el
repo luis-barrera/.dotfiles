@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "ivy-rich" "ivy-rich.el" (0 0 0 0))
-;;; Generated autoloads from ivy-rich.el
+;;;### (autoloads nil "ivy-rich" "../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich.el"
+;;;;;;  "d403582cc06046a8d1527845f7055f10")
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich.el
 
 (defvar ivy-rich-mode nil "\
 Non-nil if Ivy-Rich mode is enabled.
@@ -51,8 +52,20 @@ nil, and toggle it if ARG is `toggle'; disable the mode
 otherwise.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "ivy-rich" "../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "ivy-rich" '("ivy-rich-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich-autoloads.el"
+;;;;;;  "../../../../../.emacs.d/elpa/ivy-rich-20210409.931/ivy-rich.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
