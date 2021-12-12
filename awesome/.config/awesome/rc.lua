@@ -79,6 +79,8 @@ local cycle_prev   = false -- Cycle trough all previous client or just the first
 
 awful.util.terminal = terminal -- Defines the default terminal emulator
 beautiful.init(chosen_theme) -- Applies theme
+beautiful.notification_height = dpi(100)
+beautiful.notification_icon_size = dpi(90)
 
 local bling = require("bling") -- Utilidades para awesome
 
@@ -91,6 +93,8 @@ awful.layout.layouts = { -- Clients Layouts
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
 	lain.layout.cascade.tile,
+	awful.layout.suit.tile.bottom,
+	awful.layout.suit.tile.top,
 }
 
 -- Mouse Actions
@@ -637,8 +641,6 @@ awful.layout.layouts = { -- Clients Layouts
 	-- awful.layout.suit.max.fullscreen,
 	-- lain.layout.cascade,
 	-- lain.layout.centerwork,
-	-- awful.layout.suit.tile.bottom,
-	-- awful.layout.suit.tile.top,
 	-- awful.layout.suit.fair,
 	-- awful.layout.suit.fair.horizontal,
 	-- awful.layout.suit.spiral,
