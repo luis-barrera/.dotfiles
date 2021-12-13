@@ -49,6 +49,7 @@ flameshot &
 parcellite -d &
 picom -b &
 playerctld daemon &
+syncthing-gtk &
 # pcloud &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
