@@ -1,5 +1,5 @@
--- TODO cambiar el tema de rofi a uno de github text
--- TODO reparar player_widget
+-- TODO: cambiar el tema de rofi a uno de github text
+-- TODO: reparar player_widget
 --[[
 	Configuración de AwesomeWM de: github.com/luis-barrera
 	Inspirado por:
@@ -33,71 +33,78 @@ local theme = {}
 
 -- Directorios por default
 theme.default_dir = require("awful.util").get_themes_dir() .. "default"
-theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
+-- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/seeyouspacecowboy.png"
 -- theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/Imágenes/wallpaper1.jpg"
 -- theme.wallpaper2 = os.getenv("HOME") .. "/Pictures/f2.jpg"
 
 -- Fuentes
--- theme.font = "JetBrainsMono Nerd Font 12"
--- theme.prompt_font = "JetBrainsMono Nerd Font 9"
--- theme.player_font = "Hurmit Nerd Font Mono 10"
--- theme.taglist_font = "JetBrainsMono Nerd Font Bold 12"
-theme.font = "Iosevka 12"
-theme.prompt_font = "Iosevka 9"
-theme.player_font = "Iosevka 10"
-theme.taglist_font = "Iosevka Italic 12"
+theme.font = "JetBrainsMono Nerd Font Regular 12"
+theme.taglist_font = "JetBrainsMono Nerd Font Regular 12"
+theme.prompt_font = "JetBrainsMono Nerd Font 9"
+theme.player_font = "Hurmit Nerd Font Mono 10"
+-- theme.font = "Iosevka 12"
+-- theme.prompt_font = "Iosevka 9"
+-- theme.player_font = "Iosevka 10"
+-- theme.taglist_font = "Iosevka Italic 12"
 
 -- Colores
-theme.fg_normal = "#EEEEEE"
-theme.bg_normal = "#000000"
-theme.fg_focus = "#79E7FF"
-theme.bg_focus = "#000000"
-theme.fg_urgent = "#000000"
-theme.bg_urgent = "#f64a32"
+theme.color1 = "#e2e2eb" -- Claro
+theme.color2 = "#2f2f3b" -- Oscuro
+theme.color3 = "#ff7b00" -- Color de acento
+theme.color4 = "#f64a32" -- Rojo, o algún color de urgente
+
+-- Aplicación de colores
+theme.fg_normal = theme.color1
+theme.bg_normal = theme.color2
+theme.fg_focus = theme.color1
+theme.bg_focus = theme.color2
+theme.fg_urgent = theme.color2
+theme.bg_urgent = theme.color4
 
 -- Colores de los applets
 theme.applets_font = theme.font
-theme.applets_fg = "#EEEEEE"
-theme.applets_bg_1 = "#000000"
-theme.applets_bg_2 = "#000000"
-theme.applets_bg_3 = "#000000"
-theme.bg_systray = theme.applets_bg_1
-theme.systray_icon_spacing = dpi(2)
+theme.applets_fg = theme.color1
+theme.applets_bg = theme.color2
 theme.applets_spacing = dpi(2)
-theme.fg_player = "#bedc87"
+
+-- Systray
+theme.bg_systray = theme.applets_bg
+theme.systray_icon_spacing = dpi(2)
 
 -- Bordes de clientes
 theme.border_width = dpi(2)
-theme.border_normal = "#FFFFFF"
-theme.border_focus = "#F77F00"
+theme.border_normal = theme.color1
+theme.border_focus = theme.color3
 
 -- Configuración del taglist
-theme.taglist_fg_focus = "#000000"
-theme.taglist_bg_focus = theme.border_focus
-theme.taglist_fg_occupied = "#000000"
-theme.taglist_bg_occupied = "#EEEEEE"
-theme.taglist_bg_empty = "#000000"
-theme.taglist_bg_urgent = "#f64a32"
+theme.taglist_fg_empty = theme.color1
+theme.taglist_bg_empty = theme.color2
+theme.taglist_fg_occupied = theme.color2
+theme.taglist_bg_occupied = theme.color1
+theme.taglist_fg_focus = theme.color1
+theme.taglist_bg_focus = theme.color2
+theme.taglist_shape = gears.shape.rectangle
+theme.taglist_shape_border_color_focus = theme.color1
+theme.taglist_shape_border_width_focus = dpi(3)
+theme.taglist_bg_urgent = theme.color4
 theme.taglist_spacing = dpi(4)
 
 -- Configuración del tasklist
-theme.tasklist_fg_normal = "#000000"
-theme.tasklist_bg_normal = "#EEEEEE"
-theme.tasklist_fg_focus = "#000000"
-theme.tasklist_bg_focus = theme.border_focus
-theme.tasklist_fg_urgent = "#000000"
-theme.tasklist_bg_urgent = "#ff0000"
 theme.tasklist_shape = gears.shape.rectangle
-
--- theme.tasklist_shape_border_color = "#EEEEEE"
-theme.tasklist_shape_border_color = "#000000"
-theme.tasklist_shape_border_width = dpi(2)
+theme.tasklist_disable_icon = true
+theme.tasklist_fg_normal = theme.color1
+theme.tasklist_bg_normal = theme.color2
+theme.tasklist_fg_focus = theme.color1
+theme.tasklist_bg_focus = theme.color2
+theme.tasklist_fg_urgent = theme.color1
+theme.tasklist_bg_urgent = theme.color4
+theme.tasklist_shape_border_color_focus = theme.color1
+theme.tasklist_shape_border_width_focus = dpi(3)
 theme.tasklist_spacing = dpi(4)
 theme.tasklist_plain_task_name = false
-theme.tasklist_disable_icon = true
 
 -- Iconos
 -- theme.mini_icon = os.getenv("HOME") .. "/Imágenes/think.png"
@@ -107,8 +114,8 @@ theme.mini_icon = os.getenv("HOME") .. "/Pictures/icon.png"
 theme.useless_gap = dpi(2)
 
 -- Prompts
-theme.prompt_fg = "#EEEEEE"
-theme.prompt_bg = "#000000"
+theme.prompt_fg = theme.color1
+theme.prompt_bg = theme.color2
 
 -- Separador
 local separator = wibox.widget.textbox('  ')
@@ -123,7 +130,7 @@ local tray = wibox.widget{
   separator,
   layout = wibox.layout.fixed.horizontal
 }
-tray = wibox.container.background(tray, theme.applets_bg_1, gears.shape.rect)
+tray = wibox.container.background(tray, theme.applets_bg, gears.shape.rect)
 tray = wibox.container.margin(tray, dpi(2), dpi(2), dpi(2), dpi(2))
 tray = wibox.container.background(tray, theme.bg_normal, gears.shape.rect)
 tray = wibox.container.margin(tray, dpi(1), dpi(2), dpi(2), dpi(2))
@@ -131,8 +138,8 @@ tray = wibox.container.margin(tray, dpi(1), dpi(2), dpi(2), dpi(2))
 -- Batería
 local batteryarc = batteryarc({
   font = theme.applets_font,
-  bg_color = theme.applets_bg_2 })
-batteryarc = wibox.container.background(batteryarc, theme.applets_bg_2, gears.shape.rect)
+  bg_color = theme.applets_bg})
+batteryarc = wibox.container.background(batteryarc, theme.applets_bg, gears.shape.rect)
 batteryarc = wibox.container.margin(batteryarc, dpi(2), dpi(2), dpi(2), dpi(2))
 batteryarc = wibox.container.background(batteryarc, theme.bg_normal, gears.shape.rect)
 batteryarc = wibox.container.margin(batteryarc, dpi(1), dpi(2), dpi(2), dpi(2))
@@ -141,29 +148,29 @@ batteryarc = wibox.container.margin(batteryarc, dpi(1), dpi(2), dpi(2), dpi(2))
 local mytextclock = wibox.widget.textclock(markup(theme.applets_fg, "  %H:%M "))
 mytextclock.font = theme.applets_font
 mytextclock.refresh = 20
-local clockbg = wibox.container.background(mytextclock, theme.applets_bg_3, gears.rect)
+local clockbg = wibox.container.background(mytextclock, theme.applets_bg, gears.rect)
 local clockwidget = wibox.container.margin(clockbg, dpi(2), dpi(2), dpi(2), dpi(2))
 clockwidget = wibox.container.background(clockwidget, theme.bg_normal, gears.shape.rect)
 clockwidget = wibox.container.margin(clockwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Volume
-local volumen = wibox.widget{
-  separator,
-  volume_widget{
-            widget_type = 'icon_and_text',
-            font = theme.applets_font
-        },
-  separator,
-  layout = wibox.layout.fixed.horizontal
-}
-volumen = wibox.container.background(volumen, theme.applets_bg_3, gears.rect)
-volumen = wibox.container.margin(volumen, dpi(2), dpi(2), dpi(2), dpi(2))
-volumen = wibox.container.background(volumen, theme.bg_normal, gears.shape.rect)
-volumen = wibox.container.margin(volumen, dpi(1), dpi(2), dpi(2), dpi(2))
+-- local volumen = wibox.widget{
+--   separator,
+--   volume_widget{
+--             widget_type = 'icon_and_text',
+--             font = theme.applets_font
+--         },
+--   separator,
+--   layout = wibox.layout.fixed.horizontal
+-- }
+-- volumen = wibox.container.background(volumen, theme.applets_bg_3, gears.rect)
+-- volumen = wibox.container.margin(volumen, dpi(2), dpi(2), dpi(2), dpi(2))
+-- volumen = wibox.container.background(volumen, theme.bg_normal, gears.shape.rect)
+-- volumen = wibox.container.margin(volumen, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Fecha
 local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg, "  %a %d %b "))
-local calbg = wibox.container.background(mytextcalendar, theme.applets_bg_1, gears.shape.rect)
+local calbg = wibox.container.background(mytextcalendar, theme.applets_bg, gears.shape.rect)
 calbg = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(2), dpi(2))
 calbg = wibox.container.background(calbg, theme.bg_normal, gears.shape.rect)
 
@@ -186,7 +193,7 @@ local cpu = wcpu({
 			markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
 		end
 })
-local cpubg = wibox.container.background(cpu.widget, theme.applets_bg_2, gears.shape.rect)
+local cpubg = wibox.container.background(cpu.widget, theme.applets_bg, gears.shape.rect)
 local cpuwidget = wibox.container.margin(cpubg, dpi(2), dpi(2), dpi(2), dpi(2))
 cpuwidget = wibox.container.background(cpuwidget, theme.bg_normal, gears.shape.rect)
 cpuwidget = wibox.container.margin(cpuwidget, dpi(1), dpi(2), dpi(2), dpi(2))
@@ -198,7 +205,7 @@ local net = wnet({
 			markup.fontfg(theme.applets_font, theme.applets_fg, " " .. net_now.received .. " ﲐ - ﲓ ".. net_now.sent .. " "))
 		end
 })
-local netbg = wibox.container.background(net.widget, theme.applets_bg_3, gears.shape.rect)
+local netbg = wibox.container.background(net.widget, theme.applets_bg, gears.shape.rect)
 local networkwidget = wibox.container.margin(netbg, dpi(2), dpi(2), dpi(2), dpi(2))
 networkwidget = wibox.container.background(networkwidget, theme.bg_normal, gears.shape.rect)
 networkwidget = wibox.container.margin(networkwidget, dpi(1), dpi(2), dpi(2), dpi(2))
@@ -238,7 +245,11 @@ local mylauncher = awful.widget.button({ image = theme.mini_icon })
 function theme.at_screen_connect(s)
 
 	-- Widget que muestra el layout actual
-	s.mylayoutbox = awful.widget.layoutbox(s)
+	s.mylayoutbox = wibox.widget{
+		separator,
+		awful.widget.layoutbox(s),
+		separator,
+		layout = wibox.layout.fixed.horizontal}
 	s.mylayoutbox:buttons(my_table.join(
 			awful.button({}, 1, function () awful.layout.inc( 1) end),
 			awful.button({}, 2, function () awful.layout.set( awful.layout.layouts[1] ) end),
@@ -246,26 +257,22 @@ function theme.at_screen_connect(s)
 			awful.button({}, 4, function () awful.layout.inc( 1) end),
 			awful.button({}, 5, function () awful.layout.inc(-1) end)))
 	s.mylayoutbox = wibox.container.background(s.mylayoutbox, theme.bg_focus, gears.shape.rect)
+	s.mylayoutbox = wibox.container.margin(s.mylayoutbox, dpi(4), dpi(2), dpi(2), dpi(2))
 
 	-- Widget que muestra las etiquetas, más configuración se encuentra en las lineas 52-56
 	s.mytaglist = awful.widget.taglist{
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
 		buttons = awful.util.taglist_buttons}
-	s.mytaglist = wibox.container.margin(s.mytaglist, dpi(2), dpi(0), dpi(2), dpi(2))
-	s.mytaglistcont = wibox.container.background(s.mytaglist, theme.bg_focus, gears.shape.rect)
+	s.mytaglist = wibox.container.margin(s.mytaglist, dpi(2), dpi(0), dpi(0), dpi(0))
+	-- s.mytaglist = wibox.container.background(s.mytaglist, theme.bg_focus)
 
 	-- Widget que contiene las etiquetas y el layout actual
 	s.mytag = wibox.widget{
-		s.mytaglistcont,
-		separator,
-		separator,
-		s.mylayoutbox,
-		separator,
-		separator,
+		s.mytaglist,
 		layout = wibox.layout.fixed.horizontal}
-	s.mytag = wibox.container.background(s.mytag, theme.bg_focus, gears.shape.rect)
-	s.mytag = wibox.container.margin(s.mytag, dpi(6), dpi(3), dpi(2), dpi(2))
+	-- s.mytag = wibox.container.background(s.mytag, theme.bg_focus, gears.shape.rect)
+	-- s.mytag = wibox.container.margin(s.mytag, dpi(0), dpi(0), dpi(0), dpi(0))
 
 	-- Widget que muestra las aplicaciones en cada espacio
 	-- mytasklist = awful.widget.tasklist {
@@ -316,11 +323,11 @@ function theme.at_screen_connect(s)
 	-- 	widget = wibox.container.background,
 	-- 	},
 	-- }
-	mytasklist = awful.widget.tasklist(s,
+	s.mytasklist = awful.widget.tasklist(s,
 		awful.widget.tasklist.filter.currenttags,
 		awful.util.tasklist_buttons
 	)
-	s.mytasklist = wibox.container.margin(mytasklist, dpi(2), dpi(2), dpi(2), dpi(2))
+	s.mytasklist = wibox.container.margin(s.mytasklist, dpi(3), dpi(3), dpi(0), dpi(0))
 
 	-- Establece un wallpaper
 	local wallpaper = theme.wallpaper
@@ -336,11 +343,12 @@ function theme.at_screen_connect(s)
 		-- Establece el wallpaper
 		gears.wallpaper.maximized(wallpaper, s)
 		-- Elementos de la Barra superior
-		s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = "000000AA"})
+		s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = "000000"})
 		s.mywibox:setup {
 			layout = wibox.layout.align.horizontal,
 			{ -- Parte izquierda
 				layout = wibox.layout.fixed.horizontal,
+				s.mylayoutbox,
 				tray,
 				batteryarc,
 				networkwidget,
@@ -381,3 +389,4 @@ function theme.at_screen_connect(s)
 end
 
 return theme
+-- DONE: TODO: definir una lista de colores y de ahí tomar los colores para los demás elementos

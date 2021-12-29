@@ -79,14 +79,15 @@ local cycle_prev   = false -- Cycle trough all previous client or just the first
 
 awful.util.terminal = terminal -- Defines the default terminal emulator
 beautiful.init(chosen_theme) -- Applies theme
-beautiful.notification_height = dpi(100)
+beautiful.max_notification_height = dpi(100)
 beautiful.notification_icon_size = dpi(90)
 
 local bling = require("bling") -- Utilidades para awesome
 
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
-awful.util.tagnames = {"home", "web", "terminal", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
+awful.util.tagnames = {"a  ", "s  ", "d  ", "f  ", "q   ", "w  ", "e  ", "1  ", "2  ", "3  ", "4  ", "5  "}
+-- awful.util.tagnames = {"a:  ", "s:  ", "d:  ", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
 	bling.layout.equalarea,
@@ -153,11 +154,11 @@ globalkeys = my_table.join(
 		end, {description = "Repara error despues de hacer login", group = "hotkeys"}),
 
 	-- Screenshot
-	awful.key({ modkey }, "Print", function()
+	awful.key({ modkey }, "+", function()
 		awful.spawn("flameshot full -c -p /home/luisbarrera/screenshots")
 		end, {description = "Screenshot", group = "hotkeys"}),
 	-- Recorte de pantalla
-	awful.key({ modkey, "Shift" }, "Print", function()
+	awful.key({ modkey, "Shift" }, "+", function()
 		awful.spawn("flameshot gui -p /home/luisbarrera/screenshots")
 		end, {description = "Recorte de pantalla", group = "hotkeys"}),
 
@@ -499,7 +500,8 @@ awful.rules.rules = {
 
 	-- zoom
 	{ rule = { class = "zoom" },
-		properties = { tag = "4", floating = true, titlebars_enabled = false, maximized = false } },
+		-- properties = { tag = "4", floating = true, titlebars_enabled = false, maximized = false } },
+		properties = { floating = true, titlebars_enabled = false, maximized = false } },
 
 	-- Gimp
 	{ rule = { class = "Gimp", role = "gimp-image-window" },

@@ -17,6 +17,7 @@ local type     = type
 local tonumber = tonumber
 local tostring = tostring
 local HOME = os.getenv("HOME")
+local dpi = require("beautiful.xresources").apply_dpi
 
 local function factory(args)
   args = args or {}
@@ -140,6 +141,7 @@ local function factory(args)
       preset  = cal.notification_preset,
       screen  = cal.followtag and awful.screen.focused() or scr or 1,
       icon    = cal.icon,
+      height  = dpi(540),
       timeout = type(seconds) == "number" and seconds or cal.notification_preset.timeout or 5
     }
   end
