@@ -283,13 +283,17 @@ alias office="libreoffice"
 alias set-firefox-default-browser="xdg-settings set default-web-browser firefox.desktop"
 alias set-chromium-default-browser="xdg-settings set default-web-browser chromium.desktop"
 
+# Alias apagar el wifi
+alias wifi-down="sudo ip link set wlan0 down"
+alias wifi-up="sudo ip link set wlan0 up"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Establece un navegador web por defecto
 # export BROWSER=/sbin/vivaldi-stable
 
-# Mensaje personalizado de sudo
+# Mensaje personalizado de sudo, el principio del prompt es el char para un sonido
 export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
 
 # Secrets para spotify-dl
