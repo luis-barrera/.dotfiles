@@ -60,3 +60,6 @@ export PATH=$PATH:$HOME/.cargo/bin
 # Javascript/Typescript lsp
 export DENO_INSTALL="/home/luisbarrera/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Editor por defecto
+export EDITOR=vim
