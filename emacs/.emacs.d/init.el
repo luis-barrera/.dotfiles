@@ -60,26 +60,15 @@
 (package-initialize)
 (package-refresh-contents)
 
-(unless (package-installed-p 'use-package)
-   (package-install 'use-package))
+; (unless (package-installed-p 'use-package)
+;    (package-install 'use-package))
 
-(unless (package-installed-p 'swiper)
-   (package-install 'swiper))
+; (unless (package-installed-p 'swiper)
+;    (package-install 'swiper))
 
-(unless (package-installed-p 'counsel)
-   (package-install 'counsel))
+; (unless (package-installed-p 'counsel)
+;    (package-install 'counsel))
 
-; (custom-set-variables
-;  ;; custom-set-variables was added by Custom.
-;  ;; If you edit it by hand, you could mess it up, so be careful.
-;  ;; Your init file should contain only one such instance.
-;  ;; If there is more than one, they won't work right.
-;  '(package-selected-packages
-;    '(swiper ivy counsel comment-tags multiple-cursors company-php ivy-hydra treemacs-magit treemacs-projectile treemacs-evil parrot lsp-pyright lsp-java lsp-dart lsp-mode solaire-mode lean-mode js-react-redux-yasnippets yasnippet-classic-snippets yasnippet-lean company-try-hard php-mode emmet-mode yasnippet-snippets company-web web-mode sequential-command alert pomm deft org-download undo-fu evil-numbers org-superstar visual-fill-column forge magit counsel-projectile projectile evil-collection general all-the-icons-completion treemacs-all-the-icons doom-themes helpful ivy-rich which-key rainbow-delimiters org-evil command-log-mode use-package))
-;  '(safe-local-variable-values
-;    '((eval setq org-image-actual-width 200)
-;      (eval org-display-inline-images t t)
-;      (eval setq org-image-actual-width 100))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -150,11 +139,11 @@
   ;; Temas favoritos
   ;; Si queremos tener una lista completa de temas usar M-x counsel-load-theme RET
   ;(load-theme 'doom-one t)
-  (load-theme 'doom-acario-dark t)
+  ;(load-theme 'doom-acario-dark t)
   ;(load-theme 'doom-gruvbox t)
   ;(load-theme 'doom-Iosvkem t)
   ;(load-theme 'doom-manegarm t)
-  ;(load-theme 'doom-peacock t)
+  (load-theme 'doom-peacock t)
   ;(load-theme 'doom-tomorrow-night t)
 
   ;; Enable flashing mode-line on errors
@@ -376,7 +365,7 @@
 :AUTHOR: %^{Author|No Author}
 :ROAM_REFS: %^{Link o Ref|No Ref}
 :ROAM_ALIAS: %^{Alias|No Alias}
-:TYPE: %^{Type|Articulo|Noticia|Libro|Video}
+:TYPE: %^{Type|Articulo|Noticia|Libro|Video|Nota Personal|Notas de Clase|Paper Científico}
 :DATE: %T
 :CREATOR: luis-barrera
 :END:
@@ -709,7 +698,8 @@
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 
 ;; Plugin para ver y administrar code-tags
-;; (autoload 'comment-tags-mode "comment-tags-mode")
+; TODO:
+; (autoload 'comment-tags-mode "comment-tags-mode")
 (setq comment-tags-keymap-prefix (kbd "C-c C-t"))
 (use-package comment-tags
   :hook ((prog-mode-hook . comment-tags-mode)))
@@ -723,15 +713,19 @@
           ("XXX" . ,(list :weight 'bold :foreground "#F7EAC8"))
           ("INFO" . ,(list :weight 'bold :foreground "#F7EAC8"))
           ("DONE" . ,(list :weight 'bold :foreground "#1FDA9A"))))
-  (setq comment-tags-comment-start-only 'nil
+  (setq comment-tags-comment-start-only t
         comment-tags-require-colon t
         comment-tags-case-sensitive t
         comment-tags-show-faces t
-        comment-tags-lighter t))
+        comment-tags-lighter nil))
 (add-hook 'prog-mode-hook 'comment-tags-mode)
 
 ;; Config para dired
 (put 'dired-find-alternate-file 'disabled nil)
+
+;; Smart paréntesis
+(require 'smartparens-config)
+(add-hook 'prog-mode-hook #'smartparens-mode)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -739,4 +733,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(emmet-mode rainbow-delimiters yasnippet-snippets yasnippet comment-tags web-mode company org-superstar visual-fill-column multiple-cursors lsp-java lsp-pyright which-key use-package undo-fu treemacs-evil solaire-mode parrot org-roam lsp-treemacs ivy-rich helpful evil-org evil-numbers evil-collection doom-themes doom-modeline counsel-projectile)))
+   '(parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
