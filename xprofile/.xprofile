@@ -7,38 +7,51 @@ xautolock -time 10 -locker slock &
 # set touchpad configs
 touchpad=$(xinput list --id-only "SynPS/2 Synaptics TouchPad")
 # Perfil de aceleracion, 0 es constante y 1 adaptativo
-xinput set-prop $touchpad 307 1
+# Device Accel Profile (308)
+xinput set-prop $touchpad 308 1
 # Presiones para detectar: el dedo salió, el dedo entró, dejarlo en 0
-xinput set-prop $touchpad 3$trackpoint 25, 40, 0
+# Synaptics Finger (313)
+# xinput set-prop $touchpad 313 40, 50, 0
 # Tiempo para detectar un toque en touchpad
-xinput set-prop $touchpad 313 100
+# Synaptics Tap Time (314)
+xinput set-prop $touchpad 314 100
 # Tiempo para detectar un movimiento en touchpad
-xinput set-prop $touchpad 314 200
+# Synaptics Tap Move (315)
+# xinput set-prop $touchpad 315 200
 # Distancia que se recorre con el scroll
-xinput set-prop $touchpad 320 80, 50
+# Synaptics Scrolling Distance (321)
+xinput set-prop $touchpad 321 80, 50
 # Activar scrool usando: borde derecho del touchpad, borde inferior del touchpad, poner un dedo en la esquina para poder hacer scroll
-xinput set-prop $touchpad 321 0, 0, 0
+# Synaptics Edge Scrolling (322)
+xinput set-prop $touchpad 322 1, 1, 0
 # Permitir scroll a dos dedos: vertical, horizontal
-xinput set-prop $touchpad 322 1, 1
+# Synaptics Two-Finger Scrolling (323)
+xinput set-prop $touchpad 323 1, 1
 # Factores de velocidad cuando: movemos lento el dedo, movemos rapido el dedo, un factor de cambio, <deprecated>
-xinput set-prop $touchpad 323 1.0, 2.0, 0.03, 0
+# Synaptics Move Speed (324)
+xinput set-prop $touchpad 324 1.0, 2.0, 0.03, 0
 # Circular scrolling, hacer scrolling como en un iPod
-xinput set-prop $touchpad 329 1
-# El circular scrolling empieza desde el borde derecho
-xinput set-prop $touchpad 331 3
-# En lugar de usar los bordes usamos un elipse al interior del touchpad para hacer el scroll
+# Synaptics Circular Scrolling (330)
+xinput set-prop $touchpad 330 1
+# El circular scrolling empieza desde el borde superior
+# Synaptics Circular Scrolling Trigger (332)
 xinput set-prop $touchpad 332 1
-# Coasting sigue haciendo scroll por un momento después de dejar el touchpad
-xinput set-prop $touchpad 335 150, 0
+# En lugar de usar los bordes usamos un elipse al interior del touchpad para hacer el scroll
+# Synaptics Circular Pad (333)
+xinput set-prop $touchpad 333 1
+# Coasting, sigue haciendo scroll por un momento después de dejar el touchpad
+# Synaptics Coasting Speed (336)
+# xinput set-prop $touchpad 336 20, 50
+# Detección de palmas
+# Synaptics Palm Detection (334)
+xinput set-prop $touchpad 334 1
 
 # set trackpoint configs
-trackpoint=$(xinput list --id-only "TPPS/2 IBM TrackPoint")
-# Toggle del botón central para hacer scroll
-xinput set-prop $trackpoint 356 0
+# trackpoint=$(xinput list --id-only "TPPS/2 IBM TrackPoint")
 # Velocidad del apuntador
-xinput set-prop $trackpoint 360 0
+# xinput set-prop $trackpoint 362 0
 # Perfiles de aceleración
-xinput set-prop $trackpoint 363 0, 0
+# xinput set-prop $trackpoint 363 0, 0
 
 # Abrir aplicaciones después del display server, pero antes del WM
 # xcompmgr &
@@ -49,7 +62,7 @@ flameshot &
 parcellite -d &
 picom -b &
 playerctld daemon &
-syncthing-gtk &
+syncthingtray --wait &
 # pcloud &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
