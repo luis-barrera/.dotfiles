@@ -9,8 +9,9 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 (cat ~/.cache/wal/sequences &)
 # (wal -q --theme base16-seti &)
 # (wal -q --theme sexy-x-dotshare &)
-(wal -q --theme sexy-sexcolors &)
+# (wal -q --theme sexy-sexcolors &)
 # (wal -q --theme sexy-dwmrob &)
+(wal -q --theme gruvbox &)
 
 # pfetch
 (pfetch &&)
