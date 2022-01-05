@@ -12,15 +12,12 @@
 
 ;; Establecemos la fuente, para el tamaño multiplicar por 10
 ;; (set-face-attribute 'default t :font "JetBrainsMono Nerd Font" :height 200)
-;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-20")
-;; (set-frame-font "JetBrainsMono Nerd Font-20" nil t)
-(set-face-attribute 'default nil :font "Iosevka-18")
-(set-frame-font "Iosevka-18" nil t)
-
-;; Indentación
-;; Se recomienda usar también los comando tabify y untabify
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono-14")
+;; (set-frame-font "JetBrainsMono Nerd Font Mono-14" nil t)
+;; (set-face-attribute 'default nil :font "Iosevka-18")
+;; (set-frame-font "Iosevka-18" nil t)
+(set-face-attribute 'default nil :font "FiraCode Nerd Font Mono-14")
+(set-frame-font "FiraCode Nerd Font Mono-14" nil t)
 
 ;; Cortar lineas
 (global-visual-line-mode t)
@@ -40,14 +37,13 @@
 ;; (setq display-line-numbers-type 'relative)
 ;; Deshabilitar la columna de números en algunos modos
 ;; (dolist (mode '(term-mode-hook
-;;  		shell-mode-hook))
+;;      shell-mode-hook))
 ;;    (add-hook mode (lambda () (display-line-numbers-mode 'nil))))
 
 ;; Abrir ventanas a la derecha y no debajo
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
 ;(setq split-window-right)
-
 
 
 ;; ##############################
@@ -74,8 +70,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(mode-line ((t (:family "Iosevka" :height 0.8))))
- '(mode-line-inactive ((t (:family "Iosevka" :height 0.8))))
+ '(company-posframe ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ '(mode-line ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ '(mode-line-inactive ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
  '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
@@ -108,10 +105,10 @@
 ;; Interfaz para encontrar cualquier cosa
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
-	 ("C-x b" . counsel-ibuffer)
-	 ("C-x C-f" . counsel-find-file)
-	 :map minibuffer-local-map
-	 ("C-r" . 'counsel-minibuffer-history)))
+   ("C-x b" . counsel-ibuffer)
+   ("C-x C-f" . counsel-find-file)
+   :map minibuffer-local-map
+   ("C-r" . 'counsel-minibuffer-history)))
 ;; Cambiar entre buffers, si queremos mostrar buffer especiales (los que empiezan con *) usar "C-x b"
 (setq ivy-ignore-buffers '("\\` " "\\`\\*"))
 (global-set-key (kbd "C-M-j") 'counsel-switch-buffer)
@@ -189,9 +186,9 @@
 ;; (use-package general
 ;;   :config
 ;;   (general-create-definer rune/leader-keys
-;; 			  :keymaps '(normal visual emacs)
-;; 			  ;:prefix "SPC"
-;; 			  :prefix "C-SPC")
+;;        :keymaps '(normal visual emacs)
+;;        ;:prefix "SPC"
+;;        :prefix "C-SPC")
 
 ;;   ;; Estos son ejemplos de cómo se definen los keybindings
 ;;   (rune/leader-keys
@@ -306,10 +303,10 @@
   (setq org-agenda-start-with-log-mode t)
   ;; Guardar la fecha cuando marcamos algo como completo
   (setq org-log-done 'time)
-  ;; Mantener el log dentro de un drawer, de manerar que se hace un fold 
+  ;; Mantener el log dentro de un drawer, de manerar que se hace un fold
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
-  (setq org-agenda-files '("~/org-mode/Tareas21O.org" "~/org-mode/Clases21O.org"))
+  (setq org-agenda-files '("~/org-mode/Tareas21O.org" "~/org-mode/Clases21O.org" "~/org-mode/todos.org"))
   ;; (setq org-agenda-files '("~/org-mode/tasks.org" "~/org-mode/clases21O.org"))
   ;; Mostrar 10 días en la vista de semana de org-agenda.
   (setq org-agenda-span 10)
@@ -343,10 +340,10 @@
   (setq org-roam-directory "~/org-roam")
   ;(setq org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
-	 ; Esta es la función con la que debemos empezar
-	 ("C-c n f" . org-roam-node-find)
-	 ("C-c n i" . org-roam-node-insert)
-	 ("C-M-i" . completion-at-point)
+   ; Esta es la función con la que debemos empezar
+   ("C-c n f" . org-roam-node-find)
+   ("C-c n i" . org-roam-node-insert)
+   ("C-M-i" . completion-at-point)
    ("C-c n t" . org-roam-tag-add)
    ("C-c n c" . org-id-get-create))
   :config
@@ -356,12 +353,12 @@
 ;; Templates para org-roam
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
-	 :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-			    "#+title: ${title}\n")
-	 :unnarrowed t)
-	("c" "Nota completa" plain "%?"
-	 :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-			    ":PROPERTIES:
+   :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+          "#+title: ${title}\n")
+   :unnarrowed t)
+  ("c" "Nota completa" plain "%?"
+   :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+          ":PROPERTIES:
 :AUTHOR: %^{Author|No Author}
 :ROAM_REFS: %^{Link o Ref|No Ref}
 :ROAM_ALIAS: %^{Alias|No Alias}
@@ -372,7 +369,7 @@
 #+title: ${title}
 #+filetags:
 ")
-	 :unnarrowed t)))
+   :unnarrowed t)))
 
 ;; Pegar imágenes en las notas desde el clipboard o abre una app para hacer screenshot
 (use-package org-download
@@ -413,7 +410,7 @@
 ;; Poner bordes a los lados del editor, solo en org-mode
 (defun efs/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
-	visual-fill-column-center-text t)
+  visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
 
@@ -523,18 +520,18 @@
 ;; Activar emmet en web-mode
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-(add-hook 'web-mode-hook  'emmet-mode) 
+(add-hook 'web-mode-hook  'emmet-mode)
 ;; Editar js, css en html-mode
 (add-hook 'web-mode-before-auto-complete-hooks
     '(lambda ()
      (let ((web-mode-cur-language
-  	    (web-mode-language-at-pos)))
+        (web-mode-language-at-pos)))
                (if (string= web-mode-cur-language "php")
-    	   (yas-activate-extra-mode 'php-mode)
-      	 (yas-deactivate-extra-mode 'php-mode))
+         (yas-activate-extra-mode 'php-mode)
+         (yas-deactivate-extra-mode 'php-mode))
                (if (string= web-mode-cur-language "css")
-    	   (setq emmet-use-css-transform t)
-      	 (setq emmet-use-css-transform nil)))))
+         (setq emmet-use-css-transform t)
+         (setq emmet-use-css-transform nil)))))
 ;; Emmet usa por defecto dos tabs(o espacios) para indentar, usar solo 1 tab
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indent-after-insert t)))
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 1)))
@@ -553,6 +550,11 @@
 ;; están habilitados usar el comando =M-x customize-variable RET
 ;; company-backends=.
 (add-hook 'after-init-hook 'global-company-mode)
+(use-package company-posframe)
+(company-posframe-mode 1)
+(setq company-tooltip-offset-display 'lines)
+(setq company-tooltip-minimum 4)
+(setq company-tooltip-flip-when-above t)
 
 ;; Snippets, autocompletado
 ;; (yas-reload-all)
@@ -602,9 +604,9 @@
 ;;   * lsp-modeline-diagnostics-mode, es un modo para mostrar los errores del código en el mode-line
 ;;   * lsp-modeline-code-actions-mode, modo para mostrar las acciones disponibles
 ;; Alguna config rara, pero necesaria
-(setq gc-cons-threshold 100000000)
+(setq gc-cons-threshold 200000000)
 ;; Cantidad de información que lee Emacs
-(setq read-process-output-max (* 1024 4096))
+(setq read-process-output-max (* 50 1024 1024))
 ;; Tasa de refresco
 (setq lsp-idle-delay 0.500)
 ;; Los logs pueden bajar el performance
@@ -619,12 +621,6 @@
 ;; LSP-java, instalar el package lsp-java
 (use-package lsp-java)
 (add-hook 'java-mode-hook #'lsp)
-;; LSP-python
-(use-package lsp-pyright
-  :ensure t
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))  ; or lsp-deferred
 ;; sql
 ;; Aquí se deben definir las conexiones a las BD que querramos usar, luego correr el comando M-x lsp-sqls-*
 ;; (setq lsp-sqls-connections
@@ -633,10 +629,24 @@
 
 ;; Config para lsp
 (use-package lsp-mode
+  :ensure t
   :init
   (setq lsp-keymap-prefix "C-c l")
-  :hook ((prog-mode-hook . lsp-mode) (lsp-mode . lsp-enable-which-key-integration) (lsp-mode . lsp-completion-mode))
-  :commands (lsp lsp-deferred))
+  (setq lsp-signature-doc-lines 1)
+  (setq lsp-enable-snippet t)
+  :hook ((js2-mode . lsp-mode)
+         (python-mode . lsp-mode)
+         (web-mode . lsp-mode)
+         (lsp-mode . lsp-enable-which-key-integration)
+         (lsp-mode . lsp-completion-mode))
+  :commands (lsp))
+
+;; Python
+(use-package lsp-pyright
+  :ensure t
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp))))  ; or lsp-deferred
 
 ;; optionally
 ;; (use-package lsp-ui :commands lsp-ui-mode)
@@ -644,16 +654,12 @@
 (use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list)
 ;; optional if you want which-key integration
-;; (use-package which-key
-;;     :config
-;;     (which-key-mode))
+(use-package which-key
+    :config
+    (which-key-mode))
 
-;; LSP por major-mode
-(add-hook 'hack-local-variables-hook
-          (lambda () (when (prog-mode 'javascript-mode) (deno-ls)))
-          (lambda () (when (prog-mode 'js2-mode) (deno-ls)))
-          (lambda () (when (prog-mode 'typescript-mode) (deno-ls)))
-          )
+(use-package lsp-ui
+  :commands lsp-ui-mode)
 
 ;; pomm
 (setq pomm-audio-enabled t)
@@ -727,10 +733,22 @@
 (require 'smartparens-config)
 (add-hook 'prog-mode-hook #'smartparens-mode)
 
+;; Company-mode con iconos
+(use-package company-box
+  :hook (company-mode . company-box-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+   '(lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+
+;; Indentación
+;; Se recomienda usar también los comando tabify y untabify
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 2)
+
+;; Mostrar espacios en blanco, para limpiar todos los espacios en blanco innecesarios de una usar whitespace-cleanup
+(setq-default show-trailing-whitespace t)
