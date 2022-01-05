@@ -14,10 +14,12 @@
 ;; (set-face-attribute 'default t :font "JetBrainsMono Nerd Font" :height 200)
 ;; (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font Mono-14")
 ;; (set-frame-font "JetBrainsMono Nerd Font Mono-14" nil t)
-;; (set-face-attribute 'default nil :font "Iosevka-18")
-;; (set-frame-font "Iosevka-18" nil t)
-(set-face-attribute 'default nil :font "FiraCode Nerd Font Mono-14")
-(set-frame-font "FiraCode Nerd Font Mono-14" nil t)
+;; (set-face-attribute 'default nil :font "Iosevka-14")
+;; (set-frame-font "Iosevka-14" nil t)
+;; (set-face-attribute 'default nil :font "FiraCode Nerd Font Mono-14")
+;; (set-frame-font "FiraCode Nerd Font Mono-14" nil t)
+(set-face-attribute 'default nil :font "VictorMono Nerd Font Mono-14")
+(set-frame-font "VictorMono Nerd Font Mono-14" nil t)
 
 ;; Cortar lineas
 (global-visual-line-mode t)
@@ -70,9 +72,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(company-posframe ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
- '(mode-line ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
- '(mode-line-inactive ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ ;; '(company-posframe ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ ;; '(mode-line ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ ;; '(mode-line-inactive ((t (:family "FiraCode Nerd Font Mono" :height 0.8))))
+ '(company-posframe ((t (:family "VictorMono Nerd Font Mono" :height 0.8))))
+ '(mode-line ((t (:family "VictorMono Nerd Font Mono" :height 0.8))))
+ '(mode-line-inactive ((t (:family "VictorMono Nerd Font Mono" :height 0.8))))
  '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
@@ -639,7 +644,7 @@
          (web-mode . lsp-mode)
          (lsp-mode . lsp-enable-which-key-integration)
          (lsp-mode . lsp-completion-mode))
-  :commands (lsp))
+  :commands (lsp-deferred))
 
 ;; Python
 (use-package lsp-pyright
@@ -736,6 +741,26 @@
 ;; Company-mode con iconos
 (use-package company-box
   :hook (company-mode . company-box-mode))
+
+;; Enable the www ligature in every possible major mode
+;; Mover a otro path, causa problemas no abre emacs
+; (use-package ligature
+;   :load-path "/home/luisbarrera/.emacs.d/lisp/ligature.el"
+;   :config
+;     (ligature-set-ligatures 't '("www"))
+;     (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+;     ;; Enable ligatures in programming modes
+;     (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+;                                      ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+;                                      "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+;                                      "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+;                                      "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+;                                      "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+;                                      "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+;                                      "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+;                                      "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+;                                      "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+;     (global-ligature-mode 't))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
