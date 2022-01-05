@@ -43,7 +43,27 @@ require("collision") {
 
 -- Posición de la notificación
 for _, preset in pairs(naughty.config.presets) do
-    preset.position = "bottom_left"
+    preset.position = "bottom_right"
+end
+
+-- Función para notificar el volumen actual
+function vol_percent_notification()
+	-- awful.spawn.with_shell("pactl get-sink-volume 0 | awk '{print $5}' | xargs -I {} notify-send 'Volumen {}'")
+	awful.spawn.easy_async_with_shell("pactl get-sink-volume 0 | awk '{print $5}'", function(out)
+		if vol_not then
+			naughty.destroy(vol_not)
+			-- naughty.reset_timeout (vol_not, 5)
+			-- naughty.replace_text({notification = vol_not, new_title="Titulo", new_text = "Nuevo volumen: " .. out})
+			-- vol_not = nil
+			vol_not = naughty.notify({ preset = naughty.config.presets.normal,
+				title = "Sonido",
+				text = "Volumen: " .. out})
+		else
+			vol_not = naughty.notify({ preset = naughty.config.presets.normal,
+				title = "Sonido",
+				text = "Volumen: " .. out})
+		end
+	end)
 end
 
 -- Error Catching
@@ -262,15 +282,19 @@ globalkeys = my_table.join(
 	-- Control de Volumen
 	awful.key({ modkey, "Control" }, "+", function()
 		awful.spawn("pactl set-sink-volume 0 +2%")
+		vol_percent_notification()
 		end, {description = "Subir volumen", group = "media"}),
 	awful.key({ modkey, "Control" }, "-", function()
 		awful.spawn("pactl set-sink-volume 0 -5%")
+		vol_percent_notification()
 		end, {description = "Bajar Volumen", group = "media"}),
 	awful.key({ }, "XF86AudioRaiseVolume", function()
 		awful.spawn("pactl set-sink-volume 0 +2%")
+		vol_percent_notification()
 		end, {description = "Subir volumen", group = "media"}),
 	awful.key({ }, "XF86AudioLowerVolume", function()
 		awful.spawn("pactl set-sink-volume 0 -5%")
+		vol_percent_notification()
 		end, {description = "Bajar Volumen", group = "media"}),
 	awful.key({ }, "XF86AudioMute", function()
 		awful.spawn("pactl set-sink-mute 0 toggle")
