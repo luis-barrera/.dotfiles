@@ -35,7 +35,7 @@ xinput set-prop $touchpad 324 1.0, 2.0, 0.03, 0
 xinput set-prop $touchpad 330 1
 # El circular scrolling empieza desde el borde superior
 # Synaptics Circular Scrolling Trigger (332)
-xinput set-prop $touchpad 332 1
+xinput set-prop $touchpad 332 7
 # En lugar de usar los bordes usamos un elipse al interior del touchpad para hacer el scroll
 # Synaptics Circular Pad (333)
 xinput set-prop $touchpad 333 1
