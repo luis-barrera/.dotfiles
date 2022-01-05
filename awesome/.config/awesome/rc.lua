@@ -41,6 +41,11 @@ require("collision") {
 	right = { "Right" , "\""       , "l"   , "F17" },
 }
 
+-- Posición de la notificación
+for _, preset in pairs(naughty.config.presets) do
+    preset.position = "bottom_left"
+end
+
 -- Error Catching
 -----------------
 -- If an error occurs during the load of the configuration file, it display a notification
