@@ -49,7 +49,7 @@ end
 -- Función para notificar el volumen actual
 function vol_percent_notification()
 	-- awful.spawn.with_shell("pactl get-sink-volume 0 | awk '{print $5}' | xargs -I {} notify-send 'Volumen {}'")
-	awful.spawn.easy_async_with_shell("pactl get-sink-volume 0 | awk '{print $5}'", function(out)
+	awful.spawn.easy_async_with_shell("pactl get-sink-volume @DEFAULT_SINK@ | awk '{print $5}'", function(out)
 		if vol_not then
 			naughty.destroy(vol_not)
 			-- naughty.reset_timeout (vol_not, 5)
@@ -63,6 +63,27 @@ function vol_percent_notification()
 			vol_not = naughty.notify({ preset = naughty.config.presets.normal,
 				title = "Sonido",
 				text = "Volumen: " .. out,
+				timeout = 2})
+		end
+	end)
+end
+-- Notificación del estado del mute
+function vol_mute_notification()
+	-- awful.spawn.with_shell("pactl get-sink-volume 0 | awk '{print $5}' | xargs -I {} notify-send 'Volumen {}'")
+	awful.spawn.easy_async_with_shell("pactl get-sink-mute @DEFAULT_SINK@", function(out)
+		if vol_mute_not then
+			naughty.destroy(vol_mute_not)
+			-- naughty.reset_timeout (vol_not, 5)
+			-- naughty.replace_text({notification = vol_not, new_title="Titulo", new_text = "Nuevo volumen: " .. out})
+			-- vol_not = nil
+			vol_mute_not = naughty.notify({ preset = naughty.config.presets.normal,
+				title = "Sonido",
+				text = out,
+				timeout = 2})
+		else
+			vol_mute_not = naughty.notify({ preset = naughty.config.presets.normal,
+				title = "Sonido",
+				text = out,
 				timeout = 2})
 		end
 	end)
@@ -283,26 +304,41 @@ globalkeys = my_table.join(
 
 	-- Control de Volumen
 	awful.key({ modkey, "Control" }, "+", function()
-		awful.spawn("pactl set-sink-volume 0 +2%")
+		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")
 		vol_percent_notification()
 		end, {description = "Subir volumen", group = "media"}),
 	awful.key({ modkey, "Control" }, "-", function()
-		awful.spawn("pactl set-sink-volume 0 -5%")
+		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
 		vol_percent_notification()
 		end, {description = "Bajar Volumen", group = "media"}),
-	awful.key({ }, "XF86AudioRaiseVolume", function()
-		awful.spawn("pactl set-sink-volume 0 +2%")
-		vol_percent_notification()
-		end, {description = "Subir volumen", group = "media"}),
-	awful.key({ }, "XF86AudioLowerVolume", function()
-		awful.spawn("pactl set-sink-volume 0 -5%")
-		vol_percent_notification()
-		end, {description = "Bajar Volumen", group = "media"}),
+	-- awful.key({ }, "XF86AudioRaiseVolume", function()
+	-- 	awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +2%")
+	-- 	vol_percent_notification()
+	-- 	end, {description = "Subir volumen", group = "media"}),
+	-- awful.key({ }, "XF86AudioLowerVolume", function()
+	-- 	awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
+	-- 	vol_percent_notification()
+	-- 	end, {description = "Bajar Volumen", group = "media"}),
 	awful.key({ }, "XF86AudioMute", function()
-		awful.spawn("pactl set-sink-mute 0 toggle")
+		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
+		vol_mute_notification()
 		end, {description = "Mute Sonido", group = "media"}),
 	awful.key({ }, "XF86AudioMicMute", function()
-		awful.spawn("pactl set-source-mute 46 toggle")
+		awful.spawn("pactl set-source-mute @DEFAULT_SOURCE@ toggle")
+		awful.spawn.easy_async_with_shell("pactl get-source-mute @DEFAULT_SOURCE@", function(out)
+			if mic_not then
+				naughty.destroy(mic_not)
+				mic_not = naughty.notify({ preset = naughty.config.presets.critical,
+					title = "Micrófono",
+					text = out,
+					timeout = 5})
+			else
+				mic_not = naughty.notify({ preset = naughty.config.presets.critical,
+					title = "Micrófono",
+					text = out,
+					timeout = 5})
+			end
+		end)
 		end, {description = "Mute micrófono", group = "media"}),
 
 	-- Ajustes de Awesome
