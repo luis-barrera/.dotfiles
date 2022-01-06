@@ -11,7 +11,9 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 # (wal -q --theme sexy-x-dotshare &)
 # (wal -q --theme sexy-sexcolors &)
 # (wal -q --theme sexy-dwmrob &)
-(wal -q --theme gruvbox &)
+# (wal -q --theme gruvbox &)
+# (wal -q --theme sexy-orangish &)
+(wal -q --theme sexy-digerati &)
 
 # pfetch
 (pfetch &&)

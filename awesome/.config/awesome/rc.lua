@@ -57,11 +57,13 @@ function vol_percent_notification()
 			-- vol_not = nil
 			vol_not = naughty.notify({ preset = naughty.config.presets.normal,
 				title = "Sonido",
-				text = "Volumen: " .. out})
+				text = "Volumen: " .. out,
+				timeout = 2})
 		else
 			vol_not = naughty.notify({ preset = naughty.config.presets.normal,
 				title = "Sonido",
-				text = "Volumen: " .. out})
+				text = "Volumen: " .. out,
+				timeout = 2})
 		end
 	end)
 end
