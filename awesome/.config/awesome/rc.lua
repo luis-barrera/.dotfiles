@@ -313,14 +313,14 @@ globalkeys = my_table.join(
 		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")
 		vol_percent_notification()
 		end, {description = "Bajar Volumen", group = "media"}),
-	awful.key({ }, "XF86AudioRaiseVolume", function()
-		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +1%")
-		vol_percent_notification()
-		end, {description = "Subir volumen", group = "media"}),
-	awful.key({ }, "XF86AudioLowerVolume", function()
-		awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -1%")
-		vol_percent_notification()
-		end, {description = "Bajar Volumen", group = "media"}),
+	-- awful.key({ }, "XF86AudioRaiseVolume", function()
+	-- 	awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ +1%")
+	-- 	vol_percent_notification()
+	-- 	end, {description = "Subir volumen", group = "media"}),
+	-- awful.key({ }, "XF86AudioLowerVolume", function()
+	-- 	awful.spawn("pactl set-sink-volume @DEFAULT_SINK@ -1%")
+	-- 	vol_percent_notification()
+	-- 	end, {description = "Bajar Volumen", group = "media"}),
 	awful.key({ }, "XF86AudioMute", function()
 		awful.spawn("pactl set-sink-mute @DEFAULT_SINK@ toggle")
 		vol_mute_notification()
