@@ -322,6 +322,8 @@
 (setq org-return-follows-link t)
 ;; Maping para abrir la agenda
 (global-set-key (kbd "C-c a") 'org-agenda-list)
+;;
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
 
 ;; Cambiar los símbolos de los headings
 (use-package org-superstar
