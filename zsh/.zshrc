@@ -246,7 +246,7 @@ alias basic-server="python3 -m http.server" # Crea un server básico para poder 
 alias la="exa -la --icons --group-directories-first -h --git"
 alias ls="exa -l --icons --group-directories-first -h"
 # Sustituir cat con bat
-# alias cat="bat"
+alias cat="bat"
 # Sustituir ps por procs
 # alias ps="procs"
 # Sustituir sed por sd
@@ -321,3 +321,6 @@ export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
 # PHP 7
 # export PATH=/sbin/php7:$PATH
 # alias php=/sbin/php7
+
+# Zoxide, reemplazo para cd
+eval "$(zoxide init zsh)"
