@@ -290,6 +290,9 @@ alias set-chromium-default-browser="xdg-settings set default-web-browser chromiu
 alias wifi-down="sudo ip link set wlan0 down"
 alias wifi-up="sudo ip link set wlan0 up"
 
+# Entrar al home server
+alias home-server="ssh valbar@192.168.0.8"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
