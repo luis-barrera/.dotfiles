@@ -345,7 +345,7 @@ globalkeys = my_table.join(
 
 	-- Ajustes de Awesome
 	awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
-	awful.key({ modkey, "Control" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
+	-- awful.key({ modkey, "Control" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
 
 	-- Abrir Firefox
 	awful.key({ modkey, "Shift" }, "b", function()
