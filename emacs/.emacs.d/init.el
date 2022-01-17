@@ -47,7 +47,7 @@
 ;; Abrir ventanas a la derecha y no debajo
 (setq split-height-threshold nil)
 (setq split-width-threshold 0)
-;(setq split-window-right)
+;;(setq split-window-right)
 
 
 ;; ##############################
@@ -58,16 +58,16 @@
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
-;(package-refresh-contents)
+;;(package-refresh-contents)
 
-; (unless (package-installed-p 'use-package)
-;    (package-install 'use-package))
+;; (unless (package-installed-p 'use-package)
+;;    (package-install 'use-package))
 
-; (unless (package-installed-p 'swiper)
-;    (package-install 'swiper))
+;; (unless (package-installed-p 'swiper)
+;;    (package-install 'swiper))
 
-; (unless (package-installed-p 'counsel)
-;    (package-install 'counsel))
+;; (unless (package-installed-p 'counsel)
+;;    (package-install 'counsel))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -120,7 +120,8 @@
 
 ;; Iconos para la barra de estado
 ;; Después de instalar el paquete, correr M-x all-the-icons-install-fonts
-(use-package all-the-icons)
+(use-package all-the-icons
+  :if (display-graphic-p))
 
 ;; Barra de estado inferior
 (use-package doom-modeline
@@ -216,7 +217,7 @@
 
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-(define-key evil-normal-state-map (kbd "gcc") 'comment-or-uncomment-region)
+(define-key evil-normal-state-map (kbd "gcc") 'evilnc-comment-or-uncomment-lines)
 (setq evil-ex-search-vim-style-regexp t)
 (setq evil-in-single-undo t)
 
@@ -227,10 +228,10 @@
   (evil-collection-init))
 
 ;; Tener bloques de código sin perder el nivel de jerarquía
-; org-mode no deja que metas un subtítulo y luego regreses al título anterior
-; cosa que puedes hacer en LaTeX, pero aquí no. Para lograr algo similar está
-; este paquete que pertenece a org-mode pero está desactivado por defecto.
-; Para usarlo está el key =C-c C-x t=
+;; org-mode no deja que metas un subtítulo y luego regreses al título anterior
+;; cosa que puedes hacer en LaTeX, pero aquí no. Para lograr algo similar está
+;; este paquete que pertenece a org-mode pero está desactivado por defecto.
+;; Para usarlo está el key =C-c C-x t=
 (require 'org-inlinetask)
 
 ;; Incremento/Decremento como en vim
@@ -250,6 +251,11 @@
 (define-key isearch-mode-map "\e" 'isearch-abort)
 (global-set-key [escape] 'keyboard-escape-quit)
 
+;; Ver los posibles undo, mostrado en forma de un arbol
+;; Con =C-x u= podemos ver el arbol y escoger
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
 
 ;; ##############################
@@ -261,12 +267,12 @@
   :bind-keymap
   ("C-c p" . projectile-command-map)
   :init
-  ; Si entramos a cualquier directorio dentro de ~/dev se carga una
-  ; configuración global dentro de ese directorio
+  ;; Si entramos a cualquier directorio dentro de ~/dev se carga una
+  ;; configuración global dentro de ese directorio
   (when (file-directory-p "~/dev")
-  (setq projectile-project-search-path '("~/dev")))
-  ; Cuando entramos a un directorio, dired también se mueva a ese
-  ; directorio
+    (setq projectile-project-search-path '("~/dev")))
+  ;; Cuando entramos a un directorio, dired también se mueva a ese
+  ;; directorio
   (setq projectile-switch-project-action #'projectile-dired))
 
 ;; Counsel para projectile
@@ -288,7 +294,7 @@
 ;; Org mode
 (use-package org
   :hook ((org-mode . org-indent-mode))
-         ;; (org-mode . org-toggle-pretty-entities)
+  ;; (org-mode . org-toggle-pretty-entities)
   :config
   ;; Guardar los buffers después de hacer un refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
@@ -330,11 +336,11 @@
   :after org
   :hook (org-mode . org-superstar-mode)
   :config
-  ; Caracteres a usar para cada nivel
+  ;; Caracteres a usar para cada nivel
   (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
-  ; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
+  ;; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
   (setq org-superstar-cycle-headline-bullets 'nil)
-  ; Ocultar un puntito que sale enfrente de los heading
+  ;; Ocultar un puntito que sale enfrente de los heading
   (setq org-hide-leading-stars nil)
   (setq org-superstar-leading-bullet ?\s)
   (setq org-indent-mode-turns-on-hiding-stars nil))
@@ -345,16 +351,16 @@
   :init (setq org-roam-v2-ack t)
   :custom
   (setq org-roam-directory "~/org-roam")
-  ;(setq org-roam-completion-everywhere t)
+  ;;(setq org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
-   ; Esta es la función con la que debemos empezar
-   ("C-c n f" . org-roam-node-find)
-   ("C-c n i" . org-roam-node-insert)
-   ("C-M-i" . completion-at-point)
-   ("C-c n t" . org-roam-tag-add)
-   ("C-c n c" . org-id-get-create))
+         ;; Esta es la función con la que debemos empezar
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-M-i" . completion-at-point)
+         ("C-c n t" . org-roam-tag-add)
+         ("C-c n c" . org-id-get-create))
   :config
-  ;(org-roam-setup)
+  ;;(org-roam-setup)
   (setq org-roam-completion-everywhere t))
 
 ;; Templates para org-roam
@@ -385,11 +391,6 @@
   (:map org-mode-map
         (("s-Y" . org-download-screenshot)
          ("s-y" . org-download-yank))))
-
-;; Navegar entre ventanas de mejor manera usando winner mode
-(winner-mode +1)
-(define-key winner-mode-map (kbd "<M-left>") #'winner-undo)
-(define-key winner-mode-map (kbd "<M-right>") #'winner-redo)
 
 ;; Encontrar palabras dentro de los archivos
 (use-package deft
@@ -467,19 +468,19 @@
 (setq appt-display-interval appt-message-warning-time) ; Disable multiple reminders
 (setq appt-display-mode-line nil)
 
-; Use appointment data from org-mode
+;; Use appointment data from org-mode
 (defun my-org-agenda-to-appt ()
   (interactive)
   (setq appt-time-msg-list nil)
   (org-agenda-to-appt))
 
-; Update alarms when...
-; (1) ... Starting Emacs
+;; Update alarms when...
+;; (1) ... Starting Emacs
 (my-org-agenda-to-appt)
-; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
+;; (2) ... Everyday at 12:05am (useful in case you keep Emacs always on)
 (run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt)
 (run-at-time "07:35am" (* 24 3600) 'my-org-agenda-to-appt)
-; (3) ... When TODO.txt is saved
+;; (3) ... When TODO.txt is saved
 (add-hook 'after-save-hook
           '(lambda ()
              (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Tareas21O.org"))
@@ -711,8 +712,8 @@
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
 
 ;; Plugin para ver y administrar code-tags
-; TODO:
-; (autoload 'comment-tags-mode "comment-tags-mode")
+;; TODO:
+;; (autoload 'comment-tags-mode "comment-tags-mode")
 (setq comment-tags-keymap-prefix (kbd "C-c C-t"))
 (use-package comment-tags
   :hook ((prog-mode-hook . comment-tags-mode)))
@@ -772,7 +773,7 @@
                                           calc-prefer-frac t
                                           calc-angle-mode rad)))))
           (t (let ((l (thing-at-point 'line)))
-               (end-of-line 1) (kill-line 0) 
+               (end-of-line 1) (kill-line 0)
                (insert (calc-eval `(,l
                                     calc-language latex
                                     calc-prefer-frac t
@@ -852,7 +853,7 @@
           (cdlatex-tab)
         (yas-next-field-or-maybe-expand)))))
 
-;; Array/tabular input with org-tables and cdlatex 
+;; Array/tabular input with org-tables and cdlatex
 (use-package org-table
   :after cdlatex
   :bind (:map orgtbl-mode-map
@@ -862,21 +863,21 @@
   (add-hook 'cdlatex-tab-hook 'lazytab-cdlatex-or-orgtbl-next-field 90)
   ;; Tabular environments using cdlatex
   (add-to-list 'cdlatex-command-alist '("smat" "Insert smallmatrix env"
-                                       "\\left( \\begin{smallmatrix} ? \\end{smallmatrix} \\right)"
-                                       lazytab-position-cursor-and-edit
-                                       nil nil t))
+                                        "\\left( \\begin{smallmatrix} ? \\end{smallmatrix} \\right)"
+                                        lazytab-position-cursor-and-edit
+                                        nil nil t))
   (add-to-list 'cdlatex-command-alist '("bmat" "Insert bmatrix env"
-                                       "\\begin{bmatrix} ? \\end{bmatrix}"
-                                       lazytab-position-cursor-and-edit
-                                       nil nil t))
+                                        "\\begin{bmatrix} ? \\end{bmatrix}"
+                                        lazytab-position-cursor-and-edit
+                                        nil nil t))
   (add-to-list 'cdlatex-command-alist '("pmat" "Insert pmatrix env"
-                                       "\\begin{pmatrix} ? \\end{pmatrix}"
-                                       lazytab-position-cursor-and-edit
-                                       nil nil t))
+                                        "\\begin{pmatrix} ? \\end{pmatrix}"
+                                        lazytab-position-cursor-and-edit
+                                        nil nil t))
   (add-to-list 'cdlatex-command-alist '("tbl" "Insert table"
                                         "\\begin{table}\n\\centering ? \\caption{}\n\\end{table}\n"
-                                       lazytab-position-cursor-and-edit
-                                       nil t nil))
+                                        lazytab-position-cursor-and-edit
+                                        nil t nil))
   :config
   ;; Tab handling in org tables
   (defun lazytab-position-cursor-and-edit ()
@@ -934,7 +935,7 @@
     (if (bound-and-true-p cdlatex-mode)
         (cdlatex-tab)
       (org-table-next-field))))
-; Snippets
+;; Snippets
 ;; Function that tries to autoexpand YaSnippets
 ;; The double quoting is NOT a typo!
 ;; (defun my/yas-try-expanding-auto-snippets ()
@@ -948,26 +949,152 @@
 
 ;; Enable the www ligature in every possible major mode
 ;; Mover a otro path, causa problemas no abre emacs
-; (use-package ligature
-;   :load-path "/home/luisbarrera/.emacs.d/lisp/ligature.el"
-;   :config
-;     (ligature-set-ligatures 't '("www"))
-;     (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
-;     ;; Enable ligatures in programming modes
-;     (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
-;                                      ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
-;                                      "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
-;                                      "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
-;                                      "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
-;                                      "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
-;                                      "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
-;                                      "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
-;                                      "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
-;                                      "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
-;     (global-ligature-mode 't))
+;; (use-package ligature
+;;   :load-path "/home/luisbarrera/.emacs.d/lisp/ligature.el"
+;;   :config
+;;     (ligature-set-ligatures 't '("www"))
+;;     (ligature-set-ligatures 'eww-mode '("ff" "fi" "ffi"))
+;;     ;; Enable ligatures in programming modes
+;;     (ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+;;                                      ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+;;                                      "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+;;                                      "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+;;                                      "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+;;                                      "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+;;                                      "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+;;                                      "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+;;                                      "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+;;                                      "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+;;     (global-ligature-mode 't))
 
 (add-to-list 'load-path "~/.emacs.d/private/org-roam-ui")
 (load-library "org-roam-ui")
+
+;; Tabs en emacs
+(use-package centaur-tabs
+  :demand
+  :config
+  (setq centaur-tabs-style "bar"
+        centaur-tabs-gray-out-icons 'buffer
+        centaur-tabs-set-modified-marker t
+        centaur-tabs-set-icons t
+        centaur-tabs-adjust-buffer-order t
+        centaur-tabs-label-fixed-length 10
+        centaur-tabs-show-navigation-buttons t
+        centaur-tabs-set-bar 'over)
+  (centaur-tabs-enable-buffer-reordering)
+  (centaur-tabs-mode t)
+  (defun centaur-tabs-buffer-groups ()
+    "`centaur-tabs-buffer-groups' control buffers' group rules.
+
+ Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
+ All buffer name start with * will group to \"Emacs\".
+ Other buffer group by `centaur-tabs-get-group-name' with project name."
+    (list
+     (cond
+	    ;; ((not (eq (file-remote-p (buffer-file-name)) nil))
+	    ;; "Remote")
+	    ((or (string-equal "*" (substring (buffer-name) 0 1))
+	         (memq major-mode '(magit-process-mode
+				                      magit-status-mode
+				                      magit-diff-mode
+				                      magit-log-mode
+				                      magit-file-mode
+				                      magit-blob-mode
+				                      magit-blame-mode
+				                      )))
+	     "Emacs")
+      ((string-match-p (concat "[0-9]\\{14\\}" ".*-.*\\.org") (buffer-name))
+       "Roam")
+	    ((derived-mode-p 'prog-mode)
+	     "Editing")
+	    ((derived-mode-p 'dired-mode)
+	     "Dired")
+	    ((memq major-mode '(helpful-mode
+			                    help-mode))
+	     "Help")
+	    ((memq major-mode '(org-mode
+			                    org-agenda-clockreport-mode
+			                    org-src-mode
+			                    org-agenda-mode
+			                    org-beamer-mode
+			                    org-indent-mode
+			                    org-bullets-mode
+			                    org-cdlatex-mode
+			                    org-agenda-log-mode
+			                    diary-mode))
+	     "OrgMode")
+	    (t
+	     (centaur-tabs-get-group-name (current-buffer))))))
+  :bind
+  (:map evil-normal-state-map
+	      ("g t" . centaur-tabs-forward)
+	      ("g T" . centaur-tabs-backward))
+  ("C-<left>" . centaur-tabs-forward-group)
+  ("C-<right>" . centaur-tabs-backward-group)
+  ("C-<prior>" . centaur-tabs-backward)
+  ("C-<next>" . centaur-tabs-forward))
+(defun centaur-tabs-hide-tab (x)
+  "Do no to show buffer X in tabs."
+  (let ((name (format "%s" x)))
+    (or
+     ;; Current window is not dedicated window.
+     (window-dedicated-p (selected-window))
+
+     ;; Buffer name not match below blacklist.
+     (string-prefix-p "*epc" name)
+     (string-prefix-p "*helm" name)
+     (string-prefix-p "*Helm" name)
+     (string-prefix-p "*Compile-Log*" name)
+     (string-prefix-p "*lsp" name)
+     (string-prefix-p "*company" name)
+     (string-prefix-p "*Flycheck" name)
+     (string-prefix-p "*tramp" name)
+     (string-prefix-p " *Mini" name)
+     (string-prefix-p "*help" name)
+     (string-prefix-p "*straight" name)
+     (string-prefix-p " *temp" name)
+     (string-prefix-p "*Help" name)
+     ;; (string-match-p (concat "[0-9]\\{14\\}" ".*-.*\\.org") name)
+
+     ;; Is not magit buffer.
+     (and (string-prefix-p "magit" name)
+	        (not (file-name-extension name)))
+     )))
+
+;; Colúmna de números de línea relativos
+(use-package linum-relative
+  :config
+  (setq linum-relative-backend 'display-line-numbers-mode)
+  (linum-relative-mode t))
+
+;; Mover palabras, linea, lineas o regiones usando M-<flechas>
+(drag-stuff-global-mode 1)
+(drag-stuff-define-keys)
+
+;; Guardar un historial de undo
+(use-package undo-fu-session
+  :config
+  (setq undo-fu-session-incompatible-files '("/COMMIT_EDITMSG\\'" "/git-rebase-todo\\'")))
+(global-undo-fu-session-mode)
+
+;; Ver el contenido del kill-ring, es decir el portapapeles interno de Emacs
+;;  Keymap para activarlo es =M-"=
+(use-package browse-kill-ring
+  :bind ("C-\"" . browse-kill-ring))
+
+;; Indentación más fuerte
+(global-aggressive-indent-mode 1)
+;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+
+;; git-diff
+(global-diff-hl-mode)
+
+;; Indent guides
+(add-hook 'prog-mode-hook 'indent-guide-mode)
+(add-hook 'text-mode-hook (indent-guide-mode 'nil))
+(add-hook 'org-mode-hook (indent-guide-mode 'nil))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -975,7 +1102,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+   '(indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
 
 ;; Indentación
 ;; Se recomienda usar también los comando tabify y untabify
