@@ -293,6 +293,10 @@ alias wifi-up="sudo ip link set wlan0 up"
 # Entrar al home server
 alias home-server="ssh valbar@192.168.0.8"
 
+# Desactivar redes sociales editando el /etc/hosts
+alias sociales-off="sudo sed -i '/.*facebook.com.*/c\0.0.0.0 www.facebook.com' /etc/hosts"
+alias sociales-on="sudo sed -i '/.*facebook.com.*/c\#0.0.0.0 www.facebook.com' /etc/hosts"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
