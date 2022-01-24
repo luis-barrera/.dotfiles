@@ -1,0 +1,110 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Milisegundos para analizar los archivos en el dir actual
+scan_timeout = 10
+
+# Formato del prompt
+format = """
+$time [                          ](bold fg:2)\
+$memory_usage
+$sudo\
+$username\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$package\
+$cmake\
+$cobol\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$rlang\
+$ruby\
+$rust\
+$scala\
+$swift\
+$conda\
+$kubernetes
+$jobs$cmd_duration$shell"""
+
+[username]
+format = "[$user]($style) "
+show_always = true
+
+[directory]
+format = "  [$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+format = " [$symbol$branch]($style) "
+
+[package]
+format = "via [🎁 $version]($style) "
+
+[memory_usage]
+disabled = false
+
+[sudo]
+style = "bold green"
+format = "[$symbol]($style)"
+symbol = " "
+disabled = false
+
+[cmd_duration]
+min_time = 500
+format = " [$duration](bold yellow) "
+
+[shell]
+fish_indicator = "[](yellow)"
+powershell_indicator = "_"
+unknown_indicator = "mystery shell"
+style = "blue bold"
+disabled = false
+
+[time]
+disabled = false
+format = '[\[$time\]]($style)'
+
+# -- Módulos disponibles
+# $hostname\
+# $shlvl\
+# $singularity\
+# $vcsh\
+# $hg_branch\
+# $nim\
+# $pulumi\
+# $red\
+# $terraform\
+# $vlang\
+# $vagrant\
+# $zig\
+# $nix_shell\
+# $aws\
+# $gcloud\
+# $openstack\
+# $azure\
+# $env_var\
+# $crystal\
+# $line_break\
+# $battery\
+# $status\
+
