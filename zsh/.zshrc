@@ -13,7 +13,8 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 # (wal -q --theme sexy-dwmrob &)
 # (wal -q --theme gruvbox &)
 # (wal -q --theme sexy-orangish &)
-(wal -q --theme sexy-digerati &)
+# (wal -q --theme sexy-digerati &)
+(wal -q --theme sexy-brewer &)
 
 # pfetch
 (pfetch &&)
@@ -291,7 +292,7 @@ alias wifi-down="sudo ip link set wlan0 down"
 alias wifi-up="sudo ip link set wlan0 up"
 
 # Entrar al home server
-alias home-server="ssh valbar@192.168.0.8"
+alias homer="ssh valbar@192.168.0.8"
 
 # Desactivar redes sociales editando el /etc/hosts
 alias sociales-off="sudo sed -i '/.*facebook.com.*/c\0.0.0.0 www.facebook.com' /etc/hosts"
