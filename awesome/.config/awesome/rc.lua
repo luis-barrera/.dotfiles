@@ -361,6 +361,10 @@ globalkeys = my_table.join(
 	awful.key({ modkey }, "Return", function()
 		awful.spawn(terminal)
 		end, {description = "Abrir terminal", group = "launcher"}),
+	-- Abre otro programa de terminal diferente
+	awful.key({ modkey, "Control"}, "Return", function()
+		awful.spawn("alacritty")
+		end, {description = "Abrir terminal", group = "launcher"}),
 
 	-- Abrir launcher
 	awful.key({ modkey }, "z", function()
