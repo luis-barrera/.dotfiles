@@ -292,7 +292,7 @@ alias wifi-down="sudo ip link set wlan0 down"
 alias wifi-up="sudo ip link set wlan0 up"
 
 # Entrar al home server
-alias homer="ssh valbar@192.168.0.8"
+alias homer="ssh 192.168.0.8"
 
 # Desactivar redes sociales editando el /etc/hosts
 alias sociales-off="sudo sed -i '/.*facebook.com.*/c\0.0.0.0 www.facebook.com' /etc/hosts"
