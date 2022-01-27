@@ -23,3 +23,7 @@
 /emacs/.emacs.d/org-roam.db
 /emacs/.emacs.d/recentf
 /emacs/.emacs.d/undo-fu-session/
+/emacs/.emacs.d/games
+/emacs/.emacs.d/forge-database.sqlite
+/emacs/.emacs.d/pomm
+/emacs/.emacs.d/tramp
