@@ -256,8 +256,8 @@ alias cat="bat"
 alias du="dust"
 
 # Translate
-alias trans-es="trans -s es -t en"
-alias trans-en="trans -s en -t es"
+alias tr-es="trans -s es -t en"
+alias tr-en="trans -s en -t es"
 
 # Anaconda environment
 alias conda-activate="source /opt/anaconda/bin/activate root"
@@ -332,3 +332,19 @@ export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
 
 # Zoxide, reemplazo para cd
 eval "$(zoxide init zsh)"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/luisbarrera/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/luisbarrera/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
