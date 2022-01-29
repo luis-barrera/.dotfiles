@@ -60,6 +60,87 @@
 (package-initialize)
 ;;(package-refresh-contents)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(lsp-pyright-disable-organize-imports t)
+ '(lsp-pyright-typechecking-mode "basic")
+ '(lsp-pyright-use-library-code-for-types t)
+ '(lsp-pyright-venv-directory "")
+ '(lsp-pyright-venv-path "")
+ '(package-selected-packages
+   '(indent-guide;
+     diff-hl;
+     magit-todos;
+     evil-nerd-commenter;
+     aggressive-indent;
+     browse-kill-ring;
+     undo-fu-session;
+     drag-stuff;
+     linum-relative;
+     undo-tree;
+     centaur-tabs;
+     org-roam-ui;
+     cdlatex;
+     company-auctex;
+     auctex;
+     lsp-ui;
+     company-box;
+     parrot;
+     solaire-mode;
+     multiple-cursors;
+     visual-fill-column;
+     all-the-icons-completion;
+     treemacs-evil;
+     org-evil;
+     evil-org;
+     evil-numbers;
+     evil-smartparens;
+     treemacs-all-the-icons;
+     treemacs-magit;
+     treemacs-projectile;
+     smartparens;
+     comment-tags;
+     rainbow-delimiters;
+     yasnippet-snippets;
+     yasnippet;
+     emmet-mode;
+     php-mode;
+     web-mode;
+     lsp-java;
+     lsp-pyright;
+     lsp-treemacs;
+     lsp-mode;
+     company-php;
+     company-web;
+     alert;
+     pomm;
+     deft;
+     org-download;
+     org-superstar;
+     org-roam;
+     evil-collection;
+     doom-themes;
+     doom-modeline;
+     counsel-projectile;
+     projectile;
+     helpful;
+     which-key;
+     command-log-mode;
+     undo-fu;
+     company;
+     ivy-hydra;
+     ivy-rich;
+     forge;
+     magit;
+     general;
+     ivy;
+     counsel;
+     swiper;
+     use-package)))
+
 ;; (unless (package-installed-p 'use-package)
 ;;    (package-install 'use-package))
 
@@ -208,10 +289,10 @@
 ;; ##############################
 ;; Keybindings
 ;; Evil mode, capa de vim
-(setq evil-want-keybinding nil)
-(setq evil-want-integration t)
 (unless (package-installed-p 'evil)
   (package-install 'evil))
+(setq evil-want-keybinding nil)
+(setq evil-want-integration t)
 (require 'evil)
 (evil-mode 1)
 
@@ -350,7 +431,7 @@
   :ensure t
   :init (setq org-roam-v2-ack t)
   :custom
-  (setq org-roam-directory "~/org-roam")
+  (setq org-roam-directory (file-truename "~/org-roam"))
   ;;(setq org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ;; Esta es la función con la que debemos empezar
@@ -361,17 +442,26 @@
          ("C-c n c" . org-id-get-create))
   :config
   ;;(org-roam-setup)
+  ;; If you're using a vertical completion framework, you might want a more informative completion interface
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags}" 'face 'org-tag)))
+  (org-roam-db-autosync-mode)
   (setq org-roam-completion-everywhere t))
+
+(setq org-roam-mode-section-functions
+      (list #'org-roam-backlinks-section
+            #'org-roam-reflinks-section
+            ;; #'org-roam-unlinked-references-section
+            ))
 
 ;; Templates para org-roam
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
-   :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-          "#+title: ${title}\n")
-   :unnarrowed t)
-  ("c" "Nota completa" plain "%?"
-   :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-          ":PROPERTIES:
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                            "#+title: ${title}\n")
+         :unnarrowed t)
+        ("c" "Nota completa" plain "%?"
+         :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+                            ":PROPERTIES:
 :AUTHOR: %^{Author|No Author}
 :ROAM_REFS: %^{Link o Ref|No Ref}
 :ROAM_ALIAS: %^{Alias|No Alias}
@@ -382,7 +472,7 @@
 #+title: ${title}
 #+filetags:
 ")
-   :unnarrowed t)))
+         :unnarrowed t)))
 
 ;; Pegar imágenes en las notas desde el clipboard o abre una app para hacer screenshot
 (use-package org-download
@@ -1095,19 +1185,6 @@
 (add-hook 'text-mode-hook (indent-guide-mode 'nil))
 (add-hook 'org-mode-hook (indent-guide-mode 'nil))
 
-
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(lsp-pyright-disable-organize-imports t)
- '(lsp-pyright-typechecking-mode "basic")
- '(lsp-pyright-use-library-code-for-types t)
- '(lsp-pyright-venv-directory "")
- '(lsp-pyright-venv-path "")
- '(package-selected-packages
-   '(indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
 
 ;; Indentación
 ;; Se recomienda usar también los comando tabify y untabify
