@@ -71,75 +71,7 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(indent-guide;
-     diff-hl;
-     magit-todos;
-     evil-nerd-commenter;
-     aggressive-indent;
-     browse-kill-ring;
-     undo-fu-session;
-     drag-stuff;
-     linum-relative;
-     undo-tree;
-     centaur-tabs;
-     org-roam-ui;
-     cdlatex;
-     company-auctex;
-     auctex;
-     lsp-ui;
-     company-box;
-     parrot;
-     solaire-mode;
-     multiple-cursors;
-     visual-fill-column;
-     all-the-icons-completion;
-     treemacs-evil;
-     org-evil;
-     evil-org;
-     evil-numbers;
-     evil-smartparens;
-     treemacs-all-the-icons;
-     treemacs-magit;
-     treemacs-projectile;
-     smartparens;
-     comment-tags;
-     rainbow-delimiters;
-     yasnippet-snippets;
-     yasnippet;
-     emmet-mode;
-     php-mode;
-     web-mode;
-     lsp-java;
-     lsp-pyright;
-     lsp-treemacs;
-     lsp-mode;
-     company-php;
-     company-web;
-     alert;
-     pomm;
-     deft;
-     org-download;
-     org-superstar;
-     org-roam;
-     evil-collection;
-     doom-themes;
-     doom-modeline;
-     counsel-projectile;
-     projectile;
-     helpful;
-     which-key;
-     command-log-mode;
-     undo-fu;
-     company;
-     ivy-hydra;
-     ivy-rich;
-     forge;
-     magit;
-     general;
-     ivy;
-     counsel;
-     swiper;
-     use-package)))
+   '(ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
 
 ;; (unless (package-installed-p 'use-package)
 ;;    (package-install 'use-package))
@@ -220,14 +152,15 @@
         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 
   ;; Temas favoritos
-  ;; Si queremos tener una lista completa de temas usar M-x counsel-load-theme RET
-  ;(load-theme 'doom-one t)
-  (load-theme 'doom-acario-dark t)
-  ;(load-theme 'doom-gruvbox t)
-  ;(load-theme 'doom-Iosvkem t)
-  ;(load-theme 'doom-manegarm t)
-  ;(load-theme 'doom-peacock t)
-  ;(load-theme 'doom-tomorrow-night t)
+  ;; Si queremos tener una lista completa de temas usar M-x counsel-load-theme [C-M-n | C-M-p]
+  ;; (load-theme 'doom-one t)
+  ;; (load-theme 'doom-acario-dark t)
+  ;; (load-theme 'doom-gruvbox t)
+  ;; (load-theme 'doom-Iosvkem t)
+  ;; (load-theme 'doom-manegarm t)
+  ;; (load-theme 'doom-peacock t)
+  ;; (load-theme 'doom-tomorrow-night t)
+  (load-theme 'doom-old-hope t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
@@ -450,7 +383,7 @@
 (setq org-roam-mode-section-functions
       (list #'org-roam-backlinks-section
             #'org-roam-reflinks-section
-            ;; #'org-roam-unlinked-references-section
+            #'org-roam-unlinked-references-section
             ))
 
 ;; Templates para org-roam
@@ -679,7 +612,7 @@
 (use-package treemacs-evil)
 (lsp-treemacs-sync-mode 1)
 
-;; Quita el path completo para symbolik links
+;; Quita el (point)ath completo para symbolik links
 (setq find-file-visit-truename t)
 
 ;; Solaire-mode
@@ -1184,6 +1117,16 @@
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 (add-hook 'text-mode-hook (indent-guide-mode 'nil))
 (add-hook 'org-mode-hook (indent-guide-mode 'nil))
+
+;; Python
+(elpy-enable)
+;; Use IPython for REPL
+;; Para hacer clear de la terminal =C-c M-o=
+(setq python-shell-interpreter "jupyter"
+      python-shell-interpreter-args "console --simple-prompt"
+      python-shell-prompt-detect-failure-warning nil)
+(add-to-list 'python-shell-completion-native-disabled-interpreters
+             "jupyter")
 
 
 ;; Indentación
