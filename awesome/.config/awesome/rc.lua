@@ -392,7 +392,7 @@ clientkeys = my_table.join(
 	awful.key({ modkey, "Control" }, "Return", function(c)
 		c:swap(awful.client.getmaster())
 		end, {description = "Mover a master", group = "client"}),
-	awful.key({ modkey }, "o", function(c)
+	awful.key({ modkey, altkey }, "o", function(c)
 		c:move_to_screen()
 		end, {description = "Mover a pantalla", group = "client"}),
 	awful.key({ modkey }, "t", function (c)
