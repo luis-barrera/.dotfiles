@@ -6,7 +6,7 @@ scan_timeout = 10
 
 # Formato del prompt
 format = """
-$time [                          ](bold fg:2)\
+$time [                           ](bold fg:2)\
 $memory_usage
 $sudo\
 $username\
