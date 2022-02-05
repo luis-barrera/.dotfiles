@@ -97,7 +97,7 @@ local function worker(args)
       info:set_markup_silently(markup.fontfg(font, default_color,  "F "))
     end
 
-    if charge < 15 then
+    if charge < 15 and not charge > 80 then
       arc.colors = { low_level_color }
       if enable_battery_warning and status ~= 'Charging' and os.difftime(os.time(), last_battery_check) > 60 then
         last_battery_check = os.time()
