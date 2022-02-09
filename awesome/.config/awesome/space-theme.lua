@@ -31,9 +31,9 @@ local theme = {}
 
 -- Directorios por default
 theme.default_dir = require("awful.util").get_themes_dir() .. "default"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
+theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
-theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/faye.jpg"
+-- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/faye.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/seeyouspacecowboy.png"
 -- theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
 -- theme.wallpaper = os.getenv("HOME") .. "/Imágenes/wallpaper1.jpg"
