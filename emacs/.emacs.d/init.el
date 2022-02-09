@@ -331,7 +331,7 @@
   ;; Mantener el log dentro de un drawer, de manerar que se hace un fold
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
-  (setq org-agenda-files '("~/org-mode/Tareas21O.org" "~/org-mode/Clases21O.org" "~/org-mode/todos.org"))
+  (setq org-agenda-files '("~/org-mode/Tareas21I.org" "~/org-mode/Clases21I.org" "~/org-mode/todos.org"))
   ;; (setq org-agenda-files '("~/org-mode/tasks.org" "~/org-mode/clases21O.org"))
   ;; Mostrar 10 días en la vista de semana de org-agenda.
   (setq org-agenda-span 10)
