@@ -355,7 +355,7 @@ globalkeys = my_table.join(
 	-- Abrir Nemo
 	awful.key({ modkey, "Shift" }, "c", function()
 		awful.spawn("nemo")
-		end, {description = "Abrir nemo", group = "launcher"}),
+	end, {description = "Abrir nemo", group = "launcher"}),
 
 	-- Abre una terminal
 	awful.key({ modkey }, "Return", function()
@@ -366,10 +366,34 @@ globalkeys = my_table.join(
 		awful.spawn("alacritty")
 		end, {description = "Abrir terminal", group = "launcher"}),
 
+	awful.key({ modkey, "Shift" }, ".", function()
+		local tagsnames = {"5  ", "4  ", "3  ", "2  ", "1  "} -- Lista de los tags
+		local t -- Variable para guardar el tag actual
+		local nexttag -- Siguiente tag
+		local clients -- Guardar los clientes del tag seleccionado
+
+		-- Iteramos sobre los tags
+		for key, tagname in ipairs(tagsnames) do
+			if key == 1 then goto continue end
+
+			t = awful.tag.find_by_name(awful.screen.focused(), tagname)
+			nexttag = awful.tag.find_by_name(awful.screen.focused(), tagsnames[key - 1])
+
+			if not t then return end
+
+			clients = t:clients()
+			for _, tagclient in ipairs(clients) do
+				tagclient:move_to_tag(nexttag)
+			end
+			::continue::
+		end
+
+	end, {description = "Desplazar tags", group = "tags"}),
+
 	-- Abrir launcher
 	awful.key({ modkey }, "z", function()
 		awful.spawn("sh /home/luisbarrera/.config/rofi/launchers/misc/launcher.sh")
-	end, {description = "dmenu", group = "launcher"}) -- <-- Ese paréntesis
+	end, {description = "rofi", group = "launcher"}) -- <-- Ese paréntesis
 	-- No poner nada entre esta linea y el paréntesis cerrando
 )
 

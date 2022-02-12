@@ -299,6 +299,9 @@ alias homer="ssh 192.168.0.8"
 alias sociales-off="sudo sed -i '/.*facebook.com.*/c\0.0.0.0 www.facebook.com' /etc/hosts"
 alias sociales-on="sudo sed -i '/.*facebook.com.*/c\#0.0.0.0 www.facebook.com' /etc/hosts"
 
+# Montar el server samba
+alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=valbar"
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
