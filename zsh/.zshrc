@@ -203,7 +203,7 @@ alias whitenoise="mpv --ytdl-format=251 https://youtu.be/nMfPqeZjc2c"
 # Reproduce sonidos relajantes de la selva
 alias relax="mpv --ytdl-format=251 https://youtu.be/cjkFG6bHGNc"
 alias travelers="mpv --ytdl-format=251 https://youtu.be/mDZf-fjBxz4"
-alias heavy-classic:"mpv --ytdl-format=251 https://youtu.be/2QKuxt_QKts"
+alias heavy-classic="mpv --ytdl-format=251 https://youtu.be/2QKuxt_QKts"
 
 # Siguiendo el meme
 alias l='ls'
@@ -257,8 +257,8 @@ alias cat="bat"
 alias du="dust"
 
 # Translate
-alias tr-es="trans -s es -t en"
-alias tr-en="trans -s en -t es"
+alias tres="trans -s es -t en"
+alias tren="trans -s en -t es"
 
 # Anaconda environment
 alias conda-activate="source /opt/anaconda/bin/activate root"
