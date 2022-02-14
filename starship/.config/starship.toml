@@ -75,6 +75,7 @@ format = " [$duration](bold yellow) "
 
 [shell]
 fish_indicator = "[](yellow)"
+zsh_indicator = "[>-](yellow)"
 powershell_indicator = "_"
 unknown_indicator = "mystery shell"
 style = "blue bold"
