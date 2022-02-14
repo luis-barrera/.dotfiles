@@ -49,6 +49,31 @@
 (setq split-width-threshold 0)
 ;;(setq split-window-right)
 
+;; org-agenda-mode
+(defun my-buffer-face-org-agenda()
+  "Establece la face para los buffers de org agenda para que sean más pequeños"
+  (interactive)
+  (setq buffer-face-mode-face '(:family "VictorMono Nerd Font Mono" :height 100))
+  (shrink-window-horizontally (- (window-width) 57))
+  (buffer-face-mode))
+(add-hook 'org-agenda-mode-hook 'my-buffer-face-org-agenda)
+;; (add-hook 'org-agenda-mode-hook 'shrink-window-if-larger-than-buffer)
+
+;; Setup del minibuffer
+(defun my-minibuffer-setup-hook ()
+  "Establece la face para los minibuffers"
+  (interactive)
+  (setq buffer-face-mode-face '(:family "VictorMono Nerd Font Mono" :height 100))
+  (buffer-face-mode))
+(add-hook 'minibuffer-setup-hook 'my-minibuffer-setup-hook)
+
+;; Setup de calenda-mode
+(defun my-buffer-face-calendar()
+  "Establece la face para los buffers de org agenda para que sean más pequeños"
+  (interactive)
+  (setq buffer-face-mode-face '(:family "VictorMono Nerd Font Mono" :height 100))
+  (buffer-face-mode))
+(add-hook 'calendar-mode-hook 'my-buffer-face-calendar)
 
 ;; ##############################
 ;; Package administrator
@@ -1129,12 +1154,12 @@
              "jupyter")
 
 ;; Manejo de ventanas
-(use-package edwina
-  :ensure t
-  :config
-  (setq display-buffer-base-action '(display-buffer-below-selected))
-  ; (edwina-setup-dwm-keys)
-  (edwina-mode 1))
+;; (use-package edwina
+;;   :ensure t
+;;   :config
+;;   ; (setq display-buffer-base-action '(display-buffer-below-selected))
+;;   ; (edwina-setup-dwm-keys)
+;;   (edwina-mode 1))
 
 ;; Indentación
 ;; Se recomienda usar también los comando tabify y untabify
