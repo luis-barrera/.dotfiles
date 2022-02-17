@@ -262,6 +262,8 @@ alias du="dust"
 # Translate
 alias tres="trans -s es -t en"
 alias tren="trans -s en -t es"
+alias dees="trans -s de -t es"
+alias esde="trans -s es -t de"
 
 # Anaconda environment
 alias conda-activate="source /opt/anaconda/bin/activate root"
@@ -331,6 +333,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 
 # Emacs
 export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
+
+export PATH=$PATH:/home/luisbarrera/.local/lib
 
 
 # PHP 7
