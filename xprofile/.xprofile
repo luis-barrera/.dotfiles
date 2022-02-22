@@ -56,7 +56,7 @@ xinput set-prop $touchpad 335 1
 # Abrir aplicaciones después del display server, pero antes del WM
 # xcompmgr &
 # light-locker &
-gnome-keyring-daemon --start
+gnome-keyring-daemon --start &
 redshift-gtk &
 flameshot &
 parcellite -d &
@@ -76,3 +76,6 @@ setxkbmap -option 'ctrl:swapcaps'
 
 # Daemons de Emacs
 #/bin/emacs --daemon &
+
+# Java y WM
+export AWT_TOOLKIT=MToolkit
