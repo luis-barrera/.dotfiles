@@ -531,11 +531,11 @@
 ;; (3) ... When TODO.txt is saved
 (add-hook 'after-save-hook
           '(lambda ()
-             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Tareas21O.org"))
+             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Tareas21I.org"))
                  (my-org-agenda-to-appt))))
 (add-hook 'after-save-hook
           '(lambda ()
-             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Clases21O.org"))
+             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Clases21I.org"))
                  (my-org-agenda-to-appt))))
 
 ; Display appointments as a window manager notification
