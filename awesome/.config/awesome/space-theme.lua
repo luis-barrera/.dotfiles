@@ -80,7 +80,7 @@ theme.bg_systray = theme.applets_bg
 theme.systray_icon_spacing = dpi(2)
 
 -- Bordes de clientes
-theme.border_width = dpi(2)
+theme.border_width = dpi(0.6)
 theme.border_normal = theme.color1
 theme.border_focus = theme.color3
 
@@ -287,12 +287,13 @@ function theme.at_screen_connect(s)
 	end
 
 	-- Barra inferior
-	s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(30), bg = "000000AA" })
+	-- s.mywibox = awful.wibar({ position = "top", screen = s, border_width = dpi(0), height = dpi(30), bg = "#000" })
+	s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(30), bg = "#0000" })
 	s.mybottomwibox:setup {
 		layout = wibox.layout.align.horizontal,
 		{ -- Parte izquierda
 			s.mytag,
-			mylauncher,
+			-- mylauncher,
 			layout = wibox.layout.fixed.horizontal,
 		},
 		s.mytasklist, -- Parte central

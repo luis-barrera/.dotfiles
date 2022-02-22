@@ -345,7 +345,7 @@ globalkeys = my_table.join(
 
 	-- Ajustes de Awesome
 	awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
-	-- awful.key({ modkey, "Control" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
+	awful.key({ modkey, "Control", "Shift" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
 
 	-- Abrir Firefox
 	awful.key({ modkey, "Shift" }, "b", function()
@@ -535,17 +535,17 @@ screen.connect_signal("property::geometry", function(s)
 )
 
 -- No border when only one client is opened
-screen.connect_signal("arrange", function(s)
-	 local only_one = #s.tiled_clients == 1
-	 for _, c in pairs(s.clients) do
-		if only_one and not c.floating or c.maximized then
-			c.border_width = dpi(0)
-		else
-			c.border_width = beautiful.border_width
-		end
-	end
-	end
-)
+-- screen.connect_signal("arrange", function(s)
+-- 	 local only_one = #s.tiled_clients == 1
+-- 	 for _, c in pairs(s.clients) do
+-- 		if only_one and not (c.floating or c.maximized) then
+-- 			c.border_width = dpi(0)
+-- 		else
+-- 			c.border_width = beautiful.border_width
+-- 		end
+-- 	end
+-- 	end
+-- )
 
 -- Creates the bars (wibar)
 awful.screen.connect_for_each_screen(function(s)
@@ -607,6 +607,13 @@ awful.rules.rules = {
 	-- Error fix
 	{ rule = { role = "GtkFileChooserDialog" },
 		properties = { maximized = false, width = 800, height = 600 } },
+
+	{ rule = { class = "Polybar" },
+		-- properties = { maximized = true, border_width = 0 } },
+		properties = { dockable = true, floating = true, border_width = 0 } },
+
+	{ rule = { class = "mpv" },
+		properties = { floating = true } },
 
 	{ rule = { class = "conky", type = "dock" },
 		properties = { border_width = 0 } }
@@ -684,13 +691,37 @@ end)
 -- Change color of the client border
 client.connect_signal("focus", function(c)
 	c.border_color = beautiful.border_focus
-	if c.maximized then
-		c.border_width=dpi(0)
-	else
-		c.border_width=beautiful.border_width
-	end
+	-- if c.maximized then
+	-- 	c.border_width=dpi(0)
+	-- else
+	-- 	c.border_width=beautiful.border_width
+	-- end
 end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- No border when only one client is opened
+screen.connect_signal("arrange", function(s)
+	local only_one = #s.tiled_clients == 1
+
+	for _, c in pairs(s.clients) do
+		if only_one then
+			c.border_width = dpi(0)
+		else
+			c.border_width = beautiful.border_width
+		end
+
+		if (c.class == "Polybar") then
+			c.border_width = dpi(0)
+		end
+
+		if (c.maximized) then
+			c.border_width = dpi(0)
+		end
+	end
+end)
+
+-- Autostart
+-- awful.spawn.with_shell("/home/luisbarrera/.config/polybar/launch.sh")
 
 -- Partes archivadas
 
