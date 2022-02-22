@@ -15,7 +15,7 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 # (wal -q --theme sexy-orangish &)
 # (wal -q --theme sexy-digerati &)
 # (wal -q --theme sexy-brewer &)
-(wal -q --theme sexy-parker_brothers &)
+# (wal -q --theme sexy-parker_brothers &)
 
 # pfetch
 (pfetch &&)
@@ -223,7 +223,7 @@ alias sls='ls'
 
 # Abrir archivos de la escuela en zathura
 alias horario="zathura ~/Trim-8/Horario21P.pdf"
-alias caluam="zathura ~/Trim9-21O/caluam.pdf"
+alias caluam="zathura ~/Trim10-21I/caluam.pdf"
 # alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 # alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Pendientes/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
@@ -260,8 +260,8 @@ alias cat="bat"
 alias du="dust"
 
 # Translate
-alias tres="trans -s es -t en"
-alias tren="trans -s en -t es"
+alias esen="trans -s es -t en"
+alias enes="trans -s en -t es"
 alias dees="trans -s de -t es"
 alias esde="trans -s es -t de"
 
