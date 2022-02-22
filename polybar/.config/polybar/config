@@ -1,0 +1,266 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+;background = #000
+;background-alt = #444
+;foreground = #dfdfdf
+;foreground-alt = #555
+;primary = #ffb52a
+;secondary = #e60053
+;alert = #bd2c40
+
+; Usando pywal
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color2:#000}
+foreground = ${xrdb:color7:#FFF}
+foreground-alt = ${xrdb:color1:#555}
+primary = ${xrdb:color1:#ffb52a}
+secondary = ${xrdb:color2:#e60053}
+alert = ${xrdb:color3:#bd2c40}
+
+[bar/topbar]
+; monitor = ${env:MONITOR:HDMI-1}
+width = 100%
+height = 27
+offset-x = 0%
+offset-y = 0%
+radius = 0.0
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = "DejaVu Sans:size=9:antialias=true;0"
+font-1 = "FuraCode Nerd Font:size=10;1"
+font-2 = "FuraCode Nerd Font:size=12;2"
+
+modules-left = bspwm xwindow
+modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = bspwm
+
+scroll-up = bspwm-desknext
+scroll-down = bspwm-deskprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/xwindow]
+type = internal/xwindow
+format = <label>
+label = %title:0:30:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout =  %layout%
+label-layout-underline = #00adad
+
+label-indicator-padding = 0
+label-indicator-margin = 0
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted =    %free% de %total%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground}
+
+label-mounted-underline = #002e2e
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %name%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+label-focused-font = 2
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.foreground}
+label-occupied-padding = 1
+label-occupied-font = 2
+
+label-urgent = %name%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+label-urgent-font = 2
+
+label-empty = %name%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 1
+label-empty-font = 2
+
+label-separator = " "
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format =  <label>
+label = %percentage%%
+format-underline = #e27300
+
+[module/cpu]
+type = internal/cpu
+format = <label>
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground}
+format-underline = #f90000
+label =  %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label =  %percentage_used%%
+
+[module/wlan]
+type = internal/network
+interface = wlan0
+interval = 1.0
+
+format-connected = <label-connected>
+label-connected =  %upspeed%  %downspeed%
+format-connected-underline = #9f78e1
+
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname:8% disconnected
+label-disconnected-foreground = ${colors.foreground}
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected = <label-connected>
+label-connected = Eth  %upspeed:4%  %downspeed:4%
+format-connected-underline = #55aa55
+format-connected-prefix-foreground = ${colors.foreground}
+
+format-disconnected =
+
+[module/date]
+type = internal/date
+interval = 5
+
+date-alt = "%A, %d-%B-%Y"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format = " <label>"
+label = %time% %date%
+
+format-prefix-foreground = ${colors.foreground}
+format-underline = #0a6cf5
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume = 墳 %percentage%%
+label-volume-foreground = ${colors.foreground}
+
+label-muted = 婢 muted
+label-muted-foreground = #666
+
+format-volume-underline = #570000
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <animation-discharging> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+animation-charging-0 =  
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 =  
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <label>
+format-underline = #f50a4d
+format-warn = <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label =  %temperature-c%
+label-warn =  %temperature-c%
+label-warn-foreground = ${colors.secondary}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 0
+
+; vim:ft=dosini

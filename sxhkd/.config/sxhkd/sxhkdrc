@@ -1,0 +1,167 @@
+# Abrir terminal
+super + Return
+	kitty
+# Terminal alternativa
+super + ctrl + Return
+	alacritty
+
+# Explorador de archivos
+super + shift + c
+	nemo
+
+# Launcher de aplicaciones
+super + z
+	/home/luisbarrera/scripts/dmenu_xcolor.sh
+# Launche gráfico de aplicaciones
+super + shift + z
+	/home/luisbarrera/.config/rofi/launchers/misc/launcher.sh
+
+# Cargar la config de teclado
+super + shift + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# Quitar/Reiniciar bspwm
+super + shift + {Delete,r}
+	bspc {quit,wm -r}
+
+# Cerrar y kill nodes
+super + shift + x
+	bspc node -c
+super + shift + ctrl + x
+	bspc node -k
+
+# Focus al node previo
+super + Tab
+	bspc node -f last
+
+# Ciclar entre los layouts tiled o monocle
+super + m
+	bspc desktop -l next
+
+# Mover el node seleccionado actual a la posición del anterior seleccionado
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# Mover el nodo actual a la posición del más grande
+super + g
+	bspc node -s biggest.window
+
+#
+# state/flags
+#
+
+# Cambia el estado del node
+super + shift + {v,b,n,m}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+# super + ctrl + {m,x,y,z}
+# 	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+super + {comma,period}
+	bspc node -f {next,prev}.local
+# focus the node for the given path jump
+# super + {p,b,comma,period}
+# 	bspc node -f @{parent,brother,first,second}
+
+# focus the next/previous window in the current desktop
+super + {_,shift + }t
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+# super + bracket{left,right}
+# 	bspc desktop -f {prev,next}.local
+
+# focus the last desktop
+super + Escape
+	bspc desktop -f last
+
+# focus the older or newer node in the focus history
+# super + {o,i}
+# 	bspc wm -h off; \
+# 	bspc node {older,newer} -f; \
+# 	bspc wm -h on
+
+# focus or send to the given desktop
+super + {_,shift +} {a,s,d,f,q,w,e,1,2,3,4,5}
+	bspc {desktop -f, node -d} {a,s,d,f,q,w,e,1,2,3,4,5}
+# super + {_,shift + }{1-9,0}
+# 	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+super + alt + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + alt + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# Multimedia
+#
+
+# Volumen
+super + ctrl + plus
+	pactl set-sink-volume @DEFAULT_SINK@ +2%
+super + ctrl + minus
+	pactl set-sink-volume @DEFAULT_SINK@ -5%
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+XF86AudioMicMute
+	pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+# Control de música
+super + ctrl + braceleft
+	playerctl --player=playerctld previous
+super + ctrl + braceright
+	playerctl --player=playerctld next
+super + ctrl + space
+	playerctl --player=playerctld play-pause
+
+# Control de brillo
+XF86MonBrightnessDown
+	xbacklight -dec 10
+XF86MonBrightnessUp
+	xbacklight -inc 5
+alt + XF86MonBrightnessDown
+xbacklight -set 0.06
