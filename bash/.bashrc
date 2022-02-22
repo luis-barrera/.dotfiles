@@ -63,3 +63,7 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Editor por defecto
 export EDITOR=vim
+
+# Arreglar problemas de aplicaciones java en bspwm
+# export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
