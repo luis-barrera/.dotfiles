@@ -222,7 +222,7 @@ alias sls='ls'
 # alias ssh='kitty +kitten ssh'
 
 # Abrir archivos de la escuela en zathura
-alias horario="zathura ~/Trim-8/Horario21P.pdf"
+alias horario="zathura ~/Trim10-21I/Horario21I.pdf"
 alias caluam="zathura ~/Trim10-21I/caluam.pdf"
 # alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 # alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
