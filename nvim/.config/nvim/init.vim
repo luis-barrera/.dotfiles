@@ -171,7 +171,7 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 " LSP nativo, a partir de NeoVim 5.0
 source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 " Instalar automáticamente server de LSP
-source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
+" source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
 " Autocompletado
 source $HOME/.config/nvim/plug-config/completion-nvim.vim
 

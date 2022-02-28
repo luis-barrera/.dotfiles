@@ -8,7 +8,7 @@ let g:lightline = {
 		\ 'statusline': 1,
 		\ 'tabline': 1
 	\},
-	\ 'colorscheme': 'PaperColor',
+	\ 'colorscheme': 'wal',
 \ }
 
 " Algunos temas ya tienen tema para lightline, pero se puede poner

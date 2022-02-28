@@ -19,12 +19,12 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " LSP Nativo de NVim
 	Plug 'neovim/nvim-lspconfig'
 " Instalar automáticamente los server de lenguajes para lsp
-	Plug 'kabouzeid/nvim-lspinstall'
+	" Plug 'kabouzeid/nvim-lspinstall'
 " Para mejorar los colorschemes usando LSP
 	Plug 'folke/lsp-colors.nvim'
 
 " Autocompletado con LSP
-	Plug 'nvim-lua/completion-nvim'
+	Plug 'haorenW1025/completion-nvim'
 " Complemento para completion-nvim, usa treessitter para dar recomendaciones
 	Plug 'nvim-treesitter/completion-treesitter'
 " Complemento para completion-nvim, usa los buffers para dar recomendaciones
@@ -216,6 +216,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Statusline
 	Plug 'itchyny/lightline.vim'
+
+" Pywal en nvim
+	Plug 'dylanaraps/wal.vim'
 
 " Pestañas más bonitas
 	" Plug 'akinsho/nvim-bufferline.lua'
