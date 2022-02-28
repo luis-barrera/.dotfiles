@@ -58,7 +58,7 @@ format = "  [$path]($style)[$read_only]($read_only_style) "
 format = " [$symbol$branch]($style) "
 
 [package]
-format = "via [🎁 $version]($style) "
+format = "via [ $version]($style) "
 
 [memory_usage]
 disabled = false
