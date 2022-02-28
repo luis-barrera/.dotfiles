@@ -27,11 +27,20 @@ bspc config gapless_monocle      true
 # bspc rule -a mplayer2 state=floating
 # bspc rule -a Kupfer.py focus=on
 # bspc rule -a Screenkey manage=off
+
+# Mandar a ciertos desktops
 bspc rule -a Emacs desktop=q state=tiled layout=tiled follow=off
 bspc rule -a firefox desktop=s state=tiled layout=monocle follow=off
 bspc rule -a "kitty:wisdom-tree" desktop=a state=tiled layout=tiled
 bspc rule -a "kitty:btop" desktop=e state=tiled layout=tiled follow=off
 bspc rule -a spotify desktop=f state=tiled layout=tiled follow=off
+
+# Rules por clase o nombre del window
+bspc rule -a Zathura state=tiled layout=tiled follow=on
+bspc rule -a *:*:"Save As" state=floating center=true
+bspc rule -a *:*:"All Files" state=floating center=true
+bsoc rule -a Xdg-desktop-portal-gtk state=floating center=true
+bspc rule -a \* rectangle 800x600+0+0 center=true
 
 # Poner un wallpaper random
 # feh --randomize --bg-fill $HOME/wallpapers &
