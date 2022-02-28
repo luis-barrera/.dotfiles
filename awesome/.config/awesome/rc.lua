@@ -21,6 +21,28 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local my_table      = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi           = require("beautiful.xresources").apply_dpi
 
+-- Error Catching
+-----------------
+-- If an error occurs during the load of the configuration file, it display a notification
+--    and then loads a basic configuration file.
+if awesome.startup_errors then
+	naughty.notify({ preset = naughty.config.presets.critical,
+		title = "Oops, there were errors during startup!",
+		text = awesome.startup_errors })
+end
+
+do
+	local in_error = false
+	awesome.connect_signal("debug::error", function(err)
+		if in_error then return end
+		in_error = true
+		naughty.notify({ preset = naughty.config.presets.critical,
+			title = "Oops, an error happened!",
+			text = tostring(err) })
+		in_error = false
+	end)
+end
+
 -- Collision, extensión para el manejo de clientes, para usarlo pulsar las
 -- teclas de dirección (h,j,k,l) junto con alguna de las teclas mod (Tecla
 -- Windows(Mod4), Alt(Mod1), Control Shift)
@@ -91,48 +113,29 @@ function vol_mute_notification()
 	end)
 end
 
--- Error Catching
------------------
--- If an error occurs during the load of the configuration file, it display a notification
---    and then loads a basic configuration file.
-if awesome.startup_errors then
-	naughty.notify({ preset = naughty.config.presets.critical,
-		title = "Oops, there were errors during startup!",
-		text = awesome.startup_errors })
-end
-
-do
-	local in_error = false
-	awesome.connect_signal("debug::error", function(err)
-		if in_error then return end
-		in_error = true
-		naughty.notify({ preset = naughty.config.presets.critical,
-			title = "Oops, an error happened!",
-			text = tostring(err) })
-		in_error = false
-	end)
-end
-
 -- Useful Variables Definition
 ------------------------------
--- local chosen_theme = "/home/luisbarrera/.config/awesome/theme.lua" -- Theme
-local chosen_theme = "/home/luisbarrera/.config/awesome/space-theme.lua" -- Theme
+local chosen_theme = "/home/luisbarrera/.config/awesome/xresources-theme.lua" -- Theme
 local modkey       = "Mod4" -- Principal Key, Windows Key
 local altkey       = "Mod1" -- Secondary Key, Left Alt key
 local terminal     = "kitty" -- Default Terminal Emulator
 local editor       = "nvim" -- Text Editor in the Terminal
--- local gui_editor   = "geany" -- Default GUI editor
+local gui_editor   = "geany" -- Default GUI editor
 local browser      = "firefox" -- Default Internet Browser
--- local scrlocker    = "light-locker" -- Screenlocker
 local vi_focus     = false -- The focus of the client (window) follows the coursor
 local cycle_prev   = false -- Cycle trough all previous client or just the first
+
+-- Crea el tema con pywal y luego obtiene carga los colores para usarlos en Awesome
+-- Neceario instalar "pip install pywal haishoku" y "pacman -Syu feh"
+os.execute("wal --backend colorthief -i /home/luisbarrera/wallpapers")
+awful.spawn.with_shell("cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources")
+-- awful.spawn.with_shell("wal --backend colorthief -i /home/luisbarrera/wallpapers & && cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
+-- awful.spawn.with_shell("xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
 
 awful.util.terminal = terminal -- Defines the default terminal emulator
 beautiful.init(chosen_theme) -- Applies theme
 beautiful.max_notification_height = dpi(100)
 beautiful.notification_icon_size = dpi(90)
-
-local bling = require("bling") -- Utilidades para awesome
 
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
@@ -140,7 +143,7 @@ awful.util.tagnames = {"a  ", "s  ", "d  ", "f  ", "q   ", "w 
 -- awful.util.tagnames = {"a:  ", "s:  ", "d:  ", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
-	bling.layout.equalarea,
+	-- bling.layout.equalarea,
 	awful.layout.suit.tile,
 	awful.layout.suit.tile.left,
 	lain.layout.cascade.tile,
@@ -234,15 +237,17 @@ globalkeys = my_table.join(
 		if client.focus then
 			client.focus:raise()
 		end
-		end, {description = "Cicla entre los clientes", group = "client"}),
+	end, {description = "Cicla entre los clientes", group = "client"}),
 
-	-- Muestra o esconde la barra
+	-- Muestra o esconde la barra superior
 	awful.key({ modkey }, "y", function()
-		local s = awful.screen.focused({mouse = true})
-		if s.mywibox then
-			s.mywibox.visible = not s.mywibox.visible
-		end
-		end, {description = "Muestra/Oculta Wibox Superior", group = "awesome"}),
+		awful.spawn("sh /home/luisbarrera/.config/polybar/hide.sh")
+		-- No polybar
+		-- local s = awful.screen.focused({mouse = true})
+		-- if s.mywibox then
+		-- 	s.mywibox.visible = not s.mywibox.visible
+		-- end
+	end, {description = "Muestra/Oculta Wibox Superior", group = "awesome"}),
 
 	-- Muestra o esconde las barras superior e inferior basandose en el estado de la barra inferior
 	awful.key({ modkey, "Shift" }, "y", function()
@@ -345,7 +350,7 @@ globalkeys = my_table.join(
 
 	-- Ajustes de Awesome
 	awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
-	awful.key({ modkey, "Control", "Shift" }, "o", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
+	awful.key({ modkey, "Control", "Shift" }, "Delete", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
 
 	-- Abrir Firefox
 	awful.key({ modkey, "Shift" }, "b", function()
@@ -432,6 +437,10 @@ clientkeys = my_table.join(
 		c.maximized = not c.maximized
 		c:emit_signal ("focus")
 		end, {description = "Maximizar", group = "client"}),
+	awful.key({ modkey, "Shift" }, "m", function(c)
+		c.fullscreen = not c.fullscreen
+		c:emit_signal ("focus")
+		end, {description = "Fullscreen", group = "client"}),
 	awful.key({ modkey }, "n", function(c)
 		c.minimized = true
 		end, {description = "Minimizar", group = "client"})
@@ -530,9 +539,10 @@ screen.connect_signal("property::geometry", function(s)
 			wallpaper = wallpaper(s)
 		end
 		gears.wallpaper.maximized(wallpaper, s, "#ffffff", 1)
+	else
+		-- awful.spawn("wal -R")
 	end
-	end
-)
+end)
 
 -- No border when only one client is opened
 -- screen.connect_signal("arrange", function(s)
@@ -720,8 +730,13 @@ screen.connect_signal("arrange", function(s)
 	end
 end)
 
+-- awful.screen.connect_for_each_screen(function(s)
+--     -- 32 is my bar height change it to whatever you like.
+--     awful.screen.padding(s, {top = 27})
+-- end)
+
 -- Autostart
--- awful.spawn.with_shell("/home/luisbarrera/.config/polybar/launch.sh")
+awful.spawn.with_shell("/home/luisbarrera/.config/polybar/launch.sh")
 
 -- Partes archivadas
 

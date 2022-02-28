@@ -12,7 +12,6 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local dpi = require("beautiful.xresources").apply_dpi
-local xrdb = require("beautiful.xresources").get_current_theme
 local my_table = awful.util.table or gears.table
 local watch = require("awful.widget.watch")
 local batteryarc = require("widgets.batteryarc")
@@ -24,30 +23,60 @@ local player = require("widgets.player")
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local markup = require("markup")
 local naughty = require("naughty")
+local beautiful = require("beautiful")
+
+-- Solución Temporal para leer Xresources
+function os.capture(cmd, raw)
+	local f = assert(io.popen(cmd, 'r'))
+	local s = assert(f:read('*a'))
+
+	f:close()
+	if raw then return s end
+	s = string.gsub(s, '^%s+', '')
+	s = string.gsub(s, '%s+$', '')
+	return s
+end
+
+function getXrdbTable()
+	local x = string.gsub(os.capture("xrdb -query"), "%*", "")
+	local data = {}
+	local temp_table = {}
+
+	for line in string.gmatch(os.capture("xrdb -query"), "[^\n]*") do
+		temp_table = {}
+		for element in string.gmatch(line, "%S+") do
+			element = string.gsub(element, "[%*:]*", "")
+			table.insert(temp_table, element)
+		end
+		data[temp_table[1]] = temp_table[2]
+	end
+	return data
+	--for key,value in pairs(data) do print(key,value) end
+end
+
 
 -- ----------------------------
 -- -- Definición de varibles --
 -- ----------------------------
 local theme = {}
 
+-- Crea el tema con pywal y luego obtiene carga los colores para usarlos en Awesome
+-- Neceario instalar "pip install pywal haishoku" y "pacman -Syu feh"
+-- awful.spawn.with_shell("wal --backend colorthief -i /home/luisbarrera/wallpapers && cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
+-- awful.spawn.with_shell("xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
+-- xrdb = beautiful.xresources.get_current_theme()
+xrdb = getXrdbTable()
+
 -- Directorios por default
 theme.default_dir = require("awful.util").get_themes_dir() .. "default"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/faye.jpg"
--- theme.wallpaper = os.getenv("HOME") .. "/.config/awesome/wallpapers/seeyouspacecowboy.png"
--- theme.wallpaper = os.getenv("HOME") .. "/Pictures/suitsat1_nasa_2008.jpg"
--- theme.wallpaper = os.getenv("HOME") .. "/Imágenes/wallpaper1.jpg"
--- theme.wallpaper2 = os.getenv("HOME") .. "/Pictures/f2.jpg"
--- theme.wallpaper2 = os.getenv("HOME") .. "/.config/awesome/wallpapers/f2.jpg"
--- theme.wallpaper2 = os.getenv("HOME") .. "/.config/awesome/wallpapers/mountain2.jpg"
 
 -- Fuentes
-local theme_font = "JetBrainsMono Nerd Font Regular"
-theme.font = theme_font .. " 12"
-theme.taglist_font = theme.font
-theme.prompt_font = theme.font
-theme.player_font = theme.font
+theme.font_name = "JetBrainsMono Nerd Font Regular "  -- Importante el espacio al final
+theme.font = theme.font_name .. "10"
+theme.tasklist_font = theme.font_name .. "10"
+theme.taglist_font = theme.font_name .. "10"
+theme.player_font = theme.font_name .. "10"
+theme.prompt_font = theme.font_name .. "10"
 -- theme.taglist_font = "JetBrainsMono Nerd Font Regular 12"
 -- theme.prompt_font = "JetBrainsMono Nerd Font 9"
 -- theme.player_font = "Hurmit Nerd Font Mono 10"
@@ -57,11 +86,12 @@ theme.player_font = theme.font
 -- theme.taglist_font = "Iosevka Italic 12"
 
 -- Colores
-theme.color1 = "#e2e2eb" -- Claro
-theme.color2 = "#000000" -- Oscuro
-theme.color3 = "#ff7b00" -- Color de acento
+theme.color1 = xrdb.foreground -- Claro
+theme.color2 = xrdb.background
+theme.color3 = xrdb.color1 -- Color de acento
 theme.color4 = "#f64a32" -- Rojo, o algún color de urgente
 theme.color5 = "#0000000" -- Color transparente
+theme.color6 = xrdb.color3
 
 -- Aplicación de colores
 theme.fg_normal = theme.color1
@@ -72,7 +102,7 @@ theme.fg_urgent = theme.color2
 theme.bg_urgent = theme.color4
 
 -- Colores de los applets
-theme.applets_font = theme.font
+theme.applets_font = theme.font_name .. "10"
 theme.applets_fg = theme.color1
 theme.applets_bg = theme.color2
 theme.applets_spacing = dpi(2)
@@ -91,26 +121,26 @@ theme.taglist_fg_empty = theme.color1
 theme.taglist_bg_empty = theme.color2
 theme.taglist_fg_occupied = theme.color2
 theme.taglist_bg_occupied = theme.color1
-theme.taglist_fg_focus = theme.color1
-theme.taglist_bg_focus = theme.color5
+theme.taglist_fg_focus = theme.color2
+theme.taglist_bg_focus = theme.color6
 theme.taglist_shape = gears.shape.rectangle
 theme.taglist_shape_border_color_focus = theme.color1
-theme.taglist_shape_border_width_focus = dpi(2)
+theme.taglist_shape_border_width_focus = dpi(0)
 theme.taglist_bg_urgent = theme.color4
-theme.taglist_spacing = dpi(4)
+theme.taglist_spacing = dpi(0)
 
 -- Configuración del tasklist
 theme.tasklist_shape = gears.shape.rectangle
 theme.tasklist_disable_icon = true
 theme.tasklist_fg_normal = theme.color1
 theme.tasklist_bg_normal = theme.color2
-theme.tasklist_fg_focus = theme.color1
-theme.tasklist_bg_focus = theme.color5
+theme.tasklist_fg_focus = theme.color2
+theme.tasklist_bg_focus = theme.color6
 theme.tasklist_fg_urgent = theme.color1
 theme.tasklist_bg_urgent = theme.color4
 theme.tasklist_shape_border_color_focus = theme.color1
-theme.tasklist_shape_border_width_focus = dpi(3)
-theme.tasklist_spacing = dpi(4)
+theme.tasklist_shape_border_width_focus = dpi(0)
+theme.tasklist_spacing = dpi(0)
 theme.tasklist_plain_task_name = false
 
 -- Iconos
@@ -118,7 +148,8 @@ theme.tasklist_plain_task_name = false
 theme.mini_icon = os.getenv("HOME") .. "/Pictures/icon.png"
 
 -- Padding de los clientes
-theme.useless_gap = dpi(2)
+theme.useless_gap = dpi(10)
+theme.gap_single_client = true
 
 -- Prompts
 theme.prompt_fg = theme.color1
@@ -219,7 +250,7 @@ function theme.at_screen_connect(s)
 		volumen,
 		mybatterywidget,
 		layout = wibox.layout.fixed.horizontal}
-	s.mywidgets = wibox.container.margin(s.mywidgets, dpi(0), dpi(0), dpi(0), dpi(2))
+	s.mywidgets = wibox.container.margin(s.mywidgets, dpi(0), dpi(0), dpi(0), dpi(0))
 
 	-- Widget que muestra el layout actual
 	s.mylayoutbox = wibox.widget{
@@ -234,14 +265,14 @@ function theme.at_screen_connect(s)
 			awful.button({}, 4, function () awful.layout.inc( 1) end),
 			awful.button({}, 5, function () awful.layout.inc(-1) end)))
 	s.mylayoutbox = wibox.container.background(s.mylayoutbox, theme.bg_focus, gears.shape.rect)
-	s.mylayoutbox = wibox.container.margin(s.mylayoutbox, dpi(4), dpi(4), dpi(0), dpi(2))
+	s.mylayoutbox = wibox.container.margin(s.mylayoutbox, dpi(0), dpi(0), dpi(0), dpi(0))
 
 	-- Widget que muestra las etiquetas, más configuración se encuentra en las lineas 52-56
 	s.mytaglist = awful.widget.taglist{
 		screen = s,
 		filter = awful.widget.taglist.filter.all,
 		buttons = awful.util.taglist_buttons}
-	s.mytaglist = wibox.container.margin(s.mytaglist, dpi(4), dpi(4), dpi(3), dpi(0))
+	s.mytaglist = wibox.container.margin(s.mytaglist, dpi(0), dpi(0), dpi(0), dpi(0))
 	-- Widget que contiene las etiquetas
 	s.mytag = wibox.widget{
 		s.mytaglist,
@@ -251,50 +282,53 @@ function theme.at_screen_connect(s)
 		awful.widget.tasklist.filter.currenttags,
 		awful.util.tasklist_buttons
 	)
-	s.mytasklist = wibox.container.margin(s.mytasklist, dpi(4), dpi(4), dpi(3), dpi(0))
+	s.mytasklist = wibox.container.margin(s.mytasklist, dpi(0), dpi(0), dpi(0), dpi(0))
 
 	-- Establece un wallpaper
-	local wallpaper = theme.wallpaper
-	local wallpaper2 = theme.wallpaper2
-	if type(wallpaper) == "function" then
-		wallpaper = wallpaper(s)
-	end
+	-- local wallpaper = theme.wallpaper
+	-- local wallpaper2 = theme.wallpaper2
+	-- if type(wallpaper) == "function" then
+	-- 	wallpaper = wallpaper(s)
+	-- else
+	-- end
 
 	-- Configuraciones especiales para el monitor principal
 	if s.index == 1 then
 		-- Define el layout de los clientes por defecto
 		awful.tag(awful.util.tagnames, s, awful.layout.layouts[2])
 		-- Establece el wallpaper
-		gears.wallpaper.maximized(wallpaper, s)
+		-- gears.wallpaper.maximized(wallpaper, s)
+		-- gears.wallpaper.set("#000000")
+		-- gears.wallpaper.prepare_context(s)
 		-- Elementos de la Barra superior
-		s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(30), bg = "000000"})
-		s.mywibox:setup {
-			layout = wibox.layout.align.horizontal,
-			{ -- Parte izquierda
-				layout = wibox.layout.fixed.horizontal,
-				s.mylayoutbox,
-				s.mywidgets
-			},
-			nil, -- Parte central
-			{ -- Parte derecha
-				layout = wibox.layout.fixed.horizontal,
-			},
-		}
+		-- s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(24), bg = "000000"})
+		-- s.mywibox:setup {
+		-- 	layout = wibox.layout.align.horizontal,
+		-- 	{ -- Parte izquierda
+		-- 		layout = wibox.layout.fixed.horizontal,
+		-- 		s.mywidgets
+		-- 	},
+		-- 	nil, -- Parte central
+		-- 	{ -- Parte derecha
+		-- 		layout = wibox.layout.fixed.horizontal,
+		-- 	},
+		-- }
 	-- Configuraciones para las demás pantallas
 	else
 		-- Layout de los clientes por defecto
 		awful.tag(awful.util.tagnames_sec, s, awful.layout.layouts[2])
 		-- Establece el wallpaper
-		gears.wallpaper.maximized(wallpaper2, s)
+		-- gears.wallpaper.maximized(wallpaper2, s)
 	end
 
 	-- Barra inferior
 	-- s.mywibox = awful.wibar({ position = "top", screen = s, border_width = dpi(0), height = dpi(30), bg = "#000" })
-	s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(30), bg = "#0000" })
+	s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = dpi(0), height = dpi(24), bg="#0000" })
 	s.mybottomwibox:setup {
 		layout = wibox.layout.align.horizontal,
 		{ -- Parte izquierda
 			s.mytag,
+			s.mylayoutbox,
 			-- mylauncher,
 			layout = wibox.layout.fixed.horizontal,
 		},
@@ -306,4 +340,4 @@ function theme.at_screen_connect(s)
 end
 
 return theme
--- DONE: TODO: definir una lista de colores y de ahí tomar los colores para los demás elementos
+
