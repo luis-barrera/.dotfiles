@@ -36,14 +36,15 @@ alert = ${xrdb:color3:#bd2c40}
 
 [bar/topbar]
 ; monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 55%
 height = 27
-offset-x = 0%
+offset-x = 45%
 offset-y = 0%
 radius = 0.0
 fixed-center = true
 
-background = ${colors.background}
+; background = ${colors.background}
+background = #00000000
 foreground = ${colors.foreground}
 
 line-size = 3
@@ -53,20 +54,22 @@ border-size = 0
 border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
-module-margin-left = 1
-module-margin-right = 2
+module-margin-left = 0
+module-margin-right = 0
 
 font-0 = "DejaVu Sans:size=9:antialias=true;0"
 font-1 = "FuraCode Nerd Font:size=10;1"
 font-2 = "FuraCode Nerd Font:size=12;2"
 
-modules-left = bspwm xwindow
-modules-right = filesystem xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+; modules-left = bspwm xwindow
+; modules-left = bspwm xwindow
+modules-right = filesystem xkeyboard xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 0
+tray-background = ${colors.background}
 
 wm-restack = bspwm
 
@@ -75,6 +78,7 @@ scroll-down = bspwm-deskprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+override-redirect = false
 
 [module/xwindow]
 type = internal/xwindow
@@ -85,13 +89,19 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-label-layout =  %layout%
-label-layout-underline = #00adad
-
 label-indicator-padding = 0
 label-indicator-margin = 0
 label-indicator-background = ${colors.secondary}
 label-indicator-underline = ${colors.secondary}
+
+label-layout =  %layout%
+label-layout-underline = #00adad
+label-layout-padding = 1
+label-layout-margin = 0
+
+format-padding = 0
+format-margin = 0
+format-background = ${colors.background}
 
 [module/filesystem]
 type = internal/fs
@@ -104,6 +114,10 @@ label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground}
 
 label-mounted-underline = #002e2e
+label-mounted-margin = 0
+format-mounted-padding = 1
+format-mounted-background = ${colors.background}
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -134,6 +148,9 @@ label-separator = " "
 [module/xbacklight]
 type = internal/xbacklight
 
+format-padding = 1
+format-background = ${colors.background}
+
 format =  <label>
 label = %percentage%%
 format-underline = #e27300
@@ -146,6 +163,8 @@ format-prefix = " "
 format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label =  %percentage:2%%
+format-padding = 1
+format-background = ${colors.background}
 
 [module/memory]
 type = internal/memory
@@ -153,6 +172,8 @@ interval = 2
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
 label =  %percentage_used%%
+format-padding = 1
+format-background = ${colors.background}
 
 [module/wlan]
 type = internal/network
@@ -162,6 +183,11 @@ interval = 1.0
 format-connected = <label-connected>
 label-connected =  %upspeed%  %downspeed%
 format-connected-underline = #9f78e1
+
+format-connected-padding = 1
+format-connected-background = ${colors.background}
+format-disconnected-padding = 1
+format-disconnected-background = ${colors.background}
 
 format-disconnected = <label-disconnected>
 format-disconnected-underline = ${self.format-connected-underline}
@@ -194,9 +220,14 @@ label = %time% %date%
 
 format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
+format-padding = 1
+format-background = ${colors.background}
 
 [module/pulseaudio]
 type = internal/pulseaudio
+
+format-volume-padding = 1
+format-volume-background = ${colors.background}
 
 format-volume = <label-volume>
 label-volume = 墳 %percentage%%
@@ -223,6 +254,13 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
+format-charging-padding = 1
+format-charging-background = ${colors.background}
+format-discharging-padding = 1
+format-discharging-background = ${colors.background}
+format-full-padding = 1
+format-full-background = ${colors.background}
+
 animation-charging-0 =  
 animation-charging-1 =  
 animation-charging-2 =  
@@ -247,6 +285,12 @@ format-underline = #f50a4d
 format-warn = <label-warn>
 format-warn-underline = ${self.format-underline}
 
+format-padding = 1
+format-background = ${colors.background}
+format-warn-padding = 1
+format-warn-background = ${colors.foreground}
+format-warn-foreground = ${colors.background}
+
 label =  %temperature-c%
 label-warn =  %temperature-c%
 label-warn-foreground = ${colors.secondary}
@@ -258,6 +302,7 @@ screenchange-reload = true
 ;compositing-foreground = source
 ;compositing-border = over
 pseudo-transparency = false
+; pseudo-transparency = true
 
 [global/wm]
 margin-top = 5
