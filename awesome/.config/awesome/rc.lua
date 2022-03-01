@@ -597,13 +597,29 @@ awful.rules.rules = {
 	{ rule = { class = "firefox" },
 		properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
 
+	-- Configuración para clientes de Emacs.
+	{ rule = { class = "Emacs" },
+		properties = { screen = 1, tag = awful.util.tagnames[5], titlebars_enabled = false } },
+
+	-- Configuración para clientes de Qutebrowser.
+	{ rule = { class = "qutebrowser" },
+		properties = { screen = 1, tag = awful.util.tagnames[6], titlebars_enabled = false } },
+
+	-- Configuración para clientes de terminal con ciertos programas.
+	{ rule = { class = "kitty", name = "btop"},
+		properties = { screen = 1, tag = awful.util.tagnames[7], titlebars_enabled = false } },
+
+	-- Configuración para clientes de terminal con ciertos programas.
+	{ rule = { class = "kitty", name = "wisdom-tree"},
+		properties = { screen = 1, tag = awful.util.tagnames[1], titlebars_enabled = false } },
+
 	-- Spotify
 	{ rule = { class = "Spotify" },
 		properties = { tag = awful.util.tagnames[4], titlebars_enabled = false } },
 
 	-- KeePassXC
 	{ rule = { class = "KeePassXC" },
-		properties = { floating = true } },
+		properties = { floating = true, width = 1000, height = 800} },
 
 	-- zoom
 	{ rule = { class = "zoom" },
