@@ -63,10 +63,18 @@ parcellite -d &
 picom -b &
 playerctld daemon &
 syncthingtray --wait &
+seahorse &
 # pcloud &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &
+
+# Programas no deamonizados
+emacs &
+firefox &
+qutebrowser &
+kitty --detach btop &
+kitty --detach wisdom-tree &
 
 # Intercambia la tecla CAPS con CTRL-Izq
 setxkbmap -option 'ctrl:swapcaps'
@@ -79,3 +87,6 @@ setxkbmap -option 'ctrl:swapcaps'
 
 # Java y WM
 export AWT_TOOLKIT=MToolkit
+
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
