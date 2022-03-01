@@ -359,3 +359,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Keyring
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
