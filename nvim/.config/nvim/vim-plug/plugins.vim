@@ -109,6 +109,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " más facilmente las funciones en código muy grande.
 	Plug 'haringsrob/nvim_context_vt'
 
+" Haskell
+	Plug 'neovimhaskell/haskell-vim'
+
 "" TODO
 
 " Mejor representación de las lineas indentadas a través de líneas verticales
