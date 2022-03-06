@@ -35,7 +35,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 	Plug 'SirVer/ultisnips'
 	Plug 'honza/vim-snippets'
 " Complemento para completion-nvim, usa tabnine para dar recomendaciones
-	Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+	" Plug 'aca/completion-tabnine', { 'do': './install.sh' }
 
 " Tree Sitter, analizador de parser para lenguajes
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
