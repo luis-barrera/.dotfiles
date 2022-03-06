@@ -36,9 +36,9 @@ alert = ${xrdb:color3:#bd2c40}
 
 [bar/topbar]
 ; monitor = ${env:MONITOR:HDMI-1}
-width = 55%
+width = 80%
 height = 27
-offset-x = 45%
+offset-x = 20%
 offset-y = 0%
 radius = 0.0
 fixed-center = true
@@ -210,6 +210,7 @@ format-disconnected =
 type = internal/date
 interval = 5
 
+date = "%A, %d-%B-%Y"
 date-alt = "%A, %d-%B-%Y"
 
 time = %H:%M
