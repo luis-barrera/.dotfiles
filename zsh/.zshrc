@@ -97,6 +97,7 @@ plugins=(git
 	fzf
 	ripgrep
 	zsh-interactive-cd
+	zsh-autosuggestions
 	)
 
 source $ZSH/oh-my-zsh.sh
@@ -306,6 +307,10 @@ alias sociales-on="sudo sed -i '/.*facebook.com.*/c\#0.0.0.0 www.facebook.com' /
 
 # Montar el server samba
 alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=valbar"
+
+# Subir archivos locales a Google Drive
+alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam Trim10-21I"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
