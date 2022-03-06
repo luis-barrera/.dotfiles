@@ -636,7 +636,7 @@ awful.rules.rules = {
 
 	{ rule = { class = "Polybar" },
 		-- properties = { maximized = true, border_width = 0 } },
-		properties = { dockable = true, floating = true, border_width = 0 } },
+		properties = { tag = awful.util.tagnames[12] ,dockable = true, floating = true, border_width = 0 } },
 
 	{ rule = { class = "mpv" },
 		properties = { floating = true } },
