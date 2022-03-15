@@ -397,7 +397,8 @@ globalkeys = my_table.join(
 
 	-- Abrir launcher
 	awful.key({ modkey }, "z", function()
-		awful.spawn("sh /home/luisbarrera/.config/rofi/launchers/misc/launcher.sh")
+		-- awful.spawn("sh /home/luisbarrera/.config/rofi/launchers/misc/launcher.sh")
+		awful.spawn("dmenu_run")
 	end, {description = "rofi", group = "launcher"}) -- <-- Ese paréntesis
 	-- No poner nada entre esta linea y el paréntesis cerrando
 )

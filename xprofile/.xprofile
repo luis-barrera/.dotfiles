@@ -73,9 +73,9 @@ lxsession &
 # Programas no deamonizados
 emacs &
 firefox &
-qutebrowser &
+# qutebrowser &
 kitty --detach btop &
-kitty --detach wisdom-tree &
+# kitty --detach wisdom-tree &
 
 # Intercambia la tecla CAPS con CTRL-Izq
 setxkbmap -option 'ctrl:swapcaps'
