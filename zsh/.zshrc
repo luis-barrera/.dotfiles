@@ -311,6 +311,9 @@ alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=v
 # Subir archivos locales a Google Drive
 alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam Trim10-21I"
 
+# Alias para pomodoro
+alias pomato="cd ~/dev/pomato && python pomato.py"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
