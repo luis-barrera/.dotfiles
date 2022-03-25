@@ -208,11 +208,11 @@ globalkeys = my_table.join(
 
 	-- Screenshot
 	awful.key({ modkey }, "+", function()
-		awful.spawn("flameshot full -c -p /home/luisbarrera/screenshots")
+		awful.spawn.with_shell("flameshot full -c -p /home/luisbarrera/screenshots")
 		end, {description = "Screenshot", group = "hotkeys"}),
 	-- Recorte de pantalla
 	awful.key({ modkey, "Shift" }, "+", function()
-		awful.spawn("flameshot launcher")
+		awful.spawn.with_shell("flameshot gui -c -p /home/luisbarrera/screenshots")
 		end, {description = "Recorte de pantalla", group = "hotkeys"}),
 
 	-- Navegación entre espacios
