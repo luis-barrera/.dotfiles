@@ -73,10 +73,10 @@ theme.default_dir = require("awful.util").get_themes_dir() .. "default"
 -- Fuentes
 theme.font_name = "JetBrainsMono Nerd Font Regular "  -- Importante el espacio al final
 theme.font = theme.font_name .. "10"
-theme.tasklist_font = theme.font_name .. "10"
-theme.taglist_font = theme.font_name .. "10"
-theme.player_font = theme.font_name .. "10"
-theme.prompt_font = theme.font_name .. "10"
+theme.tasklist_font = theme.font_name .. "8"
+theme.taglist_font = theme.font_name .. "8"
+theme.player_font = theme.font_name .. "8"
+theme.prompt_font = theme.font_name .. "8"
 -- theme.taglist_font = "JetBrainsMono Nerd Font Regular 12"
 -- theme.prompt_font = "JetBrainsMono Nerd Font 9"
 -- theme.player_font = "Hurmit Nerd Font Mono 10"
@@ -102,7 +102,7 @@ theme.fg_urgent = theme.color2
 theme.bg_urgent = theme.color4
 
 -- Colores de los applets
-theme.applets_font = theme.font_name .. "10"
+theme.applets_font = theme.font_name .. "8"
 theme.applets_fg = theme.color1
 theme.applets_bg = theme.color2
 theme.applets_spacing = dpi(2)
@@ -112,7 +112,7 @@ theme.bg_systray = theme.applets_bg
 theme.systray_icon_spacing = dpi(2)
 
 -- Bordes de clientes
-theme.border_width = dpi(0.6)
+theme.border_width = dpi(0.8)
 theme.border_normal = theme.color1
 theme.border_focus = theme.color3
 
@@ -156,7 +156,7 @@ theme.prompt_fg = theme.color1
 theme.prompt_bg = theme.color2
 
 -- Separador
-local separator = wibox.widget.textbox('  ')
+local separator = wibox.widget.textbox(' ')
 
 -- -------------
 -- -- Widgets --
