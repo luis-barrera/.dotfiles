@@ -369,6 +369,17 @@
 (global-set-key (kbd "C-c a") 'org-agenda-list)
 ;;
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0))
+;; Cambiar el formato de los codeblocks para usar minted en luga de verbatim
+(setq org-latex-listings 'minted
+      org-latex-packages-alist '(("" "minted"))
+      org-latex-pdf-process
+      '("pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"
+        "pdflatex -shell-escape -interaction nonstopmode -output-directory %o %f"))
+(setq org-latex-minted-options '(("breaklines" "true")
+                                 ("breakanywhere" "true")
+                                 ("breaksymbolleft" "{}")
+                                 ("breaksymbolright" "{}")
+                                 ("breakanywheresymbolpre" "{}")))
 
 ;; Cambiar los símbolos de los headings
 (use-package org-superstar
