@@ -223,8 +223,8 @@ alias sls='ls'
 # alias ssh='kitty +kitten ssh'
 
 # Abrir archivos de la escuela en zathura
-alias horario="zathura ~/Trim10-21I/Horario21I.pdf"
-alias caluam="zathura ~/Trim10-21I/caluam.pdf"
+alias horario="zathura ~/Trim10-22I/Horario21I.pdf"
+alias caluam="zathura ~/Trim10-22I/caluam.pdf"
 # alias librogrupos="zathura ~/Trim-7/Grupos/Judson-Abstract_algebra.pdf"
 # alias librogruposesp="zathura ~/Trim-7/Grupos/Algebra_abstracta-Judson.pdf"
 alias flutterbook="zathura ~/Pendientes/Flutter\ for\ Beginners\ by\ Alessandro\ Biessek\ \(z-lib.org\).pdf"
