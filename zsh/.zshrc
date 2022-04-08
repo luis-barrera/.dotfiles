@@ -314,6 +314,12 @@ alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden
 # Alias para pomodoro
 alias pomato="cd ~/dev/pomato && python pomato.py"
 
+# Alias navegador para desarrollo web
+alias dev-browser="firefox-developer-edition"
+
+# Alias terminar procesos por nombre
+alias ka="killall"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
