@@ -257,6 +257,7 @@
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 (define-key evil-normal-state-map (kbd "gcc") 'evilnc-comment-or-uncomment-lines)
+;; (evil-define-key 'insert 'global (kbd "jk") 'evil-normal-state)
 (setq evil-ex-search-vim-style-regexp t)
 (setq evil-in-single-undo t)
 
