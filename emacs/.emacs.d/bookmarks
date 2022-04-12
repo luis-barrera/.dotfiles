@@ -1,0 +1,90 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("gamedev-journal"
+ (filename . "~/google-drive/org-mode/gamedev-journal.org")
+ (front-context-string)
+ (rear-context-string . "ue desanimarse.\n")
+ (position . 938))
+("org-refile-last-stored"
+ (filename . "~/google-drive/org-mode/todos.org")
+ (front-context-string . "** DONE Cita Den")
+ (rear-context-string . "romiso.\n- CURP.\n")
+ (position . 49325))
+("Abreviaturas"
+ (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
+ (front-context-string . "ersona\" en mascu")
+ (rear-context-string . "' -> \"la misma p")
+ (position . 1550))
+("org-capture-last-stored"
+ (filename . "~/google-drive/org-roam/20220408112523-shebang.org")
+ (front-context-string)
+ (rear-context-string . " #!\n#+filetags:\n")
+ (position . 253))
+("The Butcher"
+ (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
+ (front-context-string)
+ (rear-context-string . "\"eficientes\".\n\n\n")
+ (position . 2930))
+("Electricidad"
+ (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
+ (front-context-string)
+ (rear-context-string . "{\\mathbf{r}}dV$\n")
+ (position . 1497))
+("Alemán"
+ (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
+ (front-context-string . " Sie, sie    | w")
+ (rear-context-string . "st  | könnt  |\n|")
+ (position . 2029))
+("org index"
+ (filename . "~/google-drive/org-mode/index.org")
+ (front-context-string . "t\n* org de luisb")
+ (rear-context-string . "+STARTUP: conten")
+ (position . 18))
+("Linux Journal"
+ (filename . "~/google-drive/org-mode/Linux-Journal.org")
+ (front-context-string . "TODO Journal\n\n- ")
+ (rear-context-string . "lo resolví.\n\n** ")
+ (position . 187))
+("Optativas"
+ (filename . "~/google-drive/org-mode/Optativas.org")
+ (front-context-string . "ética (180)\n- De")
+ (rear-context-string . " de México\n- Gen")
+ (position . 336))
+("México Profundo"
+ (filename . "~/google-drive/org-roam/20211123100144-mexico_profundo.org")
+ (front-context-string . ".\nLa mayoría era")
+ (rear-context-string . " casi 30000 años")
+ (position . 3707))
+("Algebra"
+ (filename . "~/google-drive/org-roam/20211230095703-fundamentos_de_algebra.org")
+ (front-context-string . "y su segunda com")
+ (rear-context-string . "componente es a ")
+ (position . 32442))
+("Typescript"
+ (filename . "~/google-drive/org-roam/20211230075442-programming_typescript.org")
+ (front-context-string . ":ID:       0bab2")
+ (rear-context-string . "R: luis-barrera\n")
+ (position . 131))
+("Django"
+ (filename . "~/google-drive/org-roam/20220215095726-curso_django_y_python.org")
+ (front-context-string)
+ (rear-context-string . "dy>\n#+end_src\n\n*")
+ (position . 18747))
+("ani-cli"
+ (filename . "~/google-drive/dev/ani-cli/ani-cli")
+ (front-context-string . "curl -s \"$base_u")
+ (rear-context-string . "| tr ' ' '-' )\n	")
+ (position . 2680))
+("Historia de México"
+ (filename . "~/google-drive/org-roam/20211229171044-historia_contemporanea_de_mexico.org")
+ (front-context-string . ":PROPERTIES:\n:AU")
+ (rear-context-string)
+ (position . 1))
+("init"
+ (filename . "~/.dotfiles/emacs/.emacs.d/init.el")
+ (front-context-string . "artup-hook))\n\n;;")
+ (rear-context-string . "shboard-setup-st")
+ (position . 44001))
+)
