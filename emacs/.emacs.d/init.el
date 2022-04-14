@@ -96,7 +96,7 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(workgroups company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+   '(workgroups2 company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
 
 ;; (unless (package-installed-p 'use-package)
 ;;    (package-install 'use-package))
@@ -1200,13 +1200,28 @@
 
 ;; Workgroups
 ;; Guardar los layouts en disco
-(use-package workgroups)
-(setq wg-prefix-key (kbd "C-c w"))
-(workgroups-mode 1)
-(wg-load (concat (getenv "HOME") "/.emacs.d/workgroups.emacs"))
+(use-package workgroups2
+  :ensure t
+  :config
+  (workgroups-mode 1)
+  (setq wg-prefix-key (kbd "C-c w"))
+  (setq wg-session-file "/home/luisbarrera/.emacs.d/workgroups.emacs"))
+;; (org-agenda-list)
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
+
+;; Desactivar centaur-tabs en frames que tengan más de 1 window abierto
+;; (remove-hook 'window-configuration-change-hook 'my-disable-tabs-fun)
+(add-hook 'window-configuration-change-hook 'my-disable-tabs-func)
+(defun my-disable-tabs-func ()
+  (interactive)
+  (if (eql (length (window-list)) 1)
+      (centaur-tabs-local-mode 0)
+    (centaur-tabs-local-mode)))
+;; (setq centaur-tabs-local-mode t) #'centaur-tabs-local-mode))
+;; 'centaur-tabs-local-mode (setq centaur-tabs-local-mode t)))
+;; (remove-hook 'window-configuration-change-hook 'centaur-tabs-local-mode)
 
 ;; Guardar el layout de las ventanas internas dentro de un frame de Emacs
 ;; Con C-[<left>|<right>] ciclas entre los layouts guardados.
