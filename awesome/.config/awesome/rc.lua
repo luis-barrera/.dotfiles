@@ -625,7 +625,7 @@ awful.rules.rules = {
 	-- zoom
 	{ rule = { class = "zoom" },
 		-- properties = { tag = "4", floating = true, titlebars_enabled = false, maximized = false } },
-		properties = { floating = true, titlebars_enabled = false, maximized = false } },
+		properties = { tag = awful.util.tagnames[1], floating = true, titlebars_enabled = false, maximized = false } },
 
 	-- Gimp
 	{ rule = { class = "Gimp", role = "gimp-image-window" },
