@@ -1,4 +1,4 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
@@ -8,20 +8,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Cita Den")
- (rear-context-string . "romiso.\n- CURP.\n")
- (position . 49325))
+ (filename . "~/google-drive/org-mode/Tareas21I.org")
+ (front-context-string . "** DONE Lenguaje")
+ (rear-context-string . "2022-04-06 Wed>\n")
+ (position . 8209))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220408112523-shebang.org")
+ (filename . "~/google-drive/org-roam/20220409232258-learning_managment_system.org")
  (front-context-string)
- (rear-context-string . " #!\n#+filetags:\n")
- (position . 253))
+ (rear-context-string . "tem\n#+filetags:\n")
+ (position . 280))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)
