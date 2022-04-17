@@ -31,8 +31,13 @@ let g:completion_trigger_on_delete = 1
 imap <C-l> <Plug>(completion_next_source)
 
 " \{'complete_items': ['lsp', 'snippet', 'buffers', 'ts', 'tabnine']},
-let g:completion_chain_complete_list = [
-    \{'complete_items': ['lsp', 'snippet', 'buffers', 'ts']},
-    \{'mode': '<c-p>'},
-    \{'mode': '<c-n>'}
-\]
+let g:completion_chain_complete_list = {
+			\'default' : {
+			\	'default' : [
+			\		{'complete_items' : ['lsp', 'snippet']},
+			\		{'mode' : 'file'}
+			\	],
+			\	'comment' : [],
+			\	'string' : []
+			\	}
+			\}

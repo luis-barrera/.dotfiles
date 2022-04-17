@@ -7,7 +7,7 @@ lua <<EOF
 require'nvim-treesitter.configs'.setup {
 	-- Los lenguajes a instalar, maintained significa lenguajes que tienen
 	-- soporte extendido
-	ensure_installed = "maintained",
+	ensure_installed = "all",
 
 	-- Aquí ponemos lenguajes que no queremos que se instalen
 	ignore_install = { "supercollider", "erlang", "cuda", "ocaml",

@@ -169,11 +169,17 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 " = Configuración plugins =
 " =========================
 " LSP nativo, a partir de NeoVim 5.0
-source $HOME/.config/nvim/plug-config/nvim-lsp.vim
+" source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 " Instalar automáticamente server de LSP
 " source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
+
+" XXX: Cambié de completion-nvim a nvim-cmp
 " Autocompletado
-source $HOME/.config/nvim/plug-config/completion-nvim.vim
+" source $HOME/.config/nvim/plug-config/completion-nvim.vim
+
+" Autocompletado con nvim-cmp
+luafile $HOME/.config/nvim/plug-config/nvim-cmp.lua
+
 
 " Ayuda a identificar cuando usamos f, F, t & T
 source $HOME/.config/nvim/plug-config/quickscope.vim

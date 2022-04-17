@@ -23,19 +23,30 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Para mejorar los colorschemes usando LSP
 	Plug 'folke/lsp-colors.nvim'
 
+" XXX: Cambié de completion-nvim a nvim-cmp
 " Autocompletado con LSP
-	Plug 'haorenW1025/completion-nvim'
+	" Plug 'haorenW1025/completion-nvim'
 " Complemento para completion-nvim, usa treessitter para dar recomendaciones
-	Plug 'nvim-treesitter/completion-treesitter'
+	" Plug 'nvim-treesitter/completion-treesitter'
 " Complemento para completion-nvim, usa los buffers para dar recomendaciones
-	Plug 'steelsojka/completion-buffers'
+	" Plug 'steelsojka/completion-buffers'
 " Complemento para completion-nvim, usa los ctags para dar recomendaciones
-	Plug 'kristijanhusak/completion-tags'
+	" Plug 'kristijanhusak/completion-tags'
 " Complemento para completion-nvim, usa snippets para dar recomendaciones
-	Plug 'SirVer/ultisnips'
-	Plug 'honza/vim-snippets'
+	" Plug 'SirVer/ultisnips'
+	" Plug 'honza/vim-snippets'
 " Complemento para completion-nvim, usa tabnine para dar recomendaciones
 	" Plug 'aca/completion-tabnine', { 'do': './install.sh' }
+
+" nvim-cmp, autocompletado a partir de diferentes fuentes
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+" For ultisnips users.
+	Plug 'SirVer/ultisnips'
+	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 
 " Tree Sitter, analizador de parser para lenguajes
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

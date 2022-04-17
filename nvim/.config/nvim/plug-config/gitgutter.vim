@@ -4,7 +4,7 @@
 let g:gitgutter_enabled=1
 
 " Resalta las líneas que tienen cambios
-let g:gitgutter_highlight_lines=1
+" let g:gitgutter_highlight_lines=1
 
 " Signos que usa el plugin para señalar los cambios
 let g:gitgutter_sign_added              = '+'
