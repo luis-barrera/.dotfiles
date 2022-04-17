@@ -381,3 +381,4 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+source /usr/share/nvm/init-nvm.sh
