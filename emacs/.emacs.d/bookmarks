@@ -13,20 +13,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Areglar ")
- (rear-context-string . "temas selectos.\n")
- (position . 53620))
+ (filename . "~/google-drive/org-mode/Tareas21I.org")
+ (front-context-string . "** DONE Lenguaje")
+ (rear-context-string . " =>  0:28\n:END:\n")
+ (position . 10385))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220409232258-learning_managment_system.org")
+ (filename . "~/google-drive/org-roam/20220419222325-ledger.org")
  (front-context-string)
- (rear-context-string . "tem\n#+filetags:\n")
- (position . 280))
+ (rear-context-string . "ger\n#+filetags:\n")
+ (position . 253))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

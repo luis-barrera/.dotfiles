@@ -96,7 +96,7 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(popwin workgroups2 company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+   '(ledger-mode popwin workgroups2 company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
 
 ;; (unless (package-installed-p 'use-package)
 ;;    (package-install 'use-package))
@@ -1211,6 +1211,13 @@
 ;; Abre buffers temporales en un popup
 ;; (use-package popwin)
 ;; (popwin-mode 1)
+
+;; Finanzas con ledger
+(use-package ledger-mode
+  :ensure t
+  :init
+  (setq ledger-clear-whole-transactions 1)
+  :mode "\\.ledger\\'")
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
