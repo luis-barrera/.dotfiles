@@ -330,7 +330,7 @@ alias ka="killall"
 # Refresca el tiempo de espera entre cada uso de sudo
 alias sudo='sudo -v; sudo '
 # Mensaje personalizado de sudo, el principio del prompt es el char para un sonido
-export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
+# export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
 
 # Secrets para spotify-dl
 source ~/.spotify-secrets
