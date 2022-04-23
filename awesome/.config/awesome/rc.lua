@@ -208,11 +208,13 @@ globalkeys = my_table.join(
 
 	-- Screenshot
 	awful.key({ modkey }, "+", function()
-		awful.spawn.with_shell("flameshot full -c -p /home/luisbarrera/screenshots")
+		-- awful.spawn.with_shell("flameshot full -c -p /home/luisbarrera/screenshots")
+		awful.spawn.with_shell("maim | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png")
 		end, {description = "Screenshot", group = "hotkeys"}),
 	-- Recorte de pantalla
 	awful.key({ modkey, "Shift" }, "+", function()
-		awful.spawn.with_shell("flameshot gui -c -p /home/luisbarrera/screenshots")
+		-- awful.spawn.with_shell("flameshot gui -c -p /home/luisbarrera/screenshots")
+		awful.spawn.with_shell("maim -s | tee ~/screenshots/$(date +%s).png | xclip -selection clipboard -t image/png")
 		end, {description = "Recorte de pantalla", group = "hotkeys"}),
 
 	-- Navegación entre espacios
@@ -596,11 +598,19 @@ awful.rules.rules = {
 
 	-- Configuración para clientes de Firefox.
 	{ rule = { class = "firefox" },
-		properties = { screen = 1, tag = awful.util.tagnames[2], titlebars_enabled = false } },
+		properties = {
+			screen = 1,
+			tag = awful.util.tagnames[2],
+			maximized = true,
+			titlebars_enabled = false } },
 
 	-- Configuración para clientes de Emacs.
 	{ rule = { class = "Emacs" },
-		properties = { screen = 1, tag = awful.util.tagnames[5], titlebars_enabled = false } },
+		properties = {
+			screen = 1,
+			tag = awful.util.tagnames[5],
+			maximized = true,
+			titlebars_enabled = false } },
 
 	-- Configuración para clientes de Qutebrowser.
 	{ rule = { class = "qutebrowser" },
