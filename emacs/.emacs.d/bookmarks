@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Beca-Bedu"
+(("ledger"
+ (filename . "~/google-drive/org-mode/finances.ledger")
+ (front-context-string . "    Assets:Depos")
+ (rear-context-string . "tos a Servicios\n")
+ (position . 320))
+("Beca-Bedu"
  (filename . "~/google-drive/org-mode/beca-bedu.org")
  (front-context-string . ":PROPERTIES:\n:ID")
  (rear-context-string)
@@ -14,19 +19,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** DONE Lenguaje")
- (rear-context-string . " =>  0:28\n:END:\n")
- (position . 10385))
+ (front-context-string . "** DONE Electric")
+ (rear-context-string . "El de la Reinas\n")
+ (position . 10604))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220419222325-ledger.org")
+ (filename . "~/google-drive/org-roam/20220422152019-the_question_we_ve_stopped_asking_about_teen_agers_and_social_media.org")
  (front-context-string)
- (rear-context-string . "ger\n#+filetags:\n")
- (position . 253))
+ (rear-context-string . "dia\n#+filetags:\n")
+ (position . 408))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

@@ -1,3 +1,6 @@
+;; (setq default-directory "/home/luisbarrera/.emacs.d")
+;; (setq user-emacs-directory "/home/luisbarrera/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d")
 ;; Quitar mensaje de startup
 (setq inhibit-startup-message t)
 
@@ -96,7 +99,9 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(ledger-mode popwin workgroups2 company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package)))
+   '(ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+ '(warning-suppress-log-types '((initialization) (yasnippet backquote-change)))
+ '(warning-suppress-types '((initialization) (yasnippet backquote-change))))
 
 ;; (unless (package-installed-p 'use-package)
 ;;    (package-install 'use-package))
@@ -432,10 +437,10 @@
         ("c" "Nota completa" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
                             ":PROPERTIES:
-:AUTHOR: %^{Author|No Author}
+:AUTHOR: %^{Author|Luis Barrera}
 :ROAM_REFS: %^{Link o Ref|No Ref}
 :ROAM_ALIAS: %^{Alias|No Alias}
-:TYPE: %^{Type|Articulo|Noticia|Libro|Video|Nota Personal|Notas de Clase|Paper Científico}
+:TYPE: %^{Type|Articulo de Internet|Noticia|Libro|Video|Nota Personal|Notas de Clase|Paper Científico}
 :DATE: %T
 :CREATOR: luis-barrera
 :END:
@@ -1213,11 +1218,12 @@
 ;; (popwin-mode 1)
 
 ;; Finanzas con ledger
+;; (setq exec-path (cons "usr/local/bin" exec-path))
 (use-package ledger-mode
   :ensure t
   :init
-  (setq ledger-clear-whole-transactions 1)
-  :mode "\\.ledger\\'")
+  (setq ledger-binary-path "/sbin/ledger")
+  (setq ledger-clear-whole-transactions 1))
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
