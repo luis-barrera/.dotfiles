@@ -53,6 +53,9 @@ xinput set-prop $touchpad 335 1
 # Perfiles de aceleración
 # xinput set-prop $trackpoint 363 0, 0
 
+# Intercambia la tecla CAPS con CTRL-Izq
+setxkbmap -option 'ctrl:swapcaps'
+
 # Abrir aplicaciones después del display server, pero antes del WM
 # xcompmgr &
 # light-locker &
@@ -69,6 +72,7 @@ lxsession &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &
+nohup xsuspender >/dev/null & disown
 
 # Programas no deamonizados
 emacs &
@@ -76,9 +80,6 @@ firefox &
 # qutebrowser &
 kitty --detach btop &
 # kitty --detach wisdom-tree &
-
-# Intercambia la tecla CAPS con CTRL-Izq
-setxkbmap -option 'ctrl:swapcaps'
 
 # Monitor de cambios en el File System
 #setsid fswatch -x -L /home/luisbarrera/google-drive/* | xargs -I{} ~/scripts/drive-push.sh {} >/dev/null 2>&1 < /dev/null &
