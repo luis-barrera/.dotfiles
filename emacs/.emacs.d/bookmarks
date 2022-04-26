@@ -19,9 +19,9 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** DONE Electric")
- (rear-context-string . "El de la Reinas\n")
- (position . 10604))
+ (front-context-string . "** TODO Electric")
+ (rear-context-string . "enes y Network.\n")
+ (position . 3683))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
