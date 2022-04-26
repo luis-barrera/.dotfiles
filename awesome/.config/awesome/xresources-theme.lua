@@ -328,7 +328,7 @@ function theme.at_screen_connect(s)
 		layout = wibox.layout.align.horizontal,
 		{ -- Parte izquierda
 			s.mytag,
-			s.mylayoutbox,
+			-- s.mylayoutbox,
 			-- mylauncher,
 			layout = wibox.layout.fixed.horizontal,
 		},
