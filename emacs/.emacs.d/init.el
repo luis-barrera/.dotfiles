@@ -1220,10 +1220,10 @@
 ;; Finanzas con ledger
 ;; (setq exec-path (cons "usr/local/bin" exec-path))
 (use-package ledger-mode
-  :ensure t
-  :init
-  (setq ledger-binary-path "/sbin/ledger")
-  (setq ledger-clear-whole-transactions 1))
+    :ensure t
+    :init
+    (setq ledger-binary-path "/sbin/ledger")
+    (setq ledger-clear-whole-transactions 1))
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
@@ -1253,3 +1253,7 @@
 
 ;; Mostrar espacios en blanco, para limpiar todos los espacios en blanco innecesarios de una usar whitespace-cleanup
 (setq-default show-trailing-whitespace t)
+
+;; Pedir confirmación para cerrar un frame
+;; (setq confirm-kill-emacs 'y-or-n-p)
+(setq confirm-kill-emacs #'yes-or-no-p)
