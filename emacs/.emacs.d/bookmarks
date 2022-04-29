@@ -19,19 +19,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** TODO Electric")
- (rear-context-string . "enes y Network.\n")
- (position . 3683))
+ (front-context-string . "** DONE Electric")
+ (rear-context-string . "4-26 Tue 11:42]\n")
+ (position . 11752))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220422152019-the_question_we_ve_stopped_asking_about_teen_agers_and_social_media.org")
+ (filename . "~/google-drive/org-roam/20220428011902-emacs_vs_vscode.org")
  (front-context-string)
- (rear-context-string . "dia\n#+filetags:\n")
- (position . 408))
+ (rear-context-string . "ode\n#+filetags:\n")
+ (position . 288))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)
