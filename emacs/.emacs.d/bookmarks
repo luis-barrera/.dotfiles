@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ledger"
+(("ABAP"
+ (filename . "~/google-drive/org-roam/20220217201221-abap_programming.org")
+ (front-context-string . "\nEstá pensado pa")
+ (rear-context-string . "orporativo SAP.\n")
+ (position . 470))
+("Mazos Anki"
+ (filename . "~/google-drive/org-roam/anki.org")
+ (front-context-string . "4. {{c4::Genitiv")
+ (rear-context-string . ". {{c3::Dativ}}\n")
+ (position . 281))
+("ledger"
  (filename . "~/google-drive/org-mode/finances.ledger")
  (front-context-string . "    Assets:Depos")
  (rear-context-string . "tos a Servicios\n")
