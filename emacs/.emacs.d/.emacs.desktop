@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Fri May  6 00:44:48 2022
+;; Created Fri May  6 00:52:03 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -18,6 +18,42 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  41817
+  '(39950 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25204 46941 107007 778000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (27268 27139 32256 32256 12 12 12669 18297 18297 27491 36856 68 27130 68 68 212))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/Clases21I.org"
+  "Clases21I.org"
+  'org-mode
+  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  20496
+  '(19609 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25204 46941 107006 924000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (11045 20436 18949 10720 19568 10 15650 17287 14952 26526 12303 15567 14084 13437 26475 26588))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/Tareas21I.org"
+  "Tareas21I.org"
+  'org-mode
+  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  800
+  '(3358 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25204 46941 107002 377000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1022 1865 1003 1158 1242 1312 1398 1452 1865 1765 1701 1617 1499 1092 935 798))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/Linux-Journal.org"
   "Linux-Journal.org"
   'org-mode
@@ -30,18 +66,6 @@
   '((mark-ring (10332 40036 40988 40956 40908 9093 9093 8975 13508 13358 13070 12679 9106 20797 1400 1400))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/Tareas21I.org"
-  "Tareas21I.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  800
-  '(3358 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25203 58292 159777 797000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1022 1865 1003 1158 1242 1312 1398 1452 1865 1765 1701 1617 1499 1092 935 798))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
@@ -50,7 +74,7 @@
   '(3442 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25204 27604 223547 966000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25204 46937 151148 52000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (3454 3454 37 2511 9312 6536 7771 3477 674 7216 7216 1254 1254 724 724 6997))))
 
 (desktop-create-buffer 208
@@ -64,30 +88,6 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25204 27604 432755 825000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (346))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/Clases21I.org"
-  "Clases21I.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  19609
-  '(11045 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25203 58292 159780 589000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (20436 18949 10720 19568 10 15650 17287 14952 26340 12303 15567 14084 13437 26289 26402 11575))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  27305
-  '(32194 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25203 58292 159782 443000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (32194 12 12 12669 18297 18297 27429 36794 68 27130 68 68 212 12669 12669 12669))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
