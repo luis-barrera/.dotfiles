@@ -28,20 +28,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Aprender")
- (rear-context-string . "vim a nvim-cmp.\n")
- (position . 59797))
+ (filename . "~/google-drive/org-mode/Tareas21I.org")
+ (front-context-string . "** DONE Electric")
+ (rear-context-string . "5-08 Sun 18:20]\n")
+ (position . 14687))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220429102537-the_values_of_emacs_the_neovim_revolution_and_the_vscode_gorilla.org")
+ (filename . "~/google-drive/org-roam/20220508212751-deploy_visuam.org")
  (front-context-string)
- (rear-context-string . "lla\n#+filetags:\n")
- (position . 385))
+ (rear-context-string . "UAM\n#+filetags:\n")
+ (position . 240))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

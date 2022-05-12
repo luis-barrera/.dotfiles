@@ -498,26 +498,30 @@
 
 ;; Poner los archivos de Backup (los que terminan en ~) en otro lugar
 (setq backup-directory-alist '(("." . "~/.emacs.d/backup"))
-  backup-by-copying t    ; Don't delink hardlinks
-  version-control t      ; Use version numbers on backups
-  delete-old-versions t  ; Automatically delete excess backups
-  kept-new-versions 20   ; how many of the newest versions to keep
-  kept-old-versions 5    ; and how many of the old
-  )
+      backup-by-copying t    ; Don't delink hardlinks
+      version-control t      ; Use version numbers on backups
+      delete-old-versions t  ; Automatically delete excess backups
+      kept-new-versions 20   ; how many of the newest versions to keep
+      kept-old-versions 5    ; and how many of the old
+      )
+
+;; Poner los archvos de autosave (los que empiezan y terminan en #) en otro lugar
+(setq backup-directory-alist
+      `(("." . ,(concat user-emacs-directory "backup"))))
 
 ;; Transparencia en el fondo
 ;; TODO: no me gusta que también se ponga transparante el fondo, así que por el momento lo desactivo
 (defun toggle-transparency ()
-   (interactive)
-   (let ((alpha (frame-parameter nil 'alpha)))
-     (set-frame-parameter
-      nil 'alpha
-      (if (eql (cond ((numberp alpha) alpha)
-                     ((numberp (cdr alpha)) (cdr alpha))
-                     ;; Also handle undocumented (<active> <inactive>) form.
-                     ((numberp (cadr alpha)) (cadr alpha)))
-               100)
-          '(90 . 50) '(100 . 100)))))
+  (interactive)
+  (let ((alpha (frame-parameter nil 'alpha)))
+    (set-frame-parameter
+     nil 'alpha
+     (if (eql (cond ((numberp alpha) alpha)
+                    ((numberp (cdr alpha)) (cdr alpha))
+                    ;; Also handle undocumented (<active> <inactive>) form.
+                    ((numberp (cadr alpha)) (cadr alpha)))
+              100)
+         '(90 . 50) '(100 . 100)))))
  ;; (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; Guardar los buffers abiertos antes de cerrar el editor
@@ -654,11 +658,11 @@
 (use-package treemacs-evil)
 (lsp-treemacs-sync-mode 1)
 
-;; Quita el (point)ath completo para symbolik links
+;; Quita el path completo para symbolik links
 (setq find-file-visit-truename t)
 
 ;; Solaire-mode
-(solaire-global-mode +1)
+;; (solaire-global-mode +1)
 
 ;; Viva la parrot revolution!!
 (use-package parrot
