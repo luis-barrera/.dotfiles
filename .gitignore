@@ -31,3 +31,6 @@
 /emacs/.emacs.d/init.el\~
 /gtk3/.config/gtk-3.0/bookmarks
 /emacs/.emacs.d/request/
+/emacs/.emacs.d/.bookmarks.~undo-tree~
+/emacs/.emacs.d/.init.el.~undo-tree~
+/emacs/.emacs.d/emacs-undo-tree.d
