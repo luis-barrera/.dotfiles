@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat May 14 07:31:10 2022
+;; Created Tue May 17 08:43:04 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -12,94 +12,58 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring nil)
-(setq regexp-search-ring '(#("homer" 0 5 (isearch-case-fold-search t)) #("|\n" 0 2 (isearch-case-fold-search nil isearch-regexp-function nil)) #("\n|" 0 2 (isearch-case-fold-search nil isearch-regexp-function nil)) #("\n" 0 1 (isearch-case-fold-search nil isearch-regexp-function nil)) #("-" 0 1 (isearch-case-fold-search nil isearch-regexp-function nil)) #("solaire" 0 7 (isearch-case-fold-search t)) #("pop" 0 3 (isearch-case-fold-search t)) #("compa" 0 5 (isearch-case-fold-search t)) #("backup" 0 6 (isearch-case-fold-search t)) #("efecti" 0 6 (isearch-case-fold-search t)) #("cete" 0 4 (isearch-case-fold-search t)) #("drive" 0 5 (isearch-case-fold-search t)) #("\\<\\$\\>" 0 6 (isearch-case-fold-search t)) #("frac1" 0 5 (isearch-case-fold-search t)) #("venv" 0 4 (isearch-case-fold-search t)) #("asss" 0 4 (isearch-case-fold-search nil))))
+(setq regexp-search-ring '(#("homer" 0 5 (isearch-case-fold-search t)) #("|\n" 0 2 (isearch-regexp-function nil isearch-case-fold-search nil)) #("\n|" 0 2 (isearch-regexp-function nil isearch-case-fold-search nil)) #("\n" 0 1 (isearch-regexp-function nil isearch-case-fold-search nil)) #("-" 0 1 (isearch-regexp-function nil isearch-case-fold-search nil)) #("solaire" 0 7 (isearch-case-fold-search t)) #("pop" 0 3 (isearch-case-fold-search t)) #("compa" 0 5 (isearch-case-fold-search t)) #("backup" 0 6 (isearch-case-fold-search t)) #("efecti" 0 6 (isearch-case-fold-search t)) #("cete" 0 4 (isearch-case-fold-search t)) #("drive" 0 5 (isearch-case-fold-search t)) #("\\<\\$\\>" 0 6 (isearch-case-fold-search t)) #("frac1" 0 5 (isearch-case-fold-search t)) #("venv" 0 4 (isearch-case-fold-search t)) #("asss" 0 4 (isearch-case-fold-search nil))))
 (setq register-alist (list '(102) '(104 . "kkkkkk") '(111 . [escape escape escape]) '(106) '(119 . "wwwwwww") (desktop-list* 120 (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (lambda nil (set-marker mk nil (get-buffer " *temp*")))) mk)) '(107 . [(down-mouse-1 ("Unprintable entity" 211 (183 . 201) 84076650 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) 113 107 106 100 100 escape 58 119 return 107 107 107 107 107 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 58 119 return 134217848 108 101 100 103 101 114 32 115 116 97 116 return]) '(97) '(110) '(113 . "0") '(48 . #("u" 0 1 (fontified t)))))
-(setq file-name-history '(#("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 4)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/recocido_simulado.py" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/abejas.py" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220123180828-data_science_emtech.org" 0 78 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220122223000-menstruacion_femenina.org" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/animacion/servidor.js" 0 84 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/marcador.html" 0 90 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/mapas.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/servidor.js" 0 84 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/response.json" 0 93 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/servidor.js" 0 91 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/web.js" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/index.html" 0 83 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web/web.js" 0 78 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/Node/js/simple.js" 0 67 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 85 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 72 (ivy-index 3)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 66 (ivy-index 6)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/" 0 56 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.js" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/privadas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/ejemplo2.html" 0 90 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/poligono.html" 0 103 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/marcador.html" 0 103 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/cluster.html" 0 102 (ivy-index 4)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/" 0 64 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/" 0 28 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/variasNaves/script.js" 0 82 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/" 0 57 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/clase-08-12-21/burbujas/js/Burbuja.js" 0 85 (ivy-index 2)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/variasNaves/script.js" 0 69 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/03Sem/Tarea1/tabu.py" 0 73 (ivy-index 0)) #("~/google-drive/Trim9-21O/Heuristicas/03Sem/Tarea1/" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/03Sem/Tarea1/aleatorios.py" 0 66 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/04Sem/Practica3/reloj.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/04Sem/Practica3/tabla.html" 0 70 (ivy-index 0)) #("/home/luisbarrera/Clases-Trim21O/SelectosIngSoft_2021-11-09.mkv" 0 63 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/clase-01-12-21/ejer1.html" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/class.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/tools.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/include.php" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/site.php" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/article-header.php" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/footer.html" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/header.html" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/html.php" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/for.php" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/while.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/switch.php" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/if.php" 0 58 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/addEventListener.html" 0 97 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/hammer.html" 0 87 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/jquery.html" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/index.html" 0 73 (ivy-index 0))))
+(setq file-name-history '(#("/home/luisbarrera/.emacs.d/" 0 27 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 4)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/recocido_simulado.py" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/abejas.py" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220123180828-data_science_emtech.org" 0 78 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220122223000-menstruacion_femenina.org" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/animacion/servidor.js" 0 84 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/marcador.html" 0 90 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/mapas.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/servidor.js" 0 84 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/response.json" 0 93 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/servidor.js" 0 91 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/web.js" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/index.html" 0 83 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web/web.js" 0 78 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/Node/js/simple.js" 0 67 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 85 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 72 (ivy-index 3)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 66 (ivy-index 6)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/" 0 56 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.js" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/privadas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/ejemplo2.html" 0 90 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/poligono.html" 0 103 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/marcador.html" 0 103 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/cluster.html" 0 102 (ivy-index 4)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/" 0 64 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/" 0 28 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/variasNaves/script.js" 0 82 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/" 0 57 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/clase-08-12-21/burbujas/js/Burbuja.js" 0 85 (ivy-index 2)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/variasNaves/script.js" 0 69 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/03Sem/Tarea1/tabu.py" 0 73 (ivy-index 0)) #("~/google-drive/Trim9-21O/Heuristicas/03Sem/Tarea1/" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/03Sem/Tarea1/aleatorios.py" 0 66 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/04Sem/Practica3/reloj.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/04Sem/Practica3/tabla.html" 0 70 (ivy-index 0)) #("/home/luisbarrera/Clases-Trim21O/SelectosIngSoft_2021-11-09.mkv" 0 63 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/dev/clase-01-12-21/ejer1.html" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/class.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/tools.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/include.php" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/site.php" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/article-header.php" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/footer.html" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/header.html" 0 63 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/html.php" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/for.php" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/while.php" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/switch.php" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/dev/php-freeCodeCamp/if.php" 0 58 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/addEventListener.html" 0 97 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/hammer.html" 0 87 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-30-11-21/jquery.html" 0 87 (ivy-index 0))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/Tareas21I.org"
+  "Tareas21I.org"
+  'org-mode
+  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
+  7
+  '(7503 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25219 42598 315284 219000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1979 833 798 1288 1979 779 1038 1055 90 3976 3929 4217 4154 4097 4028 3897))))
+
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/todos.org"
   "todos.org"
   'org-mode
   '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  10947
-  '(11014 nil)
+  12
+  '(11932 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25215 41185 498993 178000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (10982 10980 121 11642 13689 10945 18951 18951 18951 17561 17579 19889 29683 52464 52465 29869))))
+  '((indent-tabs-mode) (buffer-display-time 25219 42553 632625 588000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (11932 11932 10947 10947 11014 10982 10980 121 11642 13689 10945 19013 19013 19013 17623 17641))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org"
-  "20220401000056-angular_pildoras_informaticas.org"
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
   'org-mode
   '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  27707
-  '(26837 nil)
+  4215
+  '(4215 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25215 14036 19085 672000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (26837 26837 26822 26821 25550 25080 24771 24654 752 27824 23631 23236 22633 22234 21473 21458))))
+  '((indent-tabs-mode) (buffer-display-time 25219 40298 793880 576000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (9091 3454 3454 37 2511 9325 6549 7784 3477 674 7229 7229 1254 1254 724 724))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/Clases21I.org"
   "Clases21I.org"
   'org-mode
   '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  24073
+  10
   '(10 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25215 41185 498992 256000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25219 40299 851751 647000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12303 12271 24727 2557 2540 2540 28290 28291 28345 6021 19387 1221 5448 5449 18661 18666))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/20220301100057-docker.org"
-  "20220301100057-docker.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  294
-  '(294 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25215 11794 365891 610000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (294 294 294 294 572 4465 4465 4465 4465 4465 3420 3 574 43336 44384 44384))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/Tareas21I.org"
-  "Tareas21I.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  832
-  '(833 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25215 41185 498991 392000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (798 1288 1979 779 1038 1055 90 3976 3929 4217 4154 4097 4028 3897 3844 3818))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py"
-  "chess_svg.py"
-  'python-mode
-  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode company-mode company-posframe-mode yas-minor-mode lsp-mode dap-mode smartparens-mode drag-stuff-mode diff-hl-mode indent-guide-mode elpy-mode flymake-mode highlight-indentation-mode company-box-mode comment-tags-mode rainbow-delimiters-mode lsp-completion-mode lsp-modeline-code-actions-mode lsp-modeline-diagnostics-mode lsp-modeline-workspace-status-mode lsp-diagnostics-mode TeX-PDF-mode)
-  661
-  '(661 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 25215 11797 426805 20000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (728 601 650 542 223 824 533 28 28 28 28 28 28 28 28 28))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/GUIClase.py"
-  "GUIClase.py"
-  'python-mode
-  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode company-mode company-posframe-mode yas-minor-mode lsp-mode lsp-signature-mode dap-mode smartparens-mode drag-stuff-mode diff-hl-mode indent-guide-mode elpy-mode flymake-mode highlight-indentation-mode company-box-mode comment-tags-mode rainbow-delimiters-mode lsp-modeline-workspace-status-mode TeX-PDF-mode)
-  647
-  '(170 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 25215 11797 702721 703000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (814 814 399 647 647 830 619 619 66 66 94 68 68 28))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-roam/20220505005351-surveillance_capitalism_vs_the_surveillance_state.org"
@@ -110,102 +74,6 @@
   '(332 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25214 32534 10480 659000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25219 40293 928174 968000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (346 346 346 346))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/Linux-Journal.org"
-  "Linux-Journal.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode indent-guide-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  15
-  '(39437 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25214 32535 844316 425000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (41267 41034 10920 10878 10878 1 184 184 184 184 184 184 9965 184 10865 10579))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode company-mode company-posframe-mode yas-minor-mode dap-mode smartparens-mode drag-stuff-mode aggressive-indent-mode diff-hl-mode indent-guide-mode page-break-lines-mode company-box-mode comment-tags-mode rainbow-delimiters-mode TeX-PDF-mode)
-  45314
-  '(45314 nil)
-  nil
-  nil
-  '((buffer-display-time 25214 32536 421392 771000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (45302 45302 47050 46095 47205 18499 1150 32181 25659 3717 3717 3717 45949 45937 45915 3717))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py"
-  "cliente.py"
-  'python-mode
-  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode company-mode company-posframe-mode yas-minor-mode lsp-mode dap-mode smartparens-mode drag-stuff-mode diff-hl-mode indent-guide-mode elpy-mode flymake-mode highlight-indentation-mode company-box-mode comment-tags-mode rainbow-delimiters-mode lsp-modeline-workspace-status-mode TeX-PDF-mode)
-  1065
-  '(1065 nil)
-  nil
-  nil
-  '((tab-width . 8) (indent-tabs-mode) (buffer-display-time 25214 32537 28263 604000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1065 1065 1192 929 929 929 1691 1299))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/20220506093828-bedu_fase_0.org"
-  "20220506093828-bedu_fase_0.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  2549
-  '(2543 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25214 32539 695184 855000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (2513 2233))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  4215
-  '(9091 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25215 8350 889961 759000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (3454 3454 37 2511 9325 6549 7784 3477 674 7229 7229 1254 1254 724 724 7010))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/beca-bedu.org"
-  "beca-bedu.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode dap-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode TeX-PDF-mode)
-  5152
-  '(5152 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25214 32541 167420 415000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (5152 5153 5153 5153 5153 5153 5097 5075 5429 5586 4989 5054 4438 3371 3287 2903))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl"
-  "Servi.pl"
-  'prolog-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode undo-tree-mode projectile-mode company-mode company-posframe-mode yas-minor-mode dap-mode smartparens-mode drag-stuff-mode aggressive-indent-mode diff-hl-mode indent-guide-mode company-box-mode comment-tags-mode rainbow-delimiters-mode TeX-PDF-mode)
-  757
-  '(757 nil)
-  nil
-  nil
-  '((buffer-display-time 25214 32541 655055 246000) (buffer-file-coding-system . undecided-dos) (overwrite-mode) (truncate-lines))
-  '((mark-ring (958 979 1365 1886 1886 979 1885 1885 1203))))
-
-(desktop-create-buffer 208
-  nil
-  "Lenguajes"
-  'dired-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode company-mode company-posframe-mode dap-mode drag-stuff-mode company-box-mode TeX-PDF-mode)
-  283
-  '(283 nil)
-  t
-  '("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/")
-  '((buffer-display-time 25215 9631 513241 443000) (overwrite-mode) (truncate-lines))
-  '((mark-ring nil)))
 

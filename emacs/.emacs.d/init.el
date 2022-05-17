@@ -124,7 +124,8 @@
  '(org-level-2 ((t (:inherit outline-2 :height 1.15))))
  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
  '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
- '(org-level-5 ((t (:inherit outline-5 :height 1.0)))))
+ '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
+ '(treemacs-root-face ((t (:inherit (variable-pitch font-lock-string-face) :weight bold :height 0.8)))))
 
 
 ;; ##############################
@@ -418,8 +419,8 @@
   :config
   ;;(org-roam-setup)
   ;; If you're using a vertical completion framework, you might want a more informative completion interface
-  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags}" 'face 'org-tag)))
   (org-roam-db-autosync-mode)
+  (setq org-roam-node-display-template (concat "${title:*} " (propertize "${tags}" 'face 'org-tag)))
   (setq org-roam-completion-everywhere t))
 
 (setq org-roam-mode-section-functions
@@ -1265,3 +1266,13 @@
 ;; Pedir confirmación para cerrar un frame
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 (setq confirm-kill-emacs #'yes-or-no-p)
+
+(defun package-reinstall-all-activated-packages ()
+  "Refresh and reinstall all activated packages."
+  (interactive)
+  (package-refresh-contents)
+  (dolist (package-name package-activated-list)
+    (when (package-installed-p package-name)
+      (unless (ignore-errors                   ;some packages may fail to install
+                (package-reinstall package-name))
+        (warn "Package %s failed to reinstall" package-name)))))

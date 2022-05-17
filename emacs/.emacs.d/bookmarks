@@ -2,26 +2,46 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("ABAP"
+(("DataScience Google"
+ (filename . "~/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org")
+ (front-context-string)
+ (rear-context-string . " todas partes]]\n")
+ (position . 337))
+("Angular"
+ (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
+ (front-context-string . "vicio inyectable")
+ (rear-context-string . "ara hacer el ser")
+ (position . 31214))
+("Bedu Fase0"
+ (filename . "~/google-drive/org-roam/20220506093828-bedu_fase_0.org")
+ (front-context-string)
+ (rear-context-string . "$ symbol* symbol")
+ (position . 2549))
+("Docker"
+ (filename . "~/google-drive/org-roam/20220301100057-docker.org")
+ (front-context-string . "Compartir docker")
+ (rear-context-string . "oyectos.\n* TODO ")
+ (position . 48285))
+("ABAP"
  (filename . "~/google-drive/org-roam/20220217201221-abap_programming.org")
  (front-context-string . "\nEstá pensado pa")
  (rear-context-string . "orporativo SAP.\n")
  (position . 470))
 ("Mazos Anki"
  (filename . "~/google-drive/org-roam/anki.org")
- (front-context-string . "4. {{c4::Genitiv")
- (rear-context-string . ". {{c3::Dativ}}\n")
- (position . 281))
+ (front-context-string)
+ (rear-context-string . "chüss:: Adios}}\n")
+ (position . 5916))
 ("ledger"
  (filename . "~/google-drive/org-mode/finances.ledger")
- (front-context-string . "    Assets:Depos")
- (rear-context-string . "tos a Servicios\n")
- (position . 320))
+ (front-context-string)
+ (rear-context-string . "           $500\n")
+ (position . 5461))
 ("Beca-Bedu"
  (filename . "~/google-drive/org-mode/beca-bedu.org")
- (front-context-string . ":PROPERTIES:\n:ID")
- (rear-context-string)
- (position . 1))
+ (front-context-string . " 0]]\n\n* Cosas ch")
+ (rear-context-string . "4e3][Bedu - Fase")
+ (position . 5152))
 ("gamedev-journal"
  (filename . "~/google-drive/org-mode/gamedev-journal.org")
  (front-context-string)
@@ -29,19 +49,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** DONE Electric")
- (rear-context-string . "5-08 Sun 18:20]\n")
- (position . 14687))
+ (front-context-string . "** DONE Servicio")
+ (rear-context-string . "2022-03-17 Thu>\n")
+ (position . 15823))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220508212751-deploy_visuam.org")
+ (filename . "~/google-drive/org-roam/20220516001339-aspectos_basicos_datos_datos_en_todas_partes.org")
  (front-context-string)
- (rear-context-string . "UAM\n#+filetags:\n")
- (position . 240))
+ (rear-context-string . "tes\n#+filetags:\n")
+ (position . 274))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)
@@ -54,9 +74,9 @@
  (position . 1497))
 ("Alemán"
  (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
- (front-context-string . " Sie, sie    | w")
- (rear-context-string . "st  | könnt  |\n|")
- (position . 2029))
+ (front-context-string . "\n* Artículo defi")
+ (rear-context-string . "              |\n")
+ (position . 3465))
 ("org index"
  (filename . "~/google-drive/org-mode/index.org")
  (front-context-string . "t\n* org de luisb")
