@@ -99,8 +99,8 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
- '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
+   '(anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative undo-tree centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode undo-fu company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+ '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacemacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
 ;; (unless (package-installed-p 'use-package)
@@ -125,8 +125,6 @@
  '(org-level-3 ((t (:inherit outline-3 :height 1.1))))
  '(org-level-4 ((t (:inherit outline-4 :height 1.05))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.0))))
- '(sp-pair-overlay-face ((t (:background "gray0"))))
- '(sp-wrap-overlay-closing-pair ((t (:inherit sp-wrap-overlay-face :foreground "lime green"))))
  '(treemacs-root-face ((t (:inherit (variable-pitch font-lock-string-face) :weight bold :height 0.8)))))
 
 
@@ -268,7 +266,6 @@
 ;; (evil-define-key 'insert 'global (kbd "jk") 'evil-normal-state)
 (setq evil-ex-search-vim-style-regexp t)
 (setq evil-in-single-undo t)
-(setq evil-undo-system 'undo-fu)
 
 ;; Configuración de keybindings de evil para varios modos
 (use-package evil-collection
@@ -302,13 +299,11 @@
 
 ;; Ver los posibles undo, mostrado en forma de un arbol
 ;; Con =C-x u= podemos ver el arbol y escoger
-;; (use-package undo-tree
-;;   :config
-;;   (global-undo-tree-mode 1))
-;; (setq undo-tree-enable-undo-in-region nil)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode))
 
-(when (not (eq (last buffer-undo-list) 'undo-tree-canary))
-  (setq buffer-undo-list (append buffer-undo-list '(nil undo-tree-canary))))
+
 ;; ##############################
 ;; Git y manejo de proyectos
 ;; Manejo de proyectos según le directorio en el que estamos
