@@ -167,6 +167,7 @@ alias vimrc="vim ~/.vimrc"
 
 # Abre otra terminal
 alias kitty="kitty --detach"
+alias nn="kitty --detach"
 
 # Abre zathura de manera correcta
 alias zathura="zathura --fork"
