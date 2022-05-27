@@ -339,7 +339,7 @@ alias sudo='sudo -v; sudo '
 # export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
 
 # Secrets para spotify-dl
-source ~/.spotify-secrets
+# source ~/.spotify-secrets
 
 PATH="/home/luisbarrera/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/luisbarrera/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
