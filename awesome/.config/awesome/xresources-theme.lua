@@ -13,15 +13,15 @@ local awful = require("awful")
 local wibox = require("wibox")
 local dpi = require("beautiful.xresources").apply_dpi
 local my_table = awful.util.table or gears.table
-local watch = require("awful.widget.watch")
-local batteryarc = require("widgets.batteryarc")
-local calnot = require("widgets.cal")
-local wcpu = require("widgets.cpu")
-local wnet = require("widgets.net")
-local alsabar = require("widgets.alsabar")
-local player = require("widgets.player")
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
-local markup = require("markup")
+--local watch = require("awful.widget.watch")
+--local batteryarc = require("widgets.batteryarc")
+--local calnot = require("widgets.cal")
+--local wcpu = require("widgets.cpu")
+--local wnet = require("widgets.net")
+--local alsabar = require("widgets.alsabar")
+--local player = require("widgets.player")
+--local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+--local markup = require("markup")
 local naughty = require("naughty")
 local beautiful = require("beautiful")
 
@@ -162,95 +162,95 @@ local separator = wibox.widget.textbox(' ')
 -- -- Widgets --
 -- -------------
 -- System Tray
-local tray = wibox.widget{
-  separator,
-  wibox.widget.systray(),
-  separator,
-  layout = wibox.layout.fixed.horizontal
-}
-tray = wibox.container.background(tray, theme.applets_bg, gears.shape.rect)
-tray = wibox.container.margin(tray, dpi(3), dpi(3), dpi(3), dpi(3))
-tray = wibox.container.background(tray, theme.bg_normal, gears.shape.rect)
-tray = wibox.container.margin(tray, dpi(0), dpi(2), dpi(0), dpi(0))
+-- local tray = wibox.widget{
+--   separator,
+--   wibox.widget.systray(),
+--   separator,
+--   layout = wibox.layout.fixed.horizontal
+-- }
+-- tray = wibox.container.background(tray, theme.applets_bg, gears.shape.rect)
+-- tray = wibox.container.margin(tray, dpi(3), dpi(3), dpi(3), dpi(3))
+-- tray = wibox.container.background(tray, theme.bg_normal, gears.shape.rect)
+-- tray = wibox.container.margin(tray, dpi(0), dpi(2), dpi(0), dpi(0))
 
 -- Batería
-local batteryarc = batteryarc({
-  font = theme.applets_font,
-  bg_color = theme.applets_bg})
-batteryarc = wibox.container.background(batteryarc, theme.applets_bg, gears.shape.rect)
+-- local batteryarc = batteryarc({
+--   font = theme.applets_font,
+--   bg_color = theme.applets_bg})
+-- batteryarc = wibox.container.background(batteryarc, theme.applets_bg, gears.shape.rect)
 -- batteryarc = wibox.container.margin(batteryarc, dpi(2), dpi(2), dpi(2), dpi(2))
-batteryarc = wibox.container.background(batteryarc, theme.bg_normal, gears.shape.rect)
-batteryarc = wibox.container.margin(batteryarc, dpi(2), dpi(2), dpi(0), dpi(0))
+-- batteryarc = wibox.container.background(batteryarc, theme.bg_normal, gears.shape.rect)
+-- batteryarc = wibox.container.margin(batteryarc, dpi(2), dpi(2), dpi(0), dpi(0))
 
 -- Reloj
-local mytextclock = wibox.widget.textclock(markup(theme.applets_fg, "  %H:%M "))
-mytextclock.font = theme.applets_font
-mytextclock.refresh = 20
-local clockbg = wibox.container.background(mytextclock, theme.applets_bg, gears.rect)
-local clockwidget = wibox.container.background(clockbg, theme.bg_normal, gears.shape.rect)
-clockwidget = wibox.container.margin(clockwidget, dpi(2), dpi(2), dpi(0), dpi(0))
+-- local mytextclock = wibox.widget.textclock(markup(theme.applets_fg, "  %H:%M "))
+-- mytextclock.font = theme.applets_font
+-- mytextclock.refresh = 20
+-- local clockbg = wibox.container.background(mytextclock, theme.applets_bg, gears.rect)
+-- local clockwidget = wibox.container.background(clockbg, theme.bg_normal, gears.shape.rect)
+-- clockwidget = wibox.container.margin(clockwidget, dpi(2), dpi(2), dpi(0), dpi(0))
 
 -- Fecha
-local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg, "   %a %d %b "))
-local calbg = wibox.container.background(mytextcalendar, theme.applets_bg, gears.shape.rect)
-calbg = wibox.container.background(calbg, theme.bg_normal, gears.shape.rect)
+-- local mytextcalendar = wibox.widget.textclock(markup.fontfg(theme.applets_font, theme.applets_fg, "   %a %d %b "))
+-- local calbg = wibox.container.background(mytextcalendar, theme.applets_bg, gears.shape.rect)
+-- calbg = wibox.container.background(calbg, theme.bg_normal, gears.shape.rect)
 -- calbg = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(0), dpi(0))
 
 -- Calendario
-local calendarwidget = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(0), dpi(0))
-theme.cal = calnot({
-		attach_to = { mytextcalendar },
-		notification_preset = {
-			fg = theme.fg_normal,
-			bg = theme.bg_normal,
-			position = "top_left",
-			font = theme.applets_font
-		}
-})
+-- local calendarwidget = wibox.container.margin(calbg, dpi(2), dpi(2), dpi(0), dpi(0))
+-- theme.cal = calnot({
+-- 		attach_to = { mytextcalendar },
+-- 		notification_preset = {
+-- 			fg = theme.fg_normal,
+-- 			bg = theme.bg_normal,
+-- 			position = "top_left",
+-- 			font = theme.applets_font
+-- 		}
+-- })
 
 -- CPU
-local cpu = wcpu({
-		settings = function()
-		widget:set_markup(
-			markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
-		end
-})
-local cpubg = wibox.container.background(cpu.widget, theme.applets_bg, gears.shape.rect)
-local cpuwidget = wibox.container.margin(cpubg, dpi(2), dpi(2), dpi(0), dpi(0))
+-- local cpu = wcpu({
+-- 		settings = function()
+-- 		widget:set_markup(
+-- 			markup.fontfg(theme.applets_font, theme.applets_fg, "  CPU " .. cpu_now.usage.. "% "))
+-- 		end
+-- })
+-- local cpubg = wibox.container.background(cpu.widget, theme.applets_bg, gears.shape.rect)
+-- local cpuwidget = wibox.container.margin(cpubg, dpi(2), dpi(2), dpi(0), dpi(0))
 -- cpuwidget = wibox.container.background(cpuwidget, theme.bg_normal, gears.shape.rect)
 -- cpuwidget = wibox.container.margin(cpuwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Tráfico de red
-local net = wnet({
-		settings = function()
-		widget:set_markup(
-			markup.fontfg(theme.applets_font, theme.applets_fg, " " .. net_now.received .. " ﲐ - ﲓ ".. net_now.sent .. " "))
-		end
-})
-local netbg = wibox.container.background(net.widget, theme.applets_bg, gears.shape.rect)
-local networkwidget = wibox.container.margin(netbg, dpi(2), dpi(2), dpi(0), dpi(0))
+-- local net = wnet({
+-- 		settings = function()
+-- 		widget:set_markup(
+-- 			markup.fontfg(theme.applets_font, theme.applets_fg, " " .. net_now.received .. " ﲐ - ﲓ ".. net_now.sent .. " "))
+-- 		end
+-- })
+-- local netbg = wibox.container.background(net.widget, theme.applets_bg, gears.shape.rect)
+-- local networkwidget = wibox.container.margin(netbg, dpi(2), dpi(2), dpi(0), dpi(0))
 -- networkwidget = wibox.container.background(networkwidget, theme.bg_normal, gears.shape.rect)
 -- networkwidget = wibox.container.margin(networkwidget, dpi(1), dpi(2), dpi(2), dpi(2))
 
 -- Launcher
-local mylauncher = awful.widget.button({ image = theme.mini_icon })
-mylauncher = wibox.container.margin(mylauncher, dpi(4), dpi(4), dpi(3), dpi(0))
+-- local mylauncher = awful.widget.button({ image = theme.mini_icon })
+-- mylauncher = wibox.container.margin(mylauncher, dpi(4), dpi(4), dpi(3), dpi(0))
 
 -- Función que se encarga de generar los elementos de las pantallas
 function theme.at_screen_connect(s)
 	-- Todos los widgets en uno solo
-	s.mywidgets = wibox.widget{
-		tray,
-		batteryarc,
-		networkwidget,
-		cpuwidget,
-		calendarwidget,
-		mycountdownwidget,
-		clockwidget,
-		volumen,
-		mybatterywidget,
-		layout = wibox.layout.fixed.horizontal}
-	s.mywidgets = wibox.container.margin(s.mywidgets, dpi(0), dpi(0), dpi(0), dpi(0))
+	-- s.mywidgets = wibox.widget{
+	-- 	tray,
+	-- 	batteryarc,
+	-- 	networkwidget,
+	-- 	cpuwidget,
+	-- 	calendarwidget,
+	-- 	mycountdownwidget,
+	-- 	clockwidget,
+	-- 	volumen,
+	-- 	mybatterywidget,
+	-- 	layout = wibox.layout.fixed.horizontal}
+	-- s.mywidgets = wibox.container.margin(s.mywidgets, dpi(0), dpi(0), dpi(0), dpi(0))
 
 	-- Widget que muestra el layout actual
 	s.mylayoutbox = wibox.widget{

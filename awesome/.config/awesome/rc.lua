@@ -140,6 +140,7 @@ beautiful.notification_icon_size = dpi(90)
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
 awful.util.tagnames = {"a  ", "s  ", "d  ", "f  ", "q   ", "w  ", "e  ", "1  ", "2  ", "3  ", "4  ", "5  "}
+-- awful.util.tagnames = {"a", "s", "d", "f", "q", "w", "e", "1", "2", "3", "4", "5"}
 -- awful.util.tagnames = {"a:  ", "s:  ", "d:  ", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
 awful.layout.layouts = { -- Clients Layouts
@@ -565,9 +566,9 @@ awful.screen.connect_for_each_screen(function(s)
 	beautiful.at_screen_connect(s)
 end)
 -- Deletes the wibar
-awful.screen.disconnect_for_each_screen(function()
-	beautiful.at_screen_connect(s)
-end)
+-- awful.screen.disconnect_for_each_screen(function()
+-- 	beautiful.at_screen_connect(s)
+-- end)
 
 -- Clients Rules
 ----------------
