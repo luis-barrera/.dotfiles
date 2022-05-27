@@ -1,5 +1,5 @@
-;; (setq default-directory "/home/luisbarrera/.emacs.d")
-;; (setq user-emacs-directory "/home/luisbarrera/.emacs.d")
+(setq default-directory "~/.emacs.d")
+(setq user-emacs-directory "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d")
 ;; Quitar mensaje de startup
 (setq inhibit-startup-message t)
@@ -78,6 +78,16 @@
   (buffer-face-mode))
 (add-hook 'calendar-mode-hook 'my-buffer-face-calendar)
 
+(defun package-reinstall-all-activated-packages ()
+  "Refresh and reinstall all activated packages."
+  (interactive)
+  (package-refresh-contents)
+  (dolist (package-name package-activated-list)
+    (when (package-installed-p package-name)
+      (unless (ignore-errors                   ;some packages may fail to install
+                (package-reinstall package-name))
+        (warn "Package %s failed to reinstall" package-name)))))
+
 ;; ##############################
 ;; Package administrator
 (require 'package)
@@ -85,8 +95,8 @@
 ;; Comment/uncomment this line to enable MELPA Stable if desired.  See `package-archive-priorities`
 ;; and `package-pinned-packages`. Most users will not need or want to do this.
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(package-initialize)
 ;;(package-refresh-contents)
+(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -99,12 +109,16 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons-completion treemacs-evil org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags rainbow-delimiters yasnippet-snippets yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
-;; (unless (package-installed-p 'use-package)
-;;    (package-install 'use-package))
+(unless (package-installed-p 'use-package)
+   (package-install 'use-package))
+
+;; (dolist (package '(use-package))
+;;    (unless (package-installed-p package)
+;;        (package-install package)))
 
 ;; (unless (package-installed-p 'swiper)
 ;;    (package-install 'swiper))
@@ -154,6 +168,7 @@
 
 ;; Interfaz para encontrar cualquier cosa
 (use-package counsel
+  :ensure t
   :bind (("M-x" . counsel-M-x)
    ("C-x b" . counsel-ibuffer)
    ("C-x C-f" . counsel-find-file)
@@ -167,6 +182,7 @@
 ;; Iconos para la barra de estado
 ;; Después de instalar el paquete, correr M-x all-the-icons-install-fonts
 (use-package all-the-icons
+  :ensure t
   :if (display-graphic-p))
 
 ;; Barra de estado inferior
@@ -208,10 +224,12 @@
 
 ;; Paréntesis de colores
 (use-package rainbow-delimiters
+  :ensure t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 ;; Which key
 (use-package which-key
+  :ensure t
   :init (which-key-mode)
   :diminish which-key-mode
   :config
@@ -219,6 +237,7 @@
 
 ;; Muestra más info acerca de los comandos, así como su keybinding si está disponible
 (use-package ivy-rich
+  :ensure t
   :init
   (ivy-rich-mode 1))
 
@@ -262,6 +281,9 @@
 (require 'evil)
 (evil-mode 1)
 
+(use-package evil-nerd-commenter
+   :ensure t)
+
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 (define-key evil-normal-state-map (kbd "gcc") 'evilnc-comment-or-uncomment-lines)
@@ -272,6 +294,7 @@
 
 ;; Configuración de keybindings de evil para varios modos
 (use-package evil-collection
+  :ensure t
   :after evil
   :config
   (evil-collection-init))
@@ -285,12 +308,14 @@
 
 ;; Incremento/Decremento como en vim
 (use-package evil-numbers
+  :ensure t
   :after evil)
 (evil-define-key '(normal visual) 'global (kbd "+") 'evil-numbers/inc-at-pt)
 (evil-define-key '(normal visual) 'global (kbd "-") 'evil-numbers/dec-at-pt)
 
 ;; Mejor soporte para undo y redo
 (use-package undo-fu
+  :ensure t
   :after evil)
 (define-key evil-normal-state-map "u" 'undo-fu-only-undo)
 (define-key evil-normal-state-map "\C-r" 'undo-fu-only-redo)
@@ -328,6 +353,7 @@
 
 ;; Counsel para projectile
 (use-package counsel-projectile
+  :ensure t
   :config (counsel-projectile-mode))
 
 ;; Soporte para git y otros vcs
@@ -395,6 +421,7 @@
 
 ;; Cambiar los símbolos de los headings
 (use-package org-superstar
+  :ensure t
   :after org
   :hook (org-mode . org-superstar-mode)
   :config
@@ -483,7 +510,8 @@
 
 ;; Poner bordes a los lados del editor, solo en org-mode
 (use-package visual-fill-column
-  :defer t
+  :after org
+  :ensure t
   :hook (org-mode . efs/org-mode-visual-fill))
 
 ;; Poner bordes a los lados del editor, solo en org-mode
@@ -633,7 +661,7 @@
 ;; están habilitados usar el comando =M-x customize-variable RET
 ;; company-backends=.
 (add-hook 'after-init-hook 'global-company-mode)
-(use-package company-posframe)
+(use-package company-posframe :ensure t)
 (company-posframe-mode 1)
 (setq company-tooltip-offset-display 'lines)
 (setq company-tooltip-minimum 4)
@@ -641,9 +669,9 @@
 
 ;; Snippets, autocompletado
 ;; (yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
-(put 'narrow-to-region 'disabled nil)
-(put 'upcase-region 'disabled nil)
+;; (add-hook 'prog-mode-hook 'yas-minor-mode)
+;; (put 'narrow-to-region 'disabled nil)
+;; (put 'upcase-region 'disabled nil)
 
 ;; Autopair paréntesis
 (electric-pair-mode)
@@ -661,24 +689,14 @@
 ;; Treemacs, mejor file manager
 ;; Para agregar más directorios correr el comando treemacs-edit-workspace
 (global-set-key [f8] 'treemacs)
-(use-package treemacs-evil)
-(lsp-treemacs-sync-mode 1)
+;(use-package treemacs-evil)
+;(lsp-treemacs-sync-mode 1)
 
 ;; Quita el path completo para symbolik links
-(setq find-file-visit-truename t)
+;; (setq find-file-visit-truename t)
 
 ;; Solaire-mode
 ;; (solaire-global-mode +1)
-
-;; Viva la parrot revolution!!
-(use-package parrot
-  :config
-  (parrot-mode))
-;; default confused emacs nyan rotating science thumbsup
-(parrot-set-parrot-type 'emacs)
-;; Infinitamente
-;; (setq parrot-num-rotations nil)
-(setq parrot-num-rotations 6)
 
 ;; LSP-mode
 ;; Algunos comandos interesantes:
@@ -702,7 +720,7 @@
   ;; :global/:workspace/:file
   (setq lsp-modeline-diagnostics-scope :workspace))
 ;; LSP-java, instalar el package lsp-java
-(use-package lsp-java)
+(use-package lsp-java :after yasnippet-snippets)
 (add-hook 'java-mode-hook #'lsp)
 ;; sql
 ;; Aquí se deben definir las conexiones a las BD que querramos usar, luego correr el comando M-x lsp-sqls-*
@@ -726,6 +744,7 @@
 
 ;; Python
 (use-package lsp-pyright
+  :after yasnippet-snippets
   :ensure t
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
@@ -750,7 +769,8 @@
 
 ;; Multiple cursores
 ;; Para salir de este modo, usar C-g o <return>, para meter un salto de linea dentro del modo usar C-j
-(use-package multiple-cursors)
+(use-package multiple-cursors
+   :ensure t)
 ;; Soporte para evil-mode
 (setq mc/cmds-to-run-for-all
       '(
@@ -785,29 +805,6 @@
 ;; Este obligatoriamente debe tener texto seleccionado
 ;; Editar todas las strings similares
 (global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
-
-;; Plugin para ver y administrar code-tags
-;; TODO:
-;; (autoload 'comment-tags-mode "comment-tags-mode")
-(setq comment-tags-keymap-prefix (kbd "C-c C-t"))
-(use-package comment-tags
-  :hook ((prog-mode-hook . comment-tags-mode)))
-(with-eval-after-load "comment-tags"
-  (setq comment-tags-keyword-faces
-        `(("TODO" . ,(list :weight 'bold :foreground "#28ABE3"))
-          ("FIXME" . ,(list :weight 'bold :foreground "#DB3340"))
-          ("BUG" . ,(list :weight 'bold :foreground "#DB3340"))
-          ("HACK" . ,(list :weight 'bold :foreground "#E8B71A"))
-          ("KLUDGE" . ,(list :weight 'bold :foreground "#E8B71A"))
-          ("XXX" . ,(list :weight 'bold :foreground "#F7EAC8"))
-          ("INFO" . ,(list :weight 'bold :foreground "#F7EAC8"))
-          ("DONE" . ,(list :weight 'bold :foreground "#1FDA9A"))))
-  (setq comment-tags-comment-start-only t
-        comment-tags-require-colon t
-        comment-tags-case-sensitive t
-        comment-tags-show-faces t
-        comment-tags-lighter nil))
-(add-hook 'prog-mode-hook 'comment-tags-mode)
 
 ;; Config para dired
 (put 'dired-find-alternate-file 'disabled nil)
@@ -890,6 +887,10 @@
     (when (and (boundp 'yas-minor-mode) yas-minor-mode)
       (let ((yas-buffer-local-condition ''(require-snippet-condition . auto)))
         (yas-expand)))))
+
+(use-package yasnippet-snippets
+  :after yasnippet
+  :ensure t)
 
 ;; CDLatex integration with YaSnippet: Allow cdlatex tab to work inside Yas
 ;; fields
@@ -1207,7 +1208,7 @@
 
 ;; Soporte para tabnine
 (use-package company-tabnine :ensure t)
-(add-to-list 'company-backends #'company-tabnine)
+;; (add-to-list 'company-backends #'company-tabnine)
 
 ;; Company
 ;; Seleccionar la opción de company con M-1 M-2 ...
@@ -1219,7 +1220,7 @@
   :ensure t
   :config
   (workgroups-mode 1)
-  (setq wg-prefix-key (kbd "C-c w"))
+  (setq wg-prefix-key (kbd "C-c z"))
   (setq wg-session-file "/home/luisbarrera/.emacs.d/workgroups.emacs"))
 ;; (org-agenda-list)
 
@@ -1238,6 +1239,24 @@
 ;; Treesitter
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+
+;; Plugin para ver y administrar code-tags
+; TODO
+(use-package hl-todo
+  :ensure t
+  :hook (prog-mode . hl-todo-mode)
+  :config (setq hl-todo-keyword-faces
+		'(("TODO"   . "#FF0000")
+		  ("FIXME"  . "#FF0000")
+		  ("DEBUG"  . "#A020F0")
+		  ("GOTCHA" . "#FF4500")
+		  ("NOTE"   . "#FF4500")
+		  ("STUB"   . "#1E90FF")))
+  :bind (("C-c C-p" . hl-todo-previous)
+         ("C-c C-n" . hl-todo-next)
+         ("C-c C-o" . hl-todo-occur)
+         ("C-c C-i" . hl-todo-insert)))
+
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
@@ -1272,12 +1291,12 @@
 ;; (setq confirm-kill-emacs 'y-or-n-p)
 (setq confirm-kill-emacs #'yes-or-no-p)
 
-(defun package-reinstall-all-activated-packages ()
-  "Refresh and reinstall all activated packages."
-  (interactive)
-  (package-refresh-contents)
-  (dolist (package-name package-activated-list)
-    (when (package-installed-p package-name)
-      (unless (ignore-errors                   ;some packages may fail to install
-                (package-reinstall package-name))
-        (warn "Package %s failed to reinstall" package-name)))))
+;; Viva la parrot revolution!!
+(use-package parrot
+  :config
+  ;; default confused emacs nyan rotating science thumbsup
+  (parrot-set-parrot-type 'emacs)
+  ;; Infinitamente
+  ;; (setq parrot-num-rotations nil)
+  (setq parrot-num-rotations 6)
+  (parrot-mode))
