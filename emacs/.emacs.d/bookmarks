@@ -48,10 +48,10 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** DONE Servicio")
- (rear-context-string . "2022-03-17 Thu>\n")
- (position . 15823))
+ (filename . "~/google-drive/org-mode/todos.org")
+ (front-context-string . "** DONE Cambiar ")
+ (rear-context-string . "fin, solo Emby.\n")
+ (position . 72752))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")

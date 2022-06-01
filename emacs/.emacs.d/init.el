@@ -1207,7 +1207,7 @@
   (global-evil-surround-mode 1))
 
 ;; Soporte para tabnine
-(use-package company-tabnine :ensure t)
+;; (use-package company-tabnine :ensure t)
 ;; (add-to-list 'company-backends #'company-tabnine)
 
 ;; Company
