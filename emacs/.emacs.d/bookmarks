@@ -35,8 +35,8 @@
 ("ledger"
  (filename . "~/google-drive/org-mode/finances.ledger")
  (front-context-string)
- (rear-context-string . "           $500\n")
- (position . 5461))
+ (rear-context-string . "           $150\n")
+ (position . 9239))
 ("Beca-Bedu"
  (filename . "~/google-drive/org-mode/beca-bedu.org")
  (front-context-string . " 0]]\n\n* Cosas ch")
@@ -49,19 +49,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Cambiar ")
- (rear-context-string . "fin, solo Emby.\n")
- (position . 72752))
+ (front-context-string . "** DONE Arreglar")
+ (rear-context-string . "ga el que tiene\n")
+ (position . 75554))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/google-drive/org-roam/20220516001339-aspectos_basicos_datos_datos_en_todas_partes.org")
+ (filename . "~/org-roam/20220603092750-flexbox.org")
  (front-context-string)
- (rear-context-string . "tes\n#+filetags:\n")
- (position . 274))
+ (rear-context-string . "box\n#+filetags:\n")
+ (position . 301))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

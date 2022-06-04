@@ -109,7 +109,7 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
@@ -1246,17 +1246,41 @@
   :ensure t
   :hook (prog-mode . hl-todo-mode)
   :config (setq hl-todo-keyword-faces
-		'(("TODO"   . "#FF0000")
-		  ("FIXME"  . "#FF0000")
-		  ("DEBUG"  . "#A020F0")
-		  ("GOTCHA" . "#FF4500")
-		  ("NOTE"   . "#FF4500")
-		  ("STUB"   . "#1E90FF")))
+		            '(("TODO"   . "#FF0000")
+		              ("FIXME"  . "#FF0000")
+		              ("DEBUG"  . "#A020F0")
+		              ("GOTCHA" . "#FF4500")
+		              ("NOTE"   . "#FF4500")
+		              ("STUB"   . "#1E90FF")))
   :bind (("C-c C-p" . hl-todo-previous)
          ("C-c C-n" . hl-todo-next)
          ("C-c C-o" . hl-todo-occur)
          ("C-c C-i" . hl-todo-insert)))
 
+;; Oscurece ventanas de Emacs que donde no está el cursor
+(use-package dimmer
+  :config
+  ;; Solo difuminar el color de las letras
+  (setq dimmer-adjustment-mode :foreground)
+  ;; No aplicar en which-key
+  (dimmer-configure-which-key)
+  ;; No aplicar en helm
+  (dimmer-configure-helm)
+  ;; No aplicar en company
+  (dimmer-configure-company-box)
+  ;; No aplicar en posframes
+  (dimmer-configure-posframe)
+  ;; No aplicar a archivo de org
+  (dimmer-configure-org)
+  ;; Activar en modo global
+  (dimmer-mode t))
+
+;; Ver pdf y recordar su última posición
+(use-package pdf-view-restore
+  :after pdf-tools
+  :config
+  (setq pdf-view-restore-filename "~/.emacs.d/.pdf-view-restore")
+  (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
@@ -1300,3 +1324,4 @@
   ;; (setq parrot-num-rotations nil)
   (setq parrot-num-rotations 6)
   (parrot-mode))
+(put 'downcase-region 'disabled nil)
