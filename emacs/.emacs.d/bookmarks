@@ -2,21 +2,21 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("DataScience Google"
+(("Android Kotlin"
+ (filename . "~/org-roam/20220605155009-desarrollo_android.org")
+ (front-context-string)
+ (rear-context-string . "r /resources/.\n\n")
+ (position . 2350))
+("DataScience Google"
  (filename . "~/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org")
  (front-context-string)
  (rear-context-string . " todas partes]]\n")
  (position . 337))
 ("Angular"
  (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
- (front-context-string . "vicio inyectable")
- (rear-context-string . "ara hacer el ser")
- (position . 31214))
-("Bedu Fase0"
- (filename . "~/google-drive/org-roam/20220506093828-bedu_fase_0.org")
  (front-context-string)
- (rear-context-string . "$ symbol* symbol")
- (position . 2549))
+ (rear-context-string . "un commit a git\n")
+ (position . 39958))
 ("Docker"
  (filename . "~/google-drive/org-roam/20220301100057-docker.org")
  (front-context-string . "Compartir docker")
@@ -49,19 +49,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Arreglar")
- (rear-context-string . "ga el que tiene\n")
- (position . 75554))
+ (front-context-string . "** DONE Entregar")
+ (rear-context-string . "nsive en móvil.\n")
+ (position . 76275))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220603092750-flexbox.org")
+ (filename . "~/org-roam/20220605155009-desarrollo_android.org")
  (front-context-string)
- (rear-context-string . "box\n#+filetags:\n")
- (position . 301))
+ (rear-context-string . "oid\n#+filetags:\n")
+ (position . 290))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

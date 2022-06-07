@@ -109,7 +109,7 @@
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
  '(package-selected-packages
-   '(pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert pomm deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
@@ -763,14 +763,22 @@
 (use-package lsp-ui
   :commands lsp-ui-mode)
 
+;; Pomodoro en org-mode
+(use-package org-pomodoro
+  :after org)
 ;; pomm
-(setq pomm-audio-enabled t)
-(setq pomm-audio-player-executable "/sbin/paplay")
+;; (use-package pomm
+;;   :straight t
+;;   :config
+;;   (setq pomm-audio-enabled t)
+;;   (setq pomm-audio-player-executable "/sbin/paplay")
+;;   (setq pomm-csv-history-file "~/.emacs.d/pomm-hist")
+;;   :commands (pomm))
 
 ;; Multiple cursores
 ;; Para salir de este modo, usar C-g o <return>, para meter un salto de linea dentro del modo usar C-j
 (use-package multiple-cursors
-   :ensure t)
+  :ensure t)
 ;; Soporte para evil-mode
 (setq mc/cmds-to-run-for-all
       '(
@@ -1262,6 +1270,11 @@
   :config
   ;; Solo difuminar el color de las letras
   (setq dimmer-adjustment-mode :foreground)
+  (setq dimmer-exclusion-predicates '(helm--alive-p window-minibuffer-p))
+  (setq dimmer-exclusion-regexp-list
+        '("^\\*[h|H]elm.*\\*" "^\\*Minibuf-[0-9]+\\*"
+          "^.\\*which-key\\*$" "^*Messages*" "*LV*"
+          "transient"))
   ;; No aplicar en which-key
   (dimmer-configure-which-key)
   ;; No aplicar en helm
@@ -1272,6 +1285,7 @@
   (dimmer-configure-posframe)
   ;; No aplicar a archivo de org
   (dimmer-configure-org)
+  (dimmer-watch-frame-focus-events 'nil)
   ;; Activar en modo global
   (dimmer-mode t))
 
@@ -1281,6 +1295,9 @@
   :config
   (setq pdf-view-restore-filename "~/.emacs.d/.pdf-view-restore")
   (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
+
+(use-package org-cliplink
+  :bind ("C-x p i" . org-cliplink))
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
