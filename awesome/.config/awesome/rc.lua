@@ -437,10 +437,10 @@ clientkeys = my_table.join(
 		end
 		c:emit_signal ("focus")
 		end, {description = "Al frente en todos los tags", group = "client"}),
-	awful.key({ modkey }, "m", function(c)
-		c.maximized = not c.maximized
-		c:emit_signal ("focus")
-		end, {description = "Maximizar", group = "client"}),
+	-- awful.key({ modkey }, "m", function(c)
+	-- 	c.maximized = not c.maximized
+	-- 	c:emit_signal ("focus")
+	-- 	end, {description = "Maximizar", group = "client"}),
 	awful.key({ modkey, "Shift" }, "m", function(c)
 		c.fullscreen = not c.fullscreen
 		c:emit_signal ("focus")
