@@ -108,17 +108,19 @@
  '(lsp-pyright-use-library-code-for-types t)
  '(lsp-pyright-venv-directory "")
  '(lsp-pyright-venv-path "")
+ '(minimap-mode t)
+ '(minimap-window-location 'right)
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-long-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
-   '(typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
 (unless (package-installed-p 'use-package)
-   (package-install 'use-package))
+  (package-install 'use-package))
 
 ;; (dolist (package '(use-package))
 ;;    (unless (package-installed-p package)
@@ -1270,28 +1272,28 @@
          ("C-c C-i" . hl-todo-insert)))
 
 ;; Oscurece ventanas de Emacs que donde no está el cursor
-(use-package dimmer
-  :config
-  ;; Solo difuminar el color de las letras
-  (setq dimmer-adjustment-mode :foreground)
-  (setq dimmer-exclusion-predicates '(helm--alive-p window-minibuffer-p))
-  (setq dimmer-exclusion-regexp-list
-        '("^\\*[h|H]elm.*\\*" "^\\*Minibuf-[0-9]+\\*"
-          "^.\\*which-key\\*$" "^*Messages*" "*LV*"
-          "transient"))
-  ;; No aplicar en which-key
-  (dimmer-configure-which-key)
-  ;; No aplicar en helm
-  (dimmer-configure-helm)
-  ;; No aplicar en company
-  (dimmer-configure-company-box)
-  ;; No aplicar en posframes
-  (dimmer-configure-posframe)
-  ;; No aplicar a archivo de org
-  (dimmer-configure-org)
-  (dimmer-watch-frame-focus-events 'nil)
-  ;; Activar en modo global
-  (dimmer-mode t))
+;; (use-package dimmer
+;;   :config
+;;   ;; Solo difuminar el color de las letras
+;;   (setq dimmer-adjustment-mode :foreground)
+;;   (setq dimmer-exclusion-predicates '(helm--alive-p window-minibuffer-p))
+;;   (setq dimmer-exclusion-regexp-list
+;;         '("^\\*[h|H]elm.*\\*" "^\\*Minibuf-[0-9]+\\*"
+;;           "^.\\*which-key\\*$" "^*Messages*" "*LV*"
+;;           "transient"))
+;;   ;; No aplicar en which-key
+;;   (dimmer-configure-which-key)
+;;   ;; No aplicar en helm
+;;   (dimmer-configure-helm)
+;;   ;; No aplicar en company
+;;   (dimmer-configure-company-box)
+;;   ;; No aplicar en posframes
+;;   (dimmer-configure-posframe)
+;;   ;; No aplicar a archivo de org
+;;   (dimmer-configure-org)
+;;   ;; (dimmer-watch-frame-focus-events 'nil)
+;;   ;; Activar en modo global
+;;   (dimmer-mode t))
 
 ;; Ver pdf y recordar su última posición
 (use-package pdf-view-restore
@@ -1300,8 +1302,18 @@
   (setq pdf-view-restore-filename "~/.emacs.d/.pdf-view-restore")
   (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode))
 
+;; Insertar links de manera inteligente
 (use-package org-cliplink
   :bind ("C-x p i" . org-cliplink))
+
+;; Mejor menu popup
+(use-package ace-pop-menu
+  :config (ace-popup-menu-mode 1))
+
+;; Ace-window, moverse entre ventanas más fácilmente
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(setq aw-scope 'frame)
+(global-set-key (kbd "C-a") 'ace-window)
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
