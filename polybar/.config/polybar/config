@@ -26,7 +26,8 @@
 ;alert = #bd2c40
 
 ; Usando pywal
-background = ${xrdb:color0:#222}
+; background = ${xrdb:color0:#222}
+background = #C7000000
 background-alt = ${xrdb:color2:#000}
 foreground = ${xrdb:color7:#FFF}
 foreground-alt = ${xrdb:color1:#555}
@@ -69,6 +70,7 @@ modules-right = filesystem xkeyboard xbacklight pulseaudio memory cpu wlan eth b
 
 tray-position = right
 tray-padding = 0
+; tray-background = ${colors.background}
 tray-background = ${colors.background}
 
 wm-restack = bspwm
@@ -117,7 +119,6 @@ label-mounted-underline = #002e2e
 label-mounted-margin = 0
 format-mounted-padding = 1
 format-mounted-background = ${colors.background}
-
 
 [module/bspwm]
 type = internal/bspwm
