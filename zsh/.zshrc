@@ -136,7 +136,8 @@ alias zshconfig="nvim ~/.zshrc"
 # Configurar AwesomeWM
 alias wmrc="nvim ~/.config/awesome/rc.lua"
 # Configuar tema de AwesomeWM
-alias themewm="nvim ~/.config/awesome/space-theme.lua"
+# alias themewm="nvim ~/.config/awesome/space-theme.lua"
+alias themewm="nvim ~/.config/awesome/xresources-theme.lua"
 # Configuar xmonad
 alias xmwm="nvim ~/.xmonad/xmonad.hs"
 
@@ -389,3 +390,7 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 source /usr/share/nvm/init-nvm.sh
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
