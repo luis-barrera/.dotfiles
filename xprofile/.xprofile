@@ -72,7 +72,7 @@ lxsession &
 # clight-gui --tray &
 # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
 # unclutter &
-# nohup xsuspender >/dev/null & disown
+nohup xsuspender >/dev/null & disown
 
 # Programas no deamonizados
 emacs &
