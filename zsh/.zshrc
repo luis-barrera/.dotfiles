@@ -312,7 +312,9 @@ alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=v
 
 # Subir archivos locales a Google Drive
 # alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam Trim10-22I"
-alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam"
+alias drive-push="cd ~/google-drive && \
+	drive push --ignore-name-clashes --hidden \
+	org-mode org-roam Cosas_por_hacer passwords.kdbx"
 
 # Alias para pomodoro
 alias pomato="cd ~/dev/pomato && python pomato.py"
