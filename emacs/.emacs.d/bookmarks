@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Android Kotlin"
+(("Bedu"
+ (filename . "~/google-drive/org-mode/beca-bedu.org")
+ (front-context-string . "se 1]]\n\n* Cosas ")
+ (rear-context-string . "68b5e][Bedu - Fa")
+ (position . 5242))
+("DEVF"
+ (filename . "~/org-roam/20220616092103-dev_f_professional_en_data_science_ai.org")
+ (front-context-string)
+ (rear-context-string . "ncia de Datos]]\n")
+ (position . 507))
+("Android Kotlin"
  (filename . "~/org-roam/20220605155009-desarrollo_android.org")
  (front-context-string)
  (rear-context-string . "r /resources/.\n\n")
@@ -37,11 +47,6 @@
  (front-context-string)
  (rear-context-string . "           $150\n")
  (position . 9239))
-("Beca-Bedu"
- (filename . "~/google-drive/org-mode/beca-bedu.org")
- (front-context-string . " 0]]\n\n* Cosas ch")
- (rear-context-string . "4e3][Bedu - Fase")
- (position . 5152))
 ("gamedev-journal"
  (filename . "~/google-drive/org-mode/gamedev-journal.org")
  (front-context-string)
@@ -58,10 +63,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220605155009-desarrollo_android.org")
+ (filename . "~/org-roam/20220616092426-kata_introduccion_a_la_ciencia_de_datos.org")
  (front-context-string)
- (rear-context-string . "oid\n#+filetags:\n")
- (position . 290))
+ (rear-context-string . "tos\n#+filetags:\n")
+ (position . 226))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)

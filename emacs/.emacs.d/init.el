@@ -1307,8 +1307,8 @@
   :bind ("C-x p i" . org-cliplink))
 
 ;; Mejor menu popup
-(use-package ace-pop-menu
-  :config (ace-popup-menu-mode 1))
+;; (use-package ace-pop-menu
+;;   :config (ace-popup-menu-mode 1))
 
 ;; Ace-window, moverse entre ventanas más fácilmente
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
