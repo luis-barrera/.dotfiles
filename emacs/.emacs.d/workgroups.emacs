@@ -1,7 +1,7 @@
 #s(wg-session "JFBO56EDB4FFK0-1SFKEL" nil nil
               (~pickel!~
                 (5 nil 4
-                   (d "#s(wg-wconfig \"JFBO8F8KZ1G0E0-1Y92J0\" nil ((fullscreen)) 20 20 154 36 nil 16 #s(wg-win nil nil (0 0 156 35) 45302 45114 0 nil nil nil \"JFBO56EKM3EIDK-1SFM1N\"))")
+                   (d "#s(wg-wconfig \"JHT12NEF3TUAZU0-1OHEJV\" nil ((fullscreen . maximized)) 0 0 158 36 nil 16 #s(wg-win nil nil (0 0 160 35) :max 10910 0 nil nil nil \"JHSP1QEQ6JJTQG-N0LUU8\"))")
                    3
                    (c)
                    2 frame-list 1
@@ -40,32 +40,65 @@
                                                                                     20 20 154 36 nil 16 #s(wg-win nil nil
                                                                                                                   (0 0 156 35)
                                                                                                                   45302 45114 0 nil t nil "JFBO56EKM3EIDK-1SFM1N"))
+                                 nil nil nil nil)
+                 #s(wg-workgroup "JHT12NEEU9QKGVS-1OHCB9" "Org-Agenda-Ledger" t nil #s(wg-wconfig "JHT12NEF22V8G0G-1OHD82" nil
+                                                                                                  ((fullscreen))
+                                                                                                  0 0 158 36 nil 16 #s(wg-wtree nil nil
+                                                                                                                                (0 0 160 35)
+                                                                                                                                (#s(wg-wtree nil t
+                                                                                                                                             (0 0 54 35)
+                                                                                                                                             (#s(wg-win nil nil
+                                                                                                                                                        (0 0 54 17)
+                                                                                                                                                        2588 1068 0 nil nil nil "JFBO6P9F4SIU8O-1V0WPN")
+                                                                                                                                                #s(wg-win nil nil
+                                                                                                                                                          (0 17 54 35)
+                                                                                                                                                          11204 10855 0 nil t nil "JHSP1QEQ6JJTQG-N0LUU8")))
+                                                                                                                                   #s(wg-wtree nil t
+                                                                                                                                               (54 0 107 35)
+                                                                                                                                               (#s(wg-win nil nil
+                                                                                                                                                          (54 0 107 16)
+                                                                                                                                                          6558 2514 0 nil nil nil "JFBO56H1DRRS-1SOSSX")
+                                                                                                                                                  #s(wg-win nil nil
+                                                                                                                                                            (54 16 107 35)
+                                                                                                                                                            10 1 0 nil nil nil "JFBO56H1LVBDQ0-1SOSW2")))
+                                                                                                                                   #s(wg-wtree nil t
+                                                                                                                                               (107 0 160 35)
+                                                                                                                                               (#s(wg-win nil nil
+                                                                                                                                                          (107 0 160 16)
+                                                                                                                                                          1378 999 0 nil nil nil "JFBO56H17IEX1C-1SOSPU")
+                                                                                                                                                  #s(wg-win nil nil
+                                                                                                                                                            (107 16 160 35)
+                                                                                                                                                            86 68 0 nil nil nil "JFBO8F8DVV25XK-1Y8ZX0"))))))
                                  nil nil nil nil))
-              (#s(wg-buf "JFBO56H1LVBDQ0-1SOSW2" "Clases21I.org" "/home/luisbarrera/google-drive/org-mode/Clases21I.org" 10 10
+              (#s(wg-buf "JFBO56H1LVBDQ0-1SOSW2" "Clases21I.org" "/home/luisbarrera/google-drive/org-mode/Clases21I.org" 10 2550
                          ((major-mode . org-mode)
-                          (mark-ring 4252 22325 22325 22325 22325 8339 8707 5912 6104 6152 9872 8249 9371 8249 8249 9484)
+                          (mark-ring 2550 2550 1216 1216 1216 10 1206 10 1)
                           nil nil nil nil nil nil)
                          nil nil)
-                 #s(wg-buf "JFBO56H1DRRS-1SOSSX" "index.org" "/home/luisbarrera/google-drive/org-mode/index.org" 4215 4215
+                 #s(wg-buf "JFBO56H1DRRS-1SOSSX" "index.org" "/home/luisbarrera/google-drive/org-mode/index.org" 6558 27
                            ((major-mode . org-mode)
-                            (mark-ring 7952 1254 1254 724 724 6980 2906 2906 1257 1257 20 20 20 733 1061 9)
+                            (mark-ring 27 41 41 25290 20889 20810 21530 21425 21155 20691 20691 20691 20691 20691 20691 20691)
                             nil nil nil nil nil nil)
                            nil nil)
-                 #s(wg-buf "JFBO56H17IEX1C-1SOSPU" "*Org Agenda*" nil 865 349
-                           ((major-mode . org-agenda-mode)
-                            (mark-ring 349 747 818 567)
+                 #s(wg-buf "JFBO8F8DVV25XK-1Y8ZX0" "todos.org" "/home/luisbarrera/google-drive/org-mode/todos.org" 86 86
+                           ((major-mode . org-mode)
+                            (mark-ring 50635 1208 86 1296 6842 6842 14286 83 85 14352 13639 9145 9145 17909 15714 14501)
                             nil nil nil nil nil nil)
+                           nil nil)
+                 #s(wg-buf "JFBO56H17IEX1C-1SOSPU" "*Org Agenda*" nil 1378 nil
+                           ((major-mode . org-agenda-mode)
+                            nil nil nil nil nil nil nil)
                            (wg-deserialize-org-agenda-mode-buffer
                             ("~/" "*Org Agenda*"))
                            nil)
-                 #s(wg-buf "JFBO6P9F4SIU8O-1V0WPN" "Tareas21I.org" "/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 1979 3244
+                 #s(wg-buf "JFBO6P9F4SIU8O-1V0WPN" "Tareas21I.org" "/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 2588 1934
                            ((major-mode . org-mode)
-                            (mark-ring 704 886 1584 780 1257 883 883 1115 1115 1115 1115 758 528 1505 1115 1115)
+                            (mark-ring 1074 1107 1979 1979 2261 1979 1979 6601 6601 6601 1979 1085 816 7266 966 1067)
                             nil nil nil nil nil nil)
                            nil nil)
-                 #s(wg-buf "JFBO8F8DVV25XK-1Y8ZX0" "todos.org" "/home/luisbarrera/google-drive/org-mode/todos.org" 120 121
-                           ((major-mode . org-mode)
-                            (mark-ring 30298 12210 7815 7815 25789 10108 42 85 4567 19889 624 5874 34508 4025 4186 4187)
+                 #s(wg-buf "JHSP1QEQ6JJTQG-N0LUU8" "finances.ledger" "/home/luisbarrera/google-drive/org-mode/finances.ledger" 11204 11078
+                           ((major-mode . ledger-mode)
+                            (mark-ring 11077 11381 11734 10203 11520 10853 6642)
                             nil nil nil nil nil nil)
                            nil nil)
                  #s(wg-buf "JFBO56EKM3EIDK-1SFM1N" "init.el" "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el" 45302 45305

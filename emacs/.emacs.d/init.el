@@ -111,6 +111,8 @@
  '(minimap-mode t)
  '(minimap-window-location 'right)
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
+ '(org-pomodoro-long-break-frequency 5)
+ '(org-pomodoro-long-break-length 20)
  '(org-pomodoro-long-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
@@ -546,8 +548,8 @@
       )
 
 ;; Poner los archvos de autosave (los que empiezan y terminan en #) en otro lugar
-(setq backup-directory-alist
-      `(("." . ,(concat user-emacs-directory "backup"))))
+;; (setq backup-directory-alist
+;;       `(("." . ,(concat user-emacs-directory "backup"))))
 
 ;; Transparencia en el fondo
 ;; TODO: no me gusta que también se ponga transparante el fondo, así que por el momento lo desactivo

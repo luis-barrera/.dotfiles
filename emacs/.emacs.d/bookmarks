@@ -24,9 +24,9 @@
  (position . 337))
 ("Angular"
  (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
- (front-context-string)
- (rear-context-string . "un commit a git\n")
- (position . 39958))
+ (front-context-string . "\n* continuar\nPar")
+ (rear-context-string . "/div>\n#+end_src\n")
+ (position . 69659))
 ("Docker"
  (filename . "~/google-drive/org-roam/20220301100057-docker.org")
  (front-context-string . "Compartir docker")
@@ -53,20 +53,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Entregar")
- (rear-context-string . "nsive en móvil.\n")
- (position . 76275))
+ (filename . "~/google-drive/org-mode/Tareas21I.org")
+ (front-context-string . "** DONE Lenguaje")
+ (rear-context-string . " hay contenido.\n")
+ (position . 14170))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220616092426-kata_introduccion_a_la_ciencia_de_datos.org")
+ (filename . "~/org-roam/20220621102956-resolution_logic.org")
  (front-context-string)
- (rear-context-string . "tos\n#+filetags:\n")
- (position . 226))
+ (rear-context-string . "ic)\n#+filetags:\n")
+ (position . 269))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)
