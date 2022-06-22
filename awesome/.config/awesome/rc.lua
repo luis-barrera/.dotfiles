@@ -139,7 +139,7 @@ beautiful.notification_icon_size = dpi(90)
 
 -- Tags (workspaces) names
 awful.util.ws_keys = {'a', 's', 'd', 'f', 'q', 'w', 'e', '1', '2', '3', '4', '5'}
-awful.util.tagnames = {"a  ", "s  ", "d  ", "f  ", "q   ", "w  ", "e  ", "1  ", "2  ", "3  ", "4  ", "5  "}
+awful.util.tagnames = {"a  ", "s  ", "d  ", "f  ", "q  ", "w  ", "e  ", "1  ", "2  ", "3  ", "4  ", "5  "}
 -- awful.util.tagnames = {"a", "s", "d", "f", "q", "w", "e", "1", "2", "3", "4", "5"}
 -- awful.util.tagnames = {"a:  ", "s:  ", "d:  ", "music", "emacs", "agenda", "htop", "1", "2", "3", "4", "5"}
 awful.util.tagnames_sec = {"a2", "s2", "d2", "f2"} -- Workspaces for extra monitors
@@ -602,7 +602,7 @@ awful.rules.rules = {
 	{ rule = { class = "firefox" },
 		properties = {
 			screen = 1,
-			tag = awful.util.tagnames[2],
+			tag = awful.util.tagnames[7],
 			maximized = true,
 			titlebars_enabled = false } },
 
@@ -620,7 +620,7 @@ awful.rules.rules = {
 
 	-- Configuración para clientes de terminal con ciertos programas.
 	{ rule = { class = "kitty", name = "btop"},
-		properties = { screen = 1, tag = awful.util.tagnames[7], titlebars_enabled = false } },
+		properties = { screen = 1, tag = awful.util.tagnames[12], titlebars_enabled = false } },
 
 	-- Configuración para clientes de terminal con ciertos programas.
 	{ rule = { class = "kitty", name = "wisdom-tree"},
