@@ -53,20 +53,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/Tareas21I.org")
- (front-context-string . "** DONE Lenguaje")
- (rear-context-string . " hay contenido.\n")
- (position . 14170))
+ (filename . "~/google-drive/org-mode/todos.org")
+ (front-context-string . "** DONE App: Tim")
+ (rear-context-string . "21 de Mayo 2021\n")
+ (position . 101934))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220621102956-resolution_logic.org")
+ (filename . "~/org-roam/20220626101630-google_cloud_learning.org")
  (front-context-string)
- (rear-context-string . "ic)\n#+filetags:\n")
- (position . 269))
+ (rear-context-string . "ing\n#+filetags:\n")
+ (position . 207))
 ("The Butcher"
  (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
  (front-context-string)
