@@ -127,7 +127,8 @@ local cycle_prev   = false -- Cycle trough all previous client or just the first
 
 -- Crea el tema con pywal y luego obtiene carga los colores para usarlos en Awesome
 -- Neceario instalar "pip install pywal haishoku" y "pacman -Syu feh"
-os.execute("wal --backend colorthief -i /home/luisbarrera/wallpapers")
+-- os.execute("wal --backend colorthief -i /home/luisbarrera/wallpapers")
+os.execute("wal -i /home/luisbarrera/wallpapers")
 awful.spawn.with_shell("cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources")
 -- awful.spawn.with_shell("wal --backend colorthief -i /home/luisbarrera/wallpapers & && cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
 -- awful.spawn.with_shell("xrdb -merge /home/luisbarrera/.Xresources | sleep 100")
@@ -416,16 +417,22 @@ clientkeys = my_table.join(
 		c:kill()
 		end, {description = "Cerrar cliente", group = "client"}),
 	awful.key({ altkey }, "space", function(c)
+		c.maximized = false
 		c.floating = not c.floating
 		if c.floating == true then
-			c.width=800
-			c.height=400
+			c.width=970
+			c.height=720
 			awful.placement.centered(client.focus)
 		end
 		end, {description = "Floating", group = "client"}),
-	awful.key({ modkey, "Control" }, "Return", function(c)
-		c:swap(awful.client.getmaster())
-		end, {description = "Mover a master", group = "client"}),
+	-- awful.key({ altkey }, "m", function(c)
+	-- 	c.floating = false
+	-- 	c.maximized = not c.maximized
+	-- 	-- c:emit_signal ("focus")
+	-- 	end, {description = "Maximizar", group = "client"}),
+	-- awful.key({ modkey, "Control" }, "Return", function(c)
+	-- 	c:swap(awful.client.getmaster())
+	-- 	end, {description = "Mover a master", group = "client"}),
 	awful.key({ modkey, altkey }, "o", function(c)
 		c:move_to_screen()
 		end, {description = "Mover a pantalla", group = "client"}),
@@ -438,10 +445,6 @@ clientkeys = my_table.join(
 		end
 		c:emit_signal ("focus")
 		end, {description = "Al frente en todos los tags", group = "client"}),
-	-- awful.key({ modkey }, "m", function(c)
-	-- 	c.maximized = not c.maximized
-	-- 	c:emit_signal ("focus")
-	-- 	end, {description = "Maximizar", group = "client"}),
 	awful.key({ modkey, "Shift" }, "m", function(c)
 		c.fullscreen = not c.fullscreen
 		c:emit_signal ("focus")
@@ -767,8 +770,14 @@ end)
 -- Autostart
 awful.spawn.with_shell("/home/luisbarrera/.config/polybar/launch.sh")
 
--- Partes archivadas
+client.connect_signal("manage", function (c)
+    c.shape = function(cr,w,h)
+        gears.shape.rounded_rect(cr,w,h,6)
+    end
+end)
 
+
+-- Partes archivadas
 -- Autostart
 ------------
 -- This function is executed once, the first time you enter the WM. It's useful for demons and application
