@@ -37,9 +37,9 @@ alert = ${xrdb:color3:#bd2c40}
 
 [bar/topbar]
 ; monitor = ${env:MONITOR:HDMI-1}
-width = 80%
+width = 100%
 height = 27
-offset-x = 20%
+offset-x = 0%
 offset-y = 0%
 radius = 0.0
 fixed-center = true
@@ -48,7 +48,7 @@ fixed-center = true
 background = #00000000
 foreground = ${colors.foreground}
 
-line-size = 3
+line-size = 2
 line-color = #f00
 
 border-size = 0
