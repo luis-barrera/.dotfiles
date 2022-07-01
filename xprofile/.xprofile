@@ -2,7 +2,7 @@
 xset r rate 200 60 &
 
 # set slock as screen-locker
-xautolock -time 100 -locker slock &
+# xautolock -time 100 -locker slock &
 
 # set touchpad configs
 touchpad=$(xinput list --id-only 'SynPS/2 Synaptics TouchPad')
@@ -83,6 +83,10 @@ kitty --detach btop &
 
 # Monitor de cambios en el File System
 #setsid fswatch -x -L /home/luisbarrera/google-drive/* | xargs -I{} ~/scripts/drive-push.sh {} >/dev/null 2>&1 < /dev/null &
+
+# Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:
+xset s 180 120
+nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- i3lock -i ~/wallpapers/16.png -n >/dev/null & disown
 
 # Daemons de Emacs
 #/bin/emacs --daemon &
