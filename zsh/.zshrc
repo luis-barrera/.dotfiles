@@ -342,6 +342,9 @@ alias sudo='sudo -v; sudo '
 # Mensaje personalizado de sudo, el principio del prompt es el char para un sonido
 # export SUDO_PROMPT="Necesitas la contraseña para hacer eso, pendejo: "
 
+# Alias para neovide
+alias nv='neovide'
+
 # Secrets para spotify-dl
 # source ~/.spotify-secrets
 
