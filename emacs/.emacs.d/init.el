@@ -480,7 +480,6 @@
                             ":PROPERTIES:
 :AUTHOR: %^{Author|Luis Barrera}
 :ROAM_REFS: %^{Link o Ref|No Ref}
-:ROAM_ALIAS: %^{Alias|No Alias}
 :TYPE: %^{Type|Articulo de Internet|Noticia|Libro|Video|Nota Personal|Notas de Clase|Paper Científico}
 :DATE: %T
 :CREATOR: luis-barrera

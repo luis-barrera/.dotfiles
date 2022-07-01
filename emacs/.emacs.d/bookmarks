@@ -2,27 +2,32 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Bedu"
+(("Google-Cloud"
+ (filename . "~/org-roam/20220626101630-google_cloud_learning.org")
+ (front-context-string)
+ (rear-context-string . "nd-group-xxxx).\n")
+ (position . 38893))
+("Bedu-Web"
  (filename . "~/google-drive/org-mode/beca-bedu.org")
  (front-context-string . "se 1]]\n\n* Cosas ")
  (rear-context-string . "68b5e][Bedu - Fa")
  (position . 5242))
-("DEVF"
+("Dev.f-Data"
  (filename . "~/org-roam/20220616092103-dev_f_professional_en_data_science_ai.org")
  (front-context-string)
  (rear-context-string . "ncia de Datos]]\n")
  (position . 507))
-("Android Kotlin"
+("Udemy-Kotlin"
  (filename . "~/org-roam/20220605155009-desarrollo_android.org")
  (front-context-string)
  (rear-context-string . "r /resources/.\n\n")
  (position . 2350))
-("DataScience Google"
+("Google-Data"
  (filename . "~/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org")
  (front-context-string)
  (rear-context-string . " todas partes]]\n")
  (position . 337))
-("Angular"
+("YT-Angular"
  (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
  (front-context-string . "\n* continuar\nPar")
  (rear-context-string . "/div>\n#+end_src\n")
@@ -32,11 +37,6 @@
  (front-context-string . "Compartir docker")
  (rear-context-string . "oyectos.\n* TODO ")
  (position . 48285))
-("ABAP"
- (filename . "~/google-drive/org-roam/20220217201221-abap_programming.org")
- (front-context-string . "\nEstá pensado pa")
- (rear-context-string . "orporativo SAP.\n")
- (position . 470))
 ("Mazos Anki"
  (filename . "~/google-drive/org-roam/anki.org")
  (front-context-string)
@@ -47,7 +47,7 @@
  (front-context-string)
  (rear-context-string . "           $150\n")
  (position . 9239))
-("gamedev-journal"
+("02GameDev"
  (filename . "~/google-drive/org-mode/gamedev-journal.org")
  (front-context-string)
  (rear-context-string . "ue desanimarse.\n")
@@ -67,11 +67,6 @@
  (front-context-string)
  (rear-context-string . "ing\n#+filetags:\n")
  (position . 207))
-("The Butcher"
- (filename . "~/google-drive/org-roam/20220225000429-the_butcher_of_havana.org")
- (front-context-string)
- (rear-context-string . "\"eficientes\".\n\n\n")
- (position . 2930))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
@@ -87,7 +82,7 @@
  (front-context-string . "t\n* org de luisb")
  (rear-context-string . "+STARTUP: conten")
  (position . 18))
-("Linux Journal"
+("01Linux"
  (filename . "~/google-drive/org-mode/Linux-Journal.org")
  (front-context-string . "TODO Journal\n\n- ")
  (rear-context-string . "lo resolví.\n\n** ")
@@ -112,7 +107,7 @@
  (front-context-string . ":ID:       0bab2")
  (rear-context-string . "R: luis-barrera\n")
  (position . 131))
-("Django"
+("YT-Django"
  (filename . "~/google-drive/org-roam/20220215095726-curso_django_y_python.org")
  (front-context-string)
  (rear-context-string . "dy>\n#+end_src\n\n*")
