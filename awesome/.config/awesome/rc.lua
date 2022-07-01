@@ -352,9 +352,12 @@ globalkeys = my_table.join(
 		end)
 		end, {description = "Mute micrófono", group = "media"}),
 
-	-- Ajustes de Awesome
-	awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
-	awful.key({ modkey, "Control", "Shift" }, "Delete", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
+  -- Ajustes de Awesome
+  awful.key({ modkey, "Control" }, "r", awesome.restart, {description = "Recargar Awesome", group = "awesome"}),
+  awful.key({ modkey, "Control", "Shift" }, "Delete", awesome.quit, {description = "Cerrar Sesion", group = "awesome"}),
+  awful.key({ modkey }, "Delete", function()
+    awful.spawn("loginctl lock-session") end,
+    {description = "Cerrar Sesion", group = "awesome"}),
 
 	-- Abrir Firefox
 	awful.key({ modkey, "Shift" }, "b", function()
