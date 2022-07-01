@@ -128,7 +128,6 @@ set foldmethod=indent
 " ========================
 " Snippets personales
 source $HOME/.config/nvim/snippets/snippet-config.vim
-
 " Cargar Plugins
 source $HOME/.config/nvim/vim-plug/plugins.vim
 
@@ -169,6 +168,8 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 " = Configuración plugins =
 " =========================
 " LSP nativo, a partir de NeoVim 5.0
+" nvim-lspconfig, nvim-cmp
+luafile $HOME/.config/nvim/plug-config/nvim-lspconfig.lua
 " source $HOME/.config/nvim/plug-config/nvim-lsp.vim
 " Instalar automáticamente server de LSP
 " source $HOME/.config/nvim/plug-config/nvim-lspinstall.vim
@@ -178,8 +179,7 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 " source $HOME/.config/nvim/plug-config/completion-nvim.vim
 
 " Autocompletado con nvim-cmp
-luafile $HOME/.config/nvim/plug-config/nvim-cmp.lua
-
+" luafile $HOME/.config/nvim/plug-config/nvim-cmp.lua
 
 " Ayuda a identificar cuando usamos f, F, t & T
 source $HOME/.config/nvim/plug-config/quickscope.vim
@@ -208,6 +208,12 @@ source $HOME/.config/nvim/plug-config/undotree.vim
 " Goyo, modo sin distracciones
 source $HOME/.config/nvim/plug-config/goyo.vim
 
+" File explorer
+lua << EOF
+-- empty setup using defaults
+require("nvim-tree").setup()
+vim.api.nvim_set_keymap('n', '<F8>', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+EOF
 " NERD-Tree
 " source $HOME/.config/nvim/plug-config/NERDTree.vim
 
@@ -287,15 +293,16 @@ let g:livedown_browser = "surf" " Navegador a usar
 source $HOME/.config/nvim/functions/stab.vim
 source $HOME/.config/nvim/functions/toggleindent.vim
 " Convierte los tabs en espacios
-set noexpandtab
+" set noexpandtab
+set expandtab
 set copyindent
 set preserveindent
 " Convierte la tecla tab en 8 espacios
-set tabstop=4
+set tabstop=2
 " Detecta mejor si varios espacios son un TAB al momento de borrar
 " set softtabstop=0
 " Se usan 2 espacios en lugar de tabuladores para indentar
-set shiftwidth=4
+set shiftwidth=2
 " Al insertar un TAB después de texto, inserta los 2 espacios
 " set smarttab
 set listchars+=tab:│•
@@ -341,3 +348,39 @@ set nowritebackup
 "   linea comentada, es un comportamiento que, en lo personal, me disgusta
 set formatoptions-=o
 autocmd FileType * set formatoptions-=o
+
+" let s:guifontsize = 10
+" let s:guifont = "JetBrainsMono\\ Nerd\\ Font"
+
+" Neovide
+lua << EOF
+vim.g.neovide_transparency=0.8
+vim.g.gui_font_default_size = 10
+vim.g.gui_font_size = vim.g.gui_font_default_size
+vim.g.gui_font_face = "JetBrainsMono Nerd Font Mono"
+
+RefreshGuiFont = function()
+  vim.opt.guifont = string.format("%s:h%s",vim.g.gui_font_face, vim.g.gui_font_size)
+end
+
+ResizeGuiFont = function(delta)
+  vim.g.gui_font_size = vim.g.gui_font_size + delta
+  RefreshGuiFont()
+end
+
+ResetGuiFont = function ()
+  vim.g.gui_font_size = vim.g.gui_font_default_size
+  RefreshGuiFont()
+end
+
+-- Call function on startup to set default value
+ResetGuiFont()
+
+-- Keymaps
+
+local opts = { noremap = true, silent = true }
+
+vim.keymap.set({'n', 'i'}, "<C-+>", function() ResizeGuiFont(1)  end, opts)
+vim.keymap.set({'n', 'i'}, "<C-->", function() ResizeGuiFont(-1) end, opts)
+vim.keymap.set({'n', 'i'}, "<C-BS>", function() ResetGuiFont() end, opts)
+EOF

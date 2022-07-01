@@ -7,17 +7,27 @@
 
 " auto-install vim-plug
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
 " VimWiki
-  Plug 'vimwiki/vimwiki'
+    Plug 'vimwiki/vimwiki'
 
 " LSP Nativo de NVim
+	Plug 'williamboman/nvim-lsp-installer'
 	Plug 'neovim/nvim-lspconfig'
+	" Autocompletion plugin
+	Plug 'hrsh7th/nvim-cmp'
+	" LSP source for nvim-cmp
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	" Snippets source for nvim-cmp
+	Plug 'saadparwaiz1/cmp_luasnip'
+	" Snippets plugin
+	Plug 'L3MON4D3/LuaSnip'
+
 " Instalar automáticamente los server de lenguajes para lsp
 	" Plug 'kabouzeid/nvim-lspinstall'
 " Para mejorar los colorschemes usando LSP
@@ -122,6 +132,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 " Haskell
 	Plug 'neovimhaskell/haskell-vim'
+
+    " File explorer
+    " optional, for file icons
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
 
 "" TODO
 

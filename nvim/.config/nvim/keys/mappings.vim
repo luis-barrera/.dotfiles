@@ -48,3 +48,6 @@ nnoremap <F9> :set hlsearch!<CR>
 " Borrar hacia atras
 " imap <C-H> <C-W>
 " noremap! <C-H> <C-W>
+
+map <silent> cf :tabe <cfile><cr>
+map <silent> gf :tabe <cfile><cr>

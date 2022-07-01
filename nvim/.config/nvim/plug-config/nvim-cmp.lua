@@ -85,7 +85,7 @@ require('lspconfig').html.setup{capabilities = capabilities} -- HTML
 require('lspconfig').jsonls.setup{capabilities = capabilities} -- JSON
 require('lspconfig').texlab.setup{capabilities = capabilities} -- LaTeX
 require('lspconfig').intelephense.setup{capabilities = capabilities} -- PHP
-require('lspconfig').jedi_language_server.setup{capabilities = capabilities} -- Python
+-- require('lspconfig').jedi_language_server.setup{capabilities = capabilities} -- Python
 -- require('lspconfig').pyls.setup{} -- Python
 -- require'lspconfig'.solargraph.setup{on_attach=require'completion'.on_attach} -- Ruby
 -- require('lspconfig').rls.setup{} -- Rust
