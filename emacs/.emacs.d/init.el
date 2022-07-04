@@ -110,6 +110,7 @@
  '(lsp-pyright-venv-path "")
  '(minimap-mode t)
  '(minimap-window-location 'right)
+ '(org-image-actual-width 400)
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-long-break-frequency 5)
  '(org-pomodoro-long-break-length 20)
