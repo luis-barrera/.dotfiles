@@ -54,9 +54,9 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE App: Tim")
- (rear-context-string . "21 de Mayo 2021\n")
- (position . 101934))
+ (front-context-string . "** DONE Tintar r")
+ (rear-context-string . "ir los archivos\n")
+ (position . 109490))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")

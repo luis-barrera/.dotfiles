@@ -54,6 +54,18 @@
   '((mark-ring (19006 19174 19037 19037 19037 89622 19039 59024 88198 21206 86 48901 4577 4577 4577 4577))))
 
 (desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/draft.org"
+  "draft.org"
+  'org-mode
+  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  45
+  '(45 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25287 546 602014 251000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (45 45 45))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
@@ -76,6 +88,18 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25287 2726 499977 518000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (5836 5962 5448 5448 2550 2550 1216 1216 1216 10 1206 10 1))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode company-mode company-posframe-mode smartparens-mode drag-stuff-mode aggressive-indent-mode diff-hl-mode indent-guide-mode auto-revert-mode page-break-lines-mode company-box-mode hl-todo-mode rainbow-delimiters-mode)
+  16078
+  '(16078 nil)
+  nil
+  nil
+  '((buffer-display-time 25287 544 825514 545000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (16236 5471 344 51870 47891 47854 47818 47778 47535 47498 47468 47427 47406 45098 23399 23252))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/finances.ledger"
