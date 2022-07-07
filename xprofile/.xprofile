@@ -86,10 +86,16 @@ kitty --detach btop &
 
 # Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:
 xset s 180 120
-nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- i3lock -i ~/wallpapers/16.png -n >/dev/null & disown
+# nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- i3lock -i /home/luisbarrera/wallpapers/16.png -n >/dev/null & disown
+nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- betterlockscreen -l dim -n >/dev/null & disown
+xsetroot -cursor_name left_ptr
+
+# Notificaciones
+nohup /usr/bin/dunst >/dev/null & disown
 
 # Daemons de Emacs
 #/bin/emacs --daemon &
+
 
 # Java y WM
 export AWT_TOOLKIT=MToolkit
