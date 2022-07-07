@@ -403,7 +403,10 @@
   ;; Mantener el log dentro de un drawer, de manerar que se hace un fold
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
-  (setq org-agenda-files '("~/org-mode/Tareas21I.org" "~/org-mode/Clases21I.org" "~/org-mode/todos.org"))
+  (setq org-agenda-files '("~/org-mode/Tareas21I.org"
+                           "~/org-mode/Clases21I.org"
+                           "~/org-mode/todos.org"
+                           "~/org-mode/draft.org"))
   ;; (setq org-agenda-files '("~/org-mode/tasks.org" "~/org-mode/clases21O.org"))
   ;; Mostrar 10 días en la vista de semana de org-agenda.
   (setq org-agenda-span 10)
@@ -500,12 +503,12 @@
 
 ;; Encontrar palabras dentro de los archivos
 (use-package deft
-    :config
-    (setq deft-directory org-roam-directory
-          deft-recursive t
-          deft-use-filename-as-title t)
-    :bind
-    ("C-c n d" . deft))
+  :config
+  (setq deft-directory org-roam-directory
+        deft-recursive t
+        deft-use-filename-as-title t)
+  :bind
+  ("C-c n d" . deft))
 
 ;; Evil para org, hay algunas teclas que no funcionan correctamente en org mode debido a evil
 (use-package evil-org
@@ -525,7 +528,7 @@
 ;; Poner bordes a los lados del editor, solo en org-mode
 (defun efs/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
-  visual-fill-column-center-text t)
+        visual-fill-column-center-text t)
   (visual-fill-column-mode 1))
 
 
@@ -533,8 +536,8 @@
 ;; TODO: partes desordenadas, funcionan pero ponerlas en su lugar correspondiente
 ;; Quitar los keybindings de RET y SPC
 (defun my-move-key (keymap-from keymap-to key)
-     (define-key keymap-to key (lookup-key keymap-from key))
-     (define-key keymap-from key nil))
+  (define-key keymap-to key (lookup-key keymap-from key))
+  (define-key keymap-from key nil))
 (my-move-key evil-motion-state-map evil-normal-state-map (kbd "RET"))
 (my-move-key evil-motion-state-map evil-normal-state-map " ")
 
@@ -564,7 +567,7 @@
                     ((numberp (cadr alpha)) (cadr alpha)))
               100)
          '(90 . 50) '(100 . 100)))))
- ;; (global-set-key (kbd "C-c t") 'toggle-transparency)
+;; (global-set-key (kbd "C-c t") 'toggle-transparency)
 
 ;; Guardar los buffers abiertos antes de cerrar el editor
 (desktop-save-mode 1)
@@ -592,6 +595,10 @@
 (run-at-time "12:05am" (* 24 3600) 'my-org-agenda-to-appt)
 (run-at-time "07:35am" (* 24 3600) 'my-org-agenda-to-appt)
 ;; (3) ... When TODO.txt is saved
+(add-hook 'after-save-hook
+          '(lambda ()
+             (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/todos.org"))
+                 (my-org-agenda-to-appt))))
 (add-hook 'after-save-hook
           '(lambda ()
              (if (string= (buffer-file-name) (concat (getenv "HOME") "/org-mode/Tareas21I.org"))
