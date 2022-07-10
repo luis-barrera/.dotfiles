@@ -54,19 +54,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Tintar r")
- (rear-context-string . "ir los archivos\n")
- (position . 109490))
+ (front-context-string . "** DONE Reinscri")
+ (rear-context-string . " =>  0:25\n:END:\n")
+ (position . 112160))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220626101630-google_cloud_learning.org")
+ (filename . "~/org-roam/20220707094927-google_cloud_computing_foundations_infrastructure_in_google_cloud.org")
  (front-context-string)
- (rear-context-string . "ing\n#+filetags:\n")
- (position . 207))
+ (rear-context-string . "oud\n#+filetags:\n")
+ (position . 322))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
