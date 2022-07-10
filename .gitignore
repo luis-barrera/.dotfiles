@@ -35,3 +35,6 @@
 /emacs/.emacs.d/.init.el.~undo-tree~
 /emacs/.emacs.d/emacs-undo-tree.d
 *~*~
+
+# Autogenerado
+/dunst/.config/dunst/dunstrc_xr_colors
