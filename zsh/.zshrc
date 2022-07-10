@@ -345,6 +345,12 @@ alias sudo='sudo -v; sudo '
 # Alias para neovide
 alias nv='neovide'
 
+# Alias para aplicar tema
+alias theme='sh ~/scripts/xmonad_pywal_choose_wallpaper.sh'
+
+# Fin alias
+###############################################################################
+
 # Secrets para spotify-dl
 # source ~/.spotify-secrets
 
