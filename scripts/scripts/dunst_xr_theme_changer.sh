@@ -111,11 +111,11 @@ declare -A theme_attr_dict=(
     ["global-frame_color"]="\"$(xrdb_get 'color8' '#65737e')\""
 
     ["urgency_low-background"]="\"$(xrdb_get 'color0' '#2b303b')\""
-    ["urgency_low-foreground"]="\"$(xrdb_get 'color4' '#65737e')\""
+    ["urgency_low-foreground"]="\"$(xrdb_get 'color8' '#65737e')\""
     ["urgency_low-frame_color"]="\"$(xrdb_get 'color4' '#65737e')\""
 
     ["urgency_normal-background"]="\"$(xrdb_get 'color0' '#2b303b')\""
-    ["urgency_normal-foreground"]="\"$(xrdb_get 'color2' '#a3be8c')\""
+    ["urgency_normal-foreground"]="\"$(xrdb_get 'color8' '#a3be8c')\""
     ["urgency_normal-frame_color"]="\"$(xrdb_get 'color2' '#a3be8c')\""
 
     ["urgency_critical-background"]="\"$(xrdb_get 'color0' '#2b303b')\""
