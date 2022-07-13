@@ -54,9 +54,9 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Reinscri")
- (rear-context-string . " =>  0:25\n:END:\n")
- (position . 112160))
+ (front-context-string . "** Xmonad config")
+ (rear-context-string . "2022-07-12 Tue>\n")
+ (position . 115012))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")

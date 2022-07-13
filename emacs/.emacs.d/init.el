@@ -498,7 +498,8 @@
   :after org
   :bind
   (:map org-mode-map
-        (("s-Y" . org-download-screenshot)
+        (("C-x p i" . org-download-yank)
+         ("s-Y" . org-download-screenshot)
          ("s-y" . org-download-yank))))
 
 ;; Encontrar palabras dentro de los archivos
@@ -1313,7 +1314,7 @@
 
 ;; Insertar links de manera inteligente
 (use-package org-cliplink
-  :bind ("C-x p i" . org-cliplink))
+  :bind ("C-x p l" . org-cliplink))
 
 ;; Mejor menu popup
 ;; (use-package ace-pop-menu
