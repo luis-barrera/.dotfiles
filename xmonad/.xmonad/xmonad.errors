@@ -1,11 +1,8 @@
 $ ghc --make xmonad.hs -i -ilib -fforce-recomp -main-is main -dynamic -v0 -outputdir /home/luisbarrera/.xmonad/build-x86_64-linux -o /home/luisbarrera/.xmonad/xmonad-x86_64-linux
 
-xmonad.hs:401:17: error:
-    Ambiguous occurrence ‘~?’
-    It could refer to
-       either ‘XMonad.Hooks.ManageHelpers.~?’,
-              imported from ‘XMonad.Hooks.ManageHelpers’ at xmonad.hs:30:1-33
-           or ‘Main.~?’, defined at xmonad.hs:73:3
+xmonad.hs:422:1: warning: [-Wtabs]
+    Tab character found here, and in 10 further locations.
+    Please use spaces instead.
     |
-401 |     , className (~?) "join"           --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
-    |                 ^^^^
+422 |         withWindowSet $ \s -> do
+    | ^^^^^^^^

@@ -52,6 +52,9 @@ import XMonad.Actions.Minimize
 import XMonad.Actions.SpawnOn
 import XMonad.Actions.GroupNavigation
 import XMonad.Actions.CycleWS
+import qualified XMonad.Actions.FlexibleManipulate as Flex
+import XMonad.Actions.FloatSnap
+import XMonad.Actions.Promote
 
 -- Extra utilities
 import XMonad.Util.EZConfig (additionalKeys)
@@ -390,7 +393,6 @@ myXPConfig = def
 --
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
--- BUG
 myManageHook :: ManageHook
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
@@ -398,6 +400,11 @@ myManageHook = composeAll
     , title     =? "btop"           --> doF (W.shift "5")
     , className =? "firefox"        --> doF (W.shift "e")
     , className =? "firefox"        --> hasBorder False
+    , className =? "Emacs"          --> hasBorder False
+    , className =? "Emacs"          --> doF (W.shift "q")
+    , className =? "Spotify"        --> doF (W.shift "f")
+    , className =? "mpv"            --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
+    , className =? "KeePassXC"      --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
     -- Zoom
     , className =? "zoom "          --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
     , className ^? "join"           --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
@@ -409,14 +416,28 @@ newManageHook = myManageHook <> manageHook def
 
 
 ------------------------------------------------------------------------
+-- Bring clicked floating window to the front
+floatClickFocusHandler :: Event -> X All
+floatClickFocusHandler ButtonEvent { ev_window = w } = do
+	withWindowSet $ \s -> do
+		if isFloat w s
+		   then (focus w >> promote)
+		   else return ()
+		return (All True)
+		where isFloat w ss = M.member w $ W.floating ss
+floatClickFocusHandler _ = return (All True)
+
+
+------------------------------------------------------------------------
 -- Event handling
 -- * EwmhDesktops users should change this to ewmhDesktopsEventHook
 --
 -- Defines a custom handler function for X Events. The function should
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
-myEventHook = mempty
+-- myEventHook = mempty
 -- myEventHook = ewmhDesktopsEventHook
+myEventHook = floatClickFocusHandler
 
 
 ------------------------------------------------------------------------
