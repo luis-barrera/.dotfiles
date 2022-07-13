@@ -96,6 +96,9 @@ nohup /usr/bin/dunst -conf ~/.config/dunst/dunstrc_xr_colors >/dev/null & disown
 # Daemons de Emacs
 #/bin/emacs --daemon &
 
+# Tray icon de batería
+cbatticon & disown
+
 
 # Java y WM
 export AWT_TOOLKIT=MToolkit
