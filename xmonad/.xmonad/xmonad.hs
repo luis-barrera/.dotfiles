@@ -202,6 +202,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Move focus to the master window
     , ((modm, xK_m), windows W.focusMaster)
 
+    -- Raise to top
+    , ((modm, xK_ntilde), windows W.shiftMaster)
+
     -- Swap the focused window and the master window
     , ((modm .|. shiftMask, xK_Return), windows W.swapMaster)
 
@@ -229,7 +232,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm, xK_m), withFocused (sendMessage . maximizeRestore))
 
     -- Increment the number of windows in the master area
-    , ((modm , xK_comma), sendMessage (IncMasterN 1))
+    , ((modm, xK_comma), sendMessage (IncMasterN 1))
 
     -- Deincrement the number of windows in the master area
     , ((modm, xK_period), sendMessage (IncMasterN (-1)))
@@ -237,7 +240,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Focus to last focused window
     , ((modm, xK_Escape), nextMatch History (return True))
     -- Focus last visited window
-    , ((mod1Mask ,               xK_Escape),     toggleWS)
+    , ((mod1Mask, xK_Escape), toggleWS)
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -258,10 +261,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Mute mic
     [ ((0, xF86XK_AudioMicMute), spawn "sh scripts/mic-not.sh")
     -- Raise Volume
-    , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%; sh scripts/volume-not.sh")
+    -- , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%; sh scripts/volume-not.sh")
     , ((modm .|. controlMask, xK_plus), spawn "pactl set-sink-volume @DEFAULT_SINK@ +2%; sh scripts/volume-not.sh")
     -- Lower Volume
-    , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%; sh scripts/volume-not.sh")
+    -- , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%; sh scripts/volume-not.sh")
     , ((modm .|. controlMask, xK_minus), spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%; sh scripts/volume-not.sh")
     -- Mute Sound
     , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle; sh scripts/volume-not.sh")
@@ -277,9 +280,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_PowerDown), spawn "loginctl lock-session")
 
     -- Increase brightness
-    , ((0, xF86XK_MonBrightnessUp),      spawn "xbacklight -inc 5")
+    , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight -inc 5")
     -- Decrease brightness
-    , ((0, xF86XK_MonBrightnessDown),    spawn "xbacklight -dec 10")
+    , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -dec 10")
 
     -- Toogle polybar
     , ((modm, xK_y), spawn "sh /home/luisbarrera/.config/polybar/hide.sh")
@@ -403,12 +406,13 @@ myManageHook = composeAll
     , className =? "Emacs"          --> hasBorder False
     , className =? "Emacs"          --> doF (W.shift "q")
     , className =? "Spotify"        --> doF (W.shift "f")
-    , className =? "mpv"            --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
-    , className =? "KeePassXC"      --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
+    , className =? "mpv"            --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
+    , className =? "KeePassXC"      --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
     -- Zoom
-    , className =? "zoom "          --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
-    , className ^? "join"           --> doRectFloat (W.RationalRect (1 % 4) (1 % 4) (1 % 2) (1 % 2))
+    , className =? "zoom "          --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
+    , className ^? "join"           --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
     --- Desktops
+    , className =? "Dunst"          --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     ]
