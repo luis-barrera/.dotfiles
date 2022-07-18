@@ -62,7 +62,8 @@ setxkbmap -option 'ctrl:swapcaps'
 gnome-keyring-daemon --start &
 redshift-gtk &
 flameshot &
-parcellite -d &
+# parcellite -d &
+# parcellite &
 picom -b &
 playerctld daemon &
 syncthingtray --wait &
