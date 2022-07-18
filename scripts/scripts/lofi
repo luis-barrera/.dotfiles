@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Este script está pensado para ser usado como una aplicación
+# Primero se tiene que cambiar los permisos con chmod +x ./lofi
+# Luego se debe enviar al directorio donde se encuentran el resto de binario o
+# ejecutables en el sistema, en el caso de Arch es en /sbin/:
+# sudo cp ./lofi /sbin/lofi
+mpv --ytdl-format=94 https://youtu.be/jfKfPfyJRdk
