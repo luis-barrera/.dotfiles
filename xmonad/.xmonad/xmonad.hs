@@ -462,6 +462,9 @@ myLogHook = historyHook
 myStartupHook = do
           spawn "sh /home/luisbarrera/.config/polybar/launch.sh"
           spawn "wal -R; cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources"
+          spawn "killall -q dunst"
+          spawn "sh /home/luisbarrera/scripts/dunst_xr_theme_changer.sh"
+          spawn "/usr/bin/dunst -conf /home/luisbarrera/.config/dunst/dunstrc_xr_colors & disown"
           -- spawn "wal --backend colorthief -i /home/luisbarrera/wallpapers"
           -- spawnOnce "wal -i /home/luisbarrera/wallpapers"
 
