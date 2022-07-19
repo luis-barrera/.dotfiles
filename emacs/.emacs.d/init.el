@@ -110,6 +110,7 @@
  '(lsp-pyright-venv-path "")
  '(minimap-mode t)
  '(minimap-window-location 'right)
+ '(org-cite-export-processors '((t basic nil nil)))
  '(org-image-actual-width 400)
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-long-break-frequency 5)
@@ -118,7 +119,7 @@
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
-   '(lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(org-modern citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
@@ -432,19 +433,19 @@
                                  ("breakanywheresymbolpre" "{}")))
 
 ;; Cambiar los símbolos de los headings
-(use-package org-superstar
-  :ensure t
-  :after org
-  :hook (org-mode . org-superstar-mode)
-  :config
-  ;; Caracteres a usar para cada nivel
-  (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
-  ;; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
-  (setq org-superstar-cycle-headline-bullets 'nil)
-  ;; Ocultar un puntito que sale enfrente de los heading
-  (setq org-hide-leading-stars nil)
-  (setq org-superstar-leading-bullet ?\s)
-  (setq org-indent-mode-turns-on-hiding-stars nil))
+;; (use-package org-superstar
+;;   :ensure t
+;;   :after org
+;;   :hook (org-mode . org-superstar-mode)
+;;   :config
+;;   ;; Caracteres a usar para cada nivel
+;;   (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
+;;   ;; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
+;;   (setq org-superstar-cycle-headline-bullets 'nil)
+;;   ;; Ocultar un puntito que sale enfrente de los heading
+;;   (setq org-hide-leading-stars nil)
+;;   (setq org-superstar-leading-bullet ?\s)
+;;   (setq org-indent-mode-turns-on-hiding-stars nil))
 
 ;; Zettlekasten en org-mode
 (use-package org-roam
@@ -1372,6 +1373,55 @@
   (setq pulsar-highlight-face 'pulsar-yellow)
 
   (pulsar-global-mode 1))
+
+;; (setq org-cite-export-processors
+;;       '((latex biblatex)
+;;         (t csl)))
+(use-package citeproc)
+(require 'oc-csl)
+
+;; Choose some fonts
+;; (set-face-attribute 'default nil :family "Iosevka")
+;; (set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
+(set-face-attribute 'org-modern-symbol nil :family "Iosevka")
+
+;; Add frame borders and window dividers
+;; (modify-all-frames-parameters
+;;  '((right-divider-width . 40)
+;;    (internal-border-width . 40)))
+;; (dolist (face '(window-divider
+;;                 window-divider-first-pixel
+;;                 window-divider-last-pixel))
+;;   (face-spec-reset-face face)
+;;   (set-face-foreground face (face-attribute 'default :background)))
+;; (set-face-background 'fringe (face-attribute 'default :background))
+(modify-all-frames-parameters
+ '((internal-border-width . 10)))
+
+(setq
+ ;; Edit settings
+ org-auto-align-tags nil
+ org-tags-column 0
+ org-catch-invisible-edits 'show-and-error
+ org-special-ctrl-a/e t
+ org-insert-heading-respect-content t
+
+ ;; Org styling, hide markup etc.
+ org-hide-emphasis-markers t
+ ;; org-pretty-entities t
+ org-ellipsis "…"
+
+ ;; Agenda styling
+ org-agenda-tags-column 0
+ org-agenda-block-separator ?─
+ org-agenda-time-grid
+ '((daily today require-timed)
+   (800 1000 1200 1400 1600 1800 2000)
+   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+ org-agenda-current-time-string
+ "⭠ now ────────────────────────")
+
+(global-org-modern-mode)
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------

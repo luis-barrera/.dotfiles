@@ -63,10 +63,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220714085512-the_3_2_1_backup_rule_why_your_data_will_always_survive.org")
+ (filename . "~/org-roam/20220718185913-burocracia_y_tecnocracia.org")
  (front-context-string)
- (rear-context-string . "ive\n#+filetags:\n")
- (position . 333))
+ (rear-context-string . "cia\n#+filetags:\n")
+ (position . 230))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
