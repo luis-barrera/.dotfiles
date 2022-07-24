@@ -223,7 +223,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Push window back into tiling
     , ((modm, xK_t), withFocused $ windows . W.sink)
     -- Set window in floating and reduce size
-    , ((modm .|. shiftMask, xK_t), withFocused $ keysResizeWindow ((-400), (-200)) (1%2, 1%2))
+    , ((modm .|. shiftMask, xK_t), withFocused $ keysResizeWindow ((-400), (-200)) (6%8, 6%8))
     -- Minimie window
     , ((modm,               xK_n     ), withFocused minimizeWindow)
     -- unMinimize last minimized window
