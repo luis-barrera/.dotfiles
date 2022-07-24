@@ -433,19 +433,19 @@
                                  ("breakanywheresymbolpre" "{}")))
 
 ;; Cambiar los símbolos de los headings
-;; (use-package org-superstar
-;;   :ensure t
-;;   :after org
-;;   :hook (org-mode . org-superstar-mode)
-;;   :config
-;;   ;; Caracteres a usar para cada nivel
-;;   (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
-;;   ;; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
-;;   (setq org-superstar-cycle-headline-bullets 'nil)
-;;   ;; Ocultar un puntito que sale enfrente de los heading
-;;   (setq org-hide-leading-stars nil)
-;;   (setq org-superstar-leading-bullet ?\s)
-;;   (setq org-indent-mode-turns-on-hiding-stars nil))
+(use-package org-superstar
+  :ensure t
+  :after org
+  :hook (org-mode . org-superstar-mode)
+  :config
+  ;; Caracteres a usar para cada nivel
+  (setq org-superstar-headline-bullets-list '("𝍠" "𝍡" "𝍢" "𝍣" "𝍤" "𝍥" "𝍦" "𝍧"))
+  ;; Al llegar más allá de 8 niveles, nil=usar siempre el último caracter, t=ciclar entre los elementos
+  (setq org-superstar-cycle-headline-bullets 'nil)
+  ;; Ocultar un puntito que sale enfrente de los heading
+  (setq org-hide-leading-stars nil)
+  (setq org-superstar-leading-bullet ?\s)
+  (setq org-indent-mode-turns-on-hiding-stars nil))
 
 ;; Zettlekasten en org-mode
 (use-package org-roam
@@ -1398,30 +1398,64 @@
 (modify-all-frames-parameters
  '((internal-border-width . 10)))
 
-(setq
- ;; Edit settings
- org-auto-align-tags nil
- org-tags-column 0
- org-catch-invisible-edits 'show-and-error
- org-special-ctrl-a/e t
- org-insert-heading-respect-content t
+;; (setq
+;;  ;; Edit settings
+;;  org-auto-align-tags nil
+;;  org-tags-column 0
+;;  org-catch-invisible-edits 'show-and-error
+;;  org-special-ctrl-a/e t
+;;  org-insert-heading-respect-content t
 
- ;; Org styling, hide markup etc.
- org-hide-emphasis-markers t
- ;; org-pretty-entities t
- org-ellipsis "…"
+;;  ;; Org styling, hide markup etc.
+;;  org-hide-emphasis-markers t
+;;  ;; org-pretty-entities t
+;;  org-ellipsis "…"
 
- ;; Agenda styling
- org-agenda-tags-column 0
- org-agenda-block-separator ?─
- org-agenda-time-grid
- '((daily today require-timed)
-   (800 1000 1200 1400 1600 1800 2000)
-   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
- org-agenda-current-time-string
- "⭠ now ────────────────────────")
+;;  ;; Agenda styling
+;;  org-agenda-tags-column 0
+;;  org-agenda-block-separator ?─
+;;  org-agenda-time-grid
+;;  '((daily today require-timed)
+;;    (800 1000 1200 1400 1600 1800 2000)
+;;    " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+;;  org-agenda-current-time-string
+;;  "⭠ now ────────────────────────")
 
-(global-org-modern-mode)
+;; (global-org-modern-mode)
+(setq org-latex-pdf-process (list "latexmk -shell-escape -bibtex -f -pdf %f"))
+(use-package org-ref
+  :ensure nil
+  :init
+  (add-to-list 'load-path
+	       (expand-file-name "org-ref" scimax-dir))
+  (require 'bibtex)
+  (setq bibtex-autokey-year-length 4
+	bibtex-autokey-name-year-separator "-"
+	bibtex-autokey-year-title-separator "-"
+	bibtex-autokey-titleword-separator "-"
+	bibtex-autokey-titlewords 2
+	bibtex-autokey-titlewords-stretch 1
+	bibtex-autokey-titleword-length 5)
+  (define-key bibtex-mode-map (kbd "H-b") 'org-ref-bibtex-hydra/body)
+  (define-key org-mode-map (kbd "C-c ]") 'org-ref-insert-link)
+  (define-key org-mode-map (kbd "s-[") 'org-ref-insert-link-hydra/body)
+  (require 'org-ref-ivy)
+  (require 'org-ref-arxiv)
+  (require 'org-ref-scopus)
+  (require 'org-ref-wos))
+
+
+;; (use-package org-ref-ivy
+;;   :ensure nil
+;;   :init (setq org-ref-insert-link-function 'org-ref-insert-link-hydra/body
+;; 	      org-ref-insert-cite-function 'org-ref-cite-insert-ivy
+;; 	      org-ref-insert-label-function 'org-ref-insert-label-link
+;; 	      org-ref-insert-ref-function 'org-ref-insert-ref-link
+;; 	      org-ref-cite-onclick-function (lambda (_) (org-ref-citation-hydra/body))))
+
+(setq org-ref-insert-cite-function
+      (lambda ()
+	(org-cite-insert nil)))
 ;; -----------------
 ;; Termina config de packages
 ;; -----------------
