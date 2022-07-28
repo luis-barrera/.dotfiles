@@ -1500,3 +1500,5 @@
   (setq parrot-num-rotations 6)
   (parrot-mode))
 (put 'downcase-region 'disabled nil)
+
+(winner-mode 1)
