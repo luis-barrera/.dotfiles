@@ -153,7 +153,8 @@ myWorkspaces = [(xK_a, "a"), -- (keyboard key, workspace asigned)
                 (xK_2, "2"),
                 (xK_3, "3"),
                 (xK_4, "4"),
-                (xK_5, "5")]
+                (xK_5, "5"),
+                (xK_0, "0")]  -- Workspace para segundo monitor ]
 -- List of only workspaces names
 myWorkspacesNames = [ ws | (key, ws) <- myWorkspaces ] -- Mi primer config propia xd
 
