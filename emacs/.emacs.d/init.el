@@ -1383,7 +1383,7 @@
 ;; Choose some fonts
 ;; (set-face-attribute 'default nil :family "Iosevka")
 ;; (set-face-attribute 'variable-pitch nil :family "Iosevka Aile")
-(set-face-attribute 'org-modern-symbol nil :family "Iosevka")
+;; (set-face-attribute 'org-modern-symbol nil :family "Iosevka")
 
 ;; Add frame borders and window dividers
 ;; (modify-all-frames-parameters
@@ -1426,8 +1426,8 @@
 (use-package org-ref
   :ensure nil
   :init
-  (add-to-list 'load-path
-	       (expand-file-name "org-ref" scimax-dir))
+  ;; (add-to-list 'load-path
+	;;        (expand-file-name "org-ref" scimax-dir))
   (require 'bibtex)
   (setq bibtex-autokey-year-length 4
 	bibtex-autokey-name-year-separator "-"
@@ -1500,5 +1500,3 @@
   (setq parrot-num-rotations 6)
   (parrot-mode))
 (put 'downcase-region 'disabled nil)
-
-(winner-mode 1)

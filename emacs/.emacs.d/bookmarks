@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Google-Cloud"
+(("org-capture-last-stored-marker"
+ (filename . "~/.notes")
+ (front-context-string . "** TODO Idea App")
+ (rear-context-string . "t-time-string]]\n")
+ (position . 284))
+("Google-Cloud"
  (filename . "~/org-roam/20220626101630-google_cloud_learning.org")
  (front-context-string)
  (rear-context-string . "nd-group-xxxx).\n")
@@ -53,20 +58,20 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Bedu. De")
- (rear-context-string . "oes Matcha work\n")
- (position . 119411))
+ (filename . "~/.notes")
+ (front-context-string . "** TODO Idea App")
+ (rear-context-string . "t-time-string]]\n")
+ (position . 284))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220718185913-burocracia_y_tecnocracia.org")
- (front-context-string)
- (rear-context-string . "cia\n#+filetags:\n")
- (position . 230))
+ (filename . "~/.notes")
+ (front-context-string . "** TODO Idea App")
+ (rear-context-string . "t-time-string]]\n")
+ (position . 144))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
