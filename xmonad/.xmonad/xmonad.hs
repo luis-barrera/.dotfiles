@@ -158,6 +158,10 @@ myWorkspaces = [(xK_a, "a"), -- (keyboard key, workspace asigned)
 -- List of only workspaces names
 myWorkspacesNames = [ ws | (key, ws) <- myWorkspaces ] -- Mi primer config propia xd
 
+toggleFloat w = windows (\s -> if M.member w (W.floating s)
+                            then W.sink w s
+                            else (W.float w (W.RationalRect (1/10) (1/10) (8/10) (8/10)) s))
+
 
 ------------------------------------------------------------------------
 -- Key bindings
@@ -221,10 +225,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Expand the master area
     , ((modm, xK_l), sendMessage Expand)
 
-    -- Push window back into tiling
-    , ((modm, xK_t), withFocused $ windows . W.sink)
+    -- Push window back into tilling
+    -- , ((modm, xK_t), withFocused $ windows . W.sink)
     -- Set window in floating and reduce size
-    , ((modm .|. shiftMask, xK_t), withFocused $ keysResizeWindow ((-400), (-200)) (6%8, 6%8))
+    -- , ((modm .|. shiftMask, xK_t), withFocused (keysMoveWindowTo (512,384) (1%2,1%2)))
+    -- Toggle float or tilling
+    , ((modm, xK_t), withFocused toggleFloat)
+
     -- Minimie window
     , ((modm,               xK_n     ), withFocused minimizeWindow)
     -- unMinimize last minimized window
