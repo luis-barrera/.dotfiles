@@ -21,8 +21,18 @@
 ;; (set-frame-font "Iosevka-14" nil t)
 ;; (set-face-attribute 'default nil :font "FiraCode Nerd Font Mono-14")
 ;; (set-frame-font "FiraCode Nerd Font Mono-14" nil t)
-(set-face-attribute 'default nil :font "VictorMono Nerd Font Mono-14")
-(set-frame-font "VictorMono Nerd Font Mono-14" nil t)
+(setq my-font "VictorMono Nerd Font Mono")
+;; (setq my-font "JetBrainsMono Nerd Font Mono")
+(set-face-attribute 'default nil :font (concat my-font "-14"))
+(let ((faces '(mode-line
+               mode-line-buffer-id
+               mode-line-emphasis
+               mode-line-highlight
+               mode-line-inactive)))
+  (mapc
+   (lambda (face) (set-face-attribute face nil :font (concat my-font "-8")))
+   faces))
+;; (set-frame-font "VictorMono Nerd Font Mono-14" nil t)
 
 ;; Cortar lineas
 (global-visual-line-mode t)
@@ -119,7 +129,7 @@
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
-   '(org-modern citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
+   '(mini-modeline org-modern citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline counsel-projectile projectile helpful which-key command-log-mode company ivy-hydra ivy-rich forge magit general ivy counsel swiper use-package))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
 
@@ -1462,12 +1472,25 @@
 
 ;; Desactivar centaur-tabs en frames que tengan más de 1 window abierto
 ;; (remove-hook 'window-configuration-change-hook 'my-disable-tabs-fun)
-(add-hook 'window-configuration-change-hook 'my-disable-tabs-func)
+(add-hook 'buffer-list-update-hook 'my-disable-tabs-func)
 (defun my-disable-tabs-func ()
   (interactive)
   (if (eql (length (window-list)) 1)
       (centaur-tabs-local-mode 0)
     (centaur-tabs-local-mode)))
+;; Cambiar la fuente a partir del tamaño de la window (buffer)
+(add-hook 'buffer-list-update-hook 'my-change-font-size-func)
+(defun my-buffer-face-mode-fixed ()
+  "Sets a fixed width (monospace) font in current buffer"
+  (interactive)
+  (setq buffer-face-mode-face '(:height 80))
+  (buffer-face-mode))
+(defun my-change-font-size-func()
+  (interactive)
+  (if (<= (window-total-width) 60)
+      (my-buffer-face-mode-fixed)
+    (buffer-face-mode 0)))
+
 ;; (setq centaur-tabs-local-mode t) #'centaur-tabs-local-mode))
 ;; 'centaur-tabs-local-mode (setq centaur-tabs-local-mode t)))
 ;; (remove-hook 'window-configuration-change-hook 'centaur-tabs-local-mode)
