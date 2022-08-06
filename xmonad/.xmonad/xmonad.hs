@@ -404,6 +404,9 @@ myXPConfig = def
 --
 -- To match on the WM_NAME, you can use 'title' in the same way that
 -- 'className' and 'resource' are used below.
+
+bigRationalRectFloatHook = W.RationalRect (1/8) (1/8) (6/8) (6/8)
+smallRationalRectFloatHook = W.RationalRect (2/8) (1/8) (4/8) (6/8)
 myManageHook :: ManageHook
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
@@ -414,12 +417,13 @@ myManageHook = composeAll
     , className =? "Emacs"          --> hasBorder False
     , className =? "Emacs"          --> doF (W.shift "q")
     , className =? "Spotify"        --> doF (W.shift "f")
-    , className =? "mpv"            --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
-    , className =? "KeePassXC"      --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
+    , className =? "mpv"            --> doRectFloat smallRationalRectFloatHook
+    , className =? "KeePassXC"      --> doRectFloat bigRationalRectFloatHook
     -- Zoom
-    , className =? "zoom "          --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
-    , className ^? "join"           --> doRectFloat (W.RationalRect (1 % 2) (1 % 2) (1 % 2) (1 % 2))
+    , className =? "zoom "          --> doRectFloat bigRationalRectFloatHook
+    , className ^? "join"           --> doRectFloat smallRationalRectFloatHook
     --- Desktops
+    , className =? "Xdg-desktop-portal-gtk"  --> doRectFloat smallRationalRectFloatHook
     , className =? "Dunst"          --> doIgnore
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
