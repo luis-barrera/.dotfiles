@@ -63,13 +63,13 @@
 ;;(setq split-window-right)
 
 ;; org-agenda-mode
-(defun my-buffer-face-org-agenda()
-  "Establece la face para los buffers de org agenda para que sean más pequeños"
-  (interactive)
-  (setq buffer-face-mode-face '(:family "VictorMono Nerd Font Mono" :height 100))
-  ;; (shrink-window-horizontally (- (window-width) 57))
-  (buffer-face-mode))
-(add-hook 'org-agenda-mode-hook 'my-buffer-face-org-agenda)
+;; (defun my-buffer-face-org-agenda()
+;;   "Establece la face para los buffers de org agenda para que sean más pequeños"
+;;   (interactive)
+;;   (setq buffer-face-mode-face '(:family "VictorMono Nerd Font Mono" :height 100))
+;;   ;; (shrink-window-horizontally (- (window-width) 57))
+;;   (buffer-face-mode))
+;; (add-hook 'org-agenda-mode-hook 'my-buffer-face-org-agenda)
 ;; (add-hook 'org-agenda-mode-hook 'shrink-window-if-larger-than-buffer)
 
 ;; Setup del minibuffer
