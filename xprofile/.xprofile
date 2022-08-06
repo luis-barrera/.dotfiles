@@ -63,7 +63,7 @@ gnome-keyring-daemon --start &
 redshift-gtk &
 flameshot &
 # parcellite -d &
-# parcellite &
+parcellite &
 picom -b &
 playerctld daemon &
 syncthingtray --wait &
