@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Aug  6 10:34:28 2022
+;; Created Thu Aug 11 00:38:50 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -12,164 +12,128 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring nil)
-(setq regexp-search-ring '(#("\\<Tarjeta\\>" 0 11 (isearch-case-fold-search t)) #("Nu" 0 2 (isearch-case-fold-search nil)) #("pack" 0 4 (isearch-case-fold-search t)) #("agenda" 0 6 (isearch-case-fold-search t)) #("face" 0 4 (isearch-case-fold-search t)) #("\\<font\\>" 0 8 (isearch-case-fold-search nil)) #("font" 0 4 (isearch-case-fold-search t)) #("ava" 0 3 (isearch-case-fold-search nil)) #("ref" 0 3 (isearch-case-fold-search t)) #("org jj" 0 6 (isearch-case-fold-search t)) #("winner-mode" 0 11 (isearch-case-fold-search t)) #("\\<mode\\>" 0 8 (isearch-case-fold-search nil)) #("\\<-\\>" 0 5 (isearch-case-fold-search nil)) #("winn" 0 4 (isearch-case-fold-search t)) #("cite" 0 4 (isearch-case-fold-search t)) #("pitag" 0 5 (isearch-case-fold-search t))))
-(setq register-alist '((99 . #("bootstrap: [AppComponent]" 0 11 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 11 12 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 12 24 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 24 25 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)))) (122 . #("  // Aquí se meten los servicios\n  providers: [\n    ServicioEmpleadosService,\n    EmpleadosService,  // Nuevo Data Service\n    // Servicio que conecta con Firebase\n    FirebaseService\n  ],\n  bootstrap: [AppComponent]\n" 0 2 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 2 5 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 5 33 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 33 46 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 46 47 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 47 48 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 48 78 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 78 101 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 101 104 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 104 123 (face (font-lock-comment-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 123 127 (face (org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 127 129 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 129 130 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 130 164 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 164 184 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 184 186 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 186 187 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 187 189 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 189 202 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 202 203 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 203 215 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 215 216 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 216 217 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (102) (104 . "kkkkkk") (111 . [escape escape escape]) (106 . "Gkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkjjjjjjjjjjjjjjllllllllllllllllllllllllllllllll") (119 . "wwwwwww") (120 . #("  bootstrap: [AppComponent]\n" 0 13 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 13 14 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 14 26 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 26 27 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 27 28 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (107 . [(down-mouse-1 ("Unprintable entity" 211 (183 . 201) 84076650 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) 113 107 106 100 100 escape 58 119 return 107 107 107 107 107 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 58 119 return 134217848 108 101 100 103 101 114 32 115 116 97 116 return]) (97 . [escape 58 119 return]) (110) (113) (48 . #("$fgr$visUAM20" 0 13 (fontified t)))))
-(setq file-name-history '(#("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo2.org" 0 60 (ivy-index 5)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/refs.bib" 0 57 (ivy-index 1)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/" 0 46 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo1.org" 0 60 (ivy-index 7)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/refs.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/ensayo1.org" 0 57 (ivy-index 2)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/file.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/test.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/" 0 41 (ivy-index 5)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 3)) #("/home/luisbarrera/google-drive/org-mode/clases22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p,org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas21p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/draft.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template/" 0 57 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template.org" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/test.html" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.txt" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/dev/alarma-arduino/" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Org-mobile.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/.dotfiles/emacs/.emacs.d/" 0 43 (ivy-index 0)) #("/home/luisbarrera/.emacs.d/init.el" 0 34 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/draw_sol.py" 0 69 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas.pl" 0 67 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas-3.pl" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 57 (ivy-index 14)) #("/home/luisbarrera/.emacs.d/" 0 27 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/recocido_simulado.py" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/abejas.py" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220123180828-data_science_emtech.org" 0 78 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220122223000-menstruacion_femenina.org" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/animacion/servidor.js" 0 84 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/marcador.html" 0 90 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/mapas.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/servidor.js" 0 84 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/response.json" 0 93 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/servidor.js" 0 91 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/web.js" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/index.html" 0 83 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web/web.js" 0 78 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/Node/js/simple.js" 0 67 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 85 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 72 (ivy-index 3)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 66 (ivy-index 6)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/" 0 56 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.js" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/privadas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/ejemplo2.html" 0 90 (ivy-index 5)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/poligono.html" 0 103 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/dev/clase-05-01-22/ejemplosMapas/marcador.html" 0 103 (ivy-index 0))))
+(setq regexp-search-ring '(#("otros pac" 0 9 (isearch-case-fold-search t)) #("/packages" 0 9 (isearch-case-fold-search t)) #("undo" 0 4 (isearch-case-fold-search t)) #("which-key" 0 9 (isearch-case-fold-search t)) #("org" 0 3 (isearch-case-fold-search t)) #("keybin" 0 6 (isearch-case-fold-search t)) #("\\<efs\\>" 0 7 (isearch-case-fold-search nil)) #("ogr" 0 3 (isearch-case-fold-search t)) #("<>" 0 2 (isearch-case-fold-search t)) #("scro" 0 4 (isearch-case-fold-search t)) #("modelin" 0 7 (isearch-case-fold-search t)) #("map" 0 3 (isearch-case-fold-search t)) #("fringe" 0 6 (isearch-case-fold-search t)) #("##" 0 2 (isearch-case-fold-search t)) #("ivy" 0 3 (isearch-case-fold-search t)) #("\\<Inversiones\\>" 0 15 (isearch-case-fold-search nil))))
+(setq register-alist '((108 . [105 escape escape 108 108 105 113 escape escape 97 escape]) (99 . #("bootstrap: [AppComponent]" 0 11 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t) 11 12 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t) 12 24 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t) 24 25 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t))) (122 . #("  // Aquí se meten los servicios\n  providers: [\n    ServicioEmpleadosService,\n    EmpleadosService,  // Nuevo Data Service\n    // Servicio que conecta con Firebase\n    FirebaseService\n  ],\n  bootstrap: [AppComponent]\n" 0 2 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 2 5 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (font-lock-comment-delimiter-face org-block)) 5 33 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (font-lock-comment-face org-block)) 33 46 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 46 47 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 47 48 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 48 78 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 78 101 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 101 104 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t org-emphasis t face (font-lock-comment-delimiter-face org-block)) 104 123 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t org-emphasis t face (font-lock-comment-face org-block)) 123 127 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t org-emphasis t face (org-block)) 127 129 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t org-emphasis t face (font-lock-comment-delimiter-face org-block)) 129 130 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (font-lock-comment-delimiter-face org-block)) 130 164 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (font-lock-comment-face org-block)) 164 184 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 184 186 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 186 187 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 187 189 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 189 202 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 202 203 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 203 215 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 215 216 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 216 217 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)))) (102) (104 . "kkkkkk") (111 . [escape escape escape]) (106 . [107 106 escape escape]) (119 . "org-mode-hook") (120 . #("  bootstrap: [AppComponent]\n" 0 13 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 13 14 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 14 26 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 26 27 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 27 28 (yank-handler (evil-yank-line-handler nil t) fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)))) (107 . [(down-mouse-1 ("Unprintable entity" 211 (183 . 201) 84076650 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) 113 107 106 100 100 escape 58 119 return 107 107 107 107 107 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 58 119 return 134217848 108 101 100 103 101 114 32 115 116 97 116 return]) (97 . [escape 58 119 return]) (110) (113) (48 . #(";; ##############################\n" 0 3 (face font-lock-comment-delimiter-face fontified t yank-handler (evil-yank-line-handler nil t)) 3 33 (face font-lock-comment-face fontified t yank-handler (evil-yank-line-handler nil t)) 33 34 (face font-lock-comment-face fontified t yank-handler (evil-yank-line-handler nil t))))))
+(setq file-name-history '(#("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo2.org" 0 60 (ivy-index 5)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/refs.bib" 0 57 (ivy-index 1)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/" 0 46 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo1.org" 0 60 (ivy-index 7)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/refs.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/ensayo1.org" 0 57 (ivy-index 2)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/file.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/test.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/" 0 41 (ivy-index 5)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 3)) #("/home/luisbarrera/google-drive/org-mode/clases22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p,org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas21p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/draft.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template/" 0 57 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template.org" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/test.html" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.txt" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/dev/alarma-arduino/" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Org-mobile.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/.dotfiles/emacs/.emacs.d/" 0 43 (ivy-index 0)) #("/home/luisbarrera/.emacs.d/init.el" 0 34 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/draw_sol.py" 0 69 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas.pl" 0 67 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas-3.pl" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 57 (ivy-index 14)) #("/home/luisbarrera/.emacs.d/" 0 27 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/recocido_simulado.py" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/abejas.py" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220123180828-data_science_emtech.org" 0 78 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220122223000-menstruacion_femenina.org" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/animacion/servidor.js" 0 84 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/marcador.html" 0 90 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/mapas.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/servidor.js" 0 84 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/response.json" 0 93 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/servidor.js" 0 91 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/web.js" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/index.html" 0 83 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web/web.js" 0 78 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/Node/js/simple.js" 0 67 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 85 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/juego.html" 0 72 (ivy-index 3)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 66 (ivy-index 6)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/08Sem/Chart/" 0 56 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/publicas.js" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/privadas.json" 0 82 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/ejemplo2.html" 0 90 (ivy-index 5))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/draft.org"
-  "draft.org"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  45
-  '(1503 nil)
+  "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
+  "init.el"
+  'emacs-lisp-mode
+  '(visual-line-mode eldoc-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode smartparens-mode drag-stuff-mode aggressive-indent-mode page-break-lines-mode diff-hl-mode indent-guide-mode auto-revert-mode company-box-mode rainbow-delimiters-mode hl-todo-mode projectile-mode)
+  42522
+  '(41649 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25325 26982 538800 617000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (534 554 2387 2387 2387 2387 2093 2387 2387 2387 2387 2387 2387 2313 2313 2101))))
+  '((buffer-display-time 25332 38377 835390 91000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (38717 38814 31870 38919 41553 41553 41553 41553 40382 41553 21703 54893 38915 10866 10865 6149))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/clases22p.org"
   "clases22p.org"
   'org-mode
-  '(visual-line-mode override-global-mode text-scale-mode buffer-face-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  241
-  '(396 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode)
+  311
+  '(311 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25326 35298 33816 880000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (397 310 6 6 44 44 44 44 6 6 44 44 44 44 44 44))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode override-global-mode text-scale-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  55041
-  '(66033 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25326 35298 33817 958000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (38033 38087 65971 69 98 48659 95630 103285 15532 15532 18373 66223 66224 15658 66286 15909))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
-  "tareas22p.org"
-  'org-mode
-  '(visual-line-mode override-global-mode text-scale-mode buffer-face-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  889
-  '(901 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25326 35298 33817 229000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6580 901 130 999 186 2 703))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
-  "finances.ledger"
-  'ledger-mode
-  '(visual-line-mode override-global-mode text-scale-mode buffer-face-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode company-box-mode)
-  16522
-  '(16522 nil)
-  nil
-  nil
-  '((buffer-display-time 25326 35298 33817 590000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (16522 14842 13045 12043 11215 11035 15511 14823 16415 13053 12051 11223 11043 15517 15434 15434))))
+  '((indent-tabs-mode) (buffer-display-time 25332 38123 484051 458000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (311 6 397 397 397 397 310 6 6 44 44 44 44 6 6 44))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
-  '(visual-line-mode override-global-mode text-scale-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  27100
-  '(27100 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  6558
+  '(7060 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25326 35298 33817 521000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (2030 9576 13171 1918 1919 4180 6755 9431 9431 6755 9336 9336 6755 6755 436 141))))
+  '((indent-tabs-mode) (buffer-display-time 25435 35755 558082 938000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (18 6558 6558 6558 6558 27193 2125 9669 13264 2013 2014 4273 6848 9524 9524 6848))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
-  "init.el"
-  'emacs-lisp-mode
-  '(visual-line-mode eldoc-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode company-mode company-posframe-mode smartparens-mode drag-stuff-mode aggressive-indent-mode diff-hl-mode indent-guide-mode auto-revert-mode page-break-lines-mode company-box-mode hl-todo-mode rainbow-delimiters-mode)
-  52395
-  '(52395 nil)
+  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
+  "finances.ledger"
+  'ledger-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  11078
+  '(11759 nil)
   nil
   nil
-  '((buffer-display-time 25324 37901 856937 6000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (2810 2810 55019 55019 55020 54905 54954 54396 54374 54645 54838 54730 54838 54838 55017 972))))
+  '((buffer-display-time 25435 35755 918100 847000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (16521 15854 15801 15748 13804 9938 7875 7181 3797 3272 3220 3146 16570 11204 16341 16342))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/tareas21p.org"
-  "tareas21p.org"
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
   'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  1
-  '(1 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  15502
+  '(99157 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26905 30050 7973 90000) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1 1 1 1))))
+  '((indent-tabs-mode) (buffer-display-time 25435 35756 300723 920000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1 15502 19473 23683 15502 15502 39254 37951 1 68877 68877 68877 7921 11923 7921 11807))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20220717234034-google_cloud_computing_foundations_networking_and_security_in_google_cloud.org"
-  "20220717234034-google_cloud_computing_foundations_networking_and_security_in_google_cloud.org"
+  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
+  "tareas22p.org"
   'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  105864
-  '(105864 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  17
+  '(17 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26905 30059 123563 5000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (105865 105865 105865 105301 104843 104806 104666 102480 101111 101105 100175 99966 98762 96022 90298 90298))))
+  '((indent-tabs-mode) (buffer-display-time 25435 35756 649376 569000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (17 17 901 6580 901 130 999 186 2 703))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/draft.org"
+  "draft.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
+  2415
+  '(2415 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 26463 3491 465389 445000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (2415 2413 2387))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20220807144844-mozilla_openssh_server.org"
+  "20220807144844-mozilla_openssh_server.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode projectile-mode)
+  9411
+  '(9411 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25950 13631 318714 605000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (9411 9411 9411 9400 8896 8898 8839 7935 7588 7563 7382 7351 7265 5277 5210 4717))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20220626101630-google_cloud_learning.org"
   "20220626101630-google_cloud_learning.org"
   'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
   595
   '(595 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 27689 55662 716774 339000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27686 59099 273128 453000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (595))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/test.org"
-  "test.org"
+  "/home/luisbarrera/org-mode/tareas21p.org"
+  "tareas21p.org"
   'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
-  122
-  '(122 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 27689 55599 915986 770000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (122 145 91 84 83 73 112 69 49 1))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/.notes"
-  ".notes"
-  'org-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode page-break-lines-mode company-box-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
   1
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 27607 23601 806283 781000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/Reporte Docker.odt"
-  "Reporte Docker.odt"
-  'archive-mode
-  '(visual-line-mode override-global-mode which-key-mode ivy-mode evil-collection-unimpaired-mode projectile-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode company-box-mode)
-  160
-  '(nil nil)
-  t
-  nil
-  '((buffer-display-time 27607 23649 69514 551000) (buffer-file-coding-system . no-conversion) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27686 59109 473322 642000) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
