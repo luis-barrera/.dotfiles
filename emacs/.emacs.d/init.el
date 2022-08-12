@@ -22,9 +22,9 @@
 
 ;; Variable que guarda la fuente, la asignación se hace más abajo
 ;; (defconst my-font "VictorMono Nerd Font Mono" "User-defined font")
-(defconst my-font "FiraCode Nerd Font Mono" "User-defined font")
+;; (defconst my-font "FiraCode Nerd Font Mono" "User-defined font")
 ;; (defconst my-font "JetBrainsMono Nerd Font Mono" "User-defined font")
-;; (defconst my-font "Iosevka" "User-defined font")
+(defconst my-font "Iosevka" "User-defined font")
 
 ;; Cortar lineas
 (global-visual-line-mode t)
@@ -314,7 +314,7 @@
   ;; Guardar los buffers después de hacer un refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
   ;; Deja de insertar indentación en los bloques de código
-  ;; (setq org-edit-src-content-indentation 0)
+  (setq org-edit-src-content-indentation 0)
   ;; Seguir links al dar RET sobre ellos
   (setq org-return-follows-link t)
   ;; Abrir los links en el mismo frame
@@ -333,7 +333,7 @@
   ;; Mantener el log dentro de un drawer, de manerar que se hace un fold
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
-  (setq agenda-files-list (list (concat (getenv "HOME") "/org-mode/tareas21p.org")
+  (setq agenda-files-list (list (concat (getenv "HOME") "/org-mode/tareas22p.org")
                                 (concat (getenv "HOME") "/org-mode/clases22p.org")
                                 (concat (getenv "HOME") "/org-mode/todos.org")
                                 (concat (getenv "HOME") "/org-mode/draft.org")))
@@ -1130,6 +1130,10 @@
 ;; Treesitter
 (require 'tree-sitter)
 (require 'tree-sitter-langs)
+;; Habilitado en todos los modos posibles
+(global-tree-sitter-mode)
+;; Activar syntax-highlight
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
 
 
 ;; ##############################
