@@ -14,10 +14,9 @@ then
     xmonad --recompile
     xmonad --restart
 
-    killall -q dunst
-    sh "$HOME"/scripts/dunst_xr_theme_changer.sh
-    killall -q dunst
-    /usr/bin/dunst -conf "$HOME"/.config/dunst/dunstrc_xr_colors --startup_notification true & disown
-
     betterlockscreen -u "$selected"
+
+    sh "$HOME"/scripts/dunst_xr_theme_changer.sh
+    (killall -qw dunst; \
+      /usr/bin/dunst -conf "$HOME"/.config/dunst/dunstrc_xr_colors --startup_notification true & disown)
 fi

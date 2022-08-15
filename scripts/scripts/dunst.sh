@@ -1,7 +1,7 @@
 #! /bin/sh
 
 dunst -config ~/.config/dunst/dunstrc \
-  - "$(xgetres background)" \
+  -lb "$(xgetres background)" \
   -lf "$(xgetres foreground)" \
   -nb "$(xgetres background)" \
   -nf "$(xgetres foreground)" \
