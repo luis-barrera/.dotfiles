@@ -45,6 +45,7 @@ import XMonad.Layout.Minimize
 import XMonad.Layout.Maximize
 import XMonad.Layout.Dishes
 import XMonad.Layout.PerWorkspace
+import XMonad.Layout.MagicFocus
 
 -- Extra actions
 import XMonad.Actions.FloatKeys
@@ -350,10 +351,29 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- restarting (with 'mod-q') to reset your layout state to the new
 -- defaults, as xmonad preserves your old layout settings by default.
 --
+--
+myDeco = def {activeColor = xColor "1"
+                  , inactiveColor = xColorBg
+                  , urgentColor = xColor "3"
+                  , activeBorderColor = xColorFg
+                  , inactiveBorderColor = xColorBg
+                  , urgentBorderColor = xColor "3"
+                  , activeBorderWidth = 2
+                  , inactiveBorderWidth = 2
+                  , urgentBorderWidth = 2
+                  , activeTextColor = xColorFg
+                  , inactiveTextColor = xColorFg
+                  , urgentTextColor = xColor "3"
+                  , fontName = "xft:JetBrainsMono Nerd Font:size=8:antialias=true"
+                  -- , decoWidth = 200
+                  , decoHeight = 20
+                  }
+
+
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
-myLayout = maximizeWithPadding 0 (avoidFloats $
-  minimize $
+myLayout = maximizeWithPadding 0 ( minimize $
+  -- magicFocus $
   smartBorders $
   boringWindows $
   avoidStruts (gaps gapdims tiled
@@ -361,8 +381,8 @@ myLayout = maximizeWithPadding 0 (avoidFloats $
                 -- ||| Accordion
                 ||| Dishes 2 (1/6)
                 ||| gaps gapdims emptyBSP
-                ||| simpleFloat
-                ||| simpleTabbed
+                ||| simpleFloat' shrinkText myDeco
+                ||| tabbed shrinkText myDeco
                 ||| noBorders Full))
   where
      -- default tiling algorithm partitions the screen into two panes
@@ -473,10 +493,10 @@ myLogHook = historyHook
 -- By default, do nothing.
 myStartupHook = do
           spawn "sh /home/luisbarrera/.config/polybar/launch.sh"
-          spawn "wal -R; cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources"
-          spawn "killall -q dunst"
-          spawn "sh /home/luisbarrera/scripts/dunst_xr_theme_changer.sh"
-          spawn "/usr/bin/dunst -conf /home/luisbarrera/.config/dunst/dunstrc_xr_colors & disown"
+          -- spawn "wal -R; cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources"
+          -- spawn "killall -q dunst"
+          -- spawn "sh /home/luisbarrera/scripts/dunst_xr_theme_changer.sh"
+          -- spawn "/usr/bin/dunst -conf /home/luisbarrera/.config/dunst/dunstrc_xr_colors & disown"
           -- spawn "wal --backend colorthief -i /home/luisbarrera/wallpapers"
           -- spawnOnce "wal -i /home/luisbarrera/wallpapers"
 
