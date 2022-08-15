@@ -92,7 +92,7 @@ nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- be
 xsetroot -cursor_name left_ptr
 
 # Notificaciones
-nohup /usr/bin/dunst -conf ~/.config/dunst/dunstrc_xr_colors >/dev/null & disown
+/usr/bin/dunst -conf ~/.config/dunst/dunstrc_xr_colors >/dev/null & disown
 
 # Daemons de Emacs
 #/bin/emacs --daemon &
