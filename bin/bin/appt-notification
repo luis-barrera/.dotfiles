@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TIME="$1"
+MSG="$2"
+
+# Esto funciona solo en AwesomeWM
+# notify-send -t 0 "<br>Appointment in $TIME minutes:<br>$MSG<br>";
+
+# Enviar notificaciones vía ntfy
+curl \
+  -H "Title: $MSG" \
+  -H "Priority: urgent" \
+  -H "Tags: skull" \
+  -d "Appointment in $TIME minutes" \
+  ntfy.sh/luisbarrera-org
+
+# notify-send -t 0 "<br>Appointment in $TIME minutes:<br>$MSG<br>";
+# notify-send -t 0 "<br>Appointment in $TIME minutes:<br>$MSG<br>";
+
+dunstify -C 193
+dunstify -r 193 -a "Emacs: org-agenda" -u normal "Evento en $TIME:"$'\n'"$MSG" \
+  --icon="$HOME/bin/org-icon.png"
+
+/sbin/paplay "/home/luisbarrera/bin/mixkit-elevator-tone-2863.wav"
+
