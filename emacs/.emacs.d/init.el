@@ -344,6 +344,8 @@
   ;;                          "~/org-mode/draft.org"))
   ;; Mostrar 10 días en la vista de semana de org-agenda.
   (setq org-agenda-span 10)
+  ;; Integrar días festivos y fases lunares en la agenda
+  (setq org-agenda-include-diary t)
   ;; Keywords para tasks
   (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE"))))
 
@@ -483,6 +485,9 @@
 ;;   (setq pomm-csv-history-file "~/.emacs.d/pomm-hist")
 ;;   :commands (pomm))
 
+;; Notificaciones en el escritorio, hasta ahora solo las usa pomodoro
+(setq alert-default-style 'libnotify)
+
 ;; Notificaciones de escritorio para los eventos de org-agenda, por
 ;; defecto Emacs no puede enviar notificaciones al escritorio
 (require 'appt)
@@ -509,7 +514,8 @@
 (defun my-is-agenda-file-then-appt()
   "If file saved is a org-agenda file, then update appt"
   (if (member buffer-file-name org-agenda-files)
-      ('my-org-agenda-to-appt (message "appt updated"))))
+      ((org-agenda-to-appt)
+       (message "appt updated"))))
 
 ;; Display appointments as a window manager notification
 (setq appt-disp-window-function 'my-appt-display)
@@ -520,9 +526,6 @@
       (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
     (dolist (i (number-sequence 0 (1- (length min-to-app))))
       (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
-
-;; Notificaciones en el escritorio
-(setq alert-default-style 'notification)
 
 
 ;; ##############################
@@ -1464,6 +1467,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(bold ((t (:foreground "thistle4" :weight bold))))
  '(company-posframe ((t (:family my-font :height 0.8))))
  '(org-level-1 ((t (:inherit outline-1 :height 1.25))))
  '(org-level-2 ((t (:inherit outline-2 :height 1.15))))

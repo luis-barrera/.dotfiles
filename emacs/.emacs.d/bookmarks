@@ -58,10 +58,10 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/.notes")
- (front-context-string . "** TODO Idea App")
- (rear-context-string . "t-time-string]]\n")
- (position . 284))
+ (filename . "~/google-drive/org-mode/todos.org")
+ (front-context-string . "** DONE Pasar la")
+ (rear-context-string . "8-11 Thu 00:30]\n")
+ (position . 137200))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
