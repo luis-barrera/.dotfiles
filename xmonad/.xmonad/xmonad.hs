@@ -440,7 +440,9 @@ myManageHook = composeAll
     , className =? "mpv"            --> doRectFloat smallRationalRectFloatHook
     , className =? "KeePassXC"      --> doRectFloat bigRationalRectFloatHook
     -- Zoom
+    , className =? "Chat"           --> doRectFloat smallRationalRectFloatHook
     , className =? "zoom "          --> doRectFloat bigRationalRectFloatHook
+    , className =? "zoom"           --> doRectFloat bigRationalRectFloatHook
     , className ^? "join"           --> doRectFloat smallRationalRectFloatHook
     --- Desktops
     , className =? "Xdg-desktop-portal-gtk"  --> doRectFloat smallRationalRectFloatHook
@@ -535,7 +537,7 @@ defaults = def {
         mouseBindings      = myMouseBindings
     }
 
--- TODO
+-- TODO, completar bien esta info
 -- | Finally, a copy of the default bindings in simple textual tabular format.
 help :: String
 help = unlines ["The default modifier key is 'alt'. Default keybindings:",
