@@ -315,7 +315,7 @@ alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=v
 # alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam Trim10-22I"
 alias drive-push="cd ~/google-drive && \
 	drive push --ignore-name-clashes --hidden -no-prompt\
-	org-mode org-roam Cosas_por_hacer passwords.kdbx"
+	org-mode org-roam Cosas_por_hacer passwords.kdbx Libros"
 
 # Alias para pomodoro
 alias pomato="cd ~/dev/pomato && python pomato.py"
