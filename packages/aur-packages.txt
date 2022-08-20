@@ -50,6 +50,7 @@ python-ajsonrpc
 python-clickgen
 python-colorthief
 python-exceptiongroup
+python-flit-scm
 python-gaphas
 python-generic
 python-haishoku
@@ -71,6 +72,7 @@ syncthing-gtk-python3
 syncthingtray
 ttf-ancient-fonts
 ttf-twemoji-color
+universal-android-debloater-bin
 visual-studio-code-bin
 webstorm
 whatsapp-nativefier

@@ -33,6 +33,7 @@ dunst
 dust
 efibootmgr
 emacs
+evince
 exa
 fakeroot
 fd
@@ -136,6 +137,7 @@ rofi
 ruby
 scrcpy
 screenkey
+scrot
 sd
 sed
 smartmontools
