@@ -19,9 +19,9 @@
  (position . 5242))
 ("Dev.f-Data"
  (filename . "~/org-roam/20220616092103-dev_f_professional_en_data_science_ai.org")
- (front-context-string)
- (rear-context-string . "ncia de Datos]]\n")
- (position . 507))
+ (front-context-string . "Kata Fundamentos")
+ (rear-context-string . "a-829720190193][")
+ (position . 581))
 ("Udemy-Kotlin"
  (filename . "~/org-roam/20220605155009-desarrollo_android.org")
  (front-context-string)
@@ -29,9 +29,9 @@
  (position . 2350))
 ("Google-Data"
  (filename . "~/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org")
- (front-context-string)
- (rear-context-string . " todas partes]]\n")
- (position . 337))
+ (front-context-string . "ar datos para la")
+ (rear-context-string . "993f73e6][Prepar")
+ (position . 506))
 ("YT-Angular"
  (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
  (front-context-string . "\n* continuar\nPar")
