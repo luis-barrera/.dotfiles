@@ -68,6 +68,23 @@ import Graphics.X11.ExtraTypes.XF86
 
 
 ------------------------------------------------------------------------
+-- Startup hook
+-- Perform an arbitrary action each time xmonad starts or is restarted
+-- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
+-- per-workspace layout choices.
+--
+-- By default, do nothing.
+myStartupHook = do
+          spawn "wal -R; cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources"
+          spawn "sh /home/luisbarrera/.config/polybar/launch.sh"
+          -- spawn "wal --backend colorthief -i /home/luisbarrera/wallpapers"
+          -- spawn "killall -q dunst"
+          -- spawn "sh /home/luisbarrera/scripts/dunst_xr_theme_changer.sh"
+          -- spawn "/usr/bin/dunst -conf /home/luisbarrera/.config/dunst/dunstrc_xr_colors & disown"
+          -- spawnOnce "wal -i /home/luisbarrera/wallpapers"
+
+
+------------------------------------------------------------------------
 -- Customs functions definition
 -- Send to a script actual layout to print a notification
 layoutNot m = spawn $ "sh /home/luisbarrera/scripts/xmonad_layout_not.sh " ++ show m
@@ -352,7 +369,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- defaults, as xmonad preserves your old layout settings by default.
 --
 --
-myDeco = def {activeColor = xColor "1"
+myDeco = def {activeColor = xColorBg
                   , inactiveColor = xColorBg
                   , urgentColor = xColor "3"
                   , activeBorderColor = xColorFg
@@ -366,7 +383,7 @@ myDeco = def {activeColor = xColor "1"
                   , urgentTextColor = xColor "3"
                   , fontName = "xft:JetBrainsMono Nerd Font:size=8:antialias=true"
                   -- , decoWidth = 200
-                  , decoHeight = 20
+                  , decoHeight = 25
                   }
 
 
@@ -484,23 +501,6 @@ myEventHook = floatClickFocusHandler
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 -- myLogHook = return ()
 myLogHook = historyHook
-
-
-------------------------------------------------------------------------
--- Startup hook
--- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
--- per-workspace layout choices.
---
--- By default, do nothing.
-myStartupHook = do
-          spawn "sh /home/luisbarrera/.config/polybar/launch.sh"
-          -- spawn "wal -R; cat /home/luisbarrera/.cache/wal/wal | xargs feh --bg-fill $1 | xrdb -merge /home/luisbarrera/.Xresources"
-          -- spawn "killall -q dunst"
-          -- spawn "sh /home/luisbarrera/scripts/dunst_xr_theme_changer.sh"
-          -- spawn "/usr/bin/dunst -conf /home/luisbarrera/.config/dunst/dunstrc_xr_colors & disown"
-          -- spawn "wal --backend colorthief -i /home/luisbarrera/wallpapers"
-          -- spawnOnce "wal -i /home/luisbarrera/wallpapers"
 
 
 ------------------------------------------------------------------------
