@@ -323,7 +323,7 @@
   (setq org-ellipsis "⥥")
   ;; Elimina los símbolos que se usan para modificar los caracteres,
   ;; por ejemplo: los * que se usan para hacer negritas
-  (setq org-hide-emphasis-markers t)
+  (setq org-hide-emphasis-markers nil)
 
   ;; Org agenda
   ;; Guardar un log de las tareas completas
