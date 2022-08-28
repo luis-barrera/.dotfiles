@@ -1061,14 +1061,9 @@
 ;; git-diff
 (global-diff-hl-mode)
 
-
-
-
-
-
-
 ;; Config para dired
 (put 'dired-find-alternate-file 'disabled nil)
+
 
 ;; Enable the www ligature in every possible major mode
 ;; Mover a otro path, causa problemas no abre emacs
@@ -1090,7 +1085,6 @@
 ;;                                      "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
 ;;     (global-ligature-mode 't))
 
-
 ;; Indent guides
 (add-hook 'prog-mode-hook 'indent-guide-mode)
 (add-hook 'text-mode-hook (indent-guide-mode 'nil))
@@ -1107,6 +1101,7 @@
              "jupyter")
 
 ;; Haskell
+
 ;; Manejo de ventanas
 ;; (use-package edwina
 ;;   :ensure t
