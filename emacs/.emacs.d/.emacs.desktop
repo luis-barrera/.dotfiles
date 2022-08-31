@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Aug 31 09:52:19 2022
+;; Created Wed Aug 31 11:04:41 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -18,16 +18,52 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20220831094242-genetic_databases_are_too_white.org"
-  "20220831094242-genetic_databases_are_too_white.org"
+  "/home/luisbarrera/org-roam/20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
+  "20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
-  973
-  '(557 nil)
+  4035
+  '(4035 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25359 30011 462045 531000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (407 324))))
+  '((indent-tabs-mode) (buffer-display-time 25359 31800 795539 239000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (4035 1852 986 597))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  8461
+  '(55744 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25359 34202 333042 688000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (55745 55246 80913 25833 121344 124815 15565 80975 15101 9651 55517 55366 15037 55366 55246 15150))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
+  "finances.ledger"
+  'ledger-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  11414
+  '(11415 nil)
+  nil
+  nil
+  '((buffer-display-time 25359 34202 333041 274000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (11734 11574 11257 11257 11759 16521 15854 15801 15748 13804 9938 7875 7181 3797 3272 3220))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
+  "tareas22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  139
+  '(17 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25359 34202 333040 687000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (4412 4489 17 19 19 17 4367 17 17 4367 10117 4367 3594 4544 3652 2))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/clases22p.org"
@@ -38,32 +74,20 @@
   '(6 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25359 30081 238057 441000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25359 34202 333039 638000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (47 6 583 180 583 497 6 583 583 583 583 496 6 6 44 44))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
-  "finances.ledger"
-  'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode)
-  11078
-  '(11078 nil)
-  nil
-  nil
-  '((buffer-display-time 25359 30081 238059 345000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (11734 11574 11257 11257 11759 16521 15854 15801 15748 13804 9938 7875 7181 3797 3272 3220))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
-  "20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode projectile-mode)
-  4035
-  '(4035 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode)
+  6558
+  '(6558 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25359 29490 156448 687000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (4035 1852 986 597))))
+  '((indent-tabs-mode) (buffer-display-time 25359 34202 333041 79000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6818 6493 18 6558 6558 6558 6558 27193 2125 9669 13264 2013 2014 4273 6848 9524))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
@@ -76,42 +100,6 @@
   nil
   '((buffer-display-time 25359 29490 382061 35000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (52804 39114 39113 41011 41011 12054 12054 6866 1599 55702 55702 52477 52477 52392 52392 52393))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
-  "tareas22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode)
-  139
-  '(17 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25359 30081 238058 498000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (4412 4489 17 19 19 17 4367 17 17 4367 10117 4367 3594 4544 3652 2))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode)
-  80725
-  '(25770 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25359 30081 238060 386000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (121094 124503 15502 80787 15038 9588 55329 55303 14974 55303 55183 15087 15094 64395 2 124431))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode)
-  6558
-  '(6558 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25359 30081 238059 19000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6818 6493 18 6558 6558 6558 6558 27193 2125 9669 13264 2013 2014 4273 6848 9524))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
