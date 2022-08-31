@@ -32,6 +32,7 @@ lua-lpeglabel-git
 lua-lsp-git
 lua-luainspect-git
 ly
+mandelbulber2
 mpris-ctl
 neovide-git
 nerd-fonts-jetbrains-mono
@@ -49,8 +50,6 @@ pm-utils
 python-ajsonrpc
 python-clickgen
 python-colorthief
-python-exceptiongroup
-python-flit-scm
 python-gaphas
 python-generic
 python-haishoku
