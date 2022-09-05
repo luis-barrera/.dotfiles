@@ -72,6 +72,10 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'dinhhuy258/git.nvim'
 
+  -- Commenter
+  use 'numToStr/Comment.nvim'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
