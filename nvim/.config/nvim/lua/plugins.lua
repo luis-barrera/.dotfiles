@@ -76,6 +76,15 @@ return require('packer').startup(function(use)
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+  -- Surround
+  use({ "kylechui/nvim-surround", tag = "*" })
+
+  -- Lista de ToDos
+  use {
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim"
+  }
+
   -- Statusline
   use {
     'nvim-lualine/lualine.nvim',
