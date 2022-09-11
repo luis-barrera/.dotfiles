@@ -3,6 +3,13 @@
 --    if (not status) then return end
 
 -- Config antigua de neovim
+
+--[[
+  vim.g.my_option = "my value" for setting global vim options.
+  vim.o.my_option = "my value" for setting other options.
+  vim.bo.my_option = "my value" for setting buffer-specific options.
+  vim.wo.my_option = "my value" for setting window-specific options. ]]
+
 vim.cmd [[
 "    ____      _ __        _
 "   /  _/___  (_) /__   __(_)___ ___
