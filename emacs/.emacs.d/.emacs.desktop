@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Sep 10 23:22:21 2022
+;; Created Sun Sep 11 07:05:55 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -18,6 +18,18 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode TeX-PDF-mode)
+  34349
+  '(34320 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 52993 63586 474000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (42 34303 60061 60076 12214 87428 9493 16504 29882 87490 9610 87138 28957 87233 9610 9493))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
   "20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
   'org-mode
@@ -28,18 +40,6 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25373 25182 710818 278000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (17613 16120 15758 14735 14694 14233 14233 14044 13913 5945 5850 5850 5850 5850 5850 4901))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
-  18102
-  '(42 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25373 25093 138388 700000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (34273 60058 60073 12184 87425 9463 16474 29852 87487 9580 87135 28927 87230 9580 9463 17789))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
@@ -74,7 +74,7 @@
   '(9978 nil)
   nil
   nil
-  '((buffer-display-time 25373 25093 138387 947000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25373 52993 63585 794000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (6929 18353 18356 18356 17945 18356 17727 17727 6982 13899 17727 11467 17124 17124 17116 17010))))
 
 (desktop-create-buffer 208
@@ -86,7 +86,7 @@
   '(6 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25373 25093 138386 795000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25373 52993 63583 951000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
 
 (desktop-create-buffer 208
@@ -98,7 +98,7 @@
   '(4338 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25373 25093 138387 316000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25373 52993 63584 699000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (4337 5142 22 22 22 2590 139 139 17 8317 8394 17 19 19 17 8272))))
 
 (desktop-create-buffer 208
@@ -110,7 +110,7 @@
   '(114 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25373 25093 138387 774000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25373 52993 63585 591000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (6633 6633 6893 6568 18 6633 6633 6633 6633 27268 2200 9744 13339 2088 2089 4348))))
 
 (desktop-create-buffer 208
