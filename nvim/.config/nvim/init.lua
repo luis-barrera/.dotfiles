@@ -256,6 +256,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'buffer' },
+    { name = 'treesitter'},
   }),
   formatting = {
     format = lspkind.cmp_format({ with_text = false, maxwidth = 50 })
