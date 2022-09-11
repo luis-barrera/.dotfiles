@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Sep  8 21:19:49 2022
+;; Created Sat Sep 10 23:22:21 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.1
 
@@ -12,11 +12,119 @@
 (setq tags-file-name nil)
 (setq tags-table-list nil)
 (setq search-ring nil)
-(setq regexp-search-ring '(#("`" 0 1 (isearch-case-fold-search t)) #("\\<Sócrates\\>" 0 12 (isearch-case-fold-search t)) #("clave" 0 5 (isearch-case-fold-search t)) #("una" 0 3 (isearch-case-fold-search t)) #("proyec" 0 6 (isearch-case-fold-search t)) #("pers" 0 4 (isearch-case-fold-search t)) #("pac" 0 3 (isearch-case-fold-search t)) #("contin" 0 6 (isearch-case-fold-search t)) #("org-mode" 0 8 (isearch-case-fold-search t)) #("break" 0 5 (isearch-case-fold-search t)) #("," 0 1 (isearch-case-fold-search t)) #("phi" 0 3 (isearch-case-fold-search t)) #("emp" 0 3 (isearch-case-fold-search t)) #("ita" 0 3 (isearch-case-fold-search t)) #("appt" 0 4 (isearch-case-fold-search t)) #("compart" 0 7 (isearch-case-fold-search t))))
-(setq register-alist '((108 . [105 escape escape 108 108 105 113 escape escape 97 escape]) (99 . #("bootstrap: [AppComponent]" 0 11 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 11 12 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 12 24 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 24 25 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)))) (122 . #("  // Aquí se meten los servicios\n  providers: [\n    ServicioEmpleadosService,\n    EmpleadosService,  // Nuevo Data Service\n    // Servicio que conecta con Firebase\n    FirebaseService\n  ],\n  bootstrap: [AppComponent]\n" 0 2 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 2 5 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 5 33 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 33 46 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 46 47 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 47 48 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 48 78 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 78 101 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 101 104 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 104 123 (face (font-lock-comment-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 123 127 (face (org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 127 129 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 129 130 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 130 164 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 164 184 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 184 186 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 186 187 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 187 189 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 189 202 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 202 203 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 203 215 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 215 216 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 216 217 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (102) (104 . "kkkkkk") (111 . [escape escape escape]) (106 . [107 106 escape escape]) (119 . "org-mode-hook") (120 . #("  bootstrap: [AppComponent]\n" 0 13 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 13 14 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 14 26 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 26 27 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 27 28 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (107 . [(down-mouse-1 ("Unprintable entity" 211 (183 . 201) 84076650 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) 113 107 106 100 100 escape 58 119 return 107 107 107 107 107 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 58 119 return 134217848 108 101 100 103 101 114 32 115 116 97 116 return]) (97 . [escape 58 119 return]) (110) (113) (48 . #("=lua/plugin.lua=:\n#+begin_src lua\nuse({ \"kylechui/nvim-surround\", tag = \"*\" })\n#+end_src\n\n=init.lua=:\n#+begin_src lua\nlocal status, nvim_surround = pcall(require, \"nvim-surround\")\nif (not status) then return end\nnvim_surround.setup()\n#+end_src\n" 0 16 (org-emphasis t font-lock-multiline t face (org-verbatim) fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 16 18 (fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 18 33 (face org-block-begin-line font-lock-multiline t fontified t org-category "20220902210147-neovim_config" font-lock-fontified t yank-handler (evil-yank-line-handler nil t)) 33 34 (face org-block-begin-line font-lock-multiline t fontified t org-category "20220902210147-neovim_config" font-lock-fontified t yank-handler (evil-yank-line-handler nil t)) 34 37 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 37 38 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 38 39 (face (rainbow-delimiters-depth-2-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 39 40 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 40 64 (face (font-lock-string-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 64 72 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 72 75 (face (font-lock-string-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 75 76 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 76 77 (face (rainbow-delimiters-depth-2-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 77 78 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 78 79 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t rear-nonsticky t fontified t yank-handler (evil-yank-line-handler nil t)) 79 88 (face org-block-end-line font-lock-multiline t fontified t org-category "20220902210147-neovim_config" font-lock-fontified t yank-handler (evil-yank-line-handler nil t)) 88 89 (face org-block-end-line fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 89 90 (fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 90 100 (org-emphasis t font-lock-multiline t face (org-verbatim) fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 100 102 (fontified t org-category "20220902210147-neovim_config" yank-handler (evil-yank-line-handler nil t)) 102 117 (face org-block-begin-line font-lock-multiline t fontified t org-category "20220902210147-neovim_config" font-lock-fontified t yank-handler (evil-yank-line-handler nil t)) 117 118 (face org-block-begin-line font-lock-multiline t org-category "20220902210147-neovim_config" font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 118 123 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 123 124 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 124 130 (face (font-lock-variable-name-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 130 132 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 132 145 (face (font-lock-variable-name-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 145 148 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 148 153 (face (font-lock-builtin-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 153 154 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 154 161 (face (font-lock-builtin-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 161 163 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 163 178 (face (font-lock-string-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 178 179 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 179 180 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 180 182 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 182 183 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 183 184 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 184 187 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 187 194 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 194 195 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 195 196 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 196 200 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 200 201 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 201 207 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 207 208 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 208 211 (face (font-lock-keyword-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 211 212 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 212 231 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 231 232 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 232 233 (face (rainbow-delimiters-depth-1-face org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 233 234 (face (org-block) font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 234 236 (face org-block-end-line font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 236 243 (face org-block-end-line font-lock-multiline t org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 243 244 (face org-block-end-line org-category "20220902210147-neovim_config" src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t))))))
+(setq regexp-search-ring '(#("ledgerh" 0 7 (isearch-case-fold-search t)) #("`" 0 1 (isearch-case-fold-search t)) #("\\<Sócrates\\>" 0 12 (isearch-case-fold-search t)) #("clave" 0 5 (isearch-case-fold-search t)) #("una" 0 3 (isearch-case-fold-search t)) #("proyec" 0 6 (isearch-case-fold-search t)) #("pers" 0 4 (isearch-case-fold-search t)) #("pac" 0 3 (isearch-case-fold-search t)) #("contin" 0 6 (isearch-case-fold-search t)) #("org-mode" 0 8 (isearch-case-fold-search t)) #("break" 0 5 (isearch-case-fold-search t)) #("," 0 1 (isearch-case-fold-search t)) #("phi" 0 3 (isearch-case-fold-search t)) #("emp" 0 3 (isearch-case-fold-search t)) #("ita" 0 3 (isearch-case-fold-search t)) #("appt" 0 4 (isearch-case-fold-search t))))
+(setq register-alist '((108 . [105 escape escape 108 108 105 113 escape escape 97 escape]) (99 . #("bootstrap: [AppComponent]" 0 11 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 11 12 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)) 12 24 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (org-block)) 24 25 (fontified t font-lock-fontified t src-block t font-lock-multiline t face (rainbow-delimiters-depth-3-face org-block)))) (122 . #("  // Aquí se meten los servicios\n  providers: [\n    ServicioEmpleadosService,\n    EmpleadosService,  // Nuevo Data Service\n    // Servicio que conecta con Firebase\n    FirebaseService\n  ],\n  bootstrap: [AppComponent]\n" 0 2 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 2 5 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 5 33 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 33 46 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 46 47 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 47 48 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 48 78 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 78 101 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 101 104 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 104 123 (face (font-lock-comment-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 123 127 (face (org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 127 129 (face (font-lock-comment-delimiter-face org-block) org-emphasis t font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 129 130 (face (font-lock-comment-delimiter-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 130 164 (face (font-lock-comment-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 164 184 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 184 186 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 186 187 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 187 189 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 189 202 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 202 203 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 203 215 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 215 216 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 216 217 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (102) (104 . "kkkkkk") (111 . [escape escape escape]) (106 . [107 106 escape escape]) (119 . "org-mode-hook") (120 . #("  bootstrap: [AppComponent]\n" 0 13 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 13 14 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 14 26 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 26 27 (face (rainbow-delimiters-depth-3-face org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)) 27 28 (face (org-block) font-lock-multiline t src-block t font-lock-fontified t fontified t yank-handler (evil-yank-line-handler nil t)))) (107 . [(down-mouse-1 ("Unprintable entity" 211 (183 . 201) 84076650 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) (mouse-1 ("Unprintable entity" 211 (183 . 201) 84076827 nil 211 (18 . 7) nil (183 . 40) (10 . 23))) 113 107 106 100 100 escape 58 119 return 107 107 107 107 107 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 108 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 106 105 45 escape 58 119 return 134217848 108 101 100 103 101 114 32 115 116 97 116 return]) (97 . [escape 58 119 return]) (110) (113) (48 . #("." 0 1 (fontified t org-category "20220828192740-proceso_de_datos_sucios_a_datos_limpios")))))
 (setq file-name-history '("~/11Trim-22P/ArteCiencia/ensayo7/refs.bib" "~/11Trim-22P/ArteCiencia/ensayo7/ensayo.org" "~/org-roam/20220902210147-neovim_config.org" "~/org-roam/20220902210147-neovim_confif.org" "~/11Trim-22P/ArteCiencia/ensayo6/ensayo.org" "~/google-drive/org-roam/" "~/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" "~/11Trim-22P/ArteCiencia/ensayo5/ensayo.org" "~/dev/los-museos/" #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo2.org" 0 60 (ivy-index 5)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/refs.bib" 0 57 (ivy-index 1)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/" 0 46 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo1.org" 0 60 (ivy-index 7)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/refs.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/ensayo1.org" 0 57 (ivy-index 2)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/file.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/test.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/" 0 41 (ivy-index 5)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 3)) #("/home/luisbarrera/google-drive/org-mode/clases22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p,org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas21p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/draft.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template/" 0 57 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template.org" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/test.html" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.txt" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/dev/alarma-arduino/" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Org-mobile.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/.dotfiles/emacs/.emacs.d/" 0 43 (ivy-index 0)) #("/home/luisbarrera/.emacs.d/init.el" 0 34 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/draw_sol.py" 0 69 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas.pl" 0 67 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas-3.pl" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 57 (ivy-index 14)) #("/home/luisbarrera/.emacs.d/" 0 27 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 59 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/recocido_simulado.py" 0 86 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/Heuristicas/10Sem/tarea3/abejas.py" 0 62 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220123180828-data_science_emtech.org" 0 78 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/20220122223000-menstruacion_femenina.org" 0 80 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/animacion/servidor.js" 0 84 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/datos/index.html" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/08Sem/Chart/chartjs/marcador.html" 0 90 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/mapas.html" 0 83 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/servicios/servidor.js" 0 84 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/juegoPhaser/servidor.js" 0 73 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/response.json" 0 93 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/calculadora/servidor.js" 0 91 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/web.js" 0 79 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web2/index.html" 0 83 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim9-21O/SelectosIngSoft/09Sem/Node/web/web.js" 0 78 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/SelectosIngSoft/09Sem/Node/js/simple.js" 0 67 (ivy-index 0))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
+  "20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
+  22377
+  '(18908 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 25182 710818 278000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (17613 16120 15758 14735 14694 14233 14233 14044 13913 5945 5850 5850 5850 5850 5850 4901))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  18102
+  '(42 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 25093 138388 700000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (34273 60058 60073 12184 87425 9463 16474 29852 87487 9580 87135 28927 87230 9580 9463 17789))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
+  "20220515235923-data_science_certificacion_de_google.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
+  594
+  '(594 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 23232 808451 21000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (594 595))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20220902210147-neovim_config.org"
+  "20220902210147-neovim_config.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
+  12190
+  '(12190 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 23231 938006 478000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (12028 12071 1204 12071 1189 3948 12071 11843 466 462 11508 11462 11345 7561 8119 8080))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
+  "finances.ledger"
+  'ledger-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  18356
+  '(9978 nil)
+  nil
+  nil
+  '((buffer-display-time 25373 25093 138387 947000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6929 18353 18356 18356 17945 18356 17727 17727 6982 13899 17727 11467 17124 17124 17116 17010))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/clases22p.org"
+  "clases22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  240
+  '(6 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 25093 138386 795000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
+  "tareas22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  871
+  '(4338 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 25093 138387 316000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (4337 5142 22 22 22 2590 139 139 17 8317 8394 17 19 19 17 8272))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  6633
+  '(114 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25373 25093 138387 774000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6633 6633 6893 6568 18 6633 6633 6633 6633 27268 2200 9744 13339 2088 2089 4348))))
+
+(desktop-create-buffer 208
+  nil
+  "*info*"
+  'Info-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode company-box-mode projectile-mode TeX-PDF-mode)
+  4523
+  '(4523 nil)
+  t
+  '("/home/luisbarrera/.emacs.d/elpa/ledger-mode-20220523.803/ledger-mode" "Quick Add" ((history ("/home/luisbarrera/.emacs.d/elpa/ledger-mode-20220523.803/ledger-mode" "Quick Demo" 4367) ("/home/luisbarrera/.emacs.d/elpa/ledger-mode-20220523.803/ledger-mode" "Introduction to Ledger-mode" 2762) ("/home/luisbarrera/.emacs.d/elpa/ledger-mode-20220523.803/ledger-mode" "Top" 2209) ("dir" "Top" 1120))))
+  '((tab-width . 8) (buffer-display-time 25370 42418 193471 700000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (case-fold-search . t) (truncate-lines))
+  '((mark-ring (3999 1 1))))
+
 (desktop-create-buffer 208
   "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
   "init.el"
@@ -26,68 +134,8 @@
   '(55493 nil)
   nil
   nil
-  '((buffer-display-time 25370 41606 707863 29000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (52395 52395 54 1 25451 53069 52959 52813 39123 39122 41020 41020 12063 12063 6875 1599))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
-  "finances.ledger"
-  'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode TeX-PDF-mode)
-  6929
-  '(13899 nil)
-  nil
-  nil
-  '((buffer-display-time 25370 41490 174579 905000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (17728 11467 17124 17124 17116 17010 16801 11415 11734 11574 11257 11257 11759 16521 15854 15801))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode TeX-PDF-mode)
-  6558
-  '(6558 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25370 41482 710307 226000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6818 6493 18 6558 6558 6558 6558 27193 2125 9669 13264 2013 2014 4273 6848 9524))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
-  15502
-  '(28755 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25370 41482 710307 908000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (85313 9358 85147 27830 85242 9358 9241 16817 9179 33176 98 58587 43 128784 17130 17264))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/clases22p.org"
-  "clases22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
-  6
-  '(6 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25370 41482 710306 223000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6 47 6 645 180 645 559 6 645 645 645 645 558 6 6 44))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/tareas22p.org"
-  "tareas22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode text-scale-mode company-box-mode projectile-mode TeX-PDF-mode)
-  17
-  '(4720 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25370 41482 710306 832000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (27 27 27 2093 139 139 17 7755 7832 17 19 19 17 7710 17 17))))
+  '((buffer-display-time 25370 42016 897469 925000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (55493 52395 52395 54 1 25451 53069 52959 52813 39123 39122 41020 41020 12063 12063 6875))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20220906073150-how_to_use_dig.org"
@@ -102,18 +150,6 @@
   '((mark-ring (1280 942))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20220902210147-neovim_config.org"
-  "20220902210147-neovim_config.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
-  1848
-  '(466 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25367 15817 953298 720000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (462 11028 10982 10865 7150 7639 7521 6260 5872 5788 5788 5656 4370 5656 4370 3708))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/org-mode/draft.org"
   "draft.org"
   'org-mode
@@ -124,30 +160,6 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25366 19250 732994 810000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11489 11489 11021 12166 10931 1601 1490 12167 12167 12167 11730 1182 11232 11232 12167 12167))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
-  "20220828192740-proceso_de_datos_sucios_a_datos_limpios.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
-  14735
-  '(14735 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25366 8412 368697 482000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (14694 14233 14233 14044 13913 5945 5850 5850 5850 5850 5850 4901 4283 4213 5275 5139))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
-  "20220515235923-data_science_certificacion_de_google.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
-  595
-  '(595 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25366 8413 600859 642000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/tareas21p.org"
@@ -165,11 +177,23 @@
   "/home/luisbarrera/.emacs.d/diary"
   "diary"
   'fundamental-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode company-box-mode projectile-mode TeX-PDF-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
   1
   '(nil nil)
   nil
   nil
   '((buffer-display-time 25366 8418 123648 745000) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  nil
+  "*info*<2>"
+  'Info-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode company-box-mode projectile-mode TeX-PDF-mode)
+  1128
+  '(nil nil)
+  t
+  '("dir" "Top" nil)
+  '((tab-width . 8) (buffer-display-time 25370 42213 975547 834000) (overwrite-mode) (case-fold-search . t) (truncate-lines))
+  '((mark-ring (1976))))
 
