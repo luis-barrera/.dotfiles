@@ -4,17 +4,6 @@
 [core]
 	editor = nvim
 	pager = diff-so-fancy | less --tabs=4 -RFX
-[diff]
-	tool = meld
-[difftool]
-	prompt = false
-[difftool "meld"]
-	cmd = meld $LOCAL $REMOTE
-[merge]
-	tool = meld
-[mergetool "meld"]
-    cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED
-    # cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
 [gc]
 	autoDetach = false
 [credential]
@@ -36,3 +25,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[add "interactive"]
+	useBuiltin = false
