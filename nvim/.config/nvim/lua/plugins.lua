@@ -23,14 +23,7 @@ return require('packer').startup(function(use)
   -- LSP UI
   use({
     "glepnir/lspsaga.nvim",
-    branch = "main",
-    config = function()
-        local saga = require("lspsaga")
-
-        saga.init_lsp_saga({
-            -- your configuration
-        })
-    end,
+    branch = "main"
   })
 
   -- LSP para no lenuajes sin soporte
@@ -59,22 +52,28 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
 
   -- Fuzzyfinder de archivos por su contenido
-  use { "nvim-telescope/telescope-file-browser.nvim" }
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+
+  -- Fuzzy para otros plugins
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make'}
+  use {'tzachar/fuzzy.nvim', requires = {'nvim-telescope/telescope-fzf-native.nvim'}}
+
+  -- Explorador de archivos
+  use { 'kyazdani42/nvim-tree.lua',
+        requires = { 'kyazdani42/nvim-web-devicons' }}
 
   -- Soporte para tailwindcss
-  use {
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-  }
+  use { "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim" }
 
   -- Git
-  use 'lewis6991/gitsigns.nvim'
-  use 'dinhhuy258/git.nvim'
+  use { 'lewis6991/gitsigns.nvim',
+        'dinhhuy258/git.nvim' }
 
   -- Commenter
   use 'numToStr/Comment.nvim'

@@ -10,6 +10,10 @@
   vim.bo.my_option = "my value" for setting buffer-specific options.
   vim.wo.my_option = "my value" for setting window-specific options. ]]
 
+-- Desactivar por completo netrw para usar mejor nvim-tree
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.cmd [[
 "    ____      _ __        _
 "   /  _/___  (_) /__   __(_)___ ___
@@ -142,7 +146,7 @@ highlight ColorColumn guifg=#000000 guibg=#BD1E1E
 ]]
 
 
-require('plugins') 
+require('plugins')
 
 -- Colorscheme
 -- require("gruvbox").setup({
@@ -160,6 +164,13 @@ require('plugins')
 --   overrides = {},
 -- })
 -- vim.cmd("colorscheme gruvbox")
+
+-- Enable telescope theme
+vim.g.gruvbox_baby_telescope_theme = 1
+-- Transparent mode
+vim.g.gruvbox_baby_transparent_mode = 0
+-- Background color
+vim.g.gruvbox_baby_background_color = 'dark'
 vim.cmd[[colorscheme gruvbox-baby]]
 
 -- Statusline
@@ -389,6 +400,12 @@ telescope.setup {
         ["q"] = actions.close
       },
     },
+    -- Para el tema de gruvbox-baby
+    borderchars = {
+      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+      results = { " " },
+      preview = { " " },
+    },
   },
 }
 
@@ -466,11 +483,21 @@ vim.opt.termguicolors = true
 require("bufferline").setup{
   options = {
     mode = "tabs",
+    numbers = "ordinal",
     separator_style = 'slant',
+    diagnostics = "nvim_lsp",
     always_show_bufferline = false,
     show_buffer_close_icons = false,
     show_close_icon = false,
-    color_icons = true
+    color_icons = true,
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "File Explorer",
+        highlight = "Directory",
+        separator = true -- use a "true" to enable the default, or set your own character
+      },
+    },
   },
 }
 
@@ -678,6 +705,33 @@ else
     },
   }
 end
+
+
+-- Explorador de archivos
+require("nvim-tree").setup({
+  sort_by = "case_sensitive",
+  view = {
+    adaptive_size = true,
+    mappings = {
+      list = {
+        { key = "u", action = "dir_up" },
+      },
+    },
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
+
+-- Abrir el file explorer
+vim.api.nvim_set_keymap(
+  '',
+  '<Leader>fp',
+  ':NvimTreeToggle<CR>',
+  { noremap = true, silent = true })
 
 
 vim.cmd [[
