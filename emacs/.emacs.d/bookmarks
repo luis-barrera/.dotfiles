@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("org-capture-last-stored-marker"
+(("finances.ledger"
+ (filename . "~/google-drive/org-mode/finances.ledger")
+ (front-context-string)
+ (rear-context-string . "          -$57\n\n")
+ (position . 17729))
+("org-capture-last-stored-marker"
  (filename . "~/.notes")
  (front-context-string . "** TODO Idea App")
  (rear-context-string . "t-time-string]]\n")
@@ -29,9 +34,9 @@
  (position . 2350))
 ("Google-Data"
  (filename . "~/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org")
- (front-context-string . "ar datos para la")
- (rear-context-string . "993f73e6][Prepar")
- (position . 506))
+ (front-context-string . "o de datos sucio")
+ (rear-context-string . "e3d178e7][Proces")
+ (position . 595))
 ("YT-Angular"
  (filename . "~/google-drive/org-roam/20220401000056-angular_pildoras_informaticas.org")
  (front-context-string . "\n* continuar\nPar")
@@ -59,19 +64,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Cambiar ")
- (rear-context-string . "biaban de color\n")
- (position . 140071))
+ (front-context-string . "** DONE Inroads:")
+ (rear-context-string . "acceso: 165188\n\n")
+ (position . 153340))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220816005952-have_smartphones_destroyed_a_generation.org")
+ (filename . "~/org-roam/20220906073150-how_to_use_dig.org")
  (front-context-string)
- (rear-context-string . "on?\n#+filetags:\n")
- (position . 350))
+ (rear-context-string . "dig\n#+filetags:\n")
+ (position . 266))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
