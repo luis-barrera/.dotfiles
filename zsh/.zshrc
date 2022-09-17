@@ -349,6 +349,9 @@ alias nv='neovide'
 # Alias para aplicar tema
 alias theme='sh ~/scripts/xmonad_pywal_choose_wallpaper.sh'
 
+# Teclado externo
+alias teclado="xset r rate 200 60 && setxkbmap -option 'ctrl:swapcaps'"
+
 # Fin alias
 ###############################################################################
 
