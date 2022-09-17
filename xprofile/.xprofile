@@ -1,5 +1,5 @@
 # set key repeat rate. delay 200 milisecond, 60 per sec
-xset r rate 200 60 &
+xset r rate 200 60
 
 # set slock as screen-locker
 # xautolock -time 100 -locker slock &
