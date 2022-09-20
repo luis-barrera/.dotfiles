@@ -92,11 +92,11 @@ eval "$(starship init zsh)"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
 	alias-finder
-	colored-man-pages
+	# colored-man-pages
 	fancy-ctrl-z
 	fzf
-	ripgrep
-	zsh-interactive-cd
+	# ripgrep
+	# zsh-interactive-cd
 	zsh-autosuggestions
 	)
 
