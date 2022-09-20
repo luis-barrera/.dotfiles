@@ -13,6 +13,7 @@ baobab
 base
 bat
 biber
+bind
 binutils
 bison
 blanket
@@ -49,6 +50,7 @@ fzf
 gawk
 gcc
 gettext
+ghostwriter
 gimagereader-gtk
 gimp
 git
@@ -92,6 +94,7 @@ m4
 maim
 make
 man-db
+meld
 metasploit
 mpv
 mpv-mpris

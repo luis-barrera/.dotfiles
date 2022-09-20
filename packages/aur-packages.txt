@@ -38,6 +38,7 @@ neovide-git
 nerd-fonts-jetbrains-mono
 nerd-fonts-victor-mono
 nodejs-nativefier
+nvim-packer-git
 nvm
 obs-studio-git
 oh-my-zsh-git
@@ -47,6 +48,7 @@ paru
 pfetch
 platformio
 pm-utils
+prettierd
 python-ajsonrpc
 python-clickgen
 python-colorthief
@@ -73,11 +75,15 @@ ttf-ancient-fonts
 ttf-twemoji-color
 universal-android-debloater-bin
 visual-studio-code-bin
+vscode-langservers-extracted
 webstorm
 whatsapp-nativefier
 xgetres
 xmonad-contrib-git
 xmonad-git
 xsuspender-git
+youtube-music-bin
+youtubemusic-nativefier
+ytmdesktop-bin
 zoom
 zotero-bin
