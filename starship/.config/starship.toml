@@ -2,12 +2,11 @@
 add_newline = true
 
 # Milisegundos para analizar los archivos en el dir actual
-scan_timeout = 10
+scan_timeout = 20
 
 # Formato del prompt
 format = """
-$time [                           ](bold fg:2)\
-$memory_usage
+$time [                           ](bold fg:2)
 $sudo\
 $username\
 $directory\
@@ -16,35 +15,13 @@ $git_commit\
 $git_state\
 $git_metrics\
 $git_status\
-$docker_context\
 $package\
 $cmake\
-$cobol\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$helm\
 $java\
-$julia\
-$kotlin\
 $lua\
 $nodejs\
-$ocaml\
-$perl\
-$php\
-$purescript\
 $python\
-$rlang\
-$ruby\
-$rust\
-$scala\
-$swift\
-$conda\
-$kubernetes
+$docker_context
 $jobs$cmd_duration$shell"""
 
 [username]
@@ -58,7 +35,7 @@ format = "  [$path]($style)[$read_only]($read_only_style) "
 format = " [$symbol$branch]($style) "
 
 [package]
-format = "via [ $version]($style) "
+format = "[ $version]($style) "
 
 [memory_usage]
 disabled = false
@@ -71,11 +48,11 @@ disabled = false
 
 [cmd_duration]
 min_time = 500
-format = " [$duration](bold yellow) "
+format = "[ $duration](bold yellow) "
 
 [shell]
 fish_indicator = "[](yellow)"
-zsh_indicator = "[>-](yellow)"
+zsh_indicator = "[zsh >](yellow)"
 powershell_indicator = "_"
 unknown_indicator = "mystery shell"
 style = "blue bold"
@@ -86,6 +63,7 @@ disabled = false
 format = '[\[$time\]]($style)'
 
 # -- Módulos disponibles
+# $memory_usage\
 # $hostname\
 # $shlvl\
 # $singularity\
@@ -108,4 +86,25 @@ format = '[\[$time\]]($style)'
 # $line_break\
 # $battery\
 # $status\
-
+# $cobol\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $golang\
+# $helm\
+# $julia\
+# $kotlin\
+# $ocaml\
+# $perl\
+# $php\
+# $purescript\
+# $rlang\
+# $ruby\
+# $rust\
+# $scala\
+# $swift\
+# $conda\
+# $kubernetes
