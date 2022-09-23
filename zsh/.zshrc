@@ -352,6 +352,10 @@ alias theme='sh ~/scripts/xmonad_pywal_choose_wallpaper.sh'
 # Teclado externo
 alias teclado="xset r rate 200 60 && setxkbmap -option 'ctrl:swapcaps'"
 
+# Lampara esp32
+alias lamp="curl -s http://192.168.0.8/toggle -o /dev/null"
+
+
 # Fin alias
 ###############################################################################
 
