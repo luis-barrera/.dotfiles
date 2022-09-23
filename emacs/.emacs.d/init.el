@@ -102,6 +102,7 @@
  '(org-pomodoro-long-break-frequency 5)
  '(org-pomodoro-long-break-length 20)
  '(org-pomodoro-long-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
+ '(org-pomodoro-short-break-length 1)
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
