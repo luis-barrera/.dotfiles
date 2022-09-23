@@ -1,6 +1,9 @@
 -- TODO: Configurar los status de llamar a cirtos plugins para mostrar un mensaje
 -- si no se cargó alguno
 --    if (not status) then return end
+-- TODO: Separar en un sólo archivo los configs de lsp
+-- TODO: Hcaer un source al init.vim y quitarlo de aquí
+-- TODO: Moverse de init.vim a init.lua, buscar las variables de vim correctas en lua
 
 -- Config antigua de neovim
 
@@ -243,6 +246,9 @@ nvim_lsp.eslint.setup{
   cmd = { "vscode-eslint-language-server", "--stdio" }
 }
 
+-- C++ lsp
+nvim_lsp.clangd.setup{}
+
 -- Autocompletado
 local status, cmp = pcall(require, "cmp")
 if (not status) then return end
@@ -335,6 +341,7 @@ ts.setup {
     disable = {},
   },
   ensure_installed = {
+    "cpp",
     "tsx",
     "javascript",
     "toml",
