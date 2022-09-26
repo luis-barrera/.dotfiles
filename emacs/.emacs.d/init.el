@@ -98,6 +98,32 @@
      ("\\.x?html?\\'" . default)
      ("\\.pdf\\'" . "zathura %s")))
  '(org-image-actual-width 400)
+ '(org-latex-default-figure-position "H")
+ '(org-latex-default-packages-alist
+   '(("AUTO" "inputenc" t
+      ("pdflatex"))
+     ("T1" "fontenc" t
+      ("pdflatex"))
+     ("" "graphicx" t nil)
+     ("" "longtable" nil nil)
+     ("" "wrapfig" nil nil)
+     ("" "rotating" nil nil)
+     ("normalem" "ulem" t nil)
+     ("" "amsmath" t nil)
+     ("" "amssymb" t nil)
+     ("" "capt-of" nil nil)
+     ("" "hyperref" nil nil)))
+ '(org-latex-listings 'minted)
+ '(org-latex-listings-options nil)
+ '(org-latex-minted-options
+   '(("breaklines" "true")
+     ("breakanywhere" "true")
+     ("breaksymbolleft" "{}")
+     ("breaksymbolright" "{}")
+     ("breakanywheresymbolpre" "{}")
+     ("frame" "lines")))
+ '(org-odt-display-outline-level 1)
+ '(org-odt-preferred-output-format "docx")
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
  '(org-pomodoro-long-break-frequency 5)
  '(org-pomodoro-long-break-length 20)
@@ -106,7 +132,7 @@
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
-   '(lua-mode org-alert: org-alert consult orderless marginalia vertico citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline projectile helpful which-key command-log-mode company forge magit general use-package))
+   '(docker-compose-mode yaml-mode lua-mode org-alert: org-alert consult orderless marginalia vertico citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline projectile helpful which-key command-log-mode company forge magit general use-package))
  '(save-place t nil (saveplace))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
@@ -473,6 +499,10 @@
                                  ("breaksymbolleft" "{}")
                                  ("breaksymbolright" "{}")
                                  ("breakanywheresymbolpre" "{}")))
+
+;; Org export to ODT
+(setq org-odt-category-map-alist
+      '(("__Figure__" "Figura" "value" "Figure" org-odt--enumerable-image-p)))
 
 ;; Pomodoro en org-mode
 (use-package org-pomodoro
