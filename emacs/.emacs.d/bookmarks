@@ -2,11 +2,11 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("finances.ledger"
- (filename . "~/google-drive/org-mode/finances.ledger")
- (front-context-string)
- (rear-context-string . "          -$57\n\n")
- (position . 17729))
+(("Proyectos-Portafolio"
+ (filename . "~/google-drive/org-mode/Proyectos.org")
+ (front-context-string . ".\nPara los estil")
+ (rear-context-string . "tro de la página")
+ (position . 265))
 ("org-capture-last-stored-marker"
  (filename . "~/.notes")
  (front-context-string . "** TODO Idea App")
@@ -73,10 +73,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220906073150-how_to_use_dig.org")
+ (filename . "~/org-roam/20220920091209-proyecto_lampara_web_arduino.org")
  (front-context-string)
- (rear-context-string . "dig\n#+filetags:\n")
- (position . 266))
+ (rear-context-string . "ara Web Arduino\n")
+ (position . 107))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)

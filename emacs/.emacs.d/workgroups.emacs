@@ -1,18 +1,14 @@
 #s(wg-session "JFBO56EDB4FFK0-1SFKEL" nil nil
               (~pickel!~
-                (7 nil 6
-                   (d "#s(wg-wconfig \"JL71ALE43BL5IAW-2BEH1U7\" nil ((fullscreen)) 1340 602 19 2 nil 16 #s(wg-win nil nil (0 0 19 2) 1 1 0 t nil nil \"JL71ALE439UFKYG-2BEH1QV\"))")
-                   5
-                   (c)
-                   4
-                   (d "#s(wg-wconfig \"JL71ALE435T3ATS-2BEH1M3\" nil ((fullscreen)) 10 37 129 34 nil 16 #s(wg-win nil nil (0 0 130 34) 14 1 0 nil nil nil \"JIT1D4E1DF7BNR4-1QB544\"))")
+                (5 nil 4
+                   (d "#s(wg-wconfig \"JLEJNQBCQ6EFAG-2ALBSV\" nil ((fullscreen)) 10 10 129 35 nil 16 #s(wg-wtree nil nil (0 0 130 35) (#s(wg-wtree nil t (0 0 44 35) (#s(wg-win nil nil (0 0 44 8) 6 1 0 nil nil nil \"JIT1D4E1DLUK7MG-1QB57U\") #s(wg-win nil nil (0 8 44 35) 6421 6365 0 nil nil nil \"JIT1D4E1D297FQW-1QB4WO\"))) #s(wg-win nil nil (44 0 87 35) 41310 41285 0 nil nil nil \"JIT1D4E1DWM9QB4-1QB5G6\") #s(wg-wtree nil t (87 0 130 35) (#s(wg-win nil nil (87 0 130 8) 65 60 0 nil nil nil \"JJ05DKKRA05ZA0-3S60MW\") #s(wg-win nil nil (87 8 130 35) 23223 18338 0 nil nil nil \"JIT1D4E1DF7BNR4-1QB544\"))))))")
                    3
                    (c)
                    2 frame-list 1
                    (c)
                    0
                    (c))
-                (c 5 6 7 c 3 4 5 c 1 2 3 c 0 1 7)
+                (c 3 4 5 c 1 2 3 c 0 1 5)
                 0)
               "/home/luisbarrera/.emacs.d/workgroups.emacs" "1.2.1"
               (#s(wg-workgroup "JJ05GOI4AS5T3S-55GRBJ" "Org-Agenda" t nil #s(wg-wconfig "JJ05GOIJKW5F7S-55GS6N" nil
@@ -115,33 +111,16 @@
                                                                                                                                                  (87 16 130 34)
                                                                                                                                                  23223 15904 0 nil t nil "JIT1D4E1DF7BNR4-1QB544"))))))
                                  nil nil nil nil)
-                 #s(wg-workgroup "JL71ALE3RZI9R2W-2BEGWRD" "wg3" t nil #s(wg-wconfig "JL71ALE3YG8857K-2BEGY5Q" nil
-                                                                                     ((fullscreen))
-                                                                                     10 37 129 34 nil 16 #s(wg-wtree nil nil
-                                                                                                                     (0 0 130 34)
-                                                                                                                     (#s(wg-wtree nil t
-                                                                                                                                  (0 0 44 34)
-                                                                                                                                  (#s(wg-win nil nil
-                                                                                                                                             (0 0 44 16)
-                                                                                                                                             6 1 0 nil nil nil "JIT1D4E1DLUK7MG-1QB57U")
-                                                                                                                                     #s(wg-win nil nil
-                                                                                                                                               (0 16 44 34)
-                                                                                                                                               6421 6365 0 nil nil nil "JIT1D4E1D297FQW-1QB4WO")))
-                                                                                                                        #s(wg-win nil nil
-                                                                                                                                  (44 0 87 34)
-                                                                                                                                  41310 41277 0 nil nil nil "JIT1D4E1DWM9QB4-1QB5G6")
-                                                                                                                        #s(wg-wtree nil t
-                                                                                                                                    (87 0 130 34)
-                                                                                                                                    (#s(wg-win nil nil
-                                                                                                                                               (87 0 130 16)
-                                                                                                                                               114 1 0 nil t nil "JJ05DKKRA05ZA0-3S60MW")
-                                                                                                                                       #s(wg-win nil nil
-                                                                                                                                                 (87 16 130 34)
-                                                                                                                                                 23223 18338 0 nil nil nil "JIT1D4E1DF7BNR4-1QB544"))))))
+                 #s(wg-workgroup "JLEJNQAYXY8QTC-2AL8Z6" "wg3" t nil #s(wg-wconfig "JLEJNQB0F717ZC-2AL9JA" nil
+                                                                                   ((fullscreen))
+                                                                                   10 10 129 35 nil 16 #s(wg-win nil nil
+                                                                                                                 (0 0 130 35)
+                                                                                                                 17472 9336 0 nil t nil "JIT1D4E1DF7BNR4-1QB544"))
                                  nil nil nil nil))
-              (#s(wg-buf "JL71ALE439UFKYG-2BEH1QV" " *company-box-25166146*" nil 1 29
-                         ((major-mode . fundamental-mode)
-                          nil nil nil nil nil nil nil)
+              (#s(wg-buf "JIT1D4E1DF7BNR4-1QB544" "index.org" "/home/luisbarrera/google-drive/org-mode/index.org" 17472 282
+                         ((major-mode . org-mode)
+                          (mark-ring 42 13 23671 8287 24618 24618 562 7081 7081 7341 7016 18 7081 7081 7081 7081)
+                          nil nil nil nil nil nil)
                          nil nil)
                  #s(wg-buf "JIT1D4E1D297FQW-1QB4WO" "tareas22p.org" "/home/luisbarrera/google-drive/org-mode/tareas22p.org" 6421 23
                            ((major-mode . org-mode)
@@ -151,11 +130,6 @@
                  #s(wg-buf "JIT1D4E1DWM9QB4-1QB5G6" "todos.org" "/home/luisbarrera/google-drive/org-mode/todos.org" 41310 41310
                            ((major-mode . org-mode)
                             (mark-ring 41310 140341 93705 33479 34425 93510 29924 33296 29816 29816 93891 93891 19493 19746 41144 56438)
-                            nil nil nil nil nil nil)
-                           nil nil)
-                 #s(wg-buf "JIT1D4E1DF7BNR4-1QB544" "index.org" "/home/luisbarrera/google-drive/org-mode/index.org" 23223 24170
-                           ((major-mode . org-mode)
-                            (mark-ring 24170 114 6633 6633 6893 6568 18 6633 6633 6633 6633 27268 2200 9744 13339 2088)
                             nil nil nil nil nil nil)
                            nil nil)
                  #s(wg-buf "JIT1D4E1DLUK7MG-1QB57U" "clases22p.org" "/home/luisbarrera/google-drive/org-mode/clases22p.org" 6 6
