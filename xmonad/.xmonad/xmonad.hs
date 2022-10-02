@@ -30,6 +30,7 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 
 -- Layouts
 import XMonad.Layout.Accordion
@@ -529,7 +530,7 @@ defaults = def {
         manageHook         = newManageHook,
         layoutHook         = myLayout,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook,
+        logHook            = myLogHook >> setWMName "LG3D",
         startupHook        = myStartupHook,
 
         -- key bindings
