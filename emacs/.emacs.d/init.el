@@ -452,6 +452,8 @@
   :after org
   :custom (org-download-screenshot-method "scrot")
   :hook (dired-mode . org-download-enable)
+  :custom
+  (setq-default org-download-image-dir "~/org-roam/img")
   :bind
   (:map org-mode-map
         (("C-x p i" . org-download-yank))))

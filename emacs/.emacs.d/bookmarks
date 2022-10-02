@@ -64,19 +64,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Inroads:")
- (rear-context-string . "acceso: 165188\n\n")
- (position . 153340))
+ (front-context-string . "** DONE Quitar t")
+ (rear-context-string . "acceso: 817099\n\n")
+ (position . 173525))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20220920091209-proyecto_lampara_web_arduino.org")
+ (filename . "~/org-roam/20220928092058-xxd.org")
  (front-context-string)
- (rear-context-string . "ara Web Arduino\n")
- (position . 107))
+ (rear-context-string . "D:\n#+title: xxd\n")
+ (position . 81))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
