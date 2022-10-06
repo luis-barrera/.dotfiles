@@ -133,6 +133,9 @@
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
    '(docker-compose-mode yaml-mode lua-mode org-alert: org-alert consult orderless marginalia vertico citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline projectile helpful which-key command-log-mode company forge magit general use-package))
+ '(safe-local-variable-values
+   '((org-download-heading-lvl)
+     (org-download-image-dir . "~/org-roam/Test2")))
  '(save-place t nil (saveplace))
  '(undo-tree-history-directory-alist '(("" . "/home/luisbarrera/.emacs.d/emacs-undo-tree.d")))
  '(warning-suppress-log-types '((initialization) (yasnippet backquote-change))))
@@ -431,11 +434,13 @@
 (setq org-roam-capture-templates
       '(("d" "default" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                            "#+title: ${title}\n")
+                            "# -*- mode: org; org-download-image-dir: \"~/org-roam/${title}\"; org-download-heading-lvl: nil; -*-
+#+title: ${title}\n")
          :unnarrowed t)
         ("c" "Nota completa" plain "%?"
          :target (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
-                            ":PROPERTIES:
+                            "# -*- mode: org; org-download-image-dir: \"~/org-roam/${title}\"; org-download-heading-lvl: nil; -*-
+:PROPERTIES:
 :AUTHOR: %^{Author|Luis Barrera}
 :ROAM_REFS: %^{Link o Ref|No Ref}
 :TYPE: %^{Type|Articulo de Internet|Noticia|Libro|Video|Nota Personal|Notas de Clase|Paper Científico}
@@ -453,7 +458,8 @@
   :custom (org-download-screenshot-method "scrot")
   :hook (dired-mode . org-download-enable)
   :custom
-  (setq-default org-download-image-dir "~/org-roam/img")
+  (setq org-download-image-dir "~/org-roam/img")
+  (setq org-download-heading-lvl nil)
   :bind
   (:map org-mode-map
         (("C-x p i" . org-download-yank))))
@@ -1411,6 +1417,10 @@
   (if (<= (window-total-width) 60)
       (my-buffer-face-mode-fixed)
     (buffer-face-mode 0)))
+
+;; Recargar org-mode en org-roam después de hacer un capture para
+;; poder activar variables locales
+(add-hook 'org-capture-after-finalize-hook 'org-mode)
 
 (defun package-reinstall-all-activated-packages ()
   "Refresh and reinstall all activated packages."
