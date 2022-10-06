@@ -1,3 +1,4 @@
+agg
 android-studio
 anki-bin
 appimagelauncher
@@ -5,10 +6,10 @@ appimagepool-appimage
 betterlockscreen
 bibata-cursor-theme
 brave-bin
-c++utilities
 caffeine-ng
 cef-minimal
 cef-minimal-obs-bin
+ceph-libs
 colorz
 drawio-desktop-bin
 drive-bin
@@ -22,17 +23,20 @@ heroku-cli-bin
 hosts-update
 humanity-icon-theme
 i3lock-color
+insomnia-bin
 jamesdsp
 jdtls
 kitty-terminfo-git
-libajantv2
 librewolf-bin
+librist
+libvterm01
 lite-xl
 lua-lpeglabel-git
 lua-lsp-git
 lua-luainspect-git
 ly
 mandelbulber2
+mongodb-compass
 mpris-ctl
 neovide-git
 nerd-fonts-jetbrains-mono
@@ -40,7 +44,6 @@ nerd-fonts-victor-mono
 nodejs-nativefier
 nvim-packer-git
 nvm
-obs-studio-git
 oh-my-zsh-git
 otf-nerd-fonts-fira-code
 pacmixer
@@ -56,8 +59,7 @@ python-gaphas
 python-generic
 python-haishoku
 python-pulsectl
-qtforkawesome
-qtutilities
+python2
 rambox-pro-bin
 reproc
 responsively-bin
@@ -70,7 +72,6 @@ spotifywm-git
 staruml
 surf
 syncthing-gtk-python3
-syncthingtray
 ttf-ancient-fonts
 ttf-twemoji-color
 universal-android-debloater-bin

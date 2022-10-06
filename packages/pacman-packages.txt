@@ -94,6 +94,7 @@ m4
 maim
 make
 man-db
+mariadb
 meld
 metasploit
 mpv
@@ -117,8 +118,11 @@ nmap
 noto-fonts-cjk
 noto-fonts-emoji
 nyxt
+obs-studio
 openssh
 pacman
+pandoc
+pandoc-crossref
 parcellite
 pasystray
 patch
