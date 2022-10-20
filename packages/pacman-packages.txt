@@ -66,6 +66,7 @@ gvfs-smb
 gzip
 haskell-language-server
 haveged
+hblock
 htop
 hunspell-es_mx
 inkscape

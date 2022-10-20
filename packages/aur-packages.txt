@@ -18,7 +18,6 @@ etcher-bin
 flameshot-git
 fritzing
 gaphor-git
-hblock
 heroku-cli-bin
 hosts-update
 humanity-icon-theme
@@ -51,6 +50,7 @@ paru
 pfetch
 platformio
 pm-utils
+postman9-bin
 prettierd
 python-ajsonrpc
 python-clickgen
