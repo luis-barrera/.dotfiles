@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Nov 12 07:53:49 2022
+;; Created Sat Nov 12 08:25:56 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,16 +18,40 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20221009125544-analizar_datos_para_responder_preguntas.org"
+  "20221009125544-analizar_datos_para_responder_preguntas.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
+  88880
+  '(88798 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25450 21433 221611 227000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (87250 86881 86824 86103 85933 85933 85387 84962 84546 84521 83896 83407 83009 82711 82495 82237))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/clases22p.org"
+  "clases22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode)
+  241
+  '(6 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25455 42668 978045 982000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6 6 6 47 6 769 180 769 683 6 769 769 769 769 682 6))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/org-mode/todos.org"
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
-  119849
-  '(46663 nil)
+  46735
+  '(132698 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25455 42318 389170 51000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (162 45356 119928 4196 4300 103355 70 162 4124 119574 119574 169 4075 4065 95 738))))
+  '((indent-tabs-mode) (buffer-display-time 25455 42673 485354 436000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (164112 119744 46663 162 45356 119928 4196 4300 103417 70 162 4124 119636 119636 169 4075))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/draft.org"
@@ -38,20 +62,8 @@
   '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25455 42307 809761 273000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25455 42673 485355 138000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20221009125544-analizar_datos_para_responder_preguntas.org"
-  "20221009125544-analizar_datos_para_responder_preguntas.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode)
-  88880
-  '(88798 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25450 21433 221611 227000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (87250 86881 86824 86103 85933 85933 85387 84962 84546 84521 83896 83407 83009 82711 82495 82237))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
@@ -88,18 +100,6 @@
   nil
   '((buffer-display-time 25448 62002 737363 38000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904 11203))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/clases22p.org"
-  "clases22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
-  6
-  '(6 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25448 62002 908992 513000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/tareas22p.org"
