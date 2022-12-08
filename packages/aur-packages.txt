@@ -15,6 +15,7 @@ discord-canary
 drawio-desktop-bin
 drive-bin
 dropbox
+eclipse-java
 etcher-bin
 flameshot-git
 fritzing
@@ -36,7 +37,10 @@ lua-lsp-git
 lua-luainspect-git
 ly
 mandelbulber2
+metis
+mongodb-bin
 mongodb-compass
+mongosh-bin
 mpris-ctl
 neovide-git
 nerd-fonts-fira-code
