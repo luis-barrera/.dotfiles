@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Dec 15 01:11:50 2022
+;; Created Thu Dec 15 01:16:41 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,30 +18,6 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/clases22p.org"
-  "clases22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode)
-  235
-  '(1265 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25498 51351 168649 618000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1265 6 6 6 47 6 831 180 831 745 6 831 831 831 831 744))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
-  122459
-  '(185772 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25498 51351 168649 243000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (183143 136679 858 37990 122595 1272 122663 125 95 61 188 178876 137139 104587 122731 152848))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
   "init.el"
   'emacs-lisp-mode
@@ -52,6 +28,30 @@
   nil
   '((buffer-display-time 25493 17168 217551 869000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (37373 14194 42795 42795))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
+  35847
+  '(35831 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25498 51611 85705 516000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (122709 186208 183579 136929 858 38054 122845 1272 122913 125 95 61 188 179312 137389 104713))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/clases22p.org"
+  "clases22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
+  1179
+  '(1179 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25498 51465 269509 884000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1265 6 6 6 47 6 831 180 831 745 6 831 831 831 831 744))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20221206181411-mongoose_nodejs_y_mongodb.org"
@@ -81,7 +81,7 @@
   "/home/luisbarrera/org-mode/draft.org"
   "draft.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode)
   11314
   '(12901 nil)
   nil
