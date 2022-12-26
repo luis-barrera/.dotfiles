@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Dec 25 16:54:44 2022
+;; Created Sun Dec 25 18:55:40 2022
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,18 +18,6 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
-  183689
-  '(185703 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25512 54098 868623 840000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (186608 185774 77 644 59336 59342 59347 98600 75449 75568 59234 36823 98661 128132 98724 21925))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
@@ -42,6 +30,30 @@
   '((mark-ring (41 41 29 19701 27779 13312 27779 282 42 13 23731 7750 24678 24678 562 6544))))
 
 (desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode company-box-mode projectile-mode)
+  155824
+  '(187110 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25512 60947 174314 229000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (92861 104713 122535 122575 146574 153523 180060 161860 167325 172674 137389 137268 137268 182990 184124 186138))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/tareas22p.org"
+  "tareas22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode projectile-mode)
+  6425
+  '(17 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25512 60947 174314 771000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (23 1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/org-mode/draft.org"
   "draft.org"
   'org-mode
@@ -50,7 +62,7 @@
   '(12901 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25512 54098 868626 808000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25512 60947 174317 178000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12556 12556 12555 11311 180 4117))))
 
 (desktop-create-buffer 208
@@ -88,18 +100,6 @@
   nil
   '((buffer-display-time 25512 37771 202465 638000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11078 5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/tareas22p.org"
-  "tareas22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode buffer-face-mode company-box-mode projectile-mode)
-  17
-  '(23 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25500 7442 554922 20000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20221206181411-mongoose_nodejs_y_mongodb.org"
