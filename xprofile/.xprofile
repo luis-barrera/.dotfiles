@@ -56,25 +56,6 @@ xinput set-prop $touchpad 335 1
 # Intercambia la tecla CAPS con CTRL-Izq
 setxkbmap -option 'ctrl:swapcaps'
 
-# Abrir aplicaciones después del display server, pero antes del WM
-# xcompmgr &
-# light-locker &
-gnome-keyring-daemon --start &
-redshift-gtk &
-flameshot &
-# parcellite -d &
-parcellite &
-picom -b &
-playerctld daemon &
-syncthingtray --wait &
-seahorse &
-lxsession &
-# pcloud &
-# clight-gui --tray &
-# fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
-# unclutter &
-nohup xsuspender >/dev/null & disown
-
 # Programas no deamonizados
 emacs &
 firefox &
@@ -85,24 +66,48 @@ kitty --detach btop &
 # Monitor de cambios en el File System
 #setsid fswatch -x -L /home/luisbarrera/google-drive/* | xargs -I{} ~/scripts/drive-push.sh {} >/dev/null 2>&1 < /dev/null &
 
-# Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:
-xset s 180 120
-# nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- i3lock -i /home/luisbarrera/wallpapers/16.png -n >/dev/null & disown
-nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- betterlockscreen -l dim -n >/dev/null & disown
-xsetroot -cursor_name left_ptr
-
-# Notificaciones
-/usr/bin/dunst -conf ~/.config/dunst/dunstrc_xr_colors >/dev/null & disown
-
 # Daemons de Emacs
 #/bin/emacs --daemon &
 
-# Tray icon de batería
-cbatticon & disown
-
-
-# Java y WM
-export AWT_TOOLKIT=MToolkit
 
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
+
+
+
+### Config para xmonad
+
+# # Abrir aplicaciones después del display server, pero antes del WM
+# # xcompmgr &
+# # light-locker &
+# gnome-keyring-daemon --start &
+# redshift-gtk &
+# flameshot &
+# # parcellite -d &
+# parcellite &
+# picom -b &
+# playerctld daemon &
+# syncthingtray --wait &
+# seahorse &
+# lxsession &
+# # pcloud &
+# # clight-gui --tray &
+# # fetchcord --nohost --nohardware --time 15 --terminal 'kitty' &
+# # unclutter &
+# nohup xsuspender >/dev/null & disown
+#
+# # Java y WM
+# export AWT_TOOLKIT=MToolkit
+#
+# # Tray icon de batería
+# cbatticon & disown
+#
+# # Notificaciones
+# /usr/bin/dunst -conf ~/.config/dunst/dunstrc_xr_colors >/dev/null & disown
+#
+# # Dim the screen after three minutes of inactivity, lock the screen two minutes later using i3lock:
+# xset s 180 120
+# # nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- i3lock -i /home/luisbarrera/wallpapers/16.png -n >/dev/null & disown
+# nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- betterlockscreen -l dim -n >/dev/null & disown
+# xsetroot -cursor_name left_ptr
+
