@@ -60,7 +60,7 @@ setxkbmap -option 'ctrl:swapcaps'
 # emacs &
 # firefox &
 # qutebrowser &
-kitty --detach btop &
+# kitty --detach btop &
 # kitty --detach wisdom-tree &
 
 # Monitor de cambios en el File System
