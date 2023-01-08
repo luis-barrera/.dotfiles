@@ -135,6 +135,7 @@ pipewire-alsa
 pipewire-jack
 pipewire-pulse
 pkgconf
+plasma-meta
 playerctl
 procs
 pycharm-community-edition
@@ -178,6 +179,7 @@ tokei
 torbrowser-launcher
 translate-shell
 tree
+ttf-firacode-nerd
 ttf-liberation
 unison
 vi
@@ -199,6 +201,9 @@ xf86-input-synaptics
 xf86-video-intel
 xfce4-terminal
 xmobar
+xmonad
+xmonad-contrib
+xmonad-extras
 xorg-appres
 xorg-fonts-misc
 xorg-server

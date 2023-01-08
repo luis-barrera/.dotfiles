@@ -28,6 +28,7 @@ insomnia-bin
 jamesdsp
 jdtls
 kitty-terminfo-git
+kwin-bismuth-bin
 librewolf-bin
 librist
 libvterm01
@@ -42,8 +43,8 @@ mongodb-bin
 mongodb-compass
 mongosh-bin
 mpris-ctl
+multibootusb
 neovide-git
-nerd-fonts-fira-code
 nerd-fonts-jetbrains-mono
 nerd-fonts-victor-mono
 nodejs-nativefier
@@ -86,8 +87,6 @@ vscode-langservers-extracted
 webstorm
 whatsapp-nativefier
 xgetres
-xmonad-contrib-git
-xmonad-git
 xsuspender-git
 youtube-music-bin
 youtubemusic-nativefier
