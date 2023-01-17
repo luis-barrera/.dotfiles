@@ -108,6 +108,12 @@ return require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons'
   }
 
+  -- Svelte
+  use 'pangloss/vim-javascript'
+  use 'maxmellon/vim-jsx-pretty'
+  use 'w0rp/ale'
+  use 'burner/vim-svelte'
+
   if packer_bootstrap then
     require('packer').sync()
   end

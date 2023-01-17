@@ -249,6 +249,12 @@ nvim_lsp.eslint.setup{
 -- C++ lsp
 nvim_lsp.clangd.setup{}
 
+-- Svelte lsp
+nvim_lsp.svelte.setup{
+  filetypes = { "svelte", "html" }
+}
+
+
 -- Autocompletado
 local status, cmp = pcall(require, "cmp")
 if (not status) then return end
