@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Feb  6 21:15:04 2023
+;; Created Thu Feb  9 19:51:50 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,16 +18,40 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20230205082241-svelte.org"
+  "20230205082241-svelte.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  4674
+  '(4497 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25571 12610 185623 199000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (4484 4231 3849 3593 3244 3147 2865 3017 3131 3017 2540 2505 2584 2671 2671 2398))))
+
+(desktop-create-buffer 208
   "/home/luisbarrera/org-mode/todos.org"
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  198388
-  '(126942 nil)
+  145232
+  '(155722 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25569 49686 639158 619000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (126943 126943 106775 144222 301 644 59336 59342 59347 98600 75449 75568 59234 36823 98661 128262))))
+  '((indent-tabs-mode) (buffer-display-time 25573 41721 848143 599000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (145255 127748 107457 95172 87105 73910 73849 71059 35962 33162 87105 71059 107457 53081 71059 4293))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  13
+  '(13 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25569 55944 568227 782000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (17301 13 2543 13 13 10032 90 90 29 19750 27828 13361 27828 331 91 13))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/draft.org"
@@ -38,31 +62,19 @@
   '(11870 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25569 49686 639159 964000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25573 41721 848144 530000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12556 12556 12555 11311 180 4117))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  13
-  '(17301 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25569 49316 643738 591000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (13 2543 13 13 10032 90 90 29 19750 27828 13361 27828 331 91 13 23780))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/finances.ledger"
   "finances.ledger"
   'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
   11078
   '(11078 nil)
   nil
   nil
-  '((buffer-display-time 25569 49316 639226 76000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25569 55942 26196 474000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11078 5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904))))
 
 (desktop-create-buffer 208
@@ -88,18 +100,6 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25569 49316 638165 204000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20230205082241-svelte.org"
-  "20230205082241-svelte.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  3117
-  '(3002 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25569 49312 92465 340000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (3116 3002 2540 2505 2584 2671 2671 2398 2395 2342 2267 2220 2105 1396 1288 949))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
