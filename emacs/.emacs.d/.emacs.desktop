@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Feb 25 23:43:49 2023
+;; Created Sat Feb 25 23:53:38 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,28 +18,76 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
-  "20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  36601
-  '(36576 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25594 61815 559043 532000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (35392 35036 34894 34857 34674 34647 34388 34351 34126 34039 33407 31469 32915 32354 31629 29095))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/org-mode/todos.org"
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  205179
-  '(200938 nil)
+  188840
+  '(128660 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25594 61807 359817 50000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (72218 182372 176032 94906 107439 158020 158020 128728 128729 107439 86343 72218 69243 51616 33353 18428))))
+  '((indent-tabs-mode) (buffer-display-time 25594 62387 165736 672000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (128729 128729 162 644 59336 59342 59347 98600 75449 75568 59234 36823 98661 128132 98724 21925))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  13
+  '(13 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25594 62323 829830 399000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (29 29 13 13 13 13 13 13 17301 13 2543 13 13 10032 90 90))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
+  "finances.ledger"
+  'ledger-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  11078
+  '(11078 nil)
+  nil
+  nil
+  '((buffer-display-time 25594 62323 824496 437000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904 11203))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/clases22p.org"
+  "clases22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  6
+  '(6 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25594 62323 819577 160000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
+  "20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  36601
+  '(36576 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25594 62323 824694 920000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (35392 35036 34894 34857 34674 34647 34388 34351 34126 34039 33407 31469 32915 32354 31629 29095))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/tareas22p.org"
+  "tareas22p.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  17
+  '(23 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25594 62323 822970 76000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230205082241-svelte.org"
@@ -64,54 +112,6 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25956 26152 376918 962000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1878 906 906 666 466 464 215 666 666))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  13
-  '(13 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25956 25291 276484 308000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (29 29 13 13 13 13 13 13 17301 13 2543 13 13 10032 90 90))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
-  "finances.ledger"
-  'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  11078
-  '(11078 nil)
-  nil
-  nil
-  '((buffer-display-time 25956 24214 181861 807000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904 11203))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/clases22p.org"
-  "clases22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  6
-  '(6 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25956 24217 93888 448000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/tareas22p.org"
-  "tareas22p.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  17
-  '(23 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25594 61811 59658 748000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230113225012-reparar_suspend_en_kde_plasma.org"
@@ -206,7 +206,7 @@
   '(11870 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25958 37768 758435 354000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25594 62387 165737 555000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12556 12556 12555 11311 180 4117))))
 
 (desktop-create-buffer 208
@@ -232,4 +232,16 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 27753 10519 925741 447000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (38 38))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/.emacs.d/diary"
+  "diary"
+  'fundamental-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
 
