@@ -70,8 +70,8 @@ setxkbmap -option 'ctrl:swapcaps'
 #/bin/emacs --daemon &
 
 
-eval $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
+# eval $(gnome-keyring-daemon --start)
+# export SSH_AUTH_SOCK
 
 
 
@@ -111,3 +111,7 @@ export SSH_AUTH_SOCK
 # nohup xss-lock --transfer-sleep-lock /home/luisbarrera/scripts/xss-lock.sh -- betterlockscreen -l dim -n >/dev/null & disown
 # xsetroot -cursor_name left_ptr
 
+if [ "$XDG_SESSION_DESKTOP" = "sway" ] ; then
+    # https://github.com/swaywm/sway/issues/595
+    export _JAVA_AWT_WM_NONREPARENTING=1
+fi
