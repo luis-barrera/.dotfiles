@@ -1,0 +1,273 @@
+# Read `man 5 sway` for a complete reference.
+
+### Keyboard
+#
+input * {
+    xkb_layout "latam"
+    xkb_options "ctrl:swapcaps"
+    repeat_delay 200
+    repeat_rate 60
+}
+
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+# Home row direction keys, like vim
+set $left h
+set $down j
+set $up k
+set $right l
+# Your preferred terminal emulator
+set $term kitty
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg /home/luisbarrera/wallpapers/06.jpg fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+
+### Idle configuration
+#
+# Example configuration:
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+  timeout 300 'swaylock -f -c 000000' \
+  timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+  before-sleep 'playerctl pause' \
+  before-sleep 'swaylock -f -c 000000'
+
+
+### Input configuration
+#
+# Example configuration:
+#
+#   input "2:14:SynPS/2_Synaptics_TouchPad" {
+#       dwt enabled
+#       tap enabled
+#       natural_scroll enabled
+#       middle_emulation enabled
+#   }
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+
+
+### Key bindings
+#
+# Basics:
+#
+# Start a terminal
+bindsym $mod+Return exec $term
+
+# Kill focused window
+bindsym $mod+Shift+x kill
+
+# Start your launcher
+bindsym $mod+r exec $menu
+bindsym $mod+z exec rofi -show run
+
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+p exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+#
+# Moving around:
+#
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# Or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+#
+# Workspaces:
+#
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $wsq q
+set $wsw w
+set $wse e
+set $wsa a
+set $wss s
+set $wsd d
+set $wsf f
+# Switch to workspace
+bindsym --no-repeat $mod+1 workspace 1:$ws1; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+2 workspace 2:$ws2; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+3 workspace 3:$ws3; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+4 workspace 4:$ws4; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+q workspace 5:$wsq; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+w workspace 6:$wsw; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+e workspace 7:$wse; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+a workspace 8:$wsa; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+s workspace 9:$wss; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+d workspace 10:$wsd; exec "echo 1 > /tmp/sovpipe"
+bindsym --no-repeat $mod+f workspace 11:$wsf; exec "echo 1 > /tmp/sovpipe"
+
+bindsym --release $mod+1 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+2 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+3 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+4 exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+q exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+w exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+e exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+a exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+s exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+d exec "echo 0 > /tmp/sovpipe"
+bindsym --release $mod+f exec "echo 0 > /tmp/sovpipe"
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1:$ws1
+bindsym $mod+Shift+2 move container to workspace 2:$ws2
+bindsym $mod+Shift+3 move container to workspace 3:$ws3
+bindsym $mod+Shift+4 move container to workspace 4:$ws4
+bindsym $mod+Shift+q move container to workspace 5:$wsq
+bindsym $mod+Shift+w move container to workspace 6:$wsw
+bindsym $mod+Shift+e move container to workspace 7:$wse
+bindsym $mod+Shift+a move container to workspace 8:$wsa
+bindsym $mod+Shift+s move container to workspace 9:$wss
+bindsym $mod+Shift+d move container to workspace 10:$wsd
+bindsym $mod+Shift+f move container to workspace 11:$wsf
+# Note: workspaces can have any name you want, not just numbers.
+    # We just use 1-10 as the default.
+#
+# Layout stuff:
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+t layout stacking
+bindsym $mod+y layout tabbed
+bindsym $mod+u layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+i fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+p focus parent
+#
+# Scratchpad:
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+#
+# Resizing containers:
+#
+mode "resize" {
+# left will shrink the containers width
+# right will grow the containers width
+# up will shrink the containers height
+# down will grow the containers height
+bindsym $left resize shrink width 10px
+bindsym $down resize grow height 10px
+bindsym $up resize shrink height 10px
+bindsym $right resize grow width 10px
+
+# Ditto, with arrow keys
+bindsym Left resize shrink width 10px
+bindsym Down resize grow height 10px
+bindsym Up resize shrink height 10px
+bindsym Right resize grow width 10px
+
+# Return to default mode
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+bindsym $mod+0 mode "resize"
+
+#
+# Status Bar:
+#
+# Read `man 5 sway-bar` for more information about this section.
+bar {
+    # position top
+    #
+    # # When the status_command prints a new line to stdout, swaybar updates.
+    # # The default just shows the current date and time.
+    # status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    #
+    # colors {
+    #     statusline #ffffff
+    #     background #323232
+    #     inactive_workspace #32323200 #32323200 #5c5c5c
+    # }
+    swaybar_command waybar
+}
+
+default_border none
+
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
+
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+for_window [app_id="nautilus"] border none
+
+bindsym $mod+braceright exec grim -g "$(slurp)" - | swappy -f -
+
+# sov needed config
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
+exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | /usr/local/bin/sov -t 300 -c 4 -n
+
+include /etc/sway/config.d/*
