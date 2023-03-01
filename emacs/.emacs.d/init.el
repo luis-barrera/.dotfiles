@@ -1582,6 +1582,9 @@
 ;; Desplazamiento más suave
 (pixel-scroll-mode 1)
 
+;; Recuperar el workgroup guardado
+(wg-switch-to-workgroup "wg3")
+
 ;; Viva la parrot revolution!!
 (use-package parrot
   :config
