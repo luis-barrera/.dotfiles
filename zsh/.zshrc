@@ -369,7 +369,7 @@ PERL_MB_OPT="--install_base \"/home/luisbarrera/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/luisbarrera/perl5"; export PERL_MM_OPT;
 
 # opam configuration
-[[ ! -r /home/luisbarrera/.opam/opam-init/init.zsh ]] || source /home/luisbarrera/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+# [[ ! -r /home/luisbarrera/.opam/opam-init/init.zsh ]] || source /home/luisbarrera/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
@@ -403,13 +403,15 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Keyring
-if [ -n "$DESKTOP_SESSION" ];then
-    eval $(gnome-keyring-daemon --start)
-    export SSH_AUTH_SOCK
-fi
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-source /usr/share/nvm/init-nvm.sh
+# if [ -n "$DESKTOP_SESSION" ];then
+#     eval $(gnome-keyring-daemon --start)
+#     export SSH_AUTH_SOCK
+# fi
 
+# Set up Node Version Manager
+# source /usr/share/nvm/init-nvm.sh --no-use
+
+# export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
