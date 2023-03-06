@@ -132,7 +132,7 @@
  '(org-pomodoro-short-break-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
  '(org-pomodoro-start-sound "/home/luisbarrera/.emacs.d/org-pomodoro/inicio-pomo.wav")
  '(package-selected-packages
-   '(svelte-mode docker-compose-mode yaml-mode lua-mode org-alert: org-alert consult orderless marginalia vertico citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline projectile helpful which-key command-log-mode company forge magit general use-package))
+   '(org-journal svelte-mode docker-compose-mode yaml-mode lua-mode org-alert: org-alert consult orderless marginalia vertico citeproc bibtex-utils lsp-docker dockerfile-mode ox-ioslide pulsar ace-popup-menu typescript-mode org-cliplink org-pomodoro pdf-view-restore pdf-tools dimmer rainbow-delimiters company-posframe undo-fu anki-editor tree-sitter-langs tree-sitter ledger-mode workgroups2 popwin company-tabnine evil-surround dashboard page-break-lines lsp-haskell haskell-mode edwina ein elpy better-defaults indent-guide diff-hl magit-todos evil-nerd-commenter aggressive-indent browse-kill-ring undo-fu-session drag-stuff linum-relative centaur-tabs org-roam-ui cdlatex company-auctex auctex lsp-ui company-box parrot solaire-mode multiple-cursors visual-fill-column all-the-icons all-the-icons-completion org-evil evil-org evil-numbers evil-smartparens treemacs-all-the-icons treemacs-magit treemacs-projectile smartparens comment-tags yasnippet emmet-mode php-mode web-mode lsp-java lsp-pyright lsp-treemacs lsp-mode company-php company-web alert deft org-download org-superstar org-roam evil-collection doom-themes doom-modeline projectile helpful which-key command-log-mode company forge magit general use-package))
  '(safe-local-variable-values
    '((org-download-image-dir . "~/org-roam/Maestría")
      (org-download-image-dir . "~/org-roam/Mongoose: NodeJS y MongoDB")
@@ -569,6 +569,18 @@
       (start-process "my-appt-notification-app" nil my-appt-notification-app min-to-app msg)
     (dolist (i (number-sequence 0 (1- (length min-to-app))))
       (start-process "my-appt-notification-app" nil my-appt-notification-app (nth i min-to-app) (nth i msg)))))
+
+;; Org journal
+(use-package org-journal
+  :ensure t
+  :defer t
+  :after org
+  :init
+  (setq org-journal-prefix-key "C-c j ")
+  :config
+  (setq org-journal-dir "~/org-roam/journal")
+  (setq org-journal-find-file 'find-file)
+  (setq org-extend-today-until 2))
 
 
 ;; ##############################
