@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Wed Mar  8 18:10:02 2023
+;; Created Sat Mar 11 16:41:43 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,58 +18,82 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  13
-  '(42 nil)
+  "/home/luisbarrera/google-drive/org-roam/journal/20230311"
+  "20230311"
+  'org-journal-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
+  156
+  '(nil nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25605 55409 528248 591000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (42 42 13 13 29 29 13 13 13 13 13 13 17300 13 2542 13))))
+  '((indent-tabs-mode) (buffer-display-time 25613 905 125761 497000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring nil)))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/todos.org"
   "todos.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  72570
-  '(96250 nil)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
+  205747
+  '(4174 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25609 7288 513430 806000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (87377 72570 69533 51818 33245 130542 149968 186360 179834 173310 130648 130784 173310 77 192878 173310))))
+  '((indent-tabs-mode) (buffer-display-time 25613 75 133177 386000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (130840 72632 193070 72632 96374 87501 72632 69595 51880 33245 130666 150160 186552 180026 173502 130772))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-roam/20220301100057-docker.org"
+  "20220301100057-docker.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
+  88169
+  '(87141 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25613 752 590105 772000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (87662 87604 87604 86325 87126 84682 82422 81210 81132 80950 80909 80557 80009 76912 408 68700))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
+  13
+  '(13 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25609 29675 73357 388000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (42 42 42 13 13 29 29 13 13 13 13 13 13 17300 13 2542))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/draft.org"
   "draft.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
   13036
   '(11497 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25609 7288 513431 614000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25613 75 133177 832000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12610 12610 12609 11597 180 4117))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/finances.ledger"
   "finances.ledger"
   'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   11078
   '(11078 nil)
   nil
   nil
-  '((buffer-display-time 25605 55409 525844 887000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25609 29671 753213 317000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904 11203))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-mode/clases22p.org"
   "clases22p.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
   6
   '(6 nil)
   nil
@@ -81,7 +105,7 @@
   "/home/luisbarrera/org-mode/tareas22p.org"
   "tareas22p.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
   17
   '(23 nil)
   nil
@@ -93,7 +117,7 @@
   "/home/luisbarrera/.dotfiles/emacs/.emacs.d/init.el"
   "init.el"
   'emacs-lisp-mode
-  '(visual-line-mode eldoc-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode smartparens-mode drag-stuff-mode aggressive-indent-mode page-break-lines-mode diff-hl-mode indent-guide-mode dap-mode company-box-mode rainbow-delimiters-mode hl-todo-mode projectile-mode)
+  '(visual-line-mode eldoc-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode smartparens-mode drag-stuff-mode aggressive-indent-mode page-break-lines-mode diff-hl-mode indent-guide-mode dap-mode company-box-mode rainbow-delimiters-mode hl-todo-mode projectile-mode TeX-PDF-mode)
   21696
   '(21696 nil)
   nil
@@ -102,22 +126,10 @@
   '((mark-ring (21880 21641 21883 21883 21883 21885 22458 22458 21883 17244 21883 38520 58394 40743 2505 92))))
 
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-roam/20220301100057-docker.org"
-  "20220301100057-docker.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  86325
-  '(86325 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25979 38747 857462 701000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (87126 84682 82422 81210 81132 80950 80909 80557 80009 76912 408 68700 80647 80647 80628))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   "20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   36601
   '(36576 nil)
   nil
@@ -129,7 +141,7 @@
   "/home/luisbarrera/org-roam/20230205082241-svelte.org"
   "20230205082241-svelte.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   24358
   '(24358 nil)
   nil
@@ -141,7 +153,7 @@
   "/home/luisbarrera/org-roam/20230219174223-preparing_for_your_associate_cloud_engineer_journey.org"
   "20230219174223-preparing_for_your_associate_cloud_engineer_journey.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   1880
   '(1880 nil)
   nil
@@ -153,7 +165,7 @@
   "/home/luisbarrera/org-roam/20230113225012-reparar_suspend_en_kde_plasma.org"
   "20230113225012-reparar_suspend_en_kde_plasma.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   1005
   '(1320 nil)
   nil
@@ -165,7 +177,7 @@
   "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
   "20220515235923-data_science_certificacion_de_google.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   790
   '(790 nil)
   nil
@@ -177,7 +189,7 @@
   "/home/luisbarrera/google-drive/org-mode/beca-bedu.org"
   "beca-bedu.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   5307
   '(5307 nil)
   nil
@@ -189,7 +201,7 @@
   "/home/luisbarrera/google-drive/org-mode/ToDo-Lectura-Peliculas.org"
   "ToDo-Lectura-Peliculas.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   997
   '(997 nil)
   nil
@@ -201,7 +213,7 @@
   "/home/luisbarrera/org-roam/20220626101630-google_cloud_learning.org"
   "20220626101630-google_cloud_learning.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   805
   '(805 nil)
   nil
@@ -213,7 +225,7 @@
   "/home/luisbarrera/org-roam/20221216012200-mermaid_diagrams.org"
   "20221216012200-mermaid_diagrams.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   645
   '(645 nil)
   nil
@@ -225,7 +237,7 @@
   "/home/luisbarrera/org-roam/20230113234345-sat.org"
   "20230113234345-sat.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   974
   '(974 nil)
   nil
@@ -237,7 +249,7 @@
   "/home/luisbarrera/org-roam/20221206181411-mongoose_nodejs_y_mongodb.org"
   "20221206181411-mongoose_nodejs_y_mongodb.org"
   'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode TeX-PDF-mode)
   38
   '(38 nil)
   nil
@@ -249,7 +261,7 @@
   "/home/luisbarrera/.emacs.d/diary"
   "diary"
   'fundamental-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode TeX-PDF-mode)
   1
   '(nil nil)
   nil
