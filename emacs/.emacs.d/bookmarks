@@ -73,10 +73,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20230219174223-preparing_for_your_associate_cloud_engineer_journey.org")
+ (filename . "~/org-roam/20230312160458-ssh_en_github.org")
  (front-context-string)
- (rear-context-string . "ney\n#+filetags:\n")
- (position . 448))
+ (rear-context-string . ": SSH en GitHub\n")
+ (position . 195))
 ("Electricidad"
  (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
  (front-context-string)
