@@ -367,9 +367,7 @@
   ;; Mantener el log dentro de un drawer, de manerar que se hace un fold
   (setq org-log-into-drawer t)
   ;; Archivos considerados por org-agenda
-  (setq agenda-files-list (list (concat (getenv "HOME") "/org-mode/tareas22p.org")
-                                (concat (getenv "HOME") "/org-mode/clases22p.org")
-                                (concat (getenv "HOME") "/org-mode/todos.org")
+  (setq agenda-files-list (list (concat (getenv "HOME") "/org-mode/todos.org")
                                 (concat (getenv "HOME") "/org-mode/draft.org")))
   (setq org-agenda-files agenda-files-list)
   ;; (setq org-agenda-files '("~/org-mode/tareas21p.org"
