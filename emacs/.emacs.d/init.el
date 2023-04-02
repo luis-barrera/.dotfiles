@@ -370,10 +370,6 @@
   (setq agenda-files-list (list (concat (getenv "HOME") "/org-mode/todos.org")
                                 (concat (getenv "HOME") "/org-mode/draft.org")))
   (setq org-agenda-files agenda-files-list)
-  ;; (setq org-agenda-files '("~/org-mode/tareas21p.org"
-  ;;                          "~/org-mode/clases22p.org"
-  ;;                          "~/org-mode/todos.org"
-  ;;                          "~/org-mode/draft.org"))
   ;; Mostrar 10 días en la vista de semana de org-agenda.
   (setq org-agenda-span 10)
   ;; Integrar días festivos y fases lunares en la agenda
