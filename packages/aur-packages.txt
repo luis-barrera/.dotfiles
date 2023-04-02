@@ -20,9 +20,14 @@ etcher-bin
 flameshot-git
 fritzing
 gaphor-git
+github-desktop-bin
+gitkraken-standalone
+haskell-ghc-api-compat
+haskell-hls-selection-range-plugin
 heroku-cli-bin
 hosts-update
 humanity-icon-theme
+hyprland-bin
 i3lock-color
 insomnia-bin
 jamesdsp
@@ -41,6 +46,7 @@ mandelbulber2
 metis
 mongodb-bin
 mongodb-compass
+mongodb-tools-bin
 mongosh-bin
 mpris-ctl
 multibootusb
@@ -64,6 +70,8 @@ python-colorthief
 python-gaphas
 python-generic
 python-haishoku
+python-jsonrpc-server
+python-pep517
 python-pulsectl
 python2
 rambox-pro-bin
@@ -73,6 +81,7 @@ rgb_keyboard-git
 selectdefaultapplication-git
 slack-desktop
 smartgit
+sov
 spicetify-cli
 spotify
 spotifywm-git
@@ -85,7 +94,9 @@ universal-android-debloater-bin
 visual-studio-code-bin
 vscode-langservers-extracted
 webstorm
+wev
 whatsapp-nativefier
+woeusb-ng
 xgetres
 xsuspender-git
 youtube-music-bin
