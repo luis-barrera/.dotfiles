@@ -17,16 +17,6 @@
  (front-context-string)
  (rear-context-string . "nd-group-xxxx).\n")
  (position . 38893))
-("Bedu-Web"
- (filename . "~/google-drive/org-mode/beca-bedu.org")
- (front-context-string . "se 1]]\n\n* Cosas ")
- (rear-context-string . "68b5e][Bedu - Fa")
- (position . 5242))
-("Dev.f-Data"
- (filename . "~/org-roam/20220616092103-dev_f_professional_en_data_science_ai.org")
- (front-context-string . "Kata Fundamentos")
- (rear-context-string . "a-829720190193][")
- (position . 581))
 ("Udemy-Kotlin"
  (filename . "~/org-roam/20220605155009-desarrollo_android.org")
  (front-context-string)
@@ -42,11 +32,6 @@
  (front-context-string . "\n* continuar\nPar")
  (rear-context-string . "/div>\n#+end_src\n")
  (position . 69659))
-("Docker"
- (filename . "~/google-drive/org-roam/20220301100057-docker.org")
- (front-context-string . "Compartir docker")
- (rear-context-string . "oyectos.\n* TODO ")
- (position . 48285))
 ("Mazos Anki"
  (filename . "~/google-drive/org-roam/anki.org")
  (front-context-string)
@@ -73,15 +58,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20230326102319-python_mapas_interactivos_en_jupyter.org")
+ (filename . "~/org-roam/20230402223626-odoo.org")
  (front-context-string)
- (rear-context-string . "ivos en Jupyter\n")
- (position . 243))
-("Electricidad"
- (filename . "~/google-drive/org-roam/20220109225600-electricidad_y_magnetismo.org")
- (front-context-string)
- (rear-context-string . "{\\mathbf{r}}dV$\n")
- (position . 1497))
+ (rear-context-string . "doo\n#+filetags:\n")
+ (position . 314))
 ("Alemán"
  (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
  (front-context-string . "\n* Artículo defi")
@@ -97,11 +77,6 @@
  (front-context-string . "TODO Journal\n\n- ")
  (rear-context-string . "lo resolví.\n\n** ")
  (position . 187))
-("Optativas"
- (filename . "~/google-drive/org-mode/Optativas.org")
- (front-context-string . "ética (180)\n- De")
- (rear-context-string . " de México\n- Gen")
- (position . 336))
 ("México Profundo"
  (filename . "~/google-drive/org-roam/20211123100144-mexico_profundo.org")
  (front-context-string . ".\nLa mayoría era")
