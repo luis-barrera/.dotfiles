@@ -2,7 +2,17 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Proyectos-Portafolio"
+(("TODO-Lugares.org"
+ (filename . "~/google-drive/org-mode/Lugares.org")
+ (front-context-string . "r\n:PROPERTIES:\n:")
+ (rear-context-string . "Lugares a Visita")
+ (position . 19))
+("ToDo-Lectura-Peliculas.org"
+ (filename . "~/google-drive/org-mode/ToDo-Lectura-Peliculas.org")
+ (front-context-string . "* Series y pelic")
+ (rear-context-string)
+ (position . 1))
+("Proyectos-Portafolio"
  (filename . "~/google-drive/org-mode/Proyectos.org")
  (front-context-string . ".\nPara los estil")
  (rear-context-string . "tro de la página")
@@ -58,10 +68,10 @@
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20230402223626-odoo.org")
+ (filename . "~/org-roam/20230416191924-13_exercises_to_boost_your_linux_skills.org")
  (front-context-string)
- (rear-context-string . "doo\n#+filetags:\n")
- (position . 314))
+ (rear-context-string . "lls\n#+filetags:\n")
+ (position . 426))
 ("Alemán"
  (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
  (front-context-string . "\n* Artículo defi")
