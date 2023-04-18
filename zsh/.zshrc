@@ -415,3 +415,7 @@ unset __conda_setup
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Loads ssh-agent and adds credentials
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github
