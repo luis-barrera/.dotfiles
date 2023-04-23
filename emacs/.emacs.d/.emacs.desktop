@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon Apr 17 23:07:10 2023
+;; Created Sun Apr 23 11:39:27 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -22,36 +22,36 @@
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  218198
-  '(157092 nil)
+  202489
+  '(135754 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25662 9566 591354 354000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (157092 178132 221597 75267 136480 211917 218198 202296 202296 75267 136548 136414 195592 188818 181984 157092))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/draft.org"
-  "draft.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
-  12412
-  '(12560 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25662 9566 591355 620000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (12779 12631 11497 12631 12631 12631 11597 180 4117))))
+  '((indent-tabs-mode) (buffer-display-time 25669 27953 205133 22000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (6376 77 136603 218528 101118 217893 75268 221932 218515 157285 157285 178325 221914 75268 136673 212172))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  3397
+  8055
   '(2416 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 54259 282182 342000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25669 16770 799540 439000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (2546 13 13 53 53 13 42 42 42 13 13 29 29 13 13 13))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/draft.org"
+  "draft.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  11880
+  '(12560 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25669 27953 205133 510000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (12779 12631 11497 12631 12631 12631 11597 180 4117))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/finances.ledger"
@@ -62,7 +62,7 @@
   '(11078 nil)
   nil
   nil
-  '((buffer-display-time 25660 47229 452670 370000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time 25669 16765 774192 204000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11078 5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904))))
 
 (desktop-create-buffer 208
@@ -74,7 +74,7 @@
   '(1956 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47227 16583 547000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25669 16767 565393 464000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (36196 36444 36483 36483 36483 36483 36483 36483 36571 36577 35392 35036 34894 34857 34674 34647))))
 
 (desktop-create-buffer 208
@@ -86,7 +86,7 @@
   '(915 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 831302 78000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24033 136166 426000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (915 974 974 974 974 974 974 974 974 974 997 997 997))))
 
 (desktop-create-buffer 208
@@ -98,7 +98,7 @@
   '(833 t)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 797744 687000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25669 16769 199960 862000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (233 790 790 790 790 790 120 784 715 715 816 816 233))))
 
 (desktop-create-buffer 208
@@ -110,7 +110,7 @@
   '(65 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 781160 656000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 10906 769000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (65 65 1880 1878 906 906 666 466 464 215 666 666))))
 
 (desktop-create-buffer 208
@@ -122,7 +122,7 @@
   '(805 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 765717 48000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 178502 791000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (805 805 805 696 667))))
 
 (desktop-create-buffer 208
@@ -134,7 +134,7 @@
   '(645 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 749696 756000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 350522 363000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (645 638 638 498))))
 
 (desktop-create-buffer 208
@@ -146,7 +146,7 @@
   '(38 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 733270 834000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 520257 214000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (38 38))))
 
 (desktop-create-buffer 208
@@ -158,7 +158,7 @@
   '(6 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 717333 39000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 665309 427000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
 
 (desktop-create-buffer 208
@@ -170,18 +170,18 @@
   '(23 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25660 47220 701634 757000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26100 24034 810686 400000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/.emacs.d/diary"
   "diary"
   'fundamental-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
   1
   '(nil nil)
   nil
   nil
-  '((buffer-display-time 25660 47220 672186 930000) (overwrite-mode) (truncate-lines))
+  '((buffer-display-time) (overwrite-mode) (truncate-lines))
   '((mark-ring nil)))
 
