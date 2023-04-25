@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sun Apr 23 11:39:27 2023
+;; Created Mon Apr 24 23:21:21 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -22,19 +22,19 @@
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  202489
-  '(135754 nil)
+  203133
+  '(136605 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25669 27953 205133 22000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (6376 77 136603 218528 101118 217893 75268 221932 218515 157285 157285 178325 221914 75268 136673 212172))))
+  '((indent-tabs-mode) (buffer-display-time 25671 25395 609736 954000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (157557 157557 136673 157557 221531 169969 178721 182635 189531 196367 212642 221522 221546 203133 75268 203062))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  8055
+  5448
   '(2416 nil)
   nil
   nil
@@ -50,7 +50,7 @@
   '(12560 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25669 27953 205133 510000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25671 25395 609739 238000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12779 12631 11497 12631 12631 12631 11597 180 4117))))
 
 (desktop-create-buffer 208
