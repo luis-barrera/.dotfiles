@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Sat Apr 29 16:03:44 2023
+;; Created Mon May  1 19:14:35 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -22,12 +22,12 @@
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  203753
-  '(170279 nil)
+  204248
+  '(158114 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25677 37921 996863 352000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (136617 170279 183069 190027 190027 157743 183069 196925 135878 101180 91377 75268 203753 136791 157743 157743))))
+  '((indent-tabs-mode) (buffer-display-time 25680 25032 723600 225000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (75267 213881 179588 6376 136678 101241 204242 204248 170712 136678 170712 183564 190522 190522 158114 183564))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230205082241-svelte.org"
@@ -62,7 +62,7 @@
   '(12560 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25677 37921 996863 941000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25680 25032 723600 785000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (12779 12631 11497 12631 12631 12631 11597 180 4117))))
 
 (desktop-create-buffer 208
