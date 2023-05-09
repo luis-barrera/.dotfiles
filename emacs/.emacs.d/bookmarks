@@ -58,10 +58,10 @@
  (rear-context-string . "ue desanimarse.\n")
  (position . 938))
 ("org-refile-last-stored"
- (filename . "~/org-mode/todos.org")
- (front-context-string . "** DONE Microser")
- (rear-context-string . "2\nCA:HeyBETOC3\n\n")
- (position . 212404))
+ (filename . "~/google-drive/org-mode/todos.org")
+ (front-context-string . "** Work\n*** DONE")
+ (rear-context-string . "M4Q][video]]\n\n\n\n")
+ (position . 261221))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
