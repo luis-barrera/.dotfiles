@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue May  9 21:19:22 2023
+;; Created Mon May 15 10:46:27 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -13,7 +13,7 @@
 (setq tags-table-list nil)
 (setq search-ring nil)
 (setq regexp-search-ring '(#("Fonote" 0 6 (isearch-case-fold-search nil)) #("tro" 0 3 (isearch-case-fold-search t)) #("Bardo" 0 5 (isearch-case-fold-search nil)) #("f030" 0 4 (isearch-case-fold-search nil)) #("load" 0 4 (isearch-case-fold-search nil)) #("org-agen" 0 8 (isearch-case-fold-search t)) #("journal" 0 7 (isearch-case-fold-search t)) #("workg" 0 5 (isearch-case-fold-search t)) #("Mc" 0 2 (isearch-case-fold-search nil)) #("corre" 0 5 (isearch-case-fold-search t)) #("\\<\n\\>" 0 5 (isearch-case-fold-search nil)) #("log" 0 3 (isearch-case-fold-search t)) #("leer" 0 4 (isearch-case-fold-search t)) #("roam" 0 4 (isearch-case-fold-search t)) #("Google" 0 6 (isearch-case-fold-search nil)) #("Dev" 0 3 (isearch-case-fold-search nil))))
-(setq register-alist '((113 . [escape]) (48 . #("V*ml700419" 0 10 (org-category "todos" fontified t)))))
+(setq register-alist '((113 . [escape]) (48 . "")))
 (setq file-name-history '("~/.emacs.d/" "~/google-drive/org-mode/test.py" "~/org-roam/Analizar datos para responder preguntas/" "~/.emacs.d/" "~/org-roam/" "~/org-roam/docker3.org" "~/org-roam/docker2.org" "~/org-roam/Docker.bib" "~/org-roam/docker.bib" "~/google-drive/org-mode/reporte-styles.org" "~/dev/led-web-server/README.org" "~/dev/led-web-server/" "~/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" "~/11Trim-22P/ArteCiencia/ensayo6/ensayo.org" "~/google-drive/org-mode/Proyectos.org" "~/11Trim-22P/ArteCiencia/ensayo8/refs.bib" "~/11Trim-22P/ArteCiencia/ensayo8/ensayo.org" "~/11Trim-22P/ArteCiencia/ensayo7/refs.bib" "~/11Trim-22P/ArteCiencia/ensayo7/ensayo.org" "~/org-roam/20220902210147-neovim_config.org" "~/org-roam/20220902210147-neovim_confif.org" "~/11Trim-22P/ArteCiencia/ensayo6/ensayo.org" "~/google-drive/org-roam/" "~/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" "~/11Trim-22P/ArteCiencia/ensayo5/ensayo.org" "~/dev/los-museos/" #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo4/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/refs.bib" 0 57 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo3/ensayo.org" 0 59 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo2.org" 0 60 (ivy-index 5)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/refs.bib" 0 57 (ivy-index 1)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/" 0 46 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/ensayo2/ensayo1.org" 0 60 (ivy-index 7)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/refs.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/ensayo1.org" 0 57 (ivy-index 2)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/file.bib" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/2Sem/test.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/11Trim-22P/ArteCiencia/" 0 41 (ivy-index 5)) #("/home/luisbarrera/google-drive/org-mode/Tareas21I.org" 0 53 (ivy-index 3)) #("/home/luisbarrera/google-drive/org-mode/clases22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas22p,org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tareas21p.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/draft.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template/" 0 57 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/ioslide-template.org" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/test.html" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.txt" 0 49 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/index.org" 0 49 (ivy-index 0)) #("/home/luisbarrera/dev/alarma-arduino/" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Org-mobile.org" 0 54 (ivy-index 0)) #("/home/luisbarrera/.dotfiles/emacs/.emacs.d/" 0 43 (ivy-index 0)) #("/home/luisbarrera/.emacs.d/init.el" 0 34 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/draw_sol.py" 0 69 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas.pl" 0 67 (ivy-index 2)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/reinas-3.pl" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/Servi.pl" 0 66 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/cliente.py" 0 68 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 69 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/" 0 58 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 57 (ivy-index 14)) #("/home/luisbarrera/.emacs.d/" 0 27 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/" 0 52 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/chess_svg.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Proyecto/codigo_blob.py" 0 52 (ivy-index 12)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/funcional.py" 0 70 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/11Sem/ck" 0 60 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/11Sem/GUIClase.py" 0 56 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/GUIClase.py" 0 50 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/10Sem/frac-egipcias.py" 0 61 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-omega.png" 0 69 (ivy-index 6)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/180-angulos.png" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim10-22I/Fis-Comp/10Sem/45-angulos.png" 0 71 (ivy-index 3)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/10Sem/examen2.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/teim" 0 22 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Fis-Comp/07Sem/pendulo-examen.py" 0 61 (ivy-index 6)) #("/home/luisbarrera/google-drive/org-mode/finances.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/04Sem/frac-egipcias.hs" 0 74 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-roam/anki.org" 0 48 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-roam/anki-aleman.org" 0 55 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/ejer1.py" 0 53 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/notebook.ipynb" 0 72 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim10-22I/Lenguajes/09Sem/clase2.py" 0 67 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/Lenguajes/09Sem/python.py" 0 54 (ivy-index 0)) #("/home/luisbarrera/Trim10-22I/ABAP/primer-examen.org" 0 51 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/tmp.org" 0 47 (ivy-index 1)) #("/home/luisbarrera/google-drive/org-mode/personal.ledger" 0 55 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/finances.dat" 0 52 (ivy-index 0)) #("/home/luisbarrera/Trim10-21I/Lenguajes/01Sem/haskell/test.hs" 0 60 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/Clases21I.org" 0 53 (ivy-index 0)) #("/home/luisbarrera/dev/ani-cli/ani-cli" 0 37 (ivy-index 0)) #("/home/luisbarrera/google-drive/org-mode/maestria.org" 0 52 (ivy-index 0)) #("/home/luisbarrera/.emacs.el" 0 27 (ivy-index 1)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/P1 - ejemplo de login/main.py" 0 89 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/EmTech-DataScience/proyecto1/lifestore_file.py" 0 87 (ivy-index 0)) #("/home/luisbarrera/Trim9-21O/EmTech-DataScience/proyecto1/main.py" 0 64 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/awk1.awk" 0 74 (ivy-index 0)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/plot.p" 0 72 (ivy-index 3)) #("/home/luisbarrera/google-drive/Trim9-21O/Heuristicas/10Sem/tarea3/boxplot.m" 0 75 (ivy-index 0))))
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
@@ -22,71 +22,23 @@
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  197532
-  '(300 nil)
+  198658
+  '(150850 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25690 62971 399843 570000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (190518 183434 82970 66337 211573 128446 150282 176290 211567 163190 150282 176290 128514 47902 77 259280))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20230205082241-svelte.org"
-  "20230205082241-svelte.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  337
-  '(337 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25688 22024 660450 261000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (27328 26115))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-mode/draft.org"
-  "draft.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode buffer-face-mode company-box-mode projectile-mode)
-  12782
-  '(12418 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25690 62968 681399 410000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (11846 12778 12630 11496 12630 12630 12630 11596 179 4116))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/index.org"
-  "index.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  5448
-  '(5448 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 26130 9749 605118 975000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (5448 2416 2546 13 13 53 53 13 42 42 42 13 13 29 29 13))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
-  "finances.ledger"
-  'ledger-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  11078
-  '(11078 nil)
-  nil
-  nil
-  '((buffer-display-time 25688 21988 113621 771000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (11078 5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904))))
+  '((indent-tabs-mode) (buffer-display-time 25698 25029 461289 889000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (128606 128674 128675 37008 300 184436 177230 150820 128742 83068 66187 319 208601 173130 163944 66187))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   "20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  1956
+  19472
   '(1956 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25688 21988 560608 357000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25696 28722 455701 426000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (36196 36444 36483 36483 36483 36483 36483 36483 36571 36577 35392 35036 34894 34857 34674 34647))))
 
 (desktop-create-buffer 208
@@ -98,8 +50,56 @@
   '(915 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6066 233770 658000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 26159 55495 187353 104000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (915 974 974 974 974 974 974 974 974 974 997 997 997))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-mode/draft.org"
+  "draft.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  11880
+  '(12418 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25698 25029 461290 592000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (11846 12778 12630 11496 12630 12630 12630 11596 179 4116))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/org-roam/20230205082241-svelte.org"
+  "20230205082241-svelte.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  337
+  '(337 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 26157 64982 902238 322000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (27328 26115))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/index.org"
+  "index.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  5448
+  '(5448 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 26596 64046 6963 796000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (5448 2416 2546 13 13 53 53 13 42 42 42 13 13 29 29 13))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/finances.ledger"
+  "finances.ledger"
+  'ledger-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode company-mode company-posframe-mode drag-stuff-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  11078
+  '(11078 nil)
+  nil
+  nil
+  '((buffer-display-time 26155 10749 6803 287000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (11078 5159 11204 11204 11310 11865 11151 11151 11151 14549 14983 15172 15172 14549 14933 14904))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-roam/20220515235923-data_science_certificacion_de_google.org"
@@ -110,7 +110,7 @@
   '(833 t)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25688 21990 206226 374000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25696 28718 214751 524000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (233 790 790 790 790 790 120 784 715 715 816 816 233))))
 
 (desktop-create-buffer 208
@@ -122,7 +122,7 @@
   '(65 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6068 981758 621000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60367 848331 502000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (65 65 1880 1878 906 906 666 466 464 215 666 666))))
 
 (desktop-create-buffer 208
@@ -134,7 +134,7 @@
   '(805 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6069 496384 814000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60368 906787 653000) (buffer-file-coding-system . undecided-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (805 805 805 696 667))))
 
 (desktop-create-buffer 208
@@ -146,7 +146,7 @@
   '(645 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6070 30621 195000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60370 30485 880000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (645 638 638 498))))
 
 (desktop-create-buffer 208
@@ -158,7 +158,7 @@
   '(38 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6070 554172 181000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60371 217290 766000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (38 38))))
 
 (desktop-create-buffer 208
@@ -170,7 +170,7 @@
   '(6 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6071 13601 626000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60372 224486 938000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (6 6 47 6 707 180 707 621 6 707 707 707 707 620 6 6))))
 
 (desktop-create-buffer 208
@@ -182,7 +182,7 @@
   '(23 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 26559 6071 471683 854000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 27025 60373 219391 9000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (1577 9251 8804 8625 8478 6338 6337 8132 22 22 22 4590 139 139 17 12350))))
 
 (desktop-create-buffer 208
