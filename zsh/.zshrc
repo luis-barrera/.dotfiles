@@ -419,3 +419,9 @@ source <(ng completion script)
 # Loads ssh-agent and adds credentials
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/github
+
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
