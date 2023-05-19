@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Mon May 15 10:46:27 2023
+;; Created Thu May 18 19:45:45 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,18 +18,6 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  198658
-  '(150850 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25698 25029 461289 889000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (128606 128674 128675 37008 300 184436 177230 150820 128742 83068 66187 319 208601 173130 163944 66187))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   "20230102132954-comparte_datos_a_traves_del_arte_de_la_visualizacion.org"
   'org-mode
@@ -40,6 +28,18 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25696 28722 455701 426000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (36196 36444 36483 36483 36483 36483 36483 36483 36571 36577 35392 35036 34894 34857 34674 34647))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  81738
+  '(81738 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25700 25275 863412 492000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (66188 92995 219747 217346 177654 184905 177639 92995 164291 213634 219729 106391 128506 216157 128885 66187))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20230113234345-sat.org"
@@ -62,7 +62,7 @@
   '(12418 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25698 25029 461290 592000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25700 25257 238950 826000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11846 12778 12630 11496 12630 12630 12630 11596 179 4116))))
 
 (desktop-create-buffer 208
