@@ -59,19 +59,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** Work\n*** DONE")
- (rear-context-string . "M4Q][video]]\n\n\n\n")
- (position . 261221))
+ (front-context-string . "** DONE VisUAM [")
+ (rear-context-string . " 5.6 en MySQL.\n\n")
+ (position . 263509))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20230511090729-qatar_arresto_de_periodistas_extranjeros.org")
+ (filename . "~/org-roam/20230520001522-what_is_a_router_and_how_to_use_one_the_beginner_s_faq.org")
  (front-context-string)
- (rear-context-string . "tas extranjeros\n")
- (position . 251))
+ (rear-context-string . "FAQ\n#+filetags:\n")
+ (position . 453))
 ("Alemán"
  (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
  (front-context-string . "\n* Artículo defi")
