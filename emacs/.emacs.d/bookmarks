@@ -59,9 +59,9 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE VisUAM [")
- (rear-context-string . " 5.6 en MySQL.\n\n")
- (position . 263509))
+ (front-context-string . "** DONE Exámen C")
+ (rear-context-string . "e en Overleaf.\n\n")
+ (position . 266887))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
