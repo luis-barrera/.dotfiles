@@ -79,8 +79,9 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+x kill
 
 # Start your launcher
-bindsym $mod+r exec $menu
+# bindsym $mod+r exec $menu
 bindsym $mod+z exec rofi -show run
+# bindsym $mod+z exec wofi --show run
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -264,17 +265,11 @@ bindsym --locked XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ to
 
 for_window [app_id="nautilus"] border none
 
-assign [app_id="firefox"] workspace $wse
-assign [app_id="chromium"] workspace $ws1
-
 # Screenshot
 bindsym $mod+braceright exec grim -g "$(slurp)" - | swappy -f -
 
 # sov needed config
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | /usr/local/bin/sov -t 300 -c 4 -n
-
-exec firefox
-exec chromium
 
 include /etc/sway/config.d/*
