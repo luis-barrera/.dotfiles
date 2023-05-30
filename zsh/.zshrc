@@ -2,8 +2,13 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/luisbarrera/.local/bin:$PATH
 
+# ssh-agent
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github
+
 # Path to your oh-my-zsh installation.
 export ZSH="/home/luisbarrera/.oh-my-zsh"
+
 
 # Set colorscheme using pywal
 (cat ~/.cache/wal/sequences &)
@@ -98,7 +103,7 @@ plugins=(git
 	# ripgrep
 	# zsh-interactive-cd
 	zsh-autosuggestions
-	)
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -362,45 +367,13 @@ alias lamp="curl -s http://192.168.0.8/toggle -o /dev/null"
 # Secrets para spotify-dl
 # source ~/.spotify-secrets
 
-PATH="/home/luisbarrera/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/luisbarrera/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/luisbarrera/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/luisbarrera/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/luisbarrera/perl5"; export PERL_MM_OPT;
-
 # opam configuration
 # [[ ! -r /home/luisbarrera/.opam/opam-init/init.zsh ]] || source /home/luisbarrera/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Rust
-export PATH=$PATH:$HOME/.cargo/bin
-
-# Emacs
-export PATH=/home/luisbarrera/.emacs.d/bin:$PATH
-
-export PATH=$PATH:/home/luisbarrera/.local/lib
 
 
 # PHP 7
 # export PATH=/sbin/php7:$PATH
 # alias php=/sbin/php7
-
-# Zoxide, reemplazo para cd
-eval "$(zoxide init zsh)"
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/luisbarrera/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh" ]; then
-    . "/home/luisbarrera/anaconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="/home/luisbarrera/anaconda3/bin:$PATH"
-  fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # Keyring
 # if [ -n "$DESKTOP_SESSION" ];then
@@ -412,22 +385,7 @@ unset __conda_setup
 # source /usr/share/nvm/init-nvm.sh --no-use
 
 # export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+#
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
-# Loads ssh-agent and adds credentials
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/github
-
-
-export ANDROID_HOME=$HOME/Android/Sdk
-export ANDROID_SDK_ROOT=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/platform-tools
-export _JAVA_AWT_WM_NONREPARENTING=1
-export EDITOR=nvim
-
-# tmux layouts
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)
+# Zoxide, reemplazo para cd
+eval "$(zoxide init zsh)"
