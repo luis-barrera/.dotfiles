@@ -59,19 +59,19 @@
  (position . 938))
 ("org-refile-last-stored"
  (filename . "~/google-drive/org-mode/todos.org")
- (front-context-string . "** DONE Exámen C")
- (rear-context-string . "e en Overleaf.\n\n")
- (position . 266887))
+ (front-context-string . "** Estudiar Desa")
+ (rear-context-string . "Wiki · GitHub]]\n")
+ (position . 33908))
 ("Abreviaturas"
  (filename . "~/google-drive/org-roam/20220316083329-abreviaturas.org")
  (front-context-string . "ersona\" en mascu")
  (rear-context-string . "' -> \"la misma p")
  (position . 1550))
 ("org-capture-last-stored"
- (filename . "~/org-roam/20230520001522-what_is_a_router_and_how_to_use_one_the_beginner_s_faq.org")
+ (filename . "~/org-roam/20230530234317-deploy_react_app.org")
  (front-context-string)
- (rear-context-string . "FAQ\n#+filetags:\n")
- (position . 453))
+ (rear-context-string . "App\n#+filetags:\n")
+ (position . 435))
 ("Alemán"
  (filename . "~/google-drive/org-roam/20220109093451-goethe_deutsch.org")
  (front-context-string . "\n* Artículo defi")
