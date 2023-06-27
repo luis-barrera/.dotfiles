@@ -389,3 +389,5 @@ alias lamp="curl -s http://192.168.0.8/toggle -o /dev/null"
 
 # Zoxide, reemplazo para cd
 eval "$(zoxide init zsh)"
+
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
