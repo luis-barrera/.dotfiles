@@ -125,6 +125,8 @@
      ("breaksymbolright" "{}")
      ("breakanywheresymbolpre" "{}")
      ("frame" "lines")))
+ '(org-modules
+   '(ol-bbdb ol-bibtex ol-docview ol-doi ol-eww ol-gnus org-habit org-id ol-info org-inlinetask ol-irc ol-mhe org-mouse ol-rmail ol-w3m))
  '(org-odt-display-outline-level 1)
  '(org-odt-preferred-output-format "docx")
  '(org-pomodoro-finished-sound "/home/luisbarrera/.emacs.d/org-pomodoro/fin-pomo2.wav")
