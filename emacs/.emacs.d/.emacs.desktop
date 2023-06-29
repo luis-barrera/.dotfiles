@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Tue Jun 27 12:08:27 2023
+;; Created Thu Jun 29 13:08:53 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -22,36 +22,24 @@
   "todos.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  191565
-  '(116815 nil)
+  141577
+  '(34902 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25755 9597 383491 993000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (19606 19623 168837 141031 141031 319 168837 184102 15819 213238 164602 208787 213220 116012 70303 208787))))
+  '((indent-tabs-mode) (buffer-display-time 25757 54951 829130 568000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (34834 34710 34499 15819 155354 117293 192173 184654 117361 19606 19623 169445 141577 141577 319 169445))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
   '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  12180
+  6542
   '(12180 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25755 1133 940548 778000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25755 17945 457972 772000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (16344 16407 705 845 583 993 746 61 556 447 330 315 61 249 98 98))))
-
-(desktop-create-buffer 208
-  "/home/luisbarrera/org-roam/20230602114908-a_linux_sysadmin_s_introduction_to_cgroups.org"
-  "20230602114908-a_linux_sysadmin_s_introduction_to_cgroups.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  3062
-  '(2554 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 26260 57084 677625 233000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (550))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20221216012200-mermaid_diagrams.org"
@@ -98,7 +86,7 @@
   '(11896 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25755 9597 383492 906000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25757 54951 829131 199000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11859 11846 12778 12630 11496 12630 12630 12630 11596 179 4116))))
 
 (desktop-create-buffer 208
