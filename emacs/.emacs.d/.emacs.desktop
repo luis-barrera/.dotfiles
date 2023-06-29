@@ -2,7 +2,7 @@
 ;; --------------------------------------------------------------------------
 ;; Desktop File for Emacs
 ;; --------------------------------------------------------------------------
-;; Created Thu Jun 29 13:08:53 2023
+;; Created Thu Jun 29 13:13:48 2023
 ;; Desktop file format version 208
 ;; Emacs version 28.2
 
@@ -18,18 +18,6 @@
 
 ;; Buffer section -- buffers listed in same order as in buffer list:
 (desktop-create-buffer 208
-  "/home/luisbarrera/google-drive/org-mode/todos.org"
-  "todos.org"
-  'org-mode
-  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
-  141577
-  '(34902 nil)
-  nil
-  nil
-  '((indent-tabs-mode) (buffer-display-time 25757 54951 829130 568000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
-  '((mark-ring (34834 34710 34499 15819 155354 117293 192173 184654 117361 19606 19623 169445 141577 141577 319 169445))))
-
-(desktop-create-buffer 208
   "/home/luisbarrera/google-drive/org-mode/index.org"
   "index.org"
   'org-mode
@@ -40,6 +28,18 @@
   nil
   '((indent-tabs-mode) (buffer-display-time 25755 17945 457972 772000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (16344 16407 705 845 583 993 746 61 556 447 330 315 61 249 98 98))))
+
+(desktop-create-buffer 208
+  "/home/luisbarrera/google-drive/org-mode/todos.org"
+  "todos.org"
+  'org-mode
+  '(visual-line-mode evil-collection-unimpaired-mode which-key-mode override-global-mode evil-org-mode org-indent-mode company-mode company-posframe-mode drag-stuff-mode page-break-lines-mode diff-hl-mode dap-mode company-box-mode projectile-mode)
+  141644
+  '(192302 nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-display-time 25757 55238 655793 895000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((mark-ring (169691 117292 141705 34902 34834 34710 34499 15819 155483 117360 192302 184783 117428 19606 19623 169574))))
 
 (desktop-create-buffer 208
   "/home/luisbarrera/org-roam/20221216012200-mermaid_diagrams.org"
@@ -86,7 +86,7 @@
   '(11896 nil)
   nil
   nil
-  '((indent-tabs-mode) (buffer-display-time 25757 54951 829131 199000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
+  '((indent-tabs-mode) (buffer-display-time 25757 55237 385557 998000) (buffer-file-coding-system . utf-8-unix) (overwrite-mode) (truncate-lines))
   '((mark-ring (11859 11846 12778 12630 11496 12630 12630 12630 11596 179 4116))))
 
 (desktop-create-buffer 208
