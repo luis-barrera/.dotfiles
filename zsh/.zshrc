@@ -393,4 +393,8 @@ alias vim="nvim"
 # Zoxide, reemplazo para cd
 eval "$(zoxide init zsh)"
 
+# Composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+# doom EMACS
+export PATH="$HOME/.config/emacs/bin:$PATH"
