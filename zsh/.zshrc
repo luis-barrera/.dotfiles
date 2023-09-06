@@ -398,3 +398,8 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
 # doom EMACS
 export PATH="$HOME/.config/emacs/bin:$PATH"
+
+# Quartus
+export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export LM_LICENSE_FILE="$HOME/LR-133456_License.dat"
+
