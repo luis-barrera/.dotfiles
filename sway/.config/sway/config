@@ -9,6 +9,9 @@ input * {
     repeat_rate 60
 }
 
+smart_gaps on
+gaps inner 2
+gaps outer 0
 
 ### Variables
 #
@@ -30,7 +33,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/luisbarrera/wallpapers/06.jpg fill
+output * bg /home/luisbarrera/wallpapers/16.png fill
 #
 # Example configuration:
 #
