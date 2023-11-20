@@ -41,7 +41,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org-mode/")
-(setq org-agenda-files '("~/org-mode/todos.org"))
+(setq org-agenda-files '("~/org-mode/todos2.org"))
 (after! org
   (add-to-list 'org-modules 'org-habit 'org-roam)
   (setq org-log-into-drawer "LOGBOOK")
