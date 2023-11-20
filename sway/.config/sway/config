@@ -33,7 +33,7 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/luisbarrera/wallpapers/16.png fill
+output * bg /home/luisbarrera/wallpapers/09.png fill
 #
 # Example configuration:
 #
@@ -83,7 +83,7 @@ bindsym $mod+Shift+x kill
 
 # Start your launcher
 # bindsym $mod+r exec $menu
-bindsym $mod+z exec rofi -show run
+bindsym $mod+z exec wofi --show drun
 # bindsym $mod+z exec wofi --show run
 
 # Drag floating windows by holding down $mod and left mouse button.
