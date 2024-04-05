@@ -320,7 +320,7 @@ alias samba="sudo mount -t cifs //192.168.0.8/valbar /mnt/samba-hp -o username=v
 # alias drive-push="cd ~/google-drive && drive push --ignore-name-clashes --hidden org-mode org-roam Trim10-22I"
 alias drive-push="cd ~/google-drive && \
 	drive push --ignore-name-clashes --hidden -no-prompt\
-	org-mode org-roam Cosas_por_hacer passwords.kdbx Libros"
+	org-mode org-roam Cosas_por_hacer passwords.kdbx"
 
 # Alias para pomodoro
 alias pomato="cd ~/dev/pomato && python pomato.py"
@@ -363,6 +363,8 @@ alias lamp="curl -s http://192.168.0.8/toggle -o /dev/null"
 # Vim
 alias vim="nvim"
 
+# Hibernar
+alias hib="sh ~/scripts/hibernate.sh"
 
 # Fin alias
 ###############################################################################
@@ -400,6 +402,6 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # Quartus
-export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/21.1/quartus/sopc_builder/bin"
+export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
 export LM_LICENSE_FILE="$HOME/LR-133456_License.dat"
 
