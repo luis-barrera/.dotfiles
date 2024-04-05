@@ -5,7 +5,7 @@
 input * {
     xkb_layout "latam"
     xkb_options "ctrl:swapcaps"
-    repeat_delay 200
+    repeat_delay 300
     repeat_rate 60
 }
 
@@ -50,10 +50,10 @@ output * bg /home/luisbarrera/wallpapers/09.png fill
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-  timeout 3000 'swaylock -f -c 000000' \
+  timeout 3000 'swaylock -f -c 581845 -i /home/luisbarrera/wallpapers/amor-01.jpg -s fill' \
   timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
   before-sleep 'playerctl pause' \
-  before-sleep 'swaylock -f -c 000000'
+  before-sleep 'swaylock -f -c 581845 -i /home/luisbarrera/wallpapers/amor-01.jpg -s fill' \
 
 
 ### Input configuration
@@ -83,8 +83,9 @@ bindsym $mod+Shift+x kill
 
 # Start your launcher
 # bindsym $mod+r exec $menu
-bindsym $mod+z exec wofi --show drun
+bindsym $mod+z exec fuzzel
 # bindsym $mod+z exec wofi --show run
+bindsym $mod+c exec cliphist list | wofi --dmenu | cliphist decode | wl-copy
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -274,5 +275,8 @@ bindsym $mod+braceright exec grim -g "$(slurp)" - | swappy -f -
 # sov needed config
 exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK XDG_CURRENT_DESKTOP
 exec rm -f /tmp/sovpipe && mkfifo /tmp/sovpipe && tail -f /tmp/sovpipe | /usr/local/bin/sov -t 300 -c 4 -n
+
+# cliphist config
+exec wl-paste --watch cliphist store
 
 include /etc/sway/config.d/*
