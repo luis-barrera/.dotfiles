@@ -123,7 +123,9 @@ haveged
 hblock
 htop
 hunspell-es_mx
+hypridle
 hyprland
+hyprlock
 hyprpaper
 ifuse
 inkscape
@@ -253,6 +255,7 @@ swayidle
 swaylock
 swi-prolog
 sxiv
+syncthing
 systeroid
 tcpdump
 tealdeer
@@ -299,6 +302,7 @@ wireless_tools
 wireplumber
 wireshark-qt
 wl-clipboard
+wlr-randr
 wmname
 wofi
 xautolock
