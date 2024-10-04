@@ -6,7 +6,7 @@ scan_timeout = 20
 
 # Formato del prompt
 format = """
-$time [                           ](bold fg:2)
+$time [                          ](bold fg:2)
 $sudo\
 $username\
 $directory\
@@ -35,7 +35,7 @@ format = "  [$path]($style)[$read_only]($read_only_style) "
 format = " [$symbol$branch]($style) "
 
 [package]
-format = "[ $version]($style) "
+format = "[$version]($style) "
 
 [memory_usage]
 disabled = false
@@ -43,7 +43,7 @@ disabled = false
 [sudo]
 style = "bold green"
 format = "[$symbol]($style)"
-symbol = " "
+symbol = ""
 disabled = false
 
 [cmd_duration]
