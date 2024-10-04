@@ -8,6 +8,9 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+(package! org-roam)
+(package! org-roam-timestamps)
+(package! org-download)
 (package! simpleclip)
 (package! xclip)
 

@@ -40,8 +40,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org-mode/")
-(setq org-agenda-files '("~/org-mode/todos2.org"))
+(setq org-directory "~/google-drive/org-mode/")
+(setq org-agenda-files '("~/google-drive/org-mode/todos2.org"))
 (after! org
   (add-to-list 'org-modules 'org-habit 'org-roam)
   (setq org-log-into-drawer "LOGBOOK")
@@ -50,7 +50,7 @@
   (setq-default org-download-timestamp "_%Y%m%d-%H%M%S")
   (setq org-download-method 'drestivo/org-download-method))
 
-(setq org-roam-directory (file-truename "~/org-roam"))
+(setq org-roam-directory (file-truename "~/google-drive/org-roam"))
 
 (require 'org-roam)
 (org-roam-db-autosync-mode 't)
