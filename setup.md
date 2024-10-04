@@ -66,3 +66,15 @@ chsh -s \bin\zsh
 	- redshift.
 13. Verificar que los temas de gtk3 y de los cursores funcionen correctamente (usar `lxappearance`).
 14. Instalar eclipse y descargar soporte para otros lenguajes (C/C++, Java y Java EE).
+
+## ssh keys
+
+Para poder usar `ssh` con `git` y `github` se debe crear un archivo
+`~/.ssh/config` e indicar la key que se usa por cada server.
+
+```
+Host github.com
+	IdentitiesOnly yes
+	IdentityFile ~/.ssh/<key>
+```
+
