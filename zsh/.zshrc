@@ -3,16 +3,16 @@
 export PATH=/home/luisbarrera/.local/bin:$PATH
 
 # ssh-agent
-[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/github
+# [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/github-arch
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/luisbarrera/.oh-my-zsh"
 
 
 # Set colorscheme using pywal
-(cat ~/.cache/wal/sequences &)
-# (wal -q --theme base16-seti &)
+# (cat ~/.cache/wal/sequences &)
+(wal -q --theme base16-seti &)
 # (wal -q --theme sexy-x-dotshare &)
 # (wal -q --theme sexy-sexcolors &)
 # (wal -q --theme sexy-dwmrob &)
@@ -23,7 +23,7 @@ export ZSH="/home/luisbarrera/.oh-my-zsh"
 # (wal -q --theme sexy-parker_brothers &)
 
 # pfetch
-(pfetch &&)
+# (pfetch &&)
 
 # Prompt
 eval "$(starship init zsh)"
@@ -402,6 +402,6 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/.config/emacs/bin:$PATH"
 
 # Quartus
-export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
-export LM_LICENSE_FILE="$HOME/LR-133456_License.dat"
+# export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
+# export LM_LICENSE_FILE="$HOME/LR-133456_License.dat"
 

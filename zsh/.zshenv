@@ -54,8 +54,8 @@ unset __conda_setup
 # source <(gnome-keyring-daemon --start)
 
 # tmux layouts
-export PATH="$HOME/.tmuxifier/bin:$PATH"
-source <(tmuxifier init -)
+# export PATH="$HOME/.tmuxifier/bin:$PATH"
+# source <(tmuxifier init -)
 
 # Composer, Laravel
 export PATH="$HOME/.composer/vendor/bin:$PATH"
