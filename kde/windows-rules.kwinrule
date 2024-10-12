@@ -1,0 +1,47 @@
+[Emacs]
+Description=Emacs
+desktops=7a850d2c-b2fb-4fc9-9909-37a9fb6e773b,aa5b66af-54b2-4c08-ac82-84b6ed90c5e6
+desktopsrule=3
+position=960,25
+positionrule=3
+size=960,1055
+sizerule=3
+wmclass=emacs
+wmclassmatch=1
+
+[Settings for brave-personal]
+Description=Settings for brave-personal
+desktops=aa5b66af-54b2-4c08-ac82-84b6ed90c5e6
+desktopsrule=3
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+position=0,25
+positionrule=3
+size=1920,1055
+sizerule=3
+wmclass=brave-personal
+wmclassmatch=1
+
+[Settings for brave-profesional]
+Description=Settings for brave-profesional
+desktops=7a850d2c-b2fb-4fc9-9909-37a9fb6e773b
+desktopsrule=3
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+position=0,25
+positionrule=3
+size=1920,1055
+sizerule=3
+wmclass=brave-profesional
+wmclassmatch=1
+
+[Settings for kitty]
+Description=Settings for kitty
+noborder=true
+noborderrule=3
+wmclass=kitty
+wmclassmatch=1
