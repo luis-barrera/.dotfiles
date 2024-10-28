@@ -40,8 +40,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/google-drive/org-mode/")
-(setq org-agenda-files '("~/google-drive/org-mode/todos2.org"))
+(setq org-directory "~/org-mode/")
+(setq org-agenda-files '("~/org-mode/todos.org"))
 (after! org
   (add-to-list 'org-modules 'org-habit 'org-roam)
   (setq org-log-into-drawer "LOGBOOK")
@@ -50,7 +50,7 @@
   (setq-default org-download-timestamp "_%Y%m%d-%H%M%S")
   (setq org-download-method 'drestivo/org-download-method))
 
-(setq org-roam-directory (file-truename "~/google-drive/org-roam"))
+(setq org-roam-directory (file-truename "~/org-roam"))
 
 (require 'org-roam)
 (org-roam-db-autosync-mode 't)
@@ -108,6 +108,22 @@ https://github.com/abo-abo/org-download/commit/137c3d2aa083283a3fc853f9ecbbc0303
   (setq xclip-select-enable-clipboard t)
   (setq xclip-mode t)
   (setq xclip-method (quote wl-copy)))
+
+;; Add custom menu entry on splashscreen
+(defun luisbarrera/open-org-index ()
+  "Open personal org index file"
+  (interactive)
+  (find-file "~/org-mode/index.org"))
+
+(map! :leader :desc "org index" :n "o i" #'luisbarrera/open-org-index)
+
+(add-to-list '+doom-dashboard-menu-sections
+             '("Personal Org Index"
+               :icon (nerd-icons-octicon "nf-oct-repo" :face 'doom-dashboard-menu-title)
+               :key "SPC o i"
+               :when (featurep! :lang org)
+               :face (:inherit (doom-dashboard-menu-title bold))
+               :action luisbarrera/open-org-index))
 
 ;; whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
