@@ -405,3 +405,10 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # export QSYS_ROOTDIR="/home/luisbarrera/.cache/paru/clone/quartus-free/pkg/quartus-free-quartus/opt/intelFPGA/23.1/quartus/sopc_builder/bin"
 # export LM_LICENSE_FILE="$HOME/LR-133456_License.dat"
 
+# IntelliJ
+export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Open tmux on ever6y new terminal
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+  tmux attach || exec tmux new-session && exit;
+fi
