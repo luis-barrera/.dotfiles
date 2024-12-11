@@ -412,3 +412,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
   tmux attach || exec tmux new-session && exit;
 fi
+
+# GO lang
+export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
