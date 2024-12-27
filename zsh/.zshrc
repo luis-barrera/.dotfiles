@@ -415,3 +415,7 @@ fi
 
 # GO lang
 export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
