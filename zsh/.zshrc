@@ -2,77 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/luisbarrera/.local/bin:$PATH
 
-# ssh-agent
-# [ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
-# ssh-add ~/.ssh/github-arch
-
 # Path to your oh-my-zsh installation.
 export ZSH="/home/luisbarrera/.oh-my-zsh"
-
-
-# Set colorscheme using pywal
-# (cat ~/.cache/wal/sequences &)
-(wal -q --theme base16-seti &)
-# (wal -q --theme sexy-x-dotshare &)
-# (wal -q --theme sexy-sexcolors &)
-# (wal -q --theme sexy-dwmrob &)
-# (wal -q --theme gruvbox &)
-# (wal -q --theme sexy-orangish &)
-# (wal -q --theme sexy-digerati &)
-# (wal -q --theme sexy-brewer &)
-# (wal -q --theme sexy-parker_brothers &)
-
-# pfetch
-# (pfetch &&)
 
 # Prompt
 eval "$(starship init zsh)"
 
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 # Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -96,16 +35,15 @@ eval "$(starship init zsh)"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git
-	alias-finder
-	# colored-man-pages
-	fancy-ctrl-z
-	fzf
-	# ripgrep
-	# zsh-interactive-cd
-	zsh-autosuggestions
+  alias-finder
+  fancy-ctrl-z
+  fzf
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+
 
 # User configuration
 
@@ -392,9 +330,6 @@ alias hib="sh ~/scripts/hibernate.sh"
 # export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 #
 
-# Zoxide, reemplazo para cd
-eval "$(zoxide init zsh)"
-
 # Composer
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 
@@ -408,9 +343,16 @@ export PATH="$HOME/.config/emacs/bin:$PATH"
 # IntelliJ
 export _JAVA_AWT_WM_NONREPARENTING=1
 
-# Open tmux on ever6y new terminal
-if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ]; then
+# Open tmux on every new terminal
+if [ -z "$TMUX" ] && [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "xterm-ghostty" ]; then
   tmux attach || exec tmux new-session && exit;
+
+
+  _SEDCMD='s/.*\*color\([0-9]\{1,\}\).*#\([0-9a-fA-F]\{6\}\).*/\1 \2/p'
+  for i in $(sed -n "$_SEDCMD" $HOME/.Xresources | awk '$1 < 16 {printf "\\e]P%X%s", $1, $2}'); do
+    echo -en "$i"
+  done
+  clear
 fi
 
 # GO lang
@@ -419,3 +361,6 @@ export PATH="$PATH:$(go env GOBIN):$(go env GOPATH)/bin"
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
+
+# Zoxide, reemplazo para cd
+eval "$(zoxide init zsh)"
