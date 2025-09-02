@@ -78,3 +78,16 @@ Host github.com
 	IdentityFile ~/.ssh/<key>
 ```
 
+## Backup
+
+Create a list of packages installed via pacman:
+
+```
+pacman -Qqe | grep -v "$(pacman -Qqm)" > pacman-packages.txt
+```
+
+And, also a list of AUR packages:
+
+```
+pacman -Qqm > aur-packages.txt
+```
