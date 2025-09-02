@@ -1,0 +1,9 @@
+[Unit]
+Description=Fix Suspend at Startup
+
+[Service]
+ExecStart=/usr/local/sbin/fix-suspend.sh
+
+[Install]
+WantedBy=multi-user.target
+
