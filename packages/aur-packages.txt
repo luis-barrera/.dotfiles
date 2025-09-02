@@ -2,11 +2,9 @@ aseprite-git
 brave-bin
 c++utilities
 electron32
-haskell-data-array-byte
 jetbrains-toolbox
 konsave
 paru
-paru-debug
 python39
 qimgv-git
 qtforkawesome-qt6
