@@ -1,0 +1,21 @@
+[Unit]
+Description=Mount a remote in rclone as a directory
+After=multi-user.target
+
+[Service]
+Type=notify
+ExecStartPre=-/usr/bin/mkdir -p /home/luisbarrera/google-drive
+ExecStart= \
+  /usr/bin/rclone mount \
+    --vfs-cache-mode writes \
+    --vfs-cache-max-size 100M \
+    --log-level INFO \
+    --low-level-retries 1 \
+    --config /home/luisbarrera/.config/rclone/rclone.conf \
+    google-drive-fs: /home/luisbarrera/google-drive
+ExecStop=/usr/bin/fusermount -u /home/luisbarrera/google-drive
+ExecStopPost=-/bin/rmdir /home/luisbarrera/google-drive
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
