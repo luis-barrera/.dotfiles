@@ -29,3 +29,5 @@
     - copy the service `~/scripts/rclone-google-drive.service` to `.config/systemd/user`
     - load the service to systemctl: `systemctl --user daemon-reload`
     - enable the service: `systemctl --user enable --now rclone-google-drive.service`.
+1. Install `syncthing`, enable de user service `systemctl --user enable --now syncthing.service` and add the other devices.
+
